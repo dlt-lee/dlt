@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-#dlt.caret_treebag <- function(data,count) {
+dlt.caret_treebag <- function(data,count) {
   library(caret)
   library(ipred)
   
@@ -258,6 +258,6 @@ count<-dim(dlt)[1]
               testPredictions.b1,
               testPredictions.b2))
   
-#}
+}
 
 
