@@ -1,0 +1,199 @@
+library(mclust)
+library(parallel)
+#Build data
+trains_1 <-tail(dlt,402)[1:400,]
+trains_2 <-tail(dlt,402)[2:401,]
+results<-tail(dlt,400)
+tests_1<-tail(dlt,2)[1,]
+tests_2<-tail(dlt,2)[2,]
+#A:
+trn1<-trains_1$n
+trn2<-trains_2$n
+a1.1<-trains_1$a1
+a2.1<-trains_1$a2
+a3.1<-trains_1$a3
+a4.1<-trains_1$a4
+a5.1<-trains_1$a5
+a1.2<-trains_2$a1
+a2.2<-trains_2$a2
+a3.2<-trains_2$a3
+a4.2<-trains_2$a4
+a5.2<-trains_2$a5
+resa1<-results$a1
+resa2<-results$a2
+resa3<-results$a3
+resa4<-results$a4
+resa5<-results$a5
+trains.a11<-data.frame(trn1,trn2,a1.2,a1.1,resa1)
+trains.a22<-data.frame(trn1,trn2,a2.2,a2.1,resa2)
+trains.a33<-data.frame(trn1,trn2,a3.2,a3.1,resa3)
+trains.a44<-data.frame(trn1,trn2,a4.2,a4.1,resa4)
+trains.a55<-data.frame(trn1,trn2,a5.2,a5.1,resa5)
+#B:
+b1.1<-trains_1$b1
+b2.1<-trains_1$b2
+b1.2<-trains_2$b1
+b2.2<-trains_2$b2
+resb1<-results$b1
+resb2<-results$b2
+trains.b11<-data.frame(trn1,trn2,b1.2,b1.1,resb1)
+trains.b22<-data.frame(trn1,trn2,b2.2,b2.1,resb2)
+#构建gMclust回归模型
+fit_mc.a11<-Mclust(trains.a11[3:4],parallel = TRUE)
+fit_mc.a22<-Mclust(trains.a22[3:4],parallel = TRUE)
+fit_mc.a33<-Mclust(trains.a33[3:4],parallel = TRUE)
+fit_mc.a44<-Mclust(trains.a44[3:4],parallel = TRUE)
+fit_mc.a55<-Mclust(trains.a55[3:4],parallel = TRUE)
+fit_mc.b11<-Mclust(trains.b11[3:4],parallel = TRUE)
+fit_mc.b22<-Mclust(trains.b22[3:4],parallel = TRUE)
+
+#Build test data
+#A:
+tsn1<-tests_1$n
+tsn2<-tests_2$n
+a1.1<-tests_1$a1
+a2.1<-tests_1$a2
+a3.1<-tests_1$a3
+a4.1<-tests_1$a4
+a5.1<-tests_1$a5
+a1.2<-tests_2$a1
+a2.2<-tests_2$a2
+a3.2<-tests_2$a3
+a4.2<-tests_2$a4
+a5.2<-tests_2$a5
+tests.a11<-data.frame(tsn1,tsn2,a1.2,a1.1)
+tests.a22<-data.frame(tsn1,tsn2,a2.2,a2.1)
+tests.a33<-data.frame(tsn1,tsn2,a3.2,a3.1)
+tests.a44<-data.frame(tsn1,tsn2,a4.2,a4.1)
+tests.a55<-data.frame(tsn1,tsn2,a5.2,a5.1)
+#B:
+b1.1<-tests_1$b1
+b2.1<-tests_1$a2
+b1.2<-tests_2$b1
+b2.2<-tests_2$b2
+tests.b11<-data.frame(tsn1,tsn2,b1.2,b1.1)
+tests.b22<-data.frame(tsn1,tsn2,b2.2,b2.1)
+
+#Mclust回归模型预测测试集
+p.a11<-predict(fit_mc.a11, tests.a11[3:4])
+p.a22<-predict(fit_mc.a22, tests.a22[3:4])
+p.a33<-predict(fit_mc.a33, tests.a33[3:4])
+p.a44<-predict(fit_mc.a44, tests.a44[3:4])
+p.a55<-predict(fit_mc.a55, tests.a55[3:4])
+p.b11<-predict(fit_mc.b11, tests.b11[3:4])
+p.b22<-predict(fit_mc.b22, tests.b22[3:4])
+p.a11<-table(fit_mc.a11$classification,trains.a11$resa1)[p.a11$classification,]
+barplot(p.a11,main = "a11")
+p.a22<-table(fit_mc.a22$classification,trains.a22$resa2)[p.a22$classification,]
+barplot(p.a22,main = "a22")
+p.a33<-table(fit_mc.a33$classification,trains.a33$resa3)[p.a33$classification,]
+barplot(p.a33,main = "a33")
+p.a44<-table(fit_mc.a44$classification,trains.a44$resa4)[p.a44$classification,]
+barplot(p.a44,main = "a44")
+p.a55<-table(fit_mc.a55$classification,trains.a55$resa5)[p.a55$classification,]
+barplot(p.a55,main = "a55")
+p.b11<-table(fit_mc.b11$classification,trains.b11$resb1)[p.b11$classification,]
+barplot(p.b11,main = "b11")
+p.b22<-table(fit_mc.b22$classification,trains.b22$resb2)[p.b22$classification,]
+barplot(p.b22,main = "b22")
+
+sort(p.a11,decreasing = TRUE)
+sort(p.a22,decreasing = TRUE)
+sort(p.a33,decreasing = TRUE)
+sort(p.a44,decreasing = TRUE)
+sort(p.a55,decreasing = TRUE)
+sort(p.b11,decreasing = TRUE)
+sort(p.b22,decreasing = TRUE)
+
+#########################################################################################
+
+n.m.a1<-as.integer(names(p.a11))
+n.m.a2<-as.integer(names(p.a22))
+n.m.a3<-as.integer(names(p.a33))
+n.m.a4<-as.integer(names(p.a44))
+n.m.a5<-as.integer(names(p.a55))
+n.m.b1<-as.integer(names(p.b11))
+n.m.b2<-as.integer(names(p.b22))
+
+p.m.a1<-p.a11/sum(p.a11)
+p.m.a2<-p.a22/sum(p.a22)
+p.m.a3<-p.a33/sum(p.a33)
+p.m.a4<-p.a44/sum(p.a44)
+p.m.a5<-p.a55/sum(p.a55)
+p.m.b1<-p.b11/sum(p.b11)
+p.m.b2<-p.b22/sum(p.b22)
+
+p.m.a11<-data.frame(n.m.a1,p.m.a1)
+p.m.a22<-data.frame(n.m.a2,p.m.a2)
+p.m.a33<-data.frame(n.m.a3,p.m.a3)
+p.m.a44<-data.frame(n.m.a4,p.m.a4)
+p.m.a55<-data.frame(n.m.a5,p.m.a5)
+p.m.b11<-data.frame(n.m.b1,p.m.b1)
+p.m.b22<-data.frame(n.m.b2,p.m.b2)
+
+c(p.m.a11[which(n.m.a1==12),2],
+  p.m.a22[which(n.m.a2==14),2],
+  p.m.a33[which(n.m.a3==19),2],
+  p.m.a44[which(n.m.a4==23),2],
+  p.m.a55[which(n.m.a5==35),2],
+  p.m.b11[which(n.m.b1==02),2],
+  p.m.b22[which(n.m.b2==07),2])
+
+p.m.dlt<-c(18023,3,0.00000000,0.04712042,0.05250000,0.05434783,0.11538462,0.13953488,0.05797101,
+           18024,6,0.16949153,0.05235602,0.04500000,0.09677419,0.07594937,0.08888889,0.13253012,
+           18025,1,0.04444444,0.03645833,0.03000000,0.02931596,0.14843750,0.06363636,0.08653846,
+           18026,3,0.07500000,0.01515152,0.00250000,0.00000000,0.06818182,0.22972973,0.04848485,
+           18027,6,0.17333333,0.05982906,0.06500000,0.05797101,0.03797468,0.10714286,0.19277108,
+           18028,1,0.23809524,0.03313253,0.02500000,0.05288462,0.14705882,0.12500000,0.10179641,
+           18029,3,0.12000000,0.04347826,0.04000000,0.07526882,0.11235955,0.08433735,0.08982036,
+           18030,6,0.06382979,0.02970297,0.04250000,0.02941176,0.07500000,0.06818182,0.19879518,
+           18031,1,0.10416667,0.06006006,0.04750000,0.02750000,0.01980198,0.12195122,0.17829457,
+           18032,3,0.01538462,0.04301075,0.07750000,0.05641026,0.12500000,0.14285714,0.22307692,
+           18033,6,0.16071429,0.00000000,0.06750000,0.03191489,0.11702128,0.11872146,0.10344828,
+           18034,1,0.06849315,0.06382979,0.06500000,0.04504505,0.08620690,0.12264151,0.11827957,
+           18035,3,0.07865169,0.04901961,0.02750000,0.01470588,0.01428571,0.08000000,0.20000000,
+           18036,6,0.01875000,0.04833837,0.05250000,0.05853659,0.00000000,0.06493506,0.06060606,
+           18037,1,0.12871287,0.03021148,0.01750000,0.06000000,0.10344828,0.14893617,0.21472393,
+           18038,3,0.04000000,0.01075269,0.02750000,0.03738318,0.09174312,0.12037037,0.00621118,
+           18039,6,0.08235294,0.06896552,0.05000000,0.03448276,0.10071942,0.02597403,0.17567568,
+           18040,1,0.18823529,0.06896552,0.05500000,0.06034483,0.03597122,0.11688312,0.07432432,
+           18041,3,0.17857143,0.01550388,0.02750000,0.03669725,0.12307692,0.15625000,0.17610063,
+           18042,6,0.07142857,0.04838710,0.03000000,0.05376344,0.15079365,0.12857143,0.13333333,
+           18043,1,0.10606061,0.07065217,0.05000000,0.02941176,0.00000000,0.13513514,0.21428571,
+           18044,3,0.09554140,0.00990099,0.01500000,0.05405405,0.01369863,0.11981567,0.07462687,
+           18045,6,0.12371134,0.10000000,0.06750000,0.06701031,0.13461538,0.10526316,0.11392405,
+           18046,1,0.04504505,0.02962963,0.06750000,0.07142857,0.01587302,0.07142857,0.12500000,
+           18047,3,0.14814815,0.06043956,0.03000000,0.02631579,0.00000000,0.14117647,0.08917197,
+           18048,6,0.10975610,0.05050505,0.03000000,0.05217391,0.02941176,0.19354839,0.08275862,
+           18049,1,0.12000000,0.10000000,0.03250000,0.00000000,0.00000000,0.02380952,0.16560510,
+           18050,3,0.00000000,0.00000000,0.00500000,0.005405405,0.153846154,0.059322034,0.211009174,
+           18051,6,0.06060606,0.03977273,0.01750000,0.09326425,0.21153846,0.15277778,0.16891892,
+           18052,1,0.03846154,0.05487805,0.05500000,0.06666667,0.03846154,0.19457014,0.06756757,
+           18053,3,0.02597403,0.05813953,0.04000000,0.09836066,0.01010101,0.19718310,0.16883117,
+           18054,6,0.01923077,0.02325581,0.02750000,0.02777778,0.06382979,0.18055556,0.05970149,
+           18055,1,0.10126582,0.05780347,0.07000000,0.04419890,0.12676056,0.02631579,0.12025316,
+           18056,3,0.09090909,0.01960784,0.02250000,0.01098901,0.08450704,0.15384615,0.09554140,
+           18057,6,0.01020408,0.01904762,0.07000000,0.05785124,0.04597701,0.14754098,0.08280255,
+           18058,1,0.02564103,0.04000000,0.03000000,0.04918033,0.08750000,0.14393939,0.12101911,
+           18059,3,0.11111111,0.06134969,0.03000000,0.03763441,0.15294118,0.06250000,0.17910448,
+           18060,6,0.07407407,0.02439024,0.02000000,0.09433962,0.04255319,0.19270833,0.11194030,
+           18061,1,0.10447761,0.02439024,0.03000000,0.02409639,0.06410256,0.05208333,0.22012579,
+           18062,3,0.00000000,0.06707317,0.06750000,0.04819277,0.08974359,0.19791667,0.09433962)
+p.m.dlt.m<-matrix(p.m.dlt,ncol = 9,byrow = TRUE)
+
+data.day<-3
+p.m.dlt.m[p.m.dlt.m[,2]==data.day,]
+p.m.a11
+p.m.dlt.m[p.m.dlt.m[,2]==data.day,]
+p.m.a22
+p.m.a33
+p.m.dlt.m[p.m.dlt.m[,2]==data.day,]
+p.m.a44
+p.m.dlt.m[p.m.dlt.m[,2]==data.day,]
+p.m.a55
+p.m.dlt.m[p.m.dlt.m[,2]==data.day,]
+p.m.b11
+p.m.dlt.m[p.m.dlt.m[,2]==data.day,]
+p.m.b22
+
+barplot(p.m.dlt.m[3,2:8])
