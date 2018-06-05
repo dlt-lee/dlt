@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.caret_svm <- function(data,count) {
+#dlt.caret_svm <- function(data,count) {
   library(corrplot)
   #library(AppliedPredictiveModeling)
   library(caret)
@@ -107,10 +107,12 @@ dlt.caret_svm <- function(data,count) {
   n.r<-5
   n.n<-10
   
-  svmFit.a1<-train(resa1~a1.1+a2.1+a3.1+a4.1+a5.1+
-                     a1.2+a2.2+a3.2+a4.2+a5.2+
+  svmFit.a1<-train(resa1~
+                     #a1.1+a2.1+a3.1+a4.1+a5.1+
+                     #a1.2+a2.2+a3.2+a4.2+a5.2+
                      a1.3+a2.3+a3.3+a4.3+a5.3+
-                     b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                     #b1.1+b2.1+b1.2+b2.2+
+                     b1.3+b2.3,
                    data = trains.a1,
                    method = "svmRadial",
                    preProcess = c("BoxCox","center","scale","pca"),
@@ -120,10 +122,12 @@ dlt.caret_svm <- function(data,count) {
                                             number = n.n))
   print(plot(svmFit.a1,scales = list(x = list(log = 2)),main = "svm.a1"))
   
-  svmFit.a2<-train(resa2~a1.1+a2.1+a3.1+a4.1+a5.1+
-                     a1.2+a2.2+a3.2+a4.2+a5.2+
+  svmFit.a2<-train(resa2~
+                     #a1.1+a2.1+a3.1+a4.1+a5.1+
+                     #a1.2+a2.2+a3.2+a4.2+a5.2+
                      a1.3+a2.3+a3.3+a4.3+a5.3+
-                     b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                     #b1.1+b2.1+b1.2+b2.2+
+                     b1.3+b2.3,
                    data = trains.a2,
                    method = "svmRadial",
                    preProcess = c("BoxCox","center","scale","pca"),
@@ -133,10 +137,12 @@ dlt.caret_svm <- function(data,count) {
                                             number = n.n))
   print(plot(svmFit.a2,scales = list(x = list(log = 2)),main = "svm.a2"))
   
-  svmFit.a3<-train(resa3~a1.1+a2.1+a3.1+a4.1+a5.1+
-                     a1.2+a2.2+a3.2+a4.2+a5.2+
-                     a1.3+a2.3+a3.3+a4.3+a5.3+
-                     b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+  svmFit.a3<-train(resa3~
+                     #a1.1+a2.1+a3.1+a4.1+a5.1+
+                     #a1.2+a2.2+a3.2+a4.2+a5.2+
+                     #a1.3+a2.3+a3.3+a4.3+a5.3+
+                     #b1.1+b2.1+b1.2+b2.2+
+                     b1.3+b2.3,
                    data = trains.a3,
                    method = "svmRadial",
                    preProcess = c("BoxCox","center","scale","pca"),
@@ -146,10 +152,12 @@ dlt.caret_svm <- function(data,count) {
                                             number = n.n))
   print(plot(svmFit.a3,scales = list(x = list(log = 2)),main = "svm.a3"))
   
-  svmFit.a4<-train(resa4~a1.1+a2.1+a3.1+a4.1+a5.1+
-                     a1.2+a2.2+a3.2+a4.2+a5.2+
+  svmFit.a4<-train(resa4~
+                     #a1.1+a2.1+a3.1+a4.1+a5.1+
+                     #a1.2+a2.2+a3.2+a4.2+a5.2+
                      a1.3+a2.3+a3.3+a4.3+a5.3+
-                     b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                     #b1.1+b2.1+b1.2+b2.2+
+                     b1.3+b2.3,
                    data = trains.a4,
                    method = "svmRadial",
                    preProcess = c("BoxCox","center","scale","pca"),
@@ -159,10 +167,12 @@ dlt.caret_svm <- function(data,count) {
                                             number = n.n))
   print(plot(svmFit.a4,scales = list(x = list(log = 2)),main = "svm.a4"))
   
-  svmFit.a5<-train(resa5~a1.1+a2.1+a3.1+a4.1+a5.1+
-                     a1.2+a2.2+a3.2+a4.2+a5.2+
+  svmFit.a5<-train(resa5~
+                     #a1.1+a2.1+a3.1+a4.1+a5.1+
+                     #a1.2+a2.2+a3.2+a4.2+a5.2+
                      a1.3+a2.3+a3.3+a4.3+a5.3+
-                     b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                     #b1.1+b2.1+b1.2+b2.2+
+                     b1.3+b2.3,
                    data = trains.a5,
                    method = "svmRadial",
                    preProcess = c("BoxCox","center","scale","pca"),
@@ -172,10 +182,12 @@ dlt.caret_svm <- function(data,count) {
                                             number = n.n))
   print(plot(svmFit.a5,scales = list(x = list(log = 2)),main = "svm.a5"))
   
-  svmFit.b1<-train(resb1~a1.1+a2.1+a3.1+a4.1+a5.1+
-                     a1.2+a2.2+a3.2+a4.2+a5.2+
+  svmFit.b1<-train(resb1~
+                     #a1.1+a2.1+a3.1+a4.1+a5.1+
+                     #a1.2+a2.2+a3.2+a4.2+a5.2+
                      a1.3+a2.3+a3.3+a4.3+a5.3+
-                     b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                     #b1.1+b2.1+b1.2+b2.2+
+                     b1.3+b2.3,
                    data = trains.b1,
                    method = "svmRadial",
                    preProcess = c("BoxCox","center","scale","pca"),
@@ -185,10 +197,12 @@ dlt.caret_svm <- function(data,count) {
                                             number = n.n))
   print(plot(svmFit.b1,scales = list(x = list(log = 2)),main = "svm.b1"))
   
-  svmFit.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
-                     a1.2+a2.2+a3.2+a4.2+a5.2+
+  svmFit.b2<-train(resb2~
+                     #a1.1+a2.1+a3.1+a4.1+a5.1+
+                     #a1.2+a2.2+a3.2+a4.2+a5.2+
                      a1.3+a2.3+a3.3+a4.3+a5.3+
-                     b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                     #b1.1+b2.1+b1.2+b2.2+
+                     b1.3+b2.3,
                    data = trains.b2,
                    method = "svmRadial",
                    preProcess = c("BoxCox","center","scale","pca"),
@@ -280,7 +294,7 @@ dlt.caret_svm <- function(data,count) {
               testPredictions.a5,
               testPredictions.b1,
               testPredictions.b2))
-}
+#}
 
 #delta<-tail(dlt$a2,length(testPredictions.a2))-testPredictions.a2
 #plot(delta)

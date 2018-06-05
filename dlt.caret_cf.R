@@ -168,7 +168,7 @@ count<-dim(dlt)[1]
                       #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
                       #b1.1+b2.1+b1.2+b2.2+
-                      b2.3+b2.3,
+                      b1.3+b2.3,
                     data = trains.b2,
                     method="cforest",
                     trControl=trainControl(method="oob"))
@@ -259,4 +259,4 @@ count<-dim(dlt)[1]
   
   
 #}
-# 
+

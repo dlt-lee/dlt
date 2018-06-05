@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.caret_cubist <- function(data,count) {
+#dlt.caret_cubist <- function(data,count) {
   library(Cubist)
   library(caret)
   
@@ -110,10 +110,11 @@ dlt.caret_cubist <- function(data,count) {
   
   cubistGrid<-expand.grid(.committees = c(1,5,10,50,75,100),
                           .neighbors = c(0,1,3,5,7,9))
-  cubistTuned.a1<-train(resa1~a1.1+a2.1+a3.1+a4.1+a5.1+
+  cubistTuned.a1<-train(resa1~
+                          a1.1+a2.1+a3.1+a4.1+a5.1+
                           a1.2+a2.2+a3.2+a4.2+a5.2+
                           a1.3+a2.3+a3.3+a4.3+a5.3+
-                          b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                          b1.1+b2.1+b1.2+b2.2+b1.3+b2.3,
                         data = trains.a1,
                         method="cubist",
                         trControl=trainControl(method = "repeatedcv",
@@ -121,10 +122,11 @@ dlt.caret_cubist <- function(data,count) {
                                                number = n.n),
                         tuneGrid = cubistGrid)
   print(plot(cubistTuned.a1,main="cubist.a1"))
-  cubistTuned.a2<-train(resa2~a1.1+a2.1+a3.1+a4.1+a5.1+
+  cubistTuned.a2<-train(resa2~
+                          a1.1+a2.1+a3.1+a4.1+a5.1+
                           a1.2+a2.2+a3.2+a4.2+a5.2+
                           a1.3+a2.3+a3.3+a4.3+a5.3+
-                          b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                          b1.1+b2.1+b1.2+b2.2+b1.3+b2.3,
                         data = trains.a2,
                         method="cubist",
                         tuneGrid = cubistGrid,
@@ -132,10 +134,11 @@ dlt.caret_cubist <- function(data,count) {
                                                repeats = n.r,
                                                number = n.n))
   print(plot(cubistTuned.a2,main="cubist.a2"))
-  cubistTuned.a3<-train(resa3~a1.1+a2.1+a3.1+a4.1+a5.1+
+  cubistTuned.a3<-train(resa3~
+                          a1.1+a2.1+a3.1+a4.1+a5.1+
                           a1.2+a2.2+a3.2+a4.2+a5.2+
                           a1.3+a2.3+a3.3+a4.3+a5.3+
-                          b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                          b1.1+b2.1+b1.2+b2.2+b1.3+b2.3,
                         data = trains.a3,
                         method="cubist",
                         tuneGrid = cubistGrid,
@@ -143,10 +146,11 @@ dlt.caret_cubist <- function(data,count) {
                                                repeats = n.r,
                                                number = n.n))
   print(plot(cubistTuned.a3,main="cubist.a3"))
-  cubistTuned.a4<-train(resa4~a1.1+a2.1+a3.1+a4.1+a5.1+
+  cubistTuned.a4<-train(resa4~
+                          a1.1+a2.1+a3.1+a4.1+a5.1+
                           a1.2+a2.2+a3.2+a4.2+a5.2+
                           a1.3+a2.3+a3.3+a4.3+a5.3+
-                          b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                          b1.1+b2.1+b1.2+b2.2+b1.3+b2.3,
                         data = trains.a4,
                         method="cubist",
                         tuneGrid = cubistGrid,
@@ -154,10 +158,11 @@ dlt.caret_cubist <- function(data,count) {
                                                repeats = n.r,
                                                number = n.n))
   print(plot(cubistTuned.a4,main="cubist.a4"))
-  cubistTuned.a5<-train(resa5~a1.1+a2.1+a3.1+a4.1+a5.1+
+  cubistTuned.a5<-train(resa5~
+                          a1.1+a2.1+a3.1+a4.1+a5.1+
                           a1.2+a2.2+a3.2+a4.2+a5.2+
                           a1.3+a2.3+a3.3+a4.3+a5.3+
-                          b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                          b1.1+b2.1+b1.2+b2.2+b1.3+b2.3,
                         data = trains.a5,
                         method="cubist",
                         tuneGrid = cubistGrid,
@@ -165,10 +170,11 @@ dlt.caret_cubist <- function(data,count) {
                                                repeats = n.r,
                                                number = n.n))
   print(plot(cubistTuned.a5,main="cubist.a5"))
-  cubistTuned.b1<-train(resb1~a1.1+a2.1+a3.1+a4.1+a5.1+
+  cubistTuned.b1<-train(resb1~
+                          a1.1+a2.1+a3.1+a4.1+a5.1+
                           a1.2+a2.2+a3.2+a4.2+a5.2+
                           a1.3+a2.3+a3.3+a4.3+a5.3+
-                          b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                          b1.1+b2.1+b1.2+b2.2+b1.3+b2.3,
                         data = trains.b1,
                         method="cubist",
                         tuneGrid = cubistGrid,
@@ -176,10 +182,11 @@ dlt.caret_cubist <- function(data,count) {
                                                repeats = n.r,
                                                number = n.n))
   print(plot(cubistTuned.b1,main="cubist.b1"))
-  cubistTuned.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
+  cubistTuned.b2<-train(resb2~
+                          a1.1+a2.1+a3.1+a4.1+a5.1+
                           a1.2+a2.2+a3.2+a4.2+a5.2+
                           a1.3+a2.3+a3.3+a4.3+a5.3+
-                          b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                          b1.1+b2.1+b1.2+b2.2+b1.3+b2.3,
                         data = trains.b2,
                         method="cubist",
                         tuneGrid = cubistGrid,
@@ -273,4 +280,4 @@ dlt.caret_cubist <- function(data,count) {
   
   
   
-}
+#}

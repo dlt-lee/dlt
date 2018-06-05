@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.caret_ctree <- function(data,count) {
+#dlt.caret_ctree <- function(data,count) {
   library(caret)
   library(rpart)
   library(party)
@@ -111,10 +111,12 @@ dlt.caret_ctree <- function(data,count) {
   n.r<-5
   n.n<-10
   
-  ctreeModel.a1<-train(resa1~a1.1+a2.1+a3.1+a4.1+a5.1+
+  ctreeModel.a1<-train(resa1~
+                         a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         b1.1+b2.1+b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a1,
                        method="ctree",
                        tuneLength=10,
@@ -122,10 +124,12 @@ dlt.caret_ctree <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(ctreeModel.a1,main="ctree.a1"))
-  ctreeModel.a2<-train(resa2~a1.1+a2.1+a3.1+a4.1+a5.1+
+  ctreeModel.a2<-train(resa2~
+                         a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         b1.1+b2.1+b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a2,
                        method="ctree",
                        tuneLength=10,
@@ -133,10 +137,12 @@ dlt.caret_ctree <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(ctreeModel.a2,main="ctree.a2"))
-  ctreeModel.a3<-train(resa3~a1.1+a2.1+a3.1+a4.1+a5.1+
+  ctreeModel.a3<-train(resa3~
+                         a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         b1.1+b2.1+b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a3,
                        method="ctree",
                        tuneLength=10,
@@ -144,10 +150,12 @@ dlt.caret_ctree <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(ctreeModel.a3,main="ctree.a3"))
-  ctreeModel.a4<-train(resa4~a1.1+a2.1+a3.1+a4.1+a5.1+
+  ctreeModel.a4<-train(resa4~
+                         a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         b1.1+b2.1+b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a4,
                        method="ctree",
                        tuneLength=10,
@@ -155,10 +163,12 @@ dlt.caret_ctree <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(ctreeModel.a4,main="ctree.a4"))
-  ctreeModel.a5<-train(resa5~a1.1+a2.1+a3.1+a4.1+a5.1+
+  ctreeModel.a5<-train(resa5~
+                         a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         b1.1+b2.1+b1.2+b2.2+
+                         b2.3+b2.3,
                        data = trains.a5,
                        method="ctree",
                        tuneLength=10,
@@ -166,10 +176,12 @@ dlt.caret_ctree <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(ctreeModel.a5,main="ctree.a5"))
-  ctreeModel.b1<-train(resb1~a1.1+a2.1+a3.1+a4.1+a5.1+
+  ctreeModel.b1<-train(resb1~
+                         a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         b1.1+b2.1+b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.b1,
                        method="ctree",
                        tuneLength=10,
@@ -177,10 +189,12 @@ dlt.caret_ctree <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(ctreeModel.b1,main="ctree.b1"))
-  ctreeModel.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
+  ctreeModel.b2<-train(resb2~
+                         a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         b1.1+b2.1+b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.b2,
                        method="ctree",
                        tuneLength=10,
@@ -271,6 +285,6 @@ dlt.caret_ctree <- function(data,count) {
               testPredictions.a5,
               testPredictions.b1,
               testPredictions.b2))
-}
+#}
 
 
