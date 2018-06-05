@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.caret_cf <- function(data,count) {
+#dlt.caret_cf <- function(data,count) {
   library(party)
   
   trains_1 <-tail(data,count)[1:(count-3),]
@@ -101,60 +101,74 @@ dlt.caret_cf <- function(data,count) {
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resb2)
-  #固定随机数种子，使结果可重复
+  
   set.seed(100)
-  cforest.a1<-train(resa1~a1.1+a2.1+a3.1+a4.1+a5.1+
-                      a1.2+a2.2+a3.2+a4.2+a5.2+
+  cforest.a1<-train(resa1~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
-                      b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                      #b1.1+b2.1+b1.2+b2.2+
+                      b1.3+b2.3,
                     data = trains.a1,
                     method="cforest",
                     trControl=trainControl(method="oob"))
   print(plot(cforest.a1,main="cf.a1"))
-  cforest.a2<-train(resa2~a1.1+a2.1+a3.1+a4.1+a5.1+
-                      a1.2+a2.2+a3.2+a4.2+a5.2+
+  cforest.a2<-train(resa2~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
-                      b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                      #b1.1+b2.1+b1.2+b2.2+
+                      b2.3+b2.3,
                     data = trains.a2,
                     method="cforest",
                     trControl=trainControl(method="oob"))
   print(plot(cforest.a2,main="cf.a2"))
-  cforest.a3<-train(resa3~a1.1+a2.1+a3.1+a4.1+a5.1+
-                      a1.2+a2.2+a3.2+a4.2+a5.2+
+  cforest.a3<-train(resa3~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
-                      b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                      #b1.1+b2.1+b1.2+b2.2+
+                      b1.3+b2.3,
                     data = trains.a3,
                     method="cforest",
                     trControl=trainControl(method="oob"))
   print(plot(cforest.a3,main="cf.a3"))
-  cforest.a4<-train(resa4~a1.1+a2.1+a3.1+a4.1+a5.1+
-                      a1.2+a2.2+a3.2+a4.2+a5.2+
+  cforest.a4<-train(resa4~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
-                      b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                      #b1.1+b2.1+b1.2+b2.2+
+                      b1.3+b2.3,
                     data = trains.a4,
                     method="cforest",
                     trControl=trainControl(method="oob"))
   print(plot(cforest.a4,main="cf.a4"))
-  cforest.a5<-train(resa5~a1.1+a2.1+a3.1+a4.1+a5.1+
-                      a1.2+a2.2+a3.2+a4.2+a5.2+
+  cforest.a5<-train(resa5~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
-                      b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                      #b1.1+b2.1+b1.2+b2.2+
+                      b1.3+b2.3,
                     data = trains.a5,
                     method="cforest",
                     trControl=trainControl(method="oob"))
   print(plot(cforest.a5,main="cf.a5"))
-  cforest.b1<-train(resb1~a1.1+a2.1+a3.1+a4.1+a5.1+
-                      a1.2+a2.2+a3.2+a4.2+a5.2+
+  cforest.b1<-train(resb1~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
-                      b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                      #b1.1+b2.1+b1.2+b2.2+
+                      b1.3+b2.3,
                     data = trains.b1,
                     method="cforest",
                     trControl=trainControl(method="oob"))
   print(plot(cforest.b1,main="cf.b1"))
-  cforest.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
-                      a1.2+a2.2+a3.2+a4.2+a5.2+
+  cforest.b2<-train(resb2~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
                       a1.3+a2.3+a3.3+a4.3+a5.3+
-                      b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                      #b1.1+b2.1+b1.2+b2.2+
+                      b2.3+b2.3,
                     data = trains.b2,
                     method="cforest",
                     trControl=trainControl(method="oob"))
@@ -244,5 +258,5 @@ dlt.caret_cf <- function(data,count) {
   
   
   
-}
-
+#}
+# 

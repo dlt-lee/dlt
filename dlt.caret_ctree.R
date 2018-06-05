@@ -105,7 +105,7 @@ dlt.caret_ctree <- function(data,count) {
                         b1.3,b2.3,
                         resb2)
   
-  #固定随机数种子，使结果可重复
+  
   set.seed(100)
   n.t<-15
   n.r<-5
