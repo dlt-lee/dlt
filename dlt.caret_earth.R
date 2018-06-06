@@ -1,8 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-data<-dlt
-count<-dim(dlt)[1]
-dlt.caret_earth <- function(data,count) {
+#dlt.caret_earth <- function(data,count) {
   library(earth)
   library(caret)
   
@@ -49,59 +47,59 @@ dlt.caret_earth <- function(data,count) {
   resb2<-results$b2
   
   trains.a1<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
-                        a1.2,a2.2,a3.2,a4.2,a5.2,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
-                        b1.2,b2.2,
+                        #b1.1,b2.1,
+                        #b1.2,b2.2,
                         b1.3,b2.3,
                         resa1)
   trains.a2<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
-                        a1.2,a2.2,a3.2,a4.2,a5.2,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
-                        b1.2,b2.2,
+                        #b1.1,b2.1,
+                        #b1.2,b2.2,
                         b1.3,b2.3,
                         resa2)
   trains.a3<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
-                        a1.2,a2.2,a3.2,a4.2,a5.2,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
-                        b1.2,b2.2,
+                        #b1.1,b2.1,
+                        #b1.2,b2.2,
                         b1.3,b2.3,
                         resa3)
   trains.a4<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
-                        a1.2,a2.2,a3.2,a4.2,a5.2,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
-                        b1.2,b2.2,
+                        #b1.1,b2.1,
+                        #b1.2,b2.2,
                         b1.3,b2.3,
                         resa4)
   trains.a5<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
-                        a1.2,a2.2,a3.2,a4.2,a5.2,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
-                        b1.2,b2.2,
+                        #b1.1,b2.1,
+                        #b1.2,b2.2,
                         b1.3,b2.3,
                         resa5)
   trains.b1<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
-                        a1.2,a2.2,a3.2,a4.2,a5.2,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
-                        b1.2,b2.2,
+                        #b1.1,b2.1,
+                        #b1.2,b2.2,
                         b1.3,b2.3,
                         resb1)
   trains.b2<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
-                        a1.2,a2.2,a3.2,a4.2,a5.2,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
-                        b1.2,b2.2,
+                        #b1.1,b2.1,
+                        #b1.2,b2.2,
                         b1.3,b2.3,
                         resb2)
   
@@ -273,7 +271,7 @@ dlt.caret_earth <- function(data,count) {
   
   
   
-}
+#}
 
 
 
