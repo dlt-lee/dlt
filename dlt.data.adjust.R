@@ -24,10 +24,10 @@ delta.a5<-data.o.a5-data.p.a5
 delta.b1<-data.o.b1-data.p.b1
 delta.b2<-data.o.b2-data.p.b2
 
-barplot(tail(delta.a1,20),main = "Delta.a1")
-barplot(tail(delta.a2,20),main = "Delta.a2")
-barplot(tail(delta.a3,20),main = "Delta.a3")
-barplot(tail(delta.a4,20),main = "Delta.a4")
-barplot(tail(delta.a5,20),main = "Delta.a5")
-barplot(tail(delta.b1,20),main = "Delta.b1")
-barplot(tail(delta.b2,20),main = "Delta.b2")
+barplot(tail(delta.a1,40),main = "Delta.a1")
+barplot(tail(delta.a2,40),main = "Delta.a2")
+barplot(tail(delta.a3,40),main = "Delta.a3")
+barplot(tail(delta.a4,40),main = "Delta.a4")
+barplot(tail(delta.a5,40),main = "Delta.a5")
+barplot(tail(delta.b1,40),main = "Delta.b1")
+barplot(tail(delta.b2,40),main = "Delta.b2")
