@@ -165,8 +165,8 @@ count<-dim(dlt)[1]
                    data = trains.a5,
                    preProcess = c("BoxCox","center","scale","pca"),
                    #range(dlt$a1)-1
-                   subclasses = 21
-  )
+                   subclasses = 22
+                   )
   mdaModel.b1<-mda(resb1~
                      #a1.1+a2.1+a3.1+a4.1+a5.1+
                      #a1.2+a2.2+a3.2+a4.2+a5.2+
@@ -177,8 +177,8 @@ count<-dim(dlt)[1]
                    data = trains.b1,
                    preProcess = c("BoxCox","center","scale","pca"),
                    #range(dlt$a1)-1
-                   subclasses = 9
-  )
+                   subclasses = 47
+                   )
   mdaModel.b2<-mda(resb2~
                      #a1.1+a2.1+a3.1+a4.1+a5.1+
                      #a1.2+a2.2+a3.2+a4.2+a5.2+
@@ -189,8 +189,7 @@ count<-dim(dlt)[1]
                    data = trains.b2,
                    preProcess = c("BoxCox","center","scale","pca"),
                    #range(dlt$a1)-1
-                   subclasses = 9
-  )
+                   subclasses = 47)
   
   
   #Buil test data
