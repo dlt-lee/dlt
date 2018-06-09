@@ -106,6 +106,24 @@ c(tail(a1.Predictions,1),
   tail(b1.Predictions,1),
   tail(b2.Predictions,1))
 
+#MDA
+#a1.Predictions<-a1.Predictions
+#a2.Predictions<-a2.Predictions+1
+#a3.Predictions<-a3.Predictions+2
+#a4.Predictions<-a4.Predictions+5
+#a5.Predictions<-a5.Predictions+12
+#b1.Predictions<-b1.Predictions
+#b2.Predictions<-b2.Predictions+1
+
+c(tail(a1.Predictions,1),
+  tail(a2.Predictions,1),
+  tail(a3.Predictions,1),
+  tail(a4.Predictions,1),
+  tail(a5.Predictions,1),
+  tail(b1.Predictions,1),
+  tail(b2.Predictions,1)
+)
+
 n.a<-0
 n.b<-0
 n.c<-0

@@ -229,13 +229,13 @@ count<-dim(dlt)[1]
                        b2.2,b2.2,
                        b2.3,b2.3)
   test.ab<-preProcess(tests.ab,method = c("BoxCox","center","scale","pca"))
-  testPredictions.a1<-predict(mdaModel.a1,tests.ab)
-  testPredictions.a2<-predict(mdaModel.a2,tests.ab)
-  testPredictions.a3<-predict(mdaModel.a3,tests.ab)
-  testPredictions.a4<-predict(mdaModel.a4,tests.ab)
-  testPredictions.a5<-predict(mdaModel.a5,tests.ab)
-  testPredictions.b1<-predict(mdaModel.b1,tests.ab)
-  testPredictions.b2<-predict(mdaModel.b2,tests.ab)
+  testPredictions.a1<-as.numeric(predict(mdaModel.a1,tests.ab))
+  testPredictions.a2<-as.numeric(predict(mdaModel.a2,tests.ab))
+  testPredictions.a3<-as.numeric(predict(mdaModel.a3,tests.ab))
+  testPredictions.a4<-as.numeric(predict(mdaModel.a4,tests.ab))
+  testPredictions.a5<-as.numeric(predict(mdaModel.a5,tests.ab))
+  testPredictions.b1<-as.numeric(predict(mdaModel.b1,tests.ab))
+  testPredictions.b2<-as.numeric(predict(mdaModel.b2,tests.ab))
   
   print(c(tail(testPredictions.a1,1),
           tail(testPredictions.a2,1),
@@ -244,4 +244,54 @@ count<-dim(dlt)[1]
           tail(testPredictions.a5,1),
           tail(testPredictions.b1,1),
           tail(testPredictions.b2,1)))
+  
+  ################################################################################
+  rows<-length(testPredictions.a1)-1
+  data.f.ab<-tail(dlt,rows)
+  #A1:
+  a1.Predictions<-head(testPredictions.a1,rows)
+  a1.Predictions<-floor(a1.Predictions)
+  a1.delta<-data.f.ab$a1-(a1.Predictions)
+  barplot(table(a1.delta),main = "a1")
+  #A2:
+  a2.Predictions<-head(testPredictions.a2,rows)
+  a2.Predictions<-floor(a2.Predictions)
+  a2.delta<-data.f.ab$a2-a2.Predictions
+  barplot(table(a2.delta),main = "a2") 
+  #A3:
+  a3.Predictions<-head(testPredictions.a3,rows)
+  a3.Predictions<-floor(a3.Predictions)
+  a3.delta<-data.f.ab$a3-a3.Predictions
+  barplot(table(a3.delta),main = "a3") 
+  #A4:
+  a4.Predictions<-head(testPredictions.a4,rows)
+  a4.Predictions<-floor(a4.Predictions)
+  a4.delta<-data.f.ab$a4-(a4.Predictions)
+  barplot(table(a4.delta),main = "a4") 
+  #A5:
+  a5.Predictions<-head(testPredictions.a5,rows)
+  a5.Predictions<-floor(a5.Predictions)
+  a5.delta<-data.f.ab$a5-(a5.Predictions)
+  barplot(table(a5.delta),main = "a5") 
+  #B1:
+  b1.Predictions<-head(testPredictions.b1,rows)
+  b1.Predictions<-floor(b1.Predictions)
+  b1.delta<-data.f.ab$b1-(b1.Predictions)
+  barplot(table(b1.delta),main = "b1")
+  #B2:
+  b2.Predictions<-head(testPredictions.b2,rows)
+  b2.Predictions<-floor(b2.Predictions)
+  b2.delta<-data.f.ab$b2-(b2.Predictions)
+  barplot(table(b2.delta),main = "b2")
+  
+  a1.Predictions<-a1.Predictions
+  a2.Predictions<-a2.Predictions+1
+  a3.Predictions<-a3.Predictions+2
+  a4.Predictions<-a4.Predictions+5
+  a5.Predictions<-a5.Predictions+12
+  b1.Predictions<-b1.Predictions
+  b2.Predictions<-b2.Predictions+1
+  
+  
+
 #}
