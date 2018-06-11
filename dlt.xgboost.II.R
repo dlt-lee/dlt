@@ -167,7 +167,53 @@ testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T.ab)
 testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.ab)
 testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T.ab)
 
+####################################################################
+
+rows<-length(testPredictions.a1)-1
+data.f.ab<-tail(dlt,rows)
+#A1:
+a1.Predictions<-head(testPredictions.a1,rows)
+a1.Predictions<-floor(a1.Predictions)
+a1.delta<-data.f.ab$a1-(a1.Predictions)
+barplot(table(a1.delta),main = "a1")
+#A2:
+a2.Predictions<-head(testPredictions.a2,rows)
+a2.Predictions<-floor(a2.Predictions)
+a2.delta<-data.f.ab$a2-a2.Predictions
+barplot(table(a2.delta),main = "a2") 
+#A3:
+a3.Predictions<-head(testPredictions.a3,rows)
+a3.Predictions<-floor(a3.Predictions)
+a3.delta<-data.f.ab$a3-a3.Predictions
+barplot(table(a3.delta),main = "a3") 
+#A4:
+a4.Predictions<-head(testPredictions.a4,rows)
+a4.Predictions<-floor(a4.Predictions)
+a4.delta<-data.f.ab$a4-(a4.Predictions)
+barplot(table(a4.delta),main = "a4") 
+#A5:
+a5.Predictions<-head(testPredictions.a5,rows)
+a5.Predictions<-floor(a5.Predictions)
+a5.delta<-data.f.ab$a5-(a5.Predictions)
+barplot(table(a5.delta),main = "a5") 
+#B1:
+b1.Predictions<-head(testPredictions.b1,rows)
+b1.Predictions<-floor(b1.Predictions)
+b1.delta<-data.f.ab$b1-(b1.Predictions)
+barplot(table(b1.delta),main = "b1")
+#B2:
+b2.Predictions<-head(testPredictions.b2,rows)
+b2.Predictions<-floor(b2.Predictions)
+b2.delta<-data.f.ab$b2-(b2.Predictions)
+barplot(table(b2.delta),main = "b2")
 
 
+barplot(tail(a1.delta,40),main = "a1")
+barplot(tail(a2.delta,40),main = "a2")
+barplot(tail(a3.delta,40),main = "a3")
+barplot(tail(a4.delta,40),main = "a4")
+barplot(tail(a5.delta,40),main = "a5")
+barplot(tail(b1.delta,40),main = "b1")
+barplot(tail(b2.delta,40),main = "b2")
 
 
