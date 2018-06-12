@@ -109,8 +109,11 @@ trains.b2<-data.frame(trn1,trn2,trn3,
 
 set.seed(100)
 
-ctrl<-trainControl(summaryFunction = twoClassSummary,
-                   classProbs = TRUE)
+ctrl<-trainControl(method = "LGOCV",
+                   summaryFunction = twoClassSummary,
+                   classProbs = TRUE,
+                   #index = list(trainset = trains.a1),
+                   savePredictions = TRUE)
 
 smdaFit.a1<-train(resa1~
                     #a1.1+a2.1+a3.1+a4.1+a5.1+
