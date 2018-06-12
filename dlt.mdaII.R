@@ -350,13 +350,13 @@ table(n.b)
 table(n.c)
 
 
-print(c(tail(a1.Predictions,1),
-        tail(a2.Predictions,1),
-        tail(a3.Predictions,1),
-        tail(a4.Predictions,1),
-        tail(a5.Predictions,1),
-        tail(b1.Predictions,1),
-        tail(b2.Predictions,1)
-))
+print(c(tail(testPredictions.a1,1),
+        tail(testPredictions.a2+1,1),
+        tail(testPredictions.a3+2,1),  
+        tail(testPredictions.a4+5,1),
+        tail(testPredictions.a5+12,1),
+        tail(testPredictions.b1,1),
+        tail(testPredictions.b2+1,1)))
+
 
 #}

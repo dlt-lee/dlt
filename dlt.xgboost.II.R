@@ -216,4 +216,13 @@ barplot(tail(a5.delta,40),main = "a5")
 barplot(tail(b1.delta,40),main = "b1")
 barplot(tail(b2.delta,40),main = "b2")
 
+print(c(tail(floor(testPredictions.a1),1),
+        tail(floor(testPredictions.a2),1),
+        tail(floor(testPredictions.a3),1),
+        tail(floor(testPredictions.a4),1),
+        tail(floor(testPredictions.a5),1),
+        tail(floor(testPredictions.b1),1),
+        tail(floor(testPredictions.b2),1)
+))
+
 
