@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.caret_party <- function(data,count) {
+#dlt.caret_party <- function(data,count) {
   library(caret)
   library(rpart)
   library(party)
@@ -111,10 +111,12 @@ dlt.caret_party <- function(data,count) {
   n.t<-15
   n.r<-5
   n.n<-10
-  rpartTuned.a1<-train(resa1~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartTuned.a1<-train(resa1~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+b1.3+b2.3,
                        data = trains.a1,
                        method="rpart2",
                        tuneLength=12,
@@ -133,10 +135,13 @@ dlt.caret_party <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartTuned.a2,main="party.a2"))
-  rpartTuned.a3<-train(resa3~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartTuned.a3<-train(resa3~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a3,
                        method="rpart2",
                        tuneLength=12,
@@ -144,10 +149,13 @@ dlt.caret_party <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartTuned.a3,main="party.a3"))
-  rpartTuned.a4<-train(resa4~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartTuned.a4<-train(resa4~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a4,
                        method="rpart2",
                        tuneLength=12,
@@ -155,10 +163,13 @@ dlt.caret_party <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartTuned.a4,main="party.a4"))
-  rpartTuned.a5<-train(resa5~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartTuned.a5<-train(resa5~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a5,
                        method="rpart2",
                        tuneLength=12,
@@ -177,10 +188,13 @@ dlt.caret_party <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartTuned.b1,main="party.b1"))
-  rpartTuned.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartTuned.b2<-train(resb2~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.b2,
                        method="rpart2",
                        tuneLength=12,
@@ -232,6 +246,30 @@ dlt.caret_party <- function(data,count) {
   testPredictions.a5<-predict(rpartTuned.a5,tests.ab)
   testPredictions.b1<-predict(rpartTuned.b1,tests.ab)
   testPredictions.b2<-predict(rpartTuned.b2,tests.ab)
+  #################################################################
+  #verification
+  dlt.p.table(dlt,
+              ceiling(testPredictions.a1),ceiling(testPredictions.a2),
+              ceiling(testPredictions.a3),ceiling(testPredictions.a4),
+              ceiling(testPredictions.a5),
+              ceiling(testPredictions.b1),ceiling(testPredictions.b2)
+  )
+  dlt.p.table(dlt,
+              floor(testPredictions.a1),floor(testPredictions.a2),
+              floor(testPredictions.a3),floor(testPredictions.a4),
+              floor(testPredictions.a5),
+              floor(testPredictions.b1),floor(testPredictions.b2))
+  dlt.p.table(dlt,
+              trunc(testPredictions.a1),trunc(testPredictions.a2),
+              trunc(testPredictions.a3),trunc(testPredictions.a4),
+              trunc(testPredictions.a5),
+              trunc(testPredictions.b1),trunc(testPredictions.b2))
+  dlt.p.table(dlt,
+              round(testPredictions.a1),round(testPredictions.a2),
+              round(testPredictions.a3),round(testPredictions.a4),
+              round(testPredictions.a5),
+              round(testPredictions.b1),round(testPredictions.b2))
+  ################################################################
   
   print(c(tail(testPredictions.a1,1),
           tail(testPredictions.a2,1),
@@ -264,14 +302,14 @@ dlt.caret_party <- function(data,count) {
               rpartTuned.a5,
               rpartTuned.b1,
               rpartTuned.b2,
-              testPredictions.a1,
-              testPredictions.a2,
-              testPredictions.a3,
-              testPredictions.a4,
-              testPredictions.a5,
-              testPredictions.b1,
-              testPredictions.b2))
+              trunc(testPredictions.a1),
+              trunc(testPredictions.a2),
+              trunc(testPredictions.a3),
+              trunc(testPredictions.a4),
+              trunc(testPredictions.a5),
+              trunc(testPredictions.b1),
+              trunc(testPredictions.b2)))
   
-}
+#}
 
 

@@ -1,8 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-data<-dlt
-count<-dim(dlt)[1]
-dlt.caret_nnet <- function(data,count) {
+#dlt.caret_nnet <- function(data,count) {
   library(nnet)
   library(caret)
   trains_1 <-tail(data,count)[1:(count-3),]
@@ -189,128 +187,154 @@ dlt.caret_nnet <- function(data,count) {
                        linout=TRUE,
                        trace=FALSE,
                        MAXNWts=10*(ncol(trains.a5[,4:24])+1)+10+1,
-                       plot(avnnetTune.a5,main="nnet.a5")
-                       date()
-                       avnnetTune.b1<-train(resb1~a1.1+a2.1+a3.1+a4.1+a5.1+
-                                              a1.2+a2.2+a3.2+a4.2+a5.2+
-                                              a1.3+a2.3+a3.3+a4.3+a5.3+
-                                              b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
-                                            data = trains.b1,
-                                            method="avNNet",
-                                            tuneGrid=nnetGrid,
-                                            trControl=ctrl,
-                                            PreProc=c("BoxCox","center","scale","pca"),
-                                            linout=TRUE,
-                                            trace=FALSE,
-                                            MAXNWts=10*(ncol(trains.a1[,4:24])+1)+10+1,
-                                            maxit=500)
-                       plot(avnnetTune.b1,main="nnet.b1")
-                       date()
-                       avnnetTune.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
-                                              a1.2+a2.2+a3.2+a4.2+a5.2+
-                                              a1.3+a2.3+a3.3+a4.3+a5.3+
-                                              b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
-                                            data = trains.b2,
-                                            method="avNNet",
-                                            tuneGrid=nnetGrid,
-                                            trControl=ctrl,
-                                            PreProc=c("BoxCox","center","scale","pca"),
-                                            linout=TRUE,
-                                            trace=FALSE,
-                                            MAXNWts=10*(ncol(trains.b2[,4:24])+1)+10+1,
-                                            maxit=500)
-                       plot(avnnetTune.b2,main="nnet.b2")
-                       date()
+                       maxit=500)
+  plot(avnnetTune.a5,main="nnet.a5")
+  date()
+  avnnetTune.b1<-train(resb1~a1.1+a2.1+a3.1+a4.1+a5.1+
+                         a1.2+a2.2+a3.2+a4.2+a5.2+
+                         a1.3+a2.3+a3.3+a4.3+a5.3+
+                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                       data = trains.b1,
+                       method="avNNet",
+                       tuneGrid=nnetGrid,
+                       trControl=ctrl,
+                       PreProc=c("BoxCox","center","scale","pca"),
+                       linout=TRUE,
+                       trace=FALSE,
+                       MAXNWts=10*(ncol(trains.b1[,4:24])+1)+10+1,
+                       maxit=500)
+  plot(avnnetTune.b1,main="nnet.b1")
+  date()
+  avnnetTune.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
+                         a1.2+a2.2+a3.2+a4.2+a5.2+
+                         a1.3+a2.3+a3.3+a4.3+a5.3+
+                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                       data = trains.b2,
+                       method="avNNet",
+                       tuneGrid=nnetGrid,
+                       trControl=ctrl,
+                       PreProc=c("BoxCox","center","scale","pca"),
+                       linout=TRUE,
+                       trace=FALSE,
+                       MAXNWts=10*(ncol(trains.b2[,4:24])+1)+10+1,
+                       maxit=500)
+  plot(avnnetTune.b2,main="nnet.b2")
+  date()
+  
+  
+  #Buil test data
+  #A:
+  tsn1<-tests_1$n
+  tsn2<-tests_2$n
+  tsn3<-tests_3$n
+  a1.1<-tests_1$a1
+  a2.1<-tests_1$a2
+  a3.1<-tests_1$a3
+  a4.1<-tests_1$a4
+  a5.1<-tests_1$a5
+  a1.2<-tests_2$a1
+  a2.2<-tests_2$a2
+  a3.2<-tests_2$a3
+  a4.2<-tests_2$a4
+  a5.2<-tests_2$a5
+  a1.3<-tests_3$a1
+  a2.3<-tests_3$a2
+  a3.3<-tests_3$a3
+  a4.3<-tests_3$a4
+  a5.3<-tests_3$a5
+  #B:
+  b1.1<-tests_1$b1
+  b2.1<-tests_1$a2
+  b1.2<-tests_2$b1
+  b2.2<-tests_2$b2
+  b1.3<-tests_3$b1
+  b2.3<-tests_3$b2
+  
+  tests.ab<-data.frame(tsn1,tsn2,tsn3,
+                       a1.1,a2.1,a3.1,a4.1,a5.1,
+                       a1.2,a2.2,a3.2,a4.2,a5.2,
+                       a1.3,a2.3,a3.3,a4.3,a5.3,
+                       b1.1,b2.1,
+                       b1.2,b2.2,
+                       b1.3,b2.3)
+  test.ab<-preProcess(tests.ab,method = c("BoxCox","center","scale","pca"))
+  
+  testPredictions.a1<-predict(avnnetTune.a1,tests.ab)
+  testPredictions.a2<-predict(avnnetTune.a2,tests.ab)
+  testPredictions.a3<-predict(avnnetTune.a3,tests.ab)
+  testPredictions.a4<-predict(avnnetTune.a4,tests.ab)
+  testPredictions.a5<-predict(avnnetTune.a5,tests.ab)
+  testPredictions.b1<-predict(avnnetTune.b1,tests.ab)
+  testPredictions.b2<-predict(avnnetTune.b2,tests.ab)
+  
+  date()
+  #################################################################
+  #verification
+  dlt.p.table(dlt,
+              ceiling(testPredictions.a1),ceiling(testPredictions.a2),
+              ceiling(testPredictions.a3),ceiling(testPredictions.a4),
+              ceiling(testPredictions.a5),
+              ceiling(testPredictions.b1),ceiling(testPredictions.b2)
+  )
+  dlt.p.table(dlt,
+              floor(testPredictions.a1),floor(testPredictions.a2),
+              floor(testPredictions.a3),floor(testPredictions.a4),
+              floor(testPredictions.a5),
+              floor(testPredictions.b1),floor(testPredictions.b2))
+  dlt.p.table(dlt,
+              trunc(testPredictions.a1),trunc(testPredictions.a2),
+              trunc(testPredictions.a3),trunc(testPredictions.a4),
+              trunc(testPredictions.a5),
+              trunc(testPredictions.b1),trunc(testPredictions.b2))
+  dlt.p.table(dlt,
+              round(testPredictions.a1),round(testPredictions.a2),
+              round(testPredictions.a3),round(testPredictions.a4),
+              round(testPredictions.a5),
+              round(testPredictions.b1),round(testPredictions.b2))
+  ################################################################
+  
+  print(c(tail(testPredictions.a1,1),
+          tail(testPredictions.a2,1),
+          tail(testPredictions.a3,1),  
+          tail(testPredictions.a4,1),
+          tail(testPredictions.a5,1),
+          tail(testPredictions.b1,1),
+          tail(testPredictions.b2,1)))
+  
+  a1<-testPredictions.a1
+  a2<-testPredictions.a2
+  a3<-testPredictions.a3
+  a4<-testPredictions.a4
+  a5<-testPredictions.a5
+  b1<-testPredictions.b1
+  b2<-testPredictions.b2
+  
+  result.data<-data.frame(a1,a2,a3,a4,a5,b1,b2)
+  result.model<-c(avnnetTune.a1,
+                  avnnetTune.a2,
+                  avnnetTune.a3,
+                  avnnetTune.a4,
+                  avnnetTune.a5,
+                  avnnetTune.b1,
+                  avnnetTune.b2)
+  return(list(avnnetTune.a1,
+              avnnetTune.a2,
+              avnnetTune.a3,
+              avnnetTune.a4,
+              avnnetTune.a5,
+              avnnetTune.b1,
+              avnnetTune.b2,
+              testPredictions.a1,
+              testPredictions.a2,
+              testPredictions.a3,
+              testPredictions.a4,
+              testPredictions.a5,
+              testPredictions.b1,
+              testPredictions.b2))
                        
                        
-                       #Buil test data
-                       #A:
-                       tsn1<-tests_1$n
-                       tsn2<-tests_2$n
-                       tsn3<-tests_3$n
-                       a1.1<-tests_1$a1
-                       a2.1<-tests_1$a2
-                       a3.1<-tests_1$a3
-                       a4.1<-tests_1$a4
-                       a5.1<-tests_1$a5
-                       a1.2<-tests_2$a1
-                       a2.2<-tests_2$a2
-                       a3.2<-tests_2$a3
-                       a4.2<-tests_2$a4
-                       a5.2<-tests_2$a5
-                       a1.3<-tests_3$a1
-                       a2.3<-tests_3$a2
-                       a3.3<-tests_3$a3
-                       a4.3<-tests_3$a4
-                       a5.3<-tests_3$a5
-                       #B:
-                       b1.1<-tests_1$b1
-                       b2.1<-tests_1$a2
-                       b1.2<-tests_2$b1
-                       b2.2<-tests_2$b2
-                       b1.3<-tests_3$b1
-                       b2.3<-tests_3$b2
-                       
-                       tests.ab<-data.frame(tsn1,tsn2,tsn3,
-                                            a1.1,a2.1,a3.1,a4.1,a5.1,
-                                            a1.2,a2.2,a3.2,a4.2,a5.2,
-                                            a1.3,a2.3,a3.3,a4.3,a5.3,
-                                            b1.1,b2.1,
-                                            b1.2,b2.2,
-                                            b1.3,b2.3)
-                       test.ab<-preProcess(tests.ab,method = c("BoxCox","center","scale","pca"))
-                       
-                       testPredictions.a1<-predict(avnnetTune.a1,tests.ab)
-                       testPredictions.a2<-predict(avnnetTune.a2,tests.ab)
-                       testPredictions.a3<-predict(avnnetTune.a3,tests.ab)
-                       testPredictions.a4<-predict(avnnetTune.a4,tests.ab)
-                       testPredictions.a5<-predict(avnnetTune.a5,tests.ab)
-                       testPredictions.b1<-predict(avnnetTune.b1,tests.ab)
-                       testPredictions.b2<-predict(avnnetTune.b2,tests.ab)
-                       
-                       date()
-                       
-                       print(c(tail(testPredictions.a1,1),
-                               tail(testPredictions.a2,1),
-                               tail(testPredictions.a3,1),  
-                               tail(testPredictions.a4,1),
-                               tail(testPredictions.a5,1),
-                               tail(testPredictions.b1,1),
-                               tail(testPredictions.b2,1)))
-                       
-                       a1<-testPredictions.a1
-                       a2<-testPredictions.a2
-                       a3<-testPredictions.a3
-                       a4<-testPredictions.a4
-                       a5<-testPredictions.a5
-                       b1<-testPredictions.b1
-                       b2<-testPredictions.b2
-                       
-                       result.data<-data.frame(a1,a2,a3,a4,a5,b1,b2)
-                       result.model<-c(avnnetTune.a1,
-                                       avnnetTune.a2,
-                                       avnnetTune.a3,
-                                       avnnetTune.a4,
-                                       avnnetTune.a5,
-                                       avnnetTune.b1,
-                                       avnnetTune.b2)
-                       return(list(avnnetTune.a1,
-                                   avnnetTune.a2,
-                                   avnnetTune.a3,
-                                   avnnetTune.a4,
-                                   avnnetTune.a5,
-                                   avnnetTune.b1,
-                                   avnnetTune.b2,
-                                   testPredictions.a1,
-                                   testPredictions.a2,
-                                   testPredictions.a3,
-                                   testPredictions.a4,
-                                   testPredictions.a5,
-                                   testPredictions.b1,
-                                   testPredictions.b2))
                        
                        
                        
-                       
-}
+#}
 

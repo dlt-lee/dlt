@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.caret_repart <- function(data,count) {
+#dlt.caret_repart <- function(data,count) {
   library(caret)
   library(rpart)
   
@@ -109,10 +109,13 @@ dlt.caret_repart <- function(data,count) {
   n.r<-5
   n.n<-10
   
-  rpartModel.a1<-train(resa1~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartModel.a1<-train(resa1~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a1,
                        method="rpart",
                        tuneLength=30,
@@ -120,10 +123,13 @@ dlt.caret_repart <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartModel.a1,main="rpart.a1"))
-  rpartModel.a2<-train(resa2~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartModel.a2<-train(resa2~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         3b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a2,
                        method="rpart",
                        tuneLength=30,
@@ -131,10 +137,13 @@ dlt.caret_repart <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartModel.a2,main="rpart.a2"))
-  rpartModel.a3<-train(resa3~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartModel.a3<-train(resa3~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a3,
                        method="rpart",
                        tuneLength=30,
@@ -142,10 +151,13 @@ dlt.caret_repart <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartModel.a3,main="rpart.a3"))
-  rpartModel.a4<-train(resa4~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartModel.a4<-train(resa4~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a4,
                        method="rpart",
                        tuneLength=30,
@@ -153,10 +165,13 @@ dlt.caret_repart <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartModel.a4,main="rpart.a4"))
-  rpartModel.a5<-train(resa5~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartModel.a5<-train(resa5~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.a5,
                        method="rpart",
                        tuneLength=30,
@@ -164,10 +179,13 @@ dlt.caret_repart <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartModel.a5,main="rpart.a5"))
-  rpartModel.b1<-train(resb1~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartModel.b1<-train(resb1~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.b1,
                        method="rpart",
                        tuneLength=30,
@@ -175,10 +193,13 @@ dlt.caret_repart <- function(data,count) {
                                               repeats = n.r,
                                               number = n.n))
   print(plot(rpartModel.b1,main="rpart.b1"))
-  rpartModel.b2<-train(resb2~a1.1+a2.1+a3.1+a4.1+a5.1+
+  rpartModel.b2<-train(resb2~
+                         #a1.1+a2.1+a3.1+a4.1+a5.1+
                          a1.2+a2.2+a3.2+a4.2+a5.2+
                          a1.3+a2.3+a3.3+a4.3+a5.3+
-                         b1.1+b2.1+b2.2+b2.2+b2.3+b2.3,
+                         #b1.1+b2.1+
+                         b1.2+b2.2+
+                         b1.3+b2.3,
                        data = trains.b2,
                        method="rpart",
                        tuneLength=30,
@@ -229,6 +250,30 @@ dlt.caret_repart <- function(data,count) {
   testPredictions.a5<-predict(rpartModel.a5,tests.ab)
   testPredictions.b1<-predict(rpartModel.b1,tests.ab)
   testPredictions.b2<-predict(rpartModel.b2,tests.ab)
+  #################################################################
+  #verification
+  dlt.p.table(dlt,
+              ceiling(testPredictions.a1),ceiling(testPredictions.a2),
+              ceiling(testPredictions.a3),ceiling(testPredictions.a4),
+              ceiling(testPredictions.a5),
+              ceiling(testPredictions.b1),ceiling(testPredictions.b2)
+  )
+  dlt.p.table(dlt,
+              floor(testPredictions.a1),floor(testPredictions.a2),
+              floor(testPredictions.a3),floor(testPredictions.a4),
+              floor(testPredictions.a5),
+              floor(testPredictions.b1),floor(testPredictions.b2))
+  dlt.p.table(dlt,
+              trunc(testPredictions.a1),trunc(testPredictions.a2),
+              trunc(testPredictions.a3),trunc(testPredictions.a4),
+              trunc(testPredictions.a5),
+              trunc(testPredictions.b1),trunc(testPredictions.b2))
+  dlt.p.table(dlt,
+              round(testPredictions.a1),round(testPredictions.a2),
+              round(testPredictions.a3),round(testPredictions.a4),
+              round(testPredictions.a5),
+              round(testPredictions.b1),round(testPredictions.b2))
+  ################################################################
   
   print(c(tail(testPredictions.a1,1),
           tail(testPredictions.a2,1),
@@ -261,15 +306,15 @@ dlt.caret_repart <- function(data,count) {
               rpartModel.a5,
               rpartModel.b1,
               rpartModel.b2,
-              testPredictions.a1,
-              testPredictions.a2,
-              testPredictions.a3,
-              testPredictions.a4,
-              testPredictions.a5,
-              testPredictions.b1,
-              testPredictions.b2))
+              ceiling(testPredictions.a1),
+              ceiling(testPredictions.a2),
+              ceiling(testPredictions.a3),
+              ceiling(testPredictions.a4),
+              ceiling(testPredictions.a5),
+              ceiling(testPredictions.b1),
+              ceiling(testPredictions.b2)))
   
-}
+#}
 
 
 
