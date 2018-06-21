@@ -1,7 +1,7 @@
 data<-dlt
 count<-dim(dlt)[1]
 
-dlt.class.rf <- function(data,count) {
+#dlt.class.rf <- function(data,count) {
   library(randomForest)
   
   trains_1 <-tail(data,count)[1:(count-3),]
@@ -250,7 +250,15 @@ dlt.class.rf <- function(data,count) {
   tests.ab$RFclass.b1<-predict(rf.model.b1,tests.ab)
   tests.ab$RFclass.b2<-predict(rf.model.b2,tests.ab)
   
-}
+  barplot(tail(rfTestPred.a1,1),main = "a1")
+  barplot(tail(rfTestPred.a2,1),main = "a2")
+  barplot(tail(rfTestPred.a3,1),main = "a3")
+  barplot(tail(rfTestPred.a4,1),main = "a4")
+  barplot(tail(rfTestPred.a5,1),main = "a5")
+  barplot(tail(rfTestPred.b1,1),main = "b1")
+  barplot(tail(rfTestPred.b2,1),main = "b2")
+  
+#}
 
 
 
