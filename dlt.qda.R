@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.qda <- function(data,count) {
+#dlt.qda <- function(data,count) {
   library(MASS)
   
   trains_1 <-tail(data,count)[1:(count-3),]
@@ -30,11 +30,11 @@ dlt.qda <- function(data,count) {
   a3.3<-trains_3$a3
   a4.3<-trains_3$a4
   a5.3<-trains_3$a5
-  resa1<-dlt.d2c(results$a1)
-  resa2<-dlt.d2c(results$a2)
-  resa3<-dlt.d2c(results$a3)
-  resa4<-dlt.d2c(results$a4)
-  resa5<-dlt.d2c(results$a5)
+  resa1<-dlt.d2c(results$a1,1)
+  resa2<-dlt.d2c(results$a2,1)
+  resa3<-dlt.d2c(results$a3,1)
+  resa4<-dlt.d2c(results$a4,1)
+  resa5<-dlt.d2c(results$a5,1)
   #B:
   b1.1<-trains_1$b1
   b2.1<-trains_1$b2
@@ -42,8 +42,8 @@ dlt.qda <- function(data,count) {
   b2.2<-trains_2$b2
   b1.3<-trains_3$b1
   b2.3<-trains_3$b2
-  resb1<-dlt.d2c(results$b1)
-  resb2<-dlt.d2c(results$b2)
+  resb1<-dlt.d2c(results$b1,2)
+  resb2<-dlt.d2c(results$b2,2)
   
   trains.a1<-data.frame(trn1,trn2,trn3,
                         a1.1,a2.1,a3.1,a4.1,a5.1,
@@ -102,5 +102,13 @@ dlt.qda <- function(data,count) {
                         b1.3,b2.3,
                         resb2)
   
+  qda.model.a1<-qda(resa1~
+                      #a1.1+a2.1+a3.1+a4.1+a5.1+
+                      #a1.2+a2.2+a3.2+a4.2+a5.2+
+                      a1.3+a2.3+a3.3+a4.3+a5.3+
+                      #b1.1+b2.1+
+                      #b1.2+b2.2+
+                      b1.3+b2.3,
+                    data = trains.a1)
   
-}
+#}

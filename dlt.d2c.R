@@ -7,7 +7,7 @@ dlt.d2c <- function(data,ch) {
       "a.class29","a.class30","a.class31","a.class32","a.class33","a.class34","a.class35")
   b.class <-
     c("b.class01","b.class02","b.class03","b.class04","b.class05","b.class06",
-       "b.class07","a.class08","a.class09","a.class10","a.class11","a.class12")
+      "b.class07","b.class08","b.class09","b.class10","b.class11","b.class12")
   ch.temp<-"class0"
   rows<-length(data)
   print(rows)

@@ -143,7 +143,7 @@ dlt.xgboost.II <- function(data,count,n) {
   a5.3<-tests_3$a5
   #B:
   b1.1<-tests_1$b1
-  b2.1<-tests_1$a2
+  b2.1<-tests_1$b2
   b1.2<-tests_2$b1
   b2.2<-tests_2$b2
   b1.3<-tests_3$b1
