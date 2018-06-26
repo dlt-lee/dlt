@@ -113,30 +113,30 @@ dlt.pr.xgb.I <- function(data,count,seed) {
   repeatedSplits.b1<-createDataPartition(trains.b1$resb1,p = .80)
   repeatedSplits.b2<-createDataPartition(trains.b2$resb2,p = .80)
   
-  trains.a1<-trains.a1[repeatedSplits.a1$Resample1,]
-  trains.a2<-trains.a2[repeatedSplits.a2$Resample1,]
-  trains.a3<-trains.a3[repeatedSplits.a3$Resample1,]
-  trains.a4<-trains.a4[repeatedSplits.a4$Resample1,]
-  trains.a5<-trains.a5[repeatedSplits.a5$Resample1,]
-  trains.b1<-trains.b1[repeatedSplits.b1$Resample1,]
-  trains.b2<-trains.b2[repeatedSplits.b2$Resample1,]
+  train.a1<-trains.a1[repeatedSplits.a1$Resample1,]
+  train.a2<-trains.a2[repeatedSplits.a2$Resample1,]
+  train.a3<-trains.a3[repeatedSplits.a3$Resample1,]
+  train.a4<-trains.a4[repeatedSplits.a4$Resample1,]
+  train.a5<-trains.a5[repeatedSplits.a5$Resample1,]
+  train.b1<-trains.b1[repeatedSplits.b1$Resample1,]
+  train.b2<-trains.b2[repeatedSplits.b2$Resample1,]
   
-  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:10]),sparse=T)
-  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:10]),sparse=T)
-  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:10]),sparse=T)
-  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:10]),sparse=T)
-  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:10]),sparse=T)
-  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:10]),sparse=T)
-  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:10]),sparse=T)
+  train.T.a1<-Matrix(as.matrix(train.a1[,4:10]),sparse=T)
+  train.T.a2<-Matrix(as.matrix(train.a2[,4:10]),sparse=T)
+  train.T.a3<-Matrix(as.matrix(train.a3[,4:10]),sparse=T)
+  train.T.a4<-Matrix(as.matrix(train.a4[,4:10]),sparse=T)
+  train.T.a5<-Matrix(as.matrix(train.a5[,4:10]),sparse=T)
+  train.T.b1<-Matrix(as.matrix(train.b1[,4:10]),sparse=T)
+  train.T.b2<-Matrix(as.matrix(train.b2[,4:10]),sparse=T)
   
   n=300
-  bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n)
-  bst.a2 <- xgboost(data = trains.T.a2,label = trains.a2$resa2,nrounds = n)
-  bst.a3 <- xgboost(data = trains.T.a3,label = trains.a3$resa3,nrounds = n)
-  bst.a4 <- xgboost(data = trains.T.a4,label = trains.a4$resa4,nrounds = n)
-  bst.a5 <- xgboost(data = trains.T.a5,label = trains.a5$resa5,nrounds = n)
-  bst.b1 <- xgboost(data = trains.T.b1,label = trains.b1$resb1,nrounds = n)
-  bst.b2 <- xgboost(data = trains.T.b2,label = trains.b2$resb2,nrounds = n)
+  bst.a1 <- xgboost(data = train.T.a1,label = train.a1$resa1,nrounds = n)
+  bst.a2 <- xgboost(data = train.T.a2,label = train.a2$resa2,nrounds = n)
+  bst.a3 <- xgboost(data = train.T.a3,label = train.a3$resa3,nrounds = n)
+  bst.a4 <- xgboost(data = train.T.a4,label = train.a4$resa4,nrounds = n)
+  bst.a5 <- xgboost(data = train.T.a5,label = train.a5$resa5,nrounds = n)
+  bst.b1 <- xgboost(data = train.T.b1,label = train.b1$resb1,nrounds = n)
+  bst.b2 <- xgboost(data = train.T.b2,label = train.b2$resb2,nrounds = n)
   
   result.a1<-trains.a1[-repeatedSplits.a1$Resample1,]
   result.a2<-trains.a2[-repeatedSplits.a2$Resample1,]

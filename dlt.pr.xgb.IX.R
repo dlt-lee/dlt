@@ -1,5 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
+seed<-1
 dlt.pr.xgb.IX <- function(data,count,seed) {
   library(xgboost)
   library(caret)
@@ -14,15 +15,15 @@ dlt.pr.xgb.IX <- function(data,count,seed) {
   trains_8 <-tail(data,count)[8:(count-2),]
   trains_9 <-tail(data,count)[9:(count-1),]
   results<-tail(data,(count-9))
-  tests_1<-tail(data,count)[1:(count-9),]
-  tests_2<-tail(data,count)[2:(count-8),]
-  tests_3<-tail(data,count)[3:(count-7),]
-  tests_4<-tail(data,count)[4:(count-6),]
-  tests_5<-tail(data,count)[5:(count-5),]
-  tests_6<-tail(data,count)[6:(count-4),]
-  tests_7<-tail(data,count)[7:(count-3),]
-  tests_8<-tail(data,count)[8:(count-2),]
-  tests_9<-tail(data,count)[9:(count-1),]
+  tests_1<-tail(data,count)[1:(count-8),]
+  tests_2<-tail(data,count)[2:(count-7),]
+  tests_3<-tail(data,count)[3:(count-6),]
+  tests_4<-tail(data,count)[4:(count-5),]
+  tests_5<-tail(data,count)[5:(count-4),]
+  tests_6<-tail(data,count)[6:(count-3),]
+  tests_7<-tail(data,count)[7:(count-2),]
+  tests_8<-tail(data,count)[8:(count-1),]
+  tests_9<-tail(data,count-8)
   
   #A:
   trn1<-trains_1$n
@@ -254,38 +255,38 @@ dlt.pr.xgb.IX <- function(data,count,seed) {
                         resb2)
   
   set.seed(seed)
-  repeatedSplits.a1<-createDataPartition(trains.a1$resa1,p = .80,times = 3)
-  repeatedSplits.a2<-createDataPartition(trains.a2$resa2,p = .80,times = 3)
-  repeatedSplits.a3<-createDataPartition(trains.a3$resa3,p = .80,times = 3)
-  repeatedSplits.a4<-createDataPartition(trains.a4$resa4,p = .80,times = 3)
-  repeatedSplits.a5<-createDataPartition(trains.a5$resa5,p = .80,times = 3)
-  repeatedSplits.b1<-createDataPartition(trains.b1$resb1,p = .80,times = 3)
-  repeatedSplits.b2<-createDataPartition(trains.b2$resb2,p = .80,times = 3)
+  repeatedSplits.a1<-createDataPartition(trains.a1$resa1,p = .80)
+  repeatedSplits.a2<-createDataPartition(trains.a2$resa2,p = .80)
+  repeatedSplits.a3<-createDataPartition(trains.a3$resa3,p = .80)
+  repeatedSplits.a4<-createDataPartition(trains.a4$resa4,p = .80)
+  repeatedSplits.a5<-createDataPartition(trains.a5$resa5,p = .80)
+  repeatedSplits.b1<-createDataPartition(trains.b1$resb1,p = .80)
+  repeatedSplits.b2<-createDataPartition(trains.b2$resb2,p = .80)
   
-  trains.a1<-trains.a1[repeatedSplits.a1$Resample1,]
-  trains.a2<-trains.a2[repeatedSplits.a2$Resample1,]
-  trains.a3<-trains.a3[repeatedSplits.a3$Resample1,]
-  trains.a4<-trains.a4[repeatedSplits.a4$Resample1,]
-  trains.a5<-trains.a5[repeatedSplits.a5$Resample1,]
-  trains.b1<-trains.b1[repeatedSplits.b1$Resample1,]
-  trains.b2<-trains.b2[repeatedSplits.b2$Resample1,]
+  train.a1<-trains.a1[repeatedSplits.a1$Resample1,]
+  train.a2<-trains.a2[repeatedSplits.a2$Resample1,]
+  train.a3<-trains.a3[repeatedSplits.a3$Resample1,]
+  train.a4<-trains.a4[repeatedSplits.a4$Resample1,]
+  train.a5<-trains.a5[repeatedSplits.a5$Resample1,]
+  train.b1<-trains.b1[repeatedSplits.b1$Resample1,]
+  train.b2<-trains.b2[repeatedSplits.b2$Resample1,]
   
-  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:66]),sparse=T)
-  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:66]),sparse=T)
-  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:66]),sparse=T)
-  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:66]),sparse=T)
-  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:66]),sparse=T)
-  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:66]),sparse=T)
-  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:66]),sparse=T)
+  train.T.a1<-Matrix(as.matrix(train.a1[,4:66]),sparse=T)
+  train.T.a2<-Matrix(as.matrix(train.a2[,4:66]),sparse=T)
+  train.T.a3<-Matrix(as.matrix(train.a3[,4:66]),sparse=T)
+  train.T.a4<-Matrix(as.matrix(train.a4[,4:66]),sparse=T)
+  train.T.a5<-Matrix(as.matrix(train.a5[,4:66]),sparse=T)
+  train.T.b1<-Matrix(as.matrix(train.b1[,4:66]),sparse=T)
+  train.T.b2<-Matrix(as.matrix(train.b2[,4:66]),sparse=T)
   
   n=300
-  bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n)
-  bst.a2 <- xgboost(data = trains.T.a2,label = trains.a2$resa2,nrounds = n)
-  bst.a3 <- xgboost(data = trains.T.a3,label = trains.a3$resa3,nrounds = n)
-  bst.a4 <- xgboost(data = trains.T.a4,label = trains.a4$resa4,nrounds = n)
-  bst.a5 <- xgboost(data = trains.T.a5,label = trains.a5$resa5,nrounds = n)
-  bst.b1 <- xgboost(data = trains.T.b1,label = trains.b1$resb1,nrounds = n)
-  bst.b2 <- xgboost(data = trains.T.b2,label = trains.b2$resb2,nrounds = n)
+  bst.a1 <- xgboost(data = train.T.a1,label = train.a1$resa1,nrounds = n)
+  bst.a2 <- xgboost(data = train.T.a2,label = train.a2$resa2,nrounds = n)
+  bst.a3 <- xgboost(data = train.T.a3,label = train.a3$resa3,nrounds = n)
+  bst.a4 <- xgboost(data = train.T.a4,label = train.a4$resa4,nrounds = n)
+  bst.a5 <- xgboost(data = train.T.a5,label = train.a5$resa5,nrounds = n)
+  bst.b1 <- xgboost(data = train.T.b1,label = train.b1$resb1,nrounds = n)
+  bst.b2 <- xgboost(data = train.T.b2,label = train.b2$resb2,nrounds = n)
   
   result.a1<-trains.a1[-repeatedSplits.a1$Resample1,]
   result.a2<-trains.a2[-repeatedSplits.a2$Resample1,]
@@ -381,6 +382,7 @@ dlt.pr.xgb.IX <- function(data,count,seed) {
   tsn1<-tests_1$n
   tsn2<-tests_2$n
   tsn3<-tests_3$n
+  
   a1.1<-tests_1$a1
   a2.1<-tests_1$a2
   a3.1<-tests_1$a3
@@ -399,41 +401,41 @@ dlt.pr.xgb.IX <- function(data,count,seed) {
   a4.3<-tests_3$a4
   a5.3<-tests_3$a5
   
-  a1.4<-tests_1$a1
-  a2.4<-tests_1$a2
-  a3.4<-tests_1$a3
-  a4.4<-tests_1$a4
-  a5.4<-tests_1$a5
+  a1.4<-tests_4$a1
+  a2.4<-tests_4$a2
+  a3.4<-tests_4$a3
+  a4.4<-tests_4$a4
+  a5.4<-tests_4$a5
   
-  a1.5<-tests_2$a1
-  a2.5<-tests_2$a2
-  a3.5<-tests_2$a3
-  a4.5<-tests_2$a4
-  a5.5<-tests_2$a5
+  a1.5<-tests_5$a1
+  a2.5<-tests_5$a2
+  a3.5<-tests_5$a3
+  a4.5<-tests_5$a4
+  a5.5<-tests_5$a5
   
-  a1.6<-tests_3$a1
-  a2.6<-tests_3$a2
-  a3.6<-tests_3$a3
-  a4.6<-tests_3$a4
-  a5.6<-tests_3$a5
+  a1.6<-tests_6$a1
+  a2.6<-tests_6$a2
+  a3.6<-tests_6$a3
+  a4.6<-tests_6$a4
+  a5.6<-tests_6$a5
   
-  a1.7<-tests_1$a1
-  a2.7<-tests_1$a2
-  a3.7<-tests_1$a3
-  a4.7<-tests_1$a4
-  a5.7<-tests_1$a5
+  a1.7<-tests_7$a1
+  a2.7<-tests_7$a2
+  a3.7<-tests_7$a3
+  a4.7<-tests_7$a4
+  a5.7<-tests_7$a5
   
-  a1.8<-tests_2$a1
-  a2.8<-tests_2$a2
-  a3.8<-tests_2$a3
-  a4.8<-tests_2$a4
-  a5.8<-tests_2$a5
+  a1.8<-tests_8$a1
+  a2.8<-tests_8$a2
+  a3.8<-tests_8$a3
+  a4.8<-tests_8$a4
+  a5.8<-tests_8$a5
   
-  a1.9<-tests_3$a1
-  a2.9<-tests_3$a2
-  a3.9<-tests_3$a3
-  a4.9<-tests_3$a4
-  a5.9<-tests_3$a5
+  a1.9<-tests_9$a1
+  a2.9<-tests_9$a2
+  a3.9<-tests_9$a3
+  a4.9<-tests_9$a4
+  a5.9<-tests_9$a5
   #B:
   b1.1<-tests_1$b1
   b2.1<-tests_1$b2
@@ -454,7 +456,7 @@ dlt.pr.xgb.IX <- function(data,count,seed) {
   b1.9<-tests_9$b1
   b2.9<-tests_9$b2
   
-  tests.ab<-data.frame(trn1,trn2,trn3,
+  tests.ab<-data.frame(tsn1,tsn2,tsn3,
                        a1.1,a2.1,a3.1,a4.1,a5.1,
                        a1.2,a2.2,a3.2,a4.2,a5.2,
                        a1.3,a2.3,a3.3,a4.3,a5.3,
