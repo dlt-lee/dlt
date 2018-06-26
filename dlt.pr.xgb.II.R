@@ -1,7 +1,9 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.xgboost.III <- function(data,count,n) {
+dlt.pr.xgb.II <- function(data,count,seed) {
+  
   library(xgboost)
+  library(caret)
   
   trains_1 <-tail(data,count)[1:(count-3),]
   trains_2 <-tail(data,count)[2:(count-2),]
@@ -47,71 +49,90 @@ dlt.xgboost.III <- function(data,count,n) {
   
   
   trains.a1<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
+                        #b1.1,b2.1,
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resa1)
   trains.a2<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
+                        #b1.1,b2.1,
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resa2)
   trains.a3<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
+                        #b1.1,b2.1,
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resa3)
   trains.a4<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
+                        #b1.1,b2.1,
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resa4)
   trains.a5<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
+                        #b1.1,b2.1,
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resa5)
   trains.b1<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
+                        #b1.1,b2.1,
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resb1)
   trains.b2<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
-                        b1.1,b2.1,
+                        #b1.1,b2.1,
                         b1.2,b2.2,
                         b1.3,b2.3,
                         resb2)
   
-  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:24]),sparse=T)
-  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:24]),sparse=T)
-  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:24]),sparse=T)
-  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:24]),sparse=T)
-  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:24]),sparse=T)
-  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:24]),sparse=T)
-  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:24]),sparse=T)
-  #n=300
-  #A:
+  #Build training data
+  set.seed(seed)
+  repeatedSplits.a1<-createDataPartition(trains.a1$resa1,p = .80)
+  repeatedSplits.a2<-createDataPartition(trains.a2$resa2,p = .80)
+  repeatedSplits.a3<-createDataPartition(trains.a3$resa3,p = .80)
+  repeatedSplits.a4<-createDataPartition(trains.a4$resa4,p = .80)
+  repeatedSplits.a5<-createDataPartition(trains.a5$resa5,p = .80)
+  repeatedSplits.b1<-createDataPartition(trains.b1$resb1,p = .80)
+  repeatedSplits.b2<-createDataPartition(trains.b2$resb2,p = .80)
+  
+  trains.a1<-trains.a1[repeatedSplits.a1$Resample1,]
+  trains.a2<-trains.a2[repeatedSplits.a2$Resample1,]
+  trains.a3<-trains.a3[repeatedSplits.a3$Resample1,]
+  trains.a4<-trains.a4[repeatedSplits.a4$Resample1,]
+  trains.a5<-trains.a5[repeatedSplits.a5$Resample1,]
+  trains.b1<-trains.b1[repeatedSplits.b1$Resample1,]
+  trains.b2<-trains.b2[repeatedSplits.b2$Resample1,]
+  
+  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:17]),sparse=T)
+  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:17]),sparse=T)
+  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:17]),sparse=T)
+  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:17]),sparse=T)
+  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:17]),sparse=T)
+  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:17]),sparse=T)
+  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:17]),sparse=T)
+  
+  #Training
+  n=300
   bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n)
   bst.a2 <- xgboost(data = trains.T.a2,label = trains.a2$resa2,nrounds = n)
   bst.a3 <- xgboost(data = trains.T.a3,label = trains.a3$resa3,nrounds = n)
@@ -119,6 +140,98 @@ dlt.xgboost.III <- function(data,count,n) {
   bst.a5 <- xgboost(data = trains.T.a5,label = trains.a5$resa5,nrounds = n)
   bst.b1 <- xgboost(data = trains.T.b1,label = trains.b1$resb1,nrounds = n)
   bst.b2 <- xgboost(data = trains.T.b2,label = trains.b2$resb2,nrounds = n)
+  
+  #Build chexking data
+  result.a1<-trains.a1[-repeatedSplits.a1$Resample1,]
+  result.a2<-trains.a2[-repeatedSplits.a2$Resample1,]
+  result.a3<-trains.a3[-repeatedSplits.a3$Resample1,]
+  result.a4<-trains.a4[-repeatedSplits.a4$Resample1,]
+  result.a5<-trains.a5[-repeatedSplits.a5$Resample1,]
+  result.b1<-trains.b1[-repeatedSplits.b1$Resample1,]
+  result.b2<-trains.b2[-repeatedSplits.b2$Resample1,]
+  
+  result.T.a1<-Matrix(as.matrix(result.a1[,4:17]),sparse=T)
+  result.T.a2<-Matrix(as.matrix(result.a2[,4:17]),sparse=T)
+  result.T.a3<-Matrix(as.matrix(result.a3[,4:17]),sparse=T)
+  result.T.a4<-Matrix(as.matrix(result.a4[,4:17]),sparse=T)
+  result.T.a5<-Matrix(as.matrix(result.a5[,4:17]),sparse=T)
+  result.T.b1<-Matrix(as.matrix(result.b1[,4:17]),sparse=T)
+  result.T.b2<-Matrix(as.matrix(result.b2[,4:17]),sparse=T)
+  
+  testPredictions.a1 <- predict(object = bst.a1,newdata = result.T.a1)
+  testPredictions.a2 <- predict(object = bst.a2,newdata = result.T.a2)
+  testPredictions.a3 <- predict(object = bst.a3,newdata = result.T.a3)
+  testPredictions.a4 <- predict(object = bst.a4,newdata = result.T.a4)
+  testPredictions.a5 <- predict(object = bst.a5,newdata = result.T.a5)
+  testPredictions.b1 <- predict(object = bst.b1,newdata = result.T.b1)
+  testPredictions.b2 <- predict(object = bst.b2,newdata = result.T.b2)
+  
+  a1.Predictions<-round(testPredictions.a1)
+  a2.Predictions<-round(testPredictions.a2)
+  a3.Predictions<-round(testPredictions.a3)
+  a4.Predictions<-round(testPredictions.a4)
+  a5.Predictions<-round(testPredictions.a5)
+  b1.Predictions<-round(testPredictions.b1)
+  b2.Predictions<-round(testPredictions.b2)
+  
+  
+  rows<-length(result.a1)
+  n.a<-0
+  n.b<-0
+  n.c<-0
+  for (i in 1:rows) {
+    temp.a<-0
+    temp.b<-0
+    temp.c<-0
+    if (result.a1[i,]$resa1==a1.Predictions[i]) {
+      temp.a<-temp.a+1
+    }
+    if (result.a2[i,]$resa2==a2.Predictions[i]) {
+      temp.a<-temp.a+1
+    }
+    if (result.a3[i,]$resa3==a3.Predictions[i]) {
+      temp.a<-temp.a+1
+    }
+    if (result.a4[i,]$resa4==a4.Predictions[i]) {
+      temp.a<-temp.a+1
+    }
+    if (result.a5[i,]$resa5==a5.Predictions[i]) {
+      temp.a<-temp.a+1
+    }
+    n.a<-c(n.a,temp.a)
+    if (result.b1[i,]$resb1==b1.Predictions[i]) {
+      temp.b<-temp.b+1
+    }
+    if (result.b2[i,]$resb2==b2.Predictions[i]) {
+      temp.b<-temp.b+1
+    }
+    n.a<-c(n.a,temp.a)
+    n.b<-c(n.b,temp.b)
+    if (temp.a==5&temp.b==2) {
+      temp.c<-1
+    }
+    else if(temp.a==5&temp.b==1) {
+      temp.c<-2
+    }
+    else if (temp.a==5|(temp.a==4&temp.b==2)) {
+      temp.c<-3
+    }
+    else if ((temp.a==4&temp.b==1)|(temp.a==3&temp.b==2)) {
+      temp.c<-4
+    }
+    else if (temp.a==4|(temp.a==3&temp.b==1)|(temp.a==2&temp.b==2)) {
+      temp.c<-5
+    }
+    else if (temp.a==3|(temp.a==1&temp.b==2)|(temp.a==2&temp.b==1)|temp.b==2) {
+      temp.c<-6
+    }
+    n.c<-c(n.c,temp.c)
+  }
+  dim(result.a1)[1]
+  table(n.a)
+  table(n.b)
+  print(table(n.c))
+  
   
   
   #Buil test data
@@ -150,14 +263,14 @@ dlt.xgboost.III <- function(data,count,n) {
   b2.3<-tests_3$b2
   
   tests.ab<-data.frame(tsn1,tsn2,tsn3,
-                       a1.1,a2.1,a3.1,a4.1,a5.1,
+                       #a1.1,a2.1,a3.1,a4.1,a5.1,
                        a1.2,a2.2,a3.2,a4.2,a5.2,
                        a1.3,a2.3,a3.3,a4.3,a5.3,
-                       b1.1,b2.1,
+                       #b1.1,b2.1,
                        b1.2,b2.2,
                        b1.3,b2.3)
   
-  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:24]),sparse=T)
+  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:17]),sparse=T)
   
   testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.ab)
   testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.ab)
@@ -189,17 +302,25 @@ dlt.xgboost.III <- function(data,count,n) {
               round(testPredictions.a5),
               round(testPredictions.b1),round(testPredictions.b2))
   
-  return(c(
+  c(
     tail(round(testPredictions.a1),1),
     tail(round(testPredictions.a2),1),
     tail(round(testPredictions.a3),1),
     tail(round(testPredictions.a4),1),
     tail(round(testPredictions.a5),1),
     tail(round(testPredictions.b1),1),
-    tail(round(testPredictions.b2),1)
-  ))
+    tail(round(testPredictions.b2),1))
+  
+#  return(table(n.c))
+  
   
 }
+
+  
+
+
+
+
 
 
 

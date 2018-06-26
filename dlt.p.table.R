@@ -81,3 +81,5 @@ dlt.p.table <- function(dlt,
           tail(floor(testPredictions.b2),1)))
   
 }
+
+
