@@ -171,7 +171,13 @@ dlt.pr.xgb.I <- function(data,count,seed) {
   b2.Predictions<-round(testPredictions.b2)
   
   
-  rows<-length(result.a1)
+  rows<-min(length(testPredictions.a1),
+            length(testPredictions.a2),
+            length(testPredictions.a3),
+            length(testPredictions.a4),
+            length(testPredictions.a5),
+            length(testPredictions.b1),
+            length(testPredictions.b2))
   n.a<-0
   n.b<-0
   n.c<-0
