@@ -636,60 +636,15 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
             length(testPredictions.a5),
             length(testPredictions.b1),
             length(testPredictions.b2))
-  n.a<-0
-  n.b<-0
-  n.c<-0
-  for (i in 1:rows) {
-    temp.a<-0
-    temp.b<-0
-    temp.c<-0
-    if (result.a1[i,]$resa1==a1.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a2[i,]$resa2==a2.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a3[i,]$resa3==a3.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a4[i,]$resa4==a4.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a5[i,]$resa5==a5.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    n.a<-c(n.a,temp.a)
-    if (result.b1[i,]$resb1==b1.Predictions[i]) {
-      temp.b<-temp.b+1
-    }
-    if (result.b2[i,]$resb2==b2.Predictions[i]) {
-      temp.b<-temp.b+1
-    }
-    n.a<-c(n.a,temp.a)
-    n.b<-c(n.b,temp.b)
-    if (temp.a==5&temp.b==2) {
-      temp.c<-1
-    }
-    else if(temp.a==5&temp.b==1) {
-      temp.c<-2
-    }
-    else if (temp.a==5|(temp.a==4&temp.b==2)) {
-      temp.c<-3
-    }
-    else if ((temp.a==4&temp.b==1)|(temp.a==3&temp.b==2)) {
-      temp.c<-4
-    }
-    else if (temp.a==4|(temp.a==3&temp.b==1)|(temp.a==2&temp.b==2)) {
-      temp.c<-5
-    }
-    else if (temp.a==3|(temp.a==1&temp.b==2)|(temp.a==2&temp.b==1)|temp.b==2) {
-      temp.c<-6
-    }
-    n.c<-c(n.c,temp.c)
-  }
-  table(n.a)
-  table(n.b)
-  print(table(n.c))
+  
+  barplot(result.a1$resa1-a1.Predictions,main = "a1")
+  barplot(result.a2$resa2-a2.Predictions,main = "a2")
+  barplot(result.a3$resa3-a3.Predictions,main = "a3")
+  barplot(result.a4$resa4-a4.Predictions,main = "a4")
+  barplot(result.a5$resa5-a5.Predictions,main = "a5")
+  barplot(result.b1$resb1-b1.Predictions,main = "b1")
+  barplot(result.b2$resb2-b2.Predictions,main = "b2")
+  
   
   #Buil test data
   #A:
@@ -750,6 +705,72 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
   a3.9<-tests_9$a3
   a4.9<-tests_9$a4
   a5.9<-tests_9$a5
+  
+  a1.10<-tests_10$a1
+  a2.10<-tests_10$a2
+  a3.10<-tests_10$a3
+  a4.10<-tests_10$a4
+  a5.10<-tests_10$a5
+  
+  a1.11<-tests_11$a1
+  a2.11<-tests_11$a2
+  a3.11<-tests_11$a3
+  a4.11<-tests_11$a4
+  a5.11<-tests_11$a5
+  
+  a1.12<-tests_12$a1
+  a2.12<-tests_12$a2
+  a3.12<-tests_12$a3
+  a4.12<-tests_12$a4
+  a5.12<-tests_12$a5
+  
+  a1.13<-tests_13$a1
+  a2.13<-tests_13$a2
+  a3.13<-tests_13$a3
+  a4.13<-tests_13$a4
+  a5.13<-tests_13$a5
+  
+  a1.14<-tests_14$a1
+  a2.14<-tests_14$a2
+  a3.14<-tests_14$a3
+  a4.14<-tests_14$a4
+  a5.14<-tests_14$a5
+  
+  a1.15<-tests_15$a1
+  a2.15<-tests_15$a2
+  a3.15<-tests_15$a3
+  a4.15<-tests_15$a4
+  a5.15<-tests_15$a5
+  
+  a1.16<-tests_16$a1
+  a2.16<-tests_16$a2
+  a3.16<-tests_16$a3
+  a4.16<-tests_16$a4
+  a5.16<-tests_16$a5
+  
+  a1.17<-tests_17$a1
+  a2.17<-tests_17$a2
+  a3.17<-tests_17$a3
+  a4.17<-tests_17$a4
+  a5.17<-tests_17$a5
+  
+  a1.18<-tests_18$a1
+  a2.18<-tests_18$a2
+  a3.18<-tests_18$a3
+  a4.18<-tests_18$a4
+  a5.18<-tests_18$a5
+  
+  a1.19<-tests_19$a1
+  a2.19<-tests_19$a2
+  a3.19<-tests_19$a3
+  a4.19<-tests_19$a4
+  a5.19<-tests_19$a5
+  
+  a1.20<-tests_20$a1
+  a2.20<-tests_20$a2
+  a3.20<-tests_20$a3
+  a4.20<-tests_20$a4
+  a5.20<-tests_20$a5
   #B:
   b1.1<-tests_1$b1
   b2.1<-tests_1$b2
@@ -769,6 +790,29 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
   b2.8<-tests_8$b2
   b1.9<-tests_9$b1
   b2.9<-tests_9$b2
+  b1.10<-tests_10$b1
+  b2.10<-tests_10$b2
+  
+  b1.11<-tests_11$b1
+  b2.11<-tests_11$b2
+  b1.12<-tests_12$b1
+  b2.12<-tests_12$b2
+  b1.13<-tests_13$b1
+  b2.13<-tests_13$b2
+  b1.14<-tests_14$b1
+  b2.14<-tests_14$b2
+  b1.15<-tests_15$b1
+  b2.15<-tests_15$b2
+  b1.16<-tests_16$b1
+  b2.16<-tests_16$b2
+  b1.17<-tests_17$b1
+  b2.17<-tests_17$b2
+  b1.18<-tests_18$b1
+  b2.18<-tests_18$b2
+  b1.19<-tests_19$b1
+  b2.19<-tests_19$b2
+  b1.20<-tests_20$b1
+  b2.20<-tests_20$b2
   
   tests.ab<-data.frame(tsn1,tsn2,tsn3,
                        a1.1,a2.1,a3.1,a4.1,a5.1,
@@ -780,6 +824,20 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
                        a1.7,a2.7,a3.7,a4.7,a5.7,
                        a1.8,a2.8,a3.8,a4.8,a5.8,
                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                       
+                       a1.10,a2.10,a3.10,a4.10,a5.10,
+                       a1.11,a2.11,a3.11,a4.11,a5.11,
+                       a1.12,a2.12,a3.12,a4.12,a5.12,
+                       a1.13,a2.13,a3.13,a4.13,a5.13,
+                       a1.14,a2.14,a3.14,a4.14,a5.14,
+                       a1.15,a2.15,a3.15,a4.15,a5.15,
+                       a1.16,a2.16,a3.16,a4.16,a5.16,
+                       a1.17,a2.17,a3.17,a4.17,a5.17,
+                       a1.18,a2.18,a3.18,a4.18,a5.18,
+                       a1.19,a2.19,a3.19,a4.19,a5.19,
+                       
+                       a1.20,a2.20,a3.20,a4.20,a5.20,
+                       
                        b1.1,b2.1,
                        b1.2,b2.2,
                        b1.3,b2.3,
@@ -788,9 +846,22 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
                        b1.6,b2.6,
                        b1.7,b2.7,
                        b1.8,b2.8,
-                       b1.9,b2.9)
+                       b1.9,b2.9,
+                       
+                       b1.10,b2.10,
+                       b1.11,b2.11,
+                       b1.12,b2.12,
+                       b1.13,b2.13,
+                       b1.14,b2.14,
+                       b1.15,b2.15,
+                       b1.16,b2.16,
+                       b1.17,b2.17,
+                       b1.18,b2.18,
+                       b1.19,b2.19,
+                       
+                       b1.20,b2.20)
   
-  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:66]),sparse=T)
+  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:143]),sparse=T)
   
   testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.ab)
   testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.ab)
@@ -806,14 +877,14 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
               round(testPredictions.a5),
               round(testPredictions.b1),round(testPredictions.b2))
   
-  c(
-    tail(round(testPredictions.a1),1),
-    tail(round(testPredictions.a2),1),
-    tail(round(testPredictions.a3),1),
-    tail(round(testPredictions.a4),1),
-    tail(round(testPredictions.a5),1),
-    tail(round(testPredictions.b1),1),
-    tail(round(testPredictions.b2),1))
+  print(c(mean(result.a1$resa1-a1.Predictions),
+          mean(result.a2$resa2-a2.Predictions),
+          mean(result.a3$resa3-a3.Predictions),
+          mean(result.a4$resa4-a4.Predictions),
+          mean(result.a5$resa5-a5.Predictions),
+          mean(result.b1$resb1-b1.Predictions),
+          mean(result.b2$resb2-b2.Predictions)))
+  
   
   
   
