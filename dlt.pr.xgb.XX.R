@@ -885,6 +885,16 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
           mean(result.b1$resb1-b1.Predictions),
           mean(result.b2$resb2-b2.Predictions)))
   
+  return(c(
+    tail(round(testPredictions.a1),1),
+    tail(round(testPredictions.a2),1),
+    tail(round(testPredictions.a3),1),
+    tail(round(testPredictions.a4),1),
+    tail(round(testPredictions.a5),1),
+    tail(round(testPredictions.b1),1),
+    tail(round(testPredictions.b2),1)
+  ))
+  
   
   
   
