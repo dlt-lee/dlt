@@ -885,6 +885,17 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
           mean(result.b1$resb1-b1.Predictions),
           mean(result.b2$resb2-b2.Predictions)))
   
+  print("A:")
+  print(sort(table(result.a1$resa1-a1.Predictions)))
+  print(sort(table(result.a2$resa2-a2.Predictions)))
+  print(sort(table(result.a3$resa3-a3.Predictions)))
+  print(sort(table(result.a4$resa4-a4.Predictions)))
+  print(sort(table(result.a5$resa5-a5.Predictions)))
+  print("B:")
+  print(sort(table(result.b1$resb1-b1.Predictions)))
+  print(sort(table(result.b2$resb2-b2.Predictions)))
+  
+  
   return(c(
     tail(round(testPredictions.a1),1),
     tail(round(testPredictions.a2),1),
@@ -894,8 +905,6 @@ dlt.pr.xgb.XX <- function(data,count,seed) {
     tail(round(testPredictions.b1),1),
     tail(round(testPredictions.b2),1)
   ))
-  
-  
   
   
 }
