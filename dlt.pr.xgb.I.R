@@ -178,60 +178,14 @@ dlt.pr.xgb.I <- function(data,count,seed) {
             length(testPredictions.a5),
             length(testPredictions.b1),
             length(testPredictions.b2))
-  n.a<-0
-  n.b<-0
-  n.c<-0
-  for (i in 1:rows) {
-    temp.a<-0
-    temp.b<-0
-    temp.c<-0
-    if (result.a1[i,]$resa1==a1.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a2[i,]$resa2==a2.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a3[i,]$resa3==a3.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a4[i,]$resa4==a4.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    if (result.a5[i,]$resa5==a5.Predictions[i]) {
-      temp.a<-temp.a+1
-    }
-    n.a<-c(n.a,temp.a)
-    if (result.b1[i,]$resb1==b1.Predictions[i]) {
-      temp.b<-temp.b+1
-    }
-    if (result.b2[i,]$resb2==b2.Predictions[i]) {
-      temp.b<-temp.b+1
-    }
-    n.a<-c(n.a,temp.a)
-    n.b<-c(n.b,temp.b)
-    if (temp.a==5&temp.b==2) {
-      temp.c<-1
-    }
-    else if(temp.a==5&temp.b==1) {
-      temp.c<-2
-    }
-    else if (temp.a==5|(temp.a==4&temp.b==2)) {
-      temp.c<-3
-    }
-    else if ((temp.a==4&temp.b==1)|(temp.a==3&temp.b==2)) {
-      temp.c<-4
-    }
-    else if (temp.a==4|(temp.a==3&temp.b==1)|(temp.a==2&temp.b==2)) {
-      temp.c<-5
-    }
-    else if (temp.a==3|(temp.a==1&temp.b==2)|(temp.a==2&temp.b==1)|temp.b==2) {
-      temp.c<-6
-    }
-    n.c<-c(n.c,temp.c)
-  }
-  table(n.a)
-  table(n.b)
-  print(table(n.c))
+  
+  barplot(result.a1$resa1-a1.Predictions,main = "a1")
+  barplot(result.a2$resa2-a2.Predictions,main = "a2")
+  barplot(result.a3$resa3-a3.Predictions,main = "a3")
+  barplot(result.a4$resa4-a4.Predictions,main = "a4")
+  barplot(result.a5$resa5-a5.Predictions,main = "a5")
+  barplot(result.b1$resb1-b1.Predictions,main = "b1")
+  barplot(result.b2$resb2-b2.Predictions,main = "b2")
   
   #Buil test data
   #A:
@@ -279,35 +233,24 @@ dlt.pr.xgb.I <- function(data,count,seed) {
   testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.ab)
   testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T.ab)
   
-  dlt.p.table(dlt,
-              ceiling(testPredictions.a1),ceiling(testPredictions.a2),
-              ceiling(testPredictions.a3),ceiling(testPredictions.a4),
-              ceiling(testPredictions.a5),
-              ceiling(testPredictions.b1),ceiling(testPredictions.b2)
-  )
-  dlt.p.table(dlt,
-              floor(testPredictions.a1),floor(testPredictions.a2),
-              floor(testPredictions.a3),floor(testPredictions.a4),
-              floor(testPredictions.a5),
-              floor(testPredictions.b1),floor(testPredictions.b2))
-  dlt.p.table(dlt,
-              trunc(testPredictions.a1),trunc(testPredictions.a2),
-              trunc(testPredictions.a3),trunc(testPredictions.a4),
-              trunc(testPredictions.a5),
-              trunc(testPredictions.b1),trunc(testPredictions.b2))
-  dlt.p.table(dlt,
-              round(testPredictions.a1),round(testPredictions.a2),
-              round(testPredictions.a3),round(testPredictions.a4),
-              round(testPredictions.a5),
-              round(testPredictions.b1),round(testPredictions.b2))
+ 
+  
+  print(c(mean(result.a1$resa1-a1.Predictions),
+          mean(result.a2$resa2-a2.Predictions),
+          mean(result.a3$resa3-a3.Predictions),
+          mean(result.a4$resa4-a4.Predictions),
+          mean(result.a5$resa5-a5.Predictions),
+          mean(result.b1$resb1-b1.Predictions),
+          mean(result.b2$resb2-b2.Predictions)))
+  
   return(c(
-    tail(round(testPredictions.a1),1),
-    tail(round(testPredictions.a2),1),
-    tail(round(testPredictions.a3),1),
-    tail(round(testPredictions.a4),1),
-    tail(round(testPredictions.a5),1),
-    tail(round(testPredictions.b1),1),
-    tail(round(testPredictions.b2),1)
+    tail(round(testPredictions.a1)+as.integer(names(sort(-table(result.a1$resa1-a1.Predictions))[1])),1),
+    tail(round(testPredictions.a2)+as.integer(names(sort(-table(result.a2$resa2-a2.Predictions))[1])),1),
+    tail(round(testPredictions.a3)+as.integer(names(sort(-table(result.a3$resa3-a3.Predictions))[1])),1),
+    tail(round(testPredictions.a4)+as.integer(names(sort(-table(result.a4$resa4-a4.Predictions))[1])),1),
+    tail(round(testPredictions.a5)+as.integer(names(sort(-table(result.a5$resa5-a5.Predictions))[1])),1),
+    tail(round(testPredictions.b1)+as.integer(names(sort(-table(result.b1$resb1-b1.Predictions))[1])),1),
+    tail(round(testPredictions.b2)+as.integer(names(sort(-table(result.b2$resb2-b2.Predictions))[1])),1)
   ))
   
 }
