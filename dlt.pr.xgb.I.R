@@ -233,7 +233,11 @@ dlt.pr.xgb.I <- function(data,count,seed) {
   testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.ab)
   testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T.ab)
   
- 
+  dlt.p.table(dlt,
+              round(testPredictions.a1),round(testPredictions.a2),
+              round(testPredictions.a3),round(testPredictions.a4),
+              round(testPredictions.a5),
+              round(testPredictions.b1),round(testPredictions.b2))
   
   print(c(mean(result.a1$resa1-a1.Predictions),
           mean(result.a2$resa2-a2.Predictions),
