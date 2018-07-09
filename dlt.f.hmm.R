@@ -1,3 +1,5 @@
+data<-dlt
+count<-dim(dlt)[1]
 dlt.f.hmm <- function(data,count) {
   library(HMM)
   library(markovchain)
