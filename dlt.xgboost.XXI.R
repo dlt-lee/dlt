@@ -584,13 +584,13 @@ dlt.xgboost.XXI <- function(data,count,n) {
                         
                         resb2)
   
-  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:144]),sparse=T)
-  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:144]),sparse=T)
-  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:144]),sparse=T)
-  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:144]),sparse=T)
-  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:144]),sparse=T)
-  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:144]),sparse=T)
-  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:144]),sparse=T)
+  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:150]),sparse=T)
+  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:150]),sparse=T)
+  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:150]),sparse=T)
+  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:150]),sparse=T)
+  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:150]),sparse=T)
+  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:150]),sparse=T)
+  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:150]),sparse=T)
   
   #A:
   bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n)
@@ -826,7 +826,7 @@ dlt.xgboost.XXI <- function(data,count,n) {
                        b1.20,b2.20,
                        b1.21,b2.21)
   
-  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:144]),sparse=T)
+  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:150]),sparse=T)
   
   testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.ab)
   testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.ab)
