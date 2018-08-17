@@ -1,7 +1,7 @@
 data<-dlt
 count<-dim(dlt)[1]
 n<-300
-#dlt.clu.xgb.XXI <- function(data,count,n) {
+dlt.clu.xgb.XXI <- function(data,count,n) {
   library(xgboost)
   
   trains_1  <-tail(data,count)[1:(count-21),]
@@ -568,6 +568,6 @@ n<-300
     tail(round(testPredictions.b2),1)
   ))
   
-#}
+}
 
 
