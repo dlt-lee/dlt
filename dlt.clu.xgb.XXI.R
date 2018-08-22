@@ -250,7 +250,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                         resa2)
   trains.a3<-data.frame(trn1,trn2,trn3,
                         a3.1,a3.2,a3.3,a3.4,a3.5,
-                        a3.6,a3.7,a3.8,a3.9,a4.10,
+                        a3.6,a3.7,a3.8,a3.9,a3.10,
                         a3.11,a3.12,a3.13,a3.14,a3.15,
                         a3.16,a3.17,a3.18,a3.19,a3.20,
                         a3.21,
