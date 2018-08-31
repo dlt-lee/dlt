@@ -2,7 +2,7 @@ data<-dlt
 count<-dim(dlt)[1]
 data<-dlt
 count<-dim(dlt)[1]
-#dlt.mda <- function(data,count) {
+dlt.mdaIII <- function(data,count) {
 library(mda)
 library(caret)
 
@@ -359,4 +359,6 @@ print(c(tail(a1.Predictions,1),
         tail(b2.Predictions,1)
 ))
 
-#}
+}
+
+
