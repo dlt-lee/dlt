@@ -752,7 +752,7 @@ findCorrelation(cor(dlt[,4:8]))
 findCorrelation(cor(dlt[,9:10]))
 describe(dlt)
 cor(dlt[,4:8])
-cor(dlt[,9:10])
+cor(dlt[,9:10])I
 nearZeroVar(dlt[,4:8],saveMetrics = TRUE)
 dlt_a_pca_var
 
