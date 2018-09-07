@@ -1,52 +1,96 @@
 data<-dlt
 count<-dim(dlt)[1]
 n<-300
-dlt.clu.xgb.XXI <- function(data,count,n) {
+dlt.clu.xgb.XXIV <- function(data,count,n) {
   library(xgboost)
   
-  trains_1  <-tail(data,count)[1:(count-21),]
-  trains_2  <-tail(data,count)[2:(count-20),]
-  trains_3  <-tail(data,count)[3:(count-19),]
-  trains_4  <-tail(data,count)[4:(count-18),]
-  trains_5  <-tail(data,count)[5:(count-17),]
-  trains_6  <-tail(data,count)[6:(count-16),]
-  trains_7  <-tail(data,count)[7:(count-15),]
-  trains_8  <-tail(data,count)[8:(count-14),]
-  trains_9  <-tail(data,count)[9:(count-13),]
-  trains_10<-tail(data,count)[10:(count-12),]
-  trains_11<-tail(data,count)[11:(count-11),]
-  trains_12<-tail(data,count)[12:(count-10),]
-  trains_13 <-tail(data,count)[13:(count-9),]
-  trains_14 <-tail(data,count)[14:(count-8),]
-  trains_15 <-tail(data,count)[15:(count-7),]
-  trains_16 <-tail(data,count)[16:(count-6),]
-  trains_17 <-tail(data,count)[17:(count-5),]
-  trains_18 <-tail(data,count)[18:(count-4),]
-  trains_19 <-tail(data,count)[19:(count-3),]
-  trains_20 <-tail(data,count)[20:(count-2),]
-  trains_21 <-tail(data,count)[21:(count-1),]
-  results<-tail(data,(count-21))
-  tests_1  <-tail(data,count)[1:(count-20),]
-  tests_2  <-tail(data,count)[2:(count-19),]
-  tests_3  <-tail(data,count)[3:(count-18),]
-  tests_4  <-tail(data,count)[4:(count-17),]
-  tests_5  <-tail(data,count)[5:(count-16),]
-  tests_6  <-tail(data,count)[6:(count-15),]
-  tests_7  <-tail(data,count)[7:(count-14),]
-  tests_8  <-tail(data,count)[8:(count-13),]
-  tests_9  <-tail(data,count)[9:(count-12),]
-  tests_10<-tail(data,count)[10:(count-11),]
-  tests_11<-tail(data,count)[11:(count-10),]
-  tests_12 <-tail(data,count)[12:(count-9),]
-  tests_13 <-tail(data,count)[13:(count-8),]
-  tests_14 <-tail(data,count)[14:(count-7),]
-  tests_15 <-tail(data,count)[15:(count-6),]
-  tests_16 <-tail(data,count)[16:(count-5),]
-  tests_17 <-tail(data,count)[17:(count-4),]
-  tests_18 <-tail(data,count)[18:(count-3),]
-  tests_19 <-tail(data,count)[19:(count-2),]
-  tests_20 <-tail(data,count)[20:(count-1),]
-  tests_21 <-tail(data,count-20)
+  trains_1  <-tail(data,count)[1:(count-42),]
+  trains_2  <-tail(data,count)[2:(count-41),]
+  trains_3  <-tail(data,count)[3:(count-40),]
+  trains_4  <-tail(data,count)[4:(count-39),]
+  trains_5  <-tail(data,count)[5:(count-38),]
+  trains_6  <-tail(data,count)[6:(count-37),]
+  trains_7  <-tail(data,count)[7:(count-36),]
+  trains_8  <-tail(data,count)[8:(count-35),]
+  trains_9  <-tail(data,count)[9:(count-34),]
+  trains_10<-tail(data,count)[10:(count-33),]
+  trains_11<-tail(data,count)[11:(count-32),]
+  trains_12<-tail(data,count)[12:(count-31),]
+  trains_13 <-tail(data,count)[13:(count-30),]
+  trains_14 <-tail(data,count)[14:(count-29),]
+  trains_15 <-tail(data,count)[15:(count-28),]
+  trains_16 <-tail(data,count)[16:(count-27),]
+  trains_17 <-tail(data,count)[17:(count-26),]
+  trains_18 <-tail(data,count)[18:(count-25),]
+  trains_19 <-tail(data,count)[19:(count-24),]
+  trains_20 <-tail(data,count)[20:(count-23),]
+  trains_21 <-tail(data,count)[21:(count-22),]
+  trains_22 <-tail(data,count)[22:(count-21),]
+  trains_23 <-tail(data,count)[23:(count-20),]
+  trains_24 <-tail(data,count)[24:(count-19),]
+  trains_25 <-tail(data,count)[25:(count-18),]
+  trains_26 <-tail(data,count)[26:(count-17),]
+  trains_27 <-tail(data,count)[27:(count-16),]
+  trains_28 <-tail(data,count)[28:(count-15),]
+  trains_29 <-tail(data,count)[29:(count-14),]
+  trains_30 <-tail(data,count)[30:(count-13),]
+  trains_31<-tail(data,count)[31:(count-12),]
+  trains_32<-tail(data,count)[32:(count-11),]
+  trains_33<-tail(data,count)[33:(count-10),]
+  trains_34 <-tail(data,count)[34:(count-9),]
+  trains_35 <-tail(data,count)[35:(count-8),]
+  trains_36 <-tail(data,count)[36:(count-7),]
+  trains_37 <-tail(data,count)[37:(count-6),]
+  trains_38 <-tail(data,count)[38:(count-5),]
+  trains_39 <-tail(data,count)[39:(count-4),]
+  trains_40 <-tail(data,count)[40:(count-3),]
+  trains_41 <-tail(data,count)[41:(count-2),]
+  trains_42 <-tail(data,count)[42:(count-1),]
+  
+  results<-tail(data,(count-42))
+  
+  tests_1  <-tail(data,count)[1:(count-41),]
+  tests_2  <-tail(data,count)[2:(count-40),]
+  tests_3  <-tail(data,count)[3:(count-39),]
+  tests_4  <-tail(data,count)[4:(count-38),]
+  tests_5  <-tail(data,count)[5:(count-37),]
+  tests_6  <-tail(data,count)[6:(count-36),]
+  tests_7  <-tail(data,count)[7:(count-35),]
+  tests_8  <-tail(data,count)[8:(count-34),]
+  tests_9  <-tail(data,count)[9:(count-33),]
+  tests_10<-tail(data,count)[10:(count-32),]
+  tests_11<-tail(data,count)[11:(count-31),]
+  tests_12<-tail(data,count)[12:(count-30),]
+  tests_13<-tail(data,count)[13:(count-29),]
+  tests_14<-tail(data,count)[14:(count-28),]
+  tests_15<-tail(data,count)[15:(count-27),]
+  tests_16<-tail(data,count)[16:(count-26),]
+  tests_17<-tail(data,count)[17:(count-25),]
+  tests_18<-tail(data,count)[18:(count-24),]
+  tests_19<-tail(data,count)[19:(count-23),]
+  tests_20<-tail(data,count)[20:(count-22),]
+  tests_21<-tail(data,count)[21:(count-21),]
+  tests_22<-tail(data,count)[22:(count-20),]
+  tests_23<-tail(data,count)[23:(count-19),]
+  tests_24<-tail(data,count)[24:(count-18),]
+  tests_25<-tail(data,count)[25:(count-17),]
+  tests_26<-tail(data,count)[26:(count-16),]
+  tests_27<-tail(data,count)[27:(count-15),]
+  tests_28<-tail(data,count)[28:(count-14),]
+  tests_29<-tail(data,count)[29:(count-13),]
+  tests_30<-tail(data,count)[30:(count-12),]
+  tests_31<-tail(data,count)[31:(count-11),]
+  tests_32<-tail(data,count)[32:(count-10),]
+  tests_33 <-tail(data,count)[33:(count-9),]
+  tests_34 <-tail(data,count)[34:(count-8),]
+  tests_35 <-tail(data,count)[35:(count-7),]
+  tests_36 <-tail(data,count)[36:(count-6),]
+  tests_37 <-tail(data,count)[37:(count-5),]
+  tests_38 <-tail(data,count)[38:(count-4),]
+  tests_39 <-tail(data,count)[39:(count-3),]
+  tests_40 <-tail(data,count)[40:(count-2),]
+  tests_41 <-tail(data,count)[41:(count-1),]
+  tests_42 <-tail(data,count-41)
   
   #A:
   trn1<-trains_1$n
@@ -178,6 +222,42 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
   a3.21<-trains_21$a3
   a4.21<-trains_21$a4
   a5.21<-trains_21$a5
+  
+  a1.22<-trains_22$a1
+  a2.22<-trains_22$a2
+  a3.22<-trains_22$a3
+  a4.22<-trains_22$a4
+  a5.22<-trains_22$a5
+  
+  a1.23<-trains_23$a1
+  a2.23<-trains_23$a2
+  a3.23<-trains_23$a3
+  a4.23<-trains_23$a4
+  a5.23<-trains_23$a5
+  
+  a1.24<-trains_24$a1
+  a2.24<-trains_24$a2
+  a3.24<-trains_24$a3
+  a4.24<-trains_24$a4
+  a5.24<-trains_24$a5
+  
+  a1.25<-trains_25$a1
+  a2.25<-trains_25$a2
+  a3.25<-trains_25$a3
+  a4.25<-trains_25$a4
+  a5.25<-trains_25$a5
+  
+  a1.26<-trains_26$a1
+  a2.26<-trains_26$a2
+  a3.26<-trains_26$a3
+  a4.26<-trains_26$a4
+  a5.26<-trains_26$a5
+  
+  a1.27<-trains_27$a1
+  a2.27<-trains_27$a2
+  a3.27<-trains_27$a3
+  a4.27<-trains_27$a4
+  a5.27<-trains_27$a5
   
   resa1<-results$a1
   resa2<-results$a2
@@ -499,7 +579,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                        a1.13,a1.14,a1.15,
                        a1.16,a1.17,a1.18,
                        a1.19,a1.20,a1.21
-                       )
+  )
   tests.a2<-data.frame(tsn1,tsn2,tsn3,
                        a2.1,a2.2,a2.3,
                        a2.4,a2.5,a2.6,
@@ -508,7 +588,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                        a2.13,a2.14,a2.15,
                        a2.16,a2.17,a2.18,
                        a2.19,a2.20,a2.21
-                       )
+  )
   tests.a3<-data.frame(tsn1,tsn2,tsn3,
                        a3.1,a3.2,a3.3,
                        a3.4,a3.5,a3.6,
@@ -517,7 +597,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                        a3.13,a3.14,a3.15,
                        a3.16,a3.17,a3.18,
                        a3.19,a3.20,a3.21
-                       )
+  )
   tests.a4<-data.frame(tsn1,tsn2,tsn3,
                        a4.1,a4.2,a4.3,
                        a4.4,a4.5,a4.6,
@@ -526,7 +606,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                        a4.13,a4.14,a4.15,
                        a4.16,a4.17,a4.18,
                        a4.19,a4.20,a4.21
-                       )
+  )
   tests.a5<-data.frame(tsn1,tsn2,tsn3,
                        a5.1,a5.2,a5.3,
                        a5.4,a5.5,a5.6,
@@ -535,7 +615,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                        a5.13,a5.14,a5.15,
                        a5.16,a5.17,a5.18,
                        a5.19,a5.20,a5.21
-                       )
+  )
   tests.b1<-data.frame(tsn1,tsn2,tsn3,
                        b1.1,b1.2,b1.3,
                        b1.4,b1.5,b1.6,
@@ -544,7 +624,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                        b1.13,b1.14,b1.15,
                        b1.16,b1.17,b1.18,
                        b1.19,b1.20,b1.21
-                       )
+  )
   tests.b2<-data.frame(tsn1,tsn2,tsn3,
                        b2.1,b2.2,b2.3,
                        b2.4,b2.5,b2.6,
@@ -553,7 +633,7 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
                        b2.13,b2.14,b2.15,
                        b2.16,b2.17,b2.18,
                        b2.19,b2.20,b2.21
-                       )
+  )
   
   tests.T.a1<-Matrix(as.matrix(tests.a1[,4:24]),sparse=T)
   tests.T.a2<-Matrix(as.matrix(tests.a2[,4:24]),sparse=T)
@@ -602,7 +682,14 @@ dlt.clu.xgb.XXI <- function(data,count,n) {
     tail(round(testPredictions.b1),1),
     tail(round(testPredictions.b2),1)
   ))
+    
+    
+    
+
+  
+  
   
 }
-
-
+ 
+  
+  
