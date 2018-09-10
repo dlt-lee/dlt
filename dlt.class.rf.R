@@ -287,13 +287,13 @@ count<-dim(dlt)[1]
   r.b2<-data.frame(dn.b2,pn.b2)
   
   c(
-    r.a1[which(dn.a1=="14"),2],
-    r.a2[which(dn.a2=="24"),2],
-    r.a3[which(dn.a3=="26"),2],
-    r.a4[which(dn.a4=="28"),2],
-    r.a5[which(dn.a5=="35"),2],
+    r.a1[which(dn.a1=="01"),2],
+    r.a2[which(dn.a2=="16"),2],
+    r.a3[which(dn.a3=="19"),2],
+    r.a4[which(dn.a4=="20"),2],
+    r.a5[which(dn.a5=="31"),2],
     r.b1[which(dn.b1=="02"),2],
-    r.b2[which(dn.b2=="03"),2]
+    r.b2[which(dn.b2=="07"),2]
   )
   
   

@@ -259,6 +259,97 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
   a4.27<-trains_27$a4
   a5.27<-trains_27$a5
   
+  a1.28<-trains_28$a1
+  a2.28<-trains_28$a2
+  a3.28<-trains_28$a3
+  a4.28<-trains_28$a4
+  a5.28<-trains_28$a5
+  
+  a1.29<-trains_29$a1
+  a2.29<-trains_29$a2
+  a3.29<-trains_29$a3
+  a4.29<-trains_29$a4
+  a5.29<-trains_29$a5
+  
+  a1.30<-trains_30$a1
+  a2.30<-trains_30$a2
+  a3.30<-trains_30$a3
+  a4.30<-trains_30$a4
+  a5.30<-trains_30$a5
+  
+  a1.31<-trains_31$a1
+  a2.31<-trains_31$a2
+  a3.31<-trains_31$a3
+  a4.31<-trains_31$a4
+  a5.31<-trains_31$a5
+  
+  a1.32<-trains_32$a1
+  a2.32<-trains_32$a2
+  a3.32<-trains_32$a3
+  a4.32<-trains_32$a4
+  a5.32<-trains_32$a5
+  
+  a1.33<-trains_33$a1
+  a2.33<-trains_33$a2
+  a3.33<-trains_33$a3
+  a4.33<-trains_33$a4
+  a5.33<-trains_33$a5
+  
+  a1.34<-trains_34$a1
+  a2.34<-trains_34$a2
+  a3.34<-trains_34$a3
+  a4.34<-trains_34$a4
+  a5.34<-trains_34$a5
+  
+  a1.35<-trains_35$a1
+  a2.35<-trains_35$a2
+  a3.35<-trains_35$a3
+  a4.35<-trains_35$a4
+  a5.35<-trains_35$a5
+  
+  a1.36<-trains_36$a1
+  a2.36<-trains_36$a2
+  a3.36<-trains_36$a3
+  a4.36<-trains_36$a4
+  a5.36<-trains_36$a5
+  
+  a1.37<-trains_37$a1
+  a2.37<-trains_37$a2
+  a3.37<-trains_37$a3
+  a4.37<-trains_37$a4
+  a5.37<-trains_37$a5
+  
+  a1.38<-trains_38$a1
+  a2.38<-trains_38$a2
+  a3.38<-trains_38$a3
+  a4.38<-trains_38$a4
+  a5.38<-trains_38$a5
+  
+  a1.39<-trains_39$a1
+  a2.39<-trains_39$a2
+  a3.39<-trains_39$a3
+  a4.39<-trains_39$a4
+  a5.39<-trains_39$a5
+  
+  a1.40<-trains_40$a1
+  a2.40<-trains_40$a2
+  a3.40<-trains_40$a3
+  a4.40<-trains_40$a4
+  a5.40<-trains_40$a5
+  
+  a1.41<-trains_41$a1
+  a2.41<-trains_41$a2
+  a3.41<-trains_41$a3
+  a4.41<-trains_41$a4
+  a5.41<-trains_41$a5
+  
+  a1.42<-trains_42$a1
+  a2.42<-trains_42$a2
+  a3.42<-trains_42$a3
+  a4.42<-trains_42$a4
+  a5.42<-trains_42$a5
+  
+  
   resa1<-results$a1
   resa2<-results$a2
   resa3<-results$a3
