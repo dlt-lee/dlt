@@ -362,18 +362,18 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
   b2.2<-trains_2$b2
   b1.3<-trains_3$b1
   b2.3<-trains_3$b2
-  b1.4<-trains_1$b1
-  b2.4<-trains_1$b2
-  b1.5<-trains_2$b1
-  b2.5<-trains_2$b2
-  b1.6<-trains_3$b1
-  b2.6<-trains_3$b2
-  b1.7<-trains_1$b1
-  b2.7<-trains_1$b2
-  b1.8<-trains_1$b1
-  b2.8<-trains_1$b2
-  b1.9<-trains_2$b1
-  b2.9<-trains_2$b2
+  b1.4<-trains_4$b1
+  b2.4<-trains_4$b2
+  b1.5<-trains_5$b1
+  b2.5<-trains_5$b2
+  b1.6<-trains_6$b1
+  b2.6<-trains_6$b2
+  b1.7<-trains_7$b1
+  b2.7<-trains_7$b2
+  b1.8<-trains_8$b1
+  b2.8<-trains_8$b2
+  b1.9<-trains_9$b1
+  b2.9<-trains_9$b2
   
   b1.10<-trains_10$b1
   b2.10<-trains_10$b2
@@ -531,9 +531,9 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         a5.40,a5.41,a5.42,
                         resa5)
   trains.b1<-data.frame(trn1,trn2,trn3,
-                        b1.1,b1.2,a1.3,
-                        b1.4,b1.5,a1.6,
-                        b1.7,b1.8,a1.9,
+                        b1.1,b1.2,b1.3,
+                        b1.4,b1.5,b1.6,
+                        b1.7,b1.8,b1.9,
                         b1.10,b1.11,b1.12,
                         b1.13,b1.14,b1.15,
                         b1.16,b1.17,b1.18,
@@ -1022,7 +1022,7 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        b1.31,b1.32,b1.33,
                        b1.34,b1.35,b1.36,
                        b1.37,b1.38,b1.39,
-                       a1.40,b1.41,b1.42
+                       b1.40,b1.41,b1.42
   )
   tests.b2<-data.frame(tsn1,tsn2,tsn3,
                        b2.1,b2.2,b2.3,
