@@ -191,18 +191,18 @@ dlt.clu.xgb.XVIII <- function(data,count,n) {
   b2.2<-trains_2$b2
   b1.3<-trains_3$b1
   b2.3<-trains_3$b2
-  b1.4<-trains_1$b1
-  b2.4<-trains_1$b2
-  b1.5<-trains_2$b1
-  b2.5<-trains_2$b2
-  b1.6<-trains_3$b1
-  b2.6<-trains_3$b2
-  b1.7<-trains_1$b1
-  b2.7<-trains_1$b2
-  b1.8<-trains_1$b1
-  b2.8<-trains_1$b2
-  b1.9<-trains_2$b1
-  b2.9<-trains_2$b2
+  b1.4<-trains_4$b1
+  b2.4<-trains_4$b2
+  b1.5<-trains_5$b1
+  b2.5<-trains_5$b2
+  b1.6<-trains_6$b1
+  b2.6<-trains_6$b2
+  b1.7<-trains_7$b1
+  b2.7<-trains_7$b2
+  b1.8<-trains_8$b1
+  b2.8<-trains_8$b2
+  b1.9<-trains_9$b1
+  b2.9<-trains_9$b2
   
   b1.10<-trains_10$b1
   b2.10<-trains_10$b2
