@@ -612,7 +612,8 @@ cell_2018<-c( 18001,01,13,22,25,35,3,04,
               18103,14,24,26,28,35,02,03,
               18104,01,13,14,26,28,07,11,
               18105,01,16,19,20,31,02,07,
-              18106,04,14,17,24,31,01,04
+              18106,04,14,17,24,31,01,04,
+              18107,07,08,09,10,22,03,04
               )
 m_2018<-matrix(cell_2018,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 cell_all<-c(cell_2015,
@@ -755,7 +756,7 @@ findCorrelation(cor(dlt[,4:8]))
 findCorrelation(cor(dlt[,9:10]))
 describe(dlt)
 cor(dlt[,4:8])
-cor(dlt[,9:10])I
+cor(dlt[,9:10])
 nearZeroVar(dlt[,4:8],saveMetrics = TRUE)
 dlt_a_pca_var
 
