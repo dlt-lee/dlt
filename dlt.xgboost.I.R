@@ -1,5 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
+n<-300
 dlt.xgboost.I <- function(data,count,n) {
   library(xgboost)
   
@@ -30,6 +31,7 @@ dlt.xgboost.I <- function(data,count,n) {
   a3.3<-trains_3$a3
   a4.3<-trains_3$a4
   a5.3<-trains_3$a5
+  
   resa1<-results$a1
   resa2<-results$a2
   resa3<-results$a3
@@ -198,3 +200,4 @@ dlt.xgboost.I <- function(data,count,n) {
     tail(round(testPredictions.b2),1)
   ))
 }
+

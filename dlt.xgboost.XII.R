@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.xgboost.XVIII <- function(data,count,n) {
+dlt.xgboost.XII <- function(data,count,n) {
   library(xgboost)
   
   trains_1  <-tail(data,count)[1:(count-21),]
@@ -237,12 +237,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
-                        a1.4,a2.4,a3.4,a4.4,a5.4,
-                        a1.5,a2.5,a3.5,a4.5,a5.5,
-                        a1.6,a2.6,a3.6,a4.6,a5.6,
-                        a1.7,a2.7,a3.7,a4.7,a5.7,
-                        a1.8,a2.8,a3.8,a4.8,a5.8,
-                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                        #a1.4,a2.4,a3.4,a4.4,a5.4,
+                        #a1.5,a2.5,a3.5,a4.5,a5.5,
+                        #a1.6,a2.6,a3.6,a4.6,a5.6,
+                        #a1.7,a2.7,a3.7,a4.7,a5.7,
+                        #a1.8,a2.8,a3.8,a4.8,a5.8,
+                        #a1.9,a2.9,a3.9,a4.9,a5.9,
                         
                         a1.10,a2.10,a3.10,a4.10,a5.10,
                         a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -261,12 +261,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #b1.1,b2.1,
                         #b1.2,b2.2,
                         #b1.3,b2.3,
-                        b1.4,b2.4,
-                        b1.5,b2.5,
-                        b1.6,b2.6,
-                        b1.7,b2.7,
-                        b1.8,b2.8,
-                        b1.9,b2.9,
+                        #b1.4,b2.4,
+                        #b1.5,b2.5,
+                        #b1.6,b2.6,
+                        #b1.7,b2.7,
+                        #b1.8,b2.8,
+                        #b1.9,b2.9,
                         
                         b1.10,b2.10,
                         b1.11,b2.11,
@@ -287,12 +287,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
-                        a1.4,a2.4,a3.4,a4.4,a5.4,
-                        a1.5,a2.5,a3.5,a4.5,a5.5,
-                        a1.6,a2.6,a3.6,a4.6,a5.6,
-                        a1.7,a2.7,a3.7,a4.7,a5.7,
-                        a1.8,a2.8,a3.8,a4.8,a5.8,
-                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                        #a1.4,a2.4,a3.4,a4.4,a5.4,
+                        #a1.5,a2.5,a3.5,a4.5,a5.5,
+                        #a1.6,a2.6,a3.6,a4.6,a5.6,
+                        #a1.7,a2.7,a3.7,a4.7,a5.7,
+                        #a1.8,a2.8,a3.8,a4.8,a5.8,
+                        #a1.9,a2.9,a3.9,a4.9,a5.9,
                         
                         a1.10,a2.10,a3.10,a4.10,a5.10,
                         a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -311,12 +311,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #b1.1,b2.1,
                         #b1.2,b2.2,
                         #b1.3,b2.3,
-                        b1.4,b2.4,
-                        b1.5,b2.5,
-                        b1.6,b2.6,
-                        b1.7,b2.7,
-                        b1.8,b2.8,
-                        b1.9,b2.9,
+                        #b1.4,b2.4,
+                        #b1.5,b2.5,
+                        #b1.6,b2.6,
+                        #b1.7,b2.7,
+                        #b1.8,b2.8,
+                        #b1.9,b2.9,
                         
                         b1.10,b2.10,
                         b1.11,b2.11,
@@ -337,12 +337,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
-                        a1.4,a2.4,a3.4,a4.4,a5.4,
-                        a1.5,a2.5,a3.5,a4.5,a5.5,
-                        a1.6,a2.6,a3.6,a4.6,a5.6,
-                        a1.7,a2.7,a3.7,a4.7,a5.7,
-                        a1.8,a2.8,a3.8,a4.8,a5.8,
-                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                        #a1.4,a2.4,a3.4,a4.4,a5.4,
+                        #a1.5,a2.5,a3.5,a4.5,a5.5,
+                        #a1.6,a2.6,a3.6,a4.6,a5.6,
+                        #a1.7,a2.7,a3.7,a4.7,a5.7,
+                        #a1.8,a2.8,a3.8,a4.8,a5.8,
+                        #a1.9,a2.9,a3.9,a4.9,a5.9,
                         
                         a1.10,a2.10,a3.10,a4.10,a5.10,
                         a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -361,12 +361,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #b1.1,b2.1,
                         #b1.2,b2.2,
                         #b1.3,b2.3,
-                        b1.4,b2.4,
-                        b1.5,b2.5,
-                        b1.6,b2.6,
-                        b1.7,b2.7,
-                        b1.8,b2.8,
-                        b1.9,b2.9,
+                        #b1.4,b2.4,
+                        #b1.5,b2.5,
+                        #b1.6,b2.6,
+                        #b1.7,b2.7,
+                        #b1.8,b2.8,
+                        #b1.9,b2.9,
                         
                         b1.10,b2.10,
                         b1.11,b2.11,
@@ -387,12 +387,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
-                        a1.4,a2.4,a3.4,a4.4,a5.4,
-                        a1.5,a2.5,a3.5,a4.5,a5.5,
-                        a1.6,a2.6,a3.6,a4.6,a5.6,
-                        a1.7,a2.7,a3.7,a4.7,a5.7,
-                        a1.8,a2.8,a3.8,a4.8,a5.8,
-                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                        #a1.4,a2.4,a3.4,a4.4,a5.4,
+                        #a1.5,a2.5,a3.5,a4.5,a5.5,
+                        #a1.6,a2.6,a3.6,a4.6,a5.6,
+                        #a1.7,a2.7,a3.7,a4.7,a5.7,
+                        #a1.8,a2.8,a3.8,a4.8,a5.8,
+                        #a1.9,a2.9,a3.9,a4.9,a5.9,
                         
                         a1.10,a2.10,a3.10,a4.10,a5.10,
                         a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -411,12 +411,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #b1.1,b2.1,
                         #b1.2,b2.2,
                         #b1.3,b2.3,
-                        b1.4,b2.4,
-                        b1.5,b2.5,
-                        b1.6,b2.6,
-                        b1.7,b2.7,
-                        b1.8,b2.8,
-                        b1.9,b2.9,
+                        #b1.4,b2.4,
+                        #b1.5,b2.5,
+                        #b1.6,b2.6,
+                        #b1.7,b2.7,
+                        #b1.8,b2.8,
+                        #b1.9,b2.9,
                         
                         b1.10,b2.10,
                         b1.11,b2.11,
@@ -437,12 +437,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
-                        a1.4,a2.4,a3.4,a4.4,a5.4,
-                        a1.5,a2.5,a3.5,a4.5,a5.5,
-                        a1.6,a2.6,a3.6,a4.6,a5.6,
-                        a1.7,a2.7,a3.7,a4.7,a5.7,
-                        a1.8,a2.8,a3.8,a4.8,a5.8,
-                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                        #a1.4,a2.4,a3.4,a4.4,a5.4,
+                        #a1.5,a2.5,a3.5,a4.5,a5.5,
+                        #a1.6,a2.6,a3.6,a4.6,a5.6,
+                        #a1.7,a2.7,a3.7,a4.7,a5.7,
+                        #a1.8,a2.8,a3.8,a4.8,a5.8,
+                        #a1.9,a2.9,a3.9,a4.9,a5.9,
                         
                         a1.10,a2.10,a3.10,a4.10,a5.10,
                         a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -461,12 +461,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #b1.1,b2.1,
                         #b1.2,b2.2,
                         #b1.3,b2.3,
-                        b1.4,b2.4,
-                        b1.5,b2.5,
-                        b1.6,b2.6,
-                        b1.7,b2.7,
-                        b1.8,b2.8,
-                        b1.9,b2.9,
+                        #b1.4,b2.4,
+                        #b1.5,b2.5,
+                        #b1.6,b2.6,
+                        #b1.7,b2.7,
+                        #b1.8,b2.8,
+                        #b1.9,b2.9,
                         
                         b1.10,b2.10,
                         b1.11,b2.11,
@@ -487,12 +487,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
-                        a1.4,a2.4,a3.4,a4.4,a5.4,
-                        a1.5,a2.5,a3.5,a4.5,a5.5,
-                        a1.6,a2.6,a3.6,a4.6,a5.6,
-                        a1.7,a2.7,a3.7,a4.7,a5.7,
-                        a1.8,a2.8,a3.8,a4.8,a5.8,
-                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                        #a1.4,a2.4,a3.4,a4.4,a5.4,
+                        #a1.5,a2.5,a3.5,a4.5,a5.5,
+                        #a1.6,a2.6,a3.6,a4.6,a5.6,
+                        #a1.7,a2.7,a3.7,a4.7,a5.7,
+                        #a1.8,a2.8,a3.8,a4.8,a5.8,
+                        #a1.9,a2.9,a3.9,a4.9,a5.9,
                         
                         a1.10,a2.10,a3.10,a4.10,a5.10,
                         a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -511,12 +511,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #b1.1,b2.1,
                         #b1.2,b2.2,
                         #b1.3,b2.3,
-                        b1.4,b2.4,
-                        b1.5,b2.5,
-                        b1.6,b2.6,
-                        b1.7,b2.7,
-                        b1.8,b2.8,
-                        b1.9,b2.9,
+                        #b1.4,b2.4,
+                        #b1.5,b2.5,
+                        #b1.6,b2.6,
+                        #b1.7,b2.7,
+                        #b1.8,b2.8,
+                        #b1.9,b2.9,
                         
                         b1.10,b2.10,
                         b1.11,b2.11,
@@ -537,12 +537,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
-                        a1.4,a2.4,a3.4,a4.4,a5.4,
-                        a1.5,a2.5,a3.5,a4.5,a5.5,
-                        a1.6,a2.6,a3.6,a4.6,a5.6,
-                        a1.7,a2.7,a3.7,a4.7,a5.7,
-                        a1.8,a2.8,a3.8,a4.8,a5.8,
-                        a1.9,a2.9,a3.9,a4.9,a5.9,
+                        #a1.4,a2.4,a3.4,a4.4,a5.4,
+                        #a1.5,a2.5,a3.5,a4.5,a5.5,
+                        #a1.6,a2.6,a3.6,a4.6,a5.6,
+                        #a1.7,a2.7,a3.7,a4.7,a5.7,
+                        #a1.8,a2.8,a3.8,a4.8,a5.8,
+                        #a1.9,a2.9,a3.9,a4.9,a5.9,
                         
                         a1.10,a2.10,a3.10,a4.10,a5.10,
                         a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -561,12 +561,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         #b1.1,b2.1,
                         #b1.2,b2.2,
                         #b1.3,b2.3,
-                        b1.4,b2.4,
-                        b1.5,b2.5,
-                        b1.6,b2.6,
-                        b1.7,b2.7,
-                        b1.8,b2.8,
-                        b1.9,b2.9,
+                        #b1.4,b2.4,
+                        #b1.5,b2.5,
+                        #b1.6,b2.6,
+                        #b1.7,b2.7,
+                        #b1.8,b2.8,
+                        #b1.9,b2.9,
                         
                         b1.10,b2.10,
                         b1.11,b2.11,
@@ -584,13 +584,13 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                         
                         resb2)
   
-  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:129]),sparse=T)
-  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:129]),sparse=T)
-  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:129]),sparse=T)
-  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:129]),sparse=T)
-  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:129]),sparse=T)
-  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:129]),sparse=T)
-  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:129]),sparse=T)
+  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:87]),sparse=T)
+  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:87]),sparse=T)
+  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:87]),sparse=T)
+  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:87]),sparse=T)
+  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:87]),sparse=T)
+  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:87]),sparse=T)
+  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:87]),sparse=T)
   
   #A:
   bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n)
@@ -781,12 +781,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                        #a1.1,a2.1,a3.1,a4.1,a5.1,
                        #a1.2,a2.2,a3.2,a4.2,a5.2,
                        #a1.3,a2.3,a3.3,a4.3,a5.3,
-                       a1.4,a2.4,a3.4,a4.4,a5.4,
-                       a1.5,a2.5,a3.5,a4.5,a5.5,
-                       a1.6,a2.6,a3.6,a4.6,a5.6,
-                       a1.7,a2.7,a3.7,a4.7,a5.7,
-                       a1.8,a2.8,a3.8,a4.8,a5.8,
-                       a1.9,a2.9,a3.9,a4.9,a5.9,
+                       #a1.4,a2.4,a3.4,a4.4,a5.4,
+                       #a1.5,a2.5,a3.5,a4.5,a5.5,
+                       #a1.6,a2.6,a3.6,a4.6,a5.6,
+                       #a1.7,a2.7,a3.7,a4.7,a5.7,
+                       #a1.8,a2.8,a3.8,a4.8,a5.8,
+                       #a1.9,a2.9,a3.9,a4.9,a5.9,
                        
                        a1.10,a2.10,a3.10,a4.10,a5.10,
                        a1.11,a2.11,a3.11,a4.11,a5.11,
@@ -805,12 +805,12 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                        #b1.1,b2.1,
                        #b1.2,b2.2,
                        #b1.3,b2.3,
-                       b1.4,b2.4,
-                       b1.5,b2.5,
-                       b1.6,b2.6,
-                       b1.7,b2.7,
-                       b1.8,b2.8,
-                       b1.9,b2.9,
+                       #b1.4,b2.4,
+                       #b1.5,b2.5,
+                       #b1.6,b2.6,
+                       #b1.7,b2.7,
+                       #b1.8,b2.8,
+                       #b1.9,b2.9,
                        
                        b1.10,b2.10,
                        b1.11,b2.11,
@@ -826,7 +826,7 @@ dlt.xgboost.XVIII <- function(data,count,n) {
                        b1.20,b2.20,
                        b1.21,b2.21)
   
-  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:129]),sparse=T)
+  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:87]),sparse=T)
   
   testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.ab)
   testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.ab)
