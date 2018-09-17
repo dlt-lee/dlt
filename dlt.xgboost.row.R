@@ -1,37 +1,46 @@
 data<-dlt
 count<-dim(dlt)[1]
-#dlt.xgboost.row <- function(data,count,n) {
-  data.xgb.I    <-dlt.xgboost.I(data,count,n)
-  data.xgb.II   <-dlt.xgboost.II(data,count,n)
-  data.xgb.III  <-dlt.xgboost.III(data,count,n)
-  data.xgb.VI   <-dlt.xgboost.VI(data,count,n)
-  data.xgb.IX   <-dlt.xgboost.IX(data,count,n)
-  data.xgb.XII  <-dlt.xgboost.XII(data,count,n)
-  data.xgb.XV   <-dlt.xgboost.XV(data,count,n)
-  data.xgb.XVIII<-dlt.xgboost.XVIII(data,count,n)
-  data.xgb.XXI  <-dlt.xgboost.XXI(data,count,n)
-  
-  r<-dim(data.xgb.XXI)[1]
-  
-  #data.xgb.I<-tail(data.xgb.I,r)[1:r-1]
-  
-  ab.I    <-tail(data.xgb.I,1)
-  ab.II   <-tail(data.xgb.II,1)
-  ab.III  <-tail(data.xgb.III,1)
-  ab.VI   <-tail(data.xgb.VI,1)
-  ab.IX   <-tail(data.xgb.IX,1)
-  ab.XII  <-tail(data.xgb.XII,1)
-  ab.XV   <-tail(data.xgb.XV,1)
-  ab.XVIII<-tail(data.xgb.XVIII,1)
-  ab.XXI  <-tail(data.xgb.XXI,1)
-  
-  table(c(ab.I$a1,ab.II$a1,ab.III$a1,ab.VI$a1,ab.IX$a1,ab.XII$a1,ab.XV$a1,ab.XVIII$a1,ab.XXI$a1))
-  table(c(ab.I$a2,ab.II$a2,ab.III$a2,ab.VI$a2,ab.IX$a2,ab.XII$a2,ab.XV$a2,ab.XVIII$a2,ab.XXI$a2))
-  table(c(ab.I$a3,ab.II$a3,ab.III$a3,ab.VI$a3,ab.IX$a3,ab.XII$a3,ab.XV$a3,ab.XVIII$a3,ab.XXI$a3))
-  table(c(ab.I$a4,ab.II$a4,ab.III$a4,ab.VI$a4,ab.IX$a4,ab.XII$a4,ab.XV$a4,ab.XVIII$a4,ab.XXI$a4))
-  table(c(ab.I$a5,ab.II$a5,ab.III$a5,ab.VI$a5,ab.IX$a5,ab.XII$a5,ab.XV$a5,ab.XVIII$a5,ab.XXI$a5))
-  table(c(ab.I$b1,ab.II$b1,ab.III$b1,ab.VI$b1,ab.IX$b1,ab.XII$b1,ab.XV$b1,ab.XVIII$b1,ab.XXI$b1))
-  table(c(ab.I$b2,ab.II$b2,ab.III$b2,ab.VI$b2,ab.IX$b2,ab.XII$b2,ab.XV$b2,ab.XVIII$b2,ab.XXI$b2))
-  
-  
-#}
+n<-300
+
+
+r1 <-dlt.xgboost.III(data,count,n)
+r2 <-dlt.xgboost.VI(data,count,n)
+r3 <-dlt.xgboost.IX(data,count,n)
+r4 <-dlt.xgboost.XII(data,count,n)
+r5 <-dlt.xgboost.XV(data,count,n)
+r6 <-dlt.xgboost.XVIII(data,count,n)
+r7 <-dlt.xgboost.XXI(data,count,n)
+r8 <-dlt.xgboost.XXIV(data,count,n)
+r9 <-dlt.xgboost.XXVII(data,count,n)
+r10<-dlt.xgboost.XXX(data,count,n)
+r11<-dlt.xgboost.XXXIII(data,count,n)
+r12<-dlt.xgboost.XXXVI(data,count,n)
+r13<-dlt.xgboost.XXXIX(data,count,n)
+r14<-dlt.xgboost.XXXXII(data,count,n)
+
+table(c(r1[1],r2[1],r3[1],r4[1],r5[1],r6[1],r7[1],r8[1],r9[1],r10[1],r11[1],r12[1],r13[1],r14[1]))
+table(c(r1[2],r2[2],r3[2],r4[2],r5[2],r6[2],r7[2],r8[2],r9[2],r10[2],r11[2],r12[2],r13[2],r14[2]))
+table(c(r1[3],r2[3],r3[3],r4[3],r5[3],r6[3],r7[3],r8[3],r9[3],r10[3],r11[3],r12[3],r13[3],r14[3]))
+table(c(r1[4],r2[4],r3[4],r4[4],r5[4],r6[4],r7[4],r8[4],r9[4],r10[4],r11[4],r12[4],r13[4],r14[4]))
+table(c(r1[5],r2[5],r3[5],r4[5],r5[5],r6[5],r7[5],r8[5],r9[5],r10[5],r11[5],r12[5],r13[5],r14[5]))
+table(c(r1[6],r2[6],r3[6],r4[6],r5[6],r6[6],r7[6],r8[6],r9[6],r10[6],r11[6],r12[6],r13[6],r14[6]))
+table(c(r1[7],r2[7],r3[7],r4[7],r5[7],r6[7],r7[7],r8[7],r9[7],r10[7],r11[7],r12[7],r13[7],r14[7]))
+
+
+r1
+r2
+r3
+r4
+r5
+r6
+r7
+r8
+r9
+r10
+r11
+r12
+r13
+r14
+
+
+
