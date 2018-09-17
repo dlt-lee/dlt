@@ -1,7 +1,7 @@
 data<-dlt
 count<-dim(dlt)[1]
 n<-300
-dlt.clu.xgb.XXIV <- function(data,count,n) {
+dlt.clu.xgb.XXXXII <- function(data,count,n) {
   library(xgboost)
   
   trains_1  <-tail(data,count)[1:(count-42),]
@@ -451,12 +451,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
   
   
   trains.a1<-data.frame(trn1,trn2,trn3,
-                        #a1.1,a1.2,a1.3,
-                        #a1.4,a1.5,a1.6,
-                        #a1.7,a1.8,a1.9,
-                        #a1.10,a1.11,a1.12,
-                        #a1.13,a1.14,a1.15,
-                        #a1.16,a1.17,a1.18,
+                        a1.1,a1.2,a1.3,
+                        a1.4,a1.5,a1.6,
+                        a1.7,a1.8,a1.9,
+                        a1.10,a1.11,a1.12,
+                        a1.13,a1.14,a1.15,
+                        a1.16,a1.17,a1.18,
                         a1.19,a1.20,a1.21,
                         a1.22,a1.23,a1.24,
                         a1.25,a1.26,a1.27,
@@ -467,12 +467,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         a1.40,a1.41,a1.42,
                         resa1)
   trains.a2<-data.frame(trn1,trn2,trn3,
-                        #a2.1,a2.2,a2.3,
-                        #a2.4,a2.5,a2.6,
-                        #a2.7,a2.8,a2.9,
-                        #a2.10,a2.11,a2.12,
-                        #a2.13,a2.14,a2.15,
-                        #a2.16,a2.17,a2.18,
+                        a2.1,a2.2,a2.3,
+                        a2.4,a2.5,a2.6,
+                        a2.7,a2.8,a2.9,
+                        a2.10,a2.11,a2.12,
+                        a2.13,a2.14,a2.15,
+                        a2.16,a2.17,a2.18,
                         a2.19,a2.20,a2.21,
                         a2.22,a2.23,a2.24,
                         a2.25,a2.26,a2.27,
@@ -483,12 +483,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         a2.40,a2.41,a2.42,
                         resa2)
   trains.a3<-data.frame(trn1,trn2,trn3,
-                        #a3.1,a3.2,a3.3,
-                        #a3.4,a3.5,a3.6,
-                        #a3.7,a3.8,a3.9,
-                        #a3.10,a3.11,a3.12,
-                        #a3.13,a3.14,a3.15,
-                        #a3.16,a3.17,a3.18,
+                        a3.1,a3.2,a3.3,
+                        a3.4,a3.5,a3.6,
+                        a3.7,a3.8,a3.9,
+                        a3.10,a3.11,a3.12,
+                        a3.13,a3.14,a3.15,
+                        a3.16,a3.17,a3.18,
                         a3.19,a3.20,a3.21,
                         a3.22,a3.23,a3.24,
                         a3.25,a3.26,a3.27,
@@ -499,12 +499,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         a3.40,a3.41,a3.42,
                         resa3)
   trains.a4<-data.frame(trn1,trn2,trn3,
-                        #a4.1,a4.2,a4.3,
-                        #a4.4,a4.5,a4.6,
-                        #a4.7,a4.8,a4.9,
-                        #a4.10,a4.11,a4.12,
-                        #a4.13,a4.14,a4.15,
-                        #a4.16,a4.17,a4.18,
+                        a4.1,a4.2,a4.3,
+                        a4.4,a4.5,a4.6,
+                        a4.7,a4.8,a4.9,
+                        a4.10,a4.11,a4.12,
+                        a4.13,a4.14,a4.15,
+                        a4.16,a4.17,a4.18,
                         a4.19,a4.20,a4.21,
                         a4.22,a4.23,a4.24,
                         a4.25,a4.26,a4.27,
@@ -515,12 +515,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         a4.40,a4.41,a4.42,
                         resa4)
   trains.a5<-data.frame(trn1,trn2,trn3,
-                        #a5.1,a5.2,a5.3,
-                        #a5.4,a5.5,a5.6,
-                        #a5.7,a5.8,a5.9,
-                        #a5.10,a5.11,a5.12,
-                        #a5.13,a5.14,a5.15,
-                        #a5.16,a5.17,a5.18,
+                        a5.1,a5.2,a5.3,
+                        a5.4,a5.5,a5.6,
+                        a5.7,a5.8,a5.9,
+                        a5.10,a5.11,a5.12,
+                        a5.13,a5.14,a5.15,
+                        a5.16,a5.17,a5.18,
                         a5.19,a5.20,a5.21,
                         a5.22,a5.23,a5.24,
                         a5.25,a5.26,a5.27,
@@ -531,12 +531,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         a5.40,a5.41,a5.42,
                         resa5)
   trains.b1<-data.frame(trn1,trn2,trn3,
-                        #b1.1,b1.2,b1.3,
-                        #b1.4,b1.5,b1.6,
-                        #b1.7,b1.8,b1.9,
-                        #b1.10,b1.11,b1.12,
-                        #b1.13,b1.14,b1.15,
-                        #b1.16,b1.17,b1.18,
+                        b1.1,b1.2,b1.3,
+                        b1.4,b1.5,b1.6,
+                        b1.7,b1.8,b1.9,
+                        b1.10,b1.11,b1.12,
+                        b1.13,b1.14,b1.15,
+                        b1.16,b1.17,b1.18,
                         b1.19,b1.20,b1.21,
                         b1.22,b1.23,b1.24,
                         b1.25,b1.26,b1.27,
@@ -547,12 +547,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         b1.40,b1.41,b1.42,
                         resb1)
   trains.b2<-data.frame(trn1,trn2,trn3,
-                        #b2.1,b2.2,b2.3,
-                        #b2.4,b2.5,b2.6,
-                        #b2.7,b2.8,b2.9,
-                        #b2.10,b2.11,b2.12,
-                        #b2.13,b2.14,b2.15,
-                        #b2.16,b2.17,b2.18,
+                        b2.1,b2.2,b2.3,
+                        b2.4,b2.5,b2.6,
+                        b2.7,b2.8,b2.9,
+                        b2.10,b2.11,b2.12,
+                        b2.13,b2.14,b2.15,
+                        b2.16,b2.17,b2.18,
                         b2.19,b2.20,b2.21,
                         b2.22,b2.23,b2.24,
                         b2.25,b2.26,b2.27,
@@ -563,13 +563,13 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                         b2.40,b2.41,b2.42,
                         resb2)
   
-  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:27]),sparse=T)
-  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:27]),sparse=T)
-  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:27]),sparse=T)
-  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:27]),sparse=T)
-  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:27]),sparse=T)
-  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:27]),sparse=T)
-  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:27]),sparse=T)
+  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:45]),sparse=T)
+  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:45]),sparse=T)
+  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:45]),sparse=T)
+  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:45]),sparse=T)
+  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:45]),sparse=T)
+  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:45]),sparse=T)
+  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:45]),sparse=T)
   
   #A:
   bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n,print_every_n = 300L)
@@ -929,12 +929,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
   b2.42<-tests_42$b2
   
   tests.a1<-data.frame(tsn1,tsn2,tsn3,
-                       #a1.1,a1.2,a1.3,
-                       #a1.4,a1.5,a1.6,
-                       #a1.7,a1.8,a1.9,
-                       #a1.10,a1.11,a1.12,
-                       #a1.13,a1.14,a1.15,
-                       #a1.16,a1.17,a1.18,
+                       a1.1,a1.2,a1.3,
+                       a1.4,a1.5,a1.6,
+                       a1.7,a1.8,a1.9,
+                       a1.10,a1.11,a1.12,
+                       a1.13,a1.14,a1.15,
+                       a1.16,a1.17,a1.18,
                        a1.19,a1.20,a1.21,
                        a1.22,a1.23,a1.24,
                        a1.25,a1.26,a1.27,
@@ -945,12 +945,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        a1.40,a1.41,a1.42
   )
   tests.a2<-data.frame(tsn1,tsn2,tsn3,
-                       #a2.1,a2.2,a2.3,
-                       #a2.4,a2.5,a2.6,
-                       #a2.7,a2.8,a2.9,
-                       #a2.10,a2.11,a2.12,
-                       #a2.13,a2.14,a2.15,
-                       #a2.16,a2.17,a2.18,
+                       a2.1,a2.2,a2.3,
+                       a2.4,a2.5,a2.6,
+                       a2.7,a2.8,a2.9,
+                       a2.10,a2.11,a2.12,
+                       a2.13,a2.14,a2.15,
+                       a2.16,a2.17,a2.18,
                        a2.19,a2.20,a2.21,
                        a2.22,a2.23,a2.24,
                        a2.25,a2.26,a2.27,
@@ -961,12 +961,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        a2.40,a2.41,a2.42
   )
   tests.a3<-data.frame(tsn1,tsn2,tsn3,
-                       #a3.1,a3.2,a3.3,
-                       #a3.4,a3.5,a3.6,
-                       #a3.7,a3.8,a3.9,
-                       #a3.10,a3.11,a3.12,
-                       #a3.13,a3.14,a3.15,
-                       #a3.16,a3.17,a3.18,
+                       a3.1,a3.2,a3.3,
+                       a3.4,a3.5,a3.6,
+                       a3.7,a3.8,a3.9,
+                       a3.10,a3.11,a3.12,
+                       a3.13,a3.14,a3.15,
+                       a3.16,a3.17,a3.18,
                        a3.19,a3.20,a3.21,
                        a3.22,a3.23,a3.24,
                        a3.25,a3.26,a3.27,
@@ -977,12 +977,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        a3.40,a3.41,a3.42
   )
   tests.a4<-data.frame(tsn1,tsn2,tsn3,
-                       #a4.1,a4.2,a4.3,
-                       #a4.4,a4.5,a4.6,
-                       #a4.7,a4.8,a4.9,
-                       #a4.10,a4.11,a4.12,
-                       #a4.13,a4.14,a4.15,
-                       #a4.16,a4.17,a4.18,
+                       a4.1,a4.2,a4.3,
+                       a4.4,a4.5,a4.6,
+                       a4.7,a4.8,a4.9,
+                       a4.10,a4.11,a4.12,
+                       a4.13,a4.14,a4.15,
+                       a4.16,a4.17,a4.18,
                        a4.19,a4.20,a4.21,
                        a4.22,a4.23,a4.24,
                        a4.25,a4.26,a4.27,
@@ -993,12 +993,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        a4.40,a4.41,a4.42
   )
   tests.a5<-data.frame(tsn1,tsn2,tsn3,
-                       #a5.1,a5.2,a5.3,
-                       #a5.4,a5.5,a5.6,
-                       #a5.7,a5.8,a5.9,
-                       #a5.10,a5.11,a5.12,
-                       #a5.13,a5.14,a5.15,
-                       #a5.16,a5.17,a5.18,
+                       a5.1,a5.2,a5.3,
+                       a5.4,a5.5,a5.6,
+                       a5.7,a5.8,a5.9,
+                       a5.10,a5.11,a5.12,
+                       a5.13,a5.14,a5.15,
+                       a5.16,a5.17,a5.18,
                        a5.19,a5.20,a5.21,
                        a5.22,a5.23,a5.24,
                        a5.25,a5.26,a5.27,
@@ -1009,12 +1009,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        a5.40,a5.41,a5.42
   )
   tests.b1<-data.frame(tsn1,tsn2,tsn3,
-                       #b1.1,b1.2,b1.3,
-                       #b1.4,b1.5,b1.6,
-                       #b1.7,b1.8,b1.9,
-                       #b1.10,b1.11,b1.12,
-                       #b1.13,b1.14,b1.15,
-                       #b1.16,b1.17,b1.18,
+                       b1.1,b1.2,b1.3,
+                       b1.4,b1.5,b1.6,
+                       b1.7,b1.8,b1.9,
+                       b1.10,b1.11,b1.12,
+                       b1.13,b1.14,b1.15,
+                       b1.16,b1.17,b1.18,
                        b1.19,b1.20,b1.21,
                        b1.22,b1.23,b1.24,
                        b1.25,b1.26,b1.27,
@@ -1025,12 +1025,12 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        b1.40,b1.41,b1.42
   )
   tests.b2<-data.frame(tsn1,tsn2,tsn3,
-                       #b2.1,b2.2,b2.3,
-                       #b2.4,b2.5,b2.6,
-                       #b2.7,b2.8,b2.9,
-                       #b2.10,b2.11,b2.12,
-                       #b2.13,b2.14,b2.15,
-                       #b2.16,b2.17,b2.18,
+                       b2.1,b2.2,b2.3,
+                       b2.4,b2.5,b2.6,
+                       b2.7,b2.8,b2.9,
+                       b2.10,b2.11,b2.12,
+                       b2.13,b2.14,b2.15,
+                       b2.16,b2.17,b2.18,
                        b2.19,b2.20,b2.21,
                        b2.22,b2.23,b2.24,
                        b2.25,b2.26,b2.27,
@@ -1041,13 +1041,13 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
                        b2.40,b2.41,b2.42
   )
   
-  tests.T.a1<-Matrix(as.matrix(tests.a1[,4:27]),sparse=T)
-  tests.T.a2<-Matrix(as.matrix(tests.a2[,4:27]),sparse=T)
-  tests.T.a3<-Matrix(as.matrix(tests.a3[,4:27]),sparse=T)
-  tests.T.a4<-Matrix(as.matrix(tests.a4[,4:27]),sparse=T)
-  tests.T.a5<-Matrix(as.matrix(tests.a5[,4:27]),sparse=T)
-  tests.T.b1<-Matrix(as.matrix(tests.b1[,4:27]),sparse=T)
-  tests.T.b2<-Matrix(as.matrix(tests.b2[,4:27]),sparse=T)
+  tests.T.a1<-Matrix(as.matrix(tests.a1[,4:45]),sparse=T)
+  tests.T.a2<-Matrix(as.matrix(tests.a2[,4:45]),sparse=T)
+  tests.T.a3<-Matrix(as.matrix(tests.a3[,4:45]),sparse=T)
+  tests.T.a4<-Matrix(as.matrix(tests.a4[,4:45]),sparse=T)
+  tests.T.a5<-Matrix(as.matrix(tests.a5[,4:45]),sparse=T)
+  tests.T.b1<-Matrix(as.matrix(tests.b1[,4:45]),sparse=T)
+  tests.T.b2<-Matrix(as.matrix(tests.b2[,4:45]),sparse=T)
   
   testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.a1)
   testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.a2)
@@ -1088,10 +1088,10 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
     tail(round(testPredictions.b1),1),
     tail(round(testPredictions.b2),1)
   ))
-    
-    
+  
+  
   
 }
- 
-  
-  
+
+
+

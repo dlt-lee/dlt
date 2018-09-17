@@ -112,13 +112,13 @@ dlt.xgboost.III <- function(data,count,n) {
   trains.T.b2<-Matrix(as.matrix(trains.b2[,4:24]),sparse=T)
   #n=300
   #A:
-  bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n)
-  bst.a2 <- xgboost(data = trains.T.a2,label = trains.a2$resa2,nrounds = n)
-  bst.a3 <- xgboost(data = trains.T.a3,label = trains.a3$resa3,nrounds = n)
-  bst.a4 <- xgboost(data = trains.T.a4,label = trains.a4$resa4,nrounds = n)
-  bst.a5 <- xgboost(data = trains.T.a5,label = trains.a5$resa5,nrounds = n)
-  bst.b1 <- xgboost(data = trains.T.b1,label = trains.b1$resb1,nrounds = n)
-  bst.b2 <- xgboost(data = trains.T.b2,label = trains.b2$resb2,nrounds = n)
+  bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n,print_every_n = 300L)
+  bst.a2 <- xgboost(data = trains.T.a2,label = trains.a2$resa2,nrounds = n,print_every_n = 300L)
+  bst.a3 <- xgboost(data = trains.T.a3,label = trains.a3$resa3,nrounds = n,print_every_n = 300L)
+  bst.a4 <- xgboost(data = trains.T.a4,label = trains.a4$resa4,nrounds = n,print_every_n = 300L)
+  bst.a5 <- xgboost(data = trains.T.a5,label = trains.a5$resa5,nrounds = n,print_every_n = 300L)
+  bst.b1 <- xgboost(data = trains.T.b1,label = trains.b1$resb1,nrounds = n,print_every_n = 300L)
+  bst.b2 <- xgboost(data = trains.T.b2,label = trains.b2$resb2,nrounds = n,print_every_n = 300L)
   
   
   #Buil test data
