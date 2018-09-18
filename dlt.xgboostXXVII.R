@@ -1581,23 +1581,17 @@ dlt.xgboost.XXVII <- function(data,count,n) {
                        
                        b1.40,b2.40,
                        b1.41,b2.41,
-                       b1.42,b2.42,)
+                       b1.42,b2.42)
   
-  tests.T.a1<-Matrix(as.matrix(tests.a1[,4:192]),sparse=T)
-  tests.T.a2<-Matrix(as.matrix(tests.a2[,4:192]),sparse=T)
-  tests.T.a3<-Matrix(as.matrix(tests.a3[,4:192]),sparse=T)
-  tests.T.a4<-Matrix(as.matrix(tests.a4[,4:192]),sparse=T)
-  tests.T.a5<-Matrix(as.matrix(tests.a5[,4:192]),sparse=T)
-  tests.T.b1<-Matrix(as.matrix(tests.b1[,4:192]),sparse=T)
-  tests.T.b2<-Matrix(as.matrix(tests.b2[,4:192]),sparse=T)
+  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:192]),sparse=T)
   
-  testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.a1)
-  testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.a2)
-  testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T.a3)
-  testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T.a4)
-  testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T.a5)
-  testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.b1)
-  testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T.b2)
+  testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.ab)
+  testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.ab)
+  testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T.ab)
+  testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T.ab)
+  testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T.ab)
+  testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.ab)
+  testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T.ab)
   
   dlt.p.table(dlt,
               ceiling(testPredictions.a1),ceiling(testPredictions.a2),
@@ -1621,15 +1615,27 @@ dlt.xgboost.XXVII <- function(data,count,n) {
               round(testPredictions.a5),
               round(testPredictions.b1),round(testPredictions.b2))
   
-  return(c(
-    tail(round(testPredictions.a1),1),
-    tail(round(testPredictions.a2),1),
-    tail(round(testPredictions.a3),1),
-    tail(round(testPredictions.a4),1),
-    tail(round(testPredictions.a5),1),
-    tail(round(testPredictions.b1),1),
-    tail(round(testPredictions.b2),1)
-  ))
+  #  return(c(
+  #    tail(round(testPredictions.a1),1),
+  #    tail(round(testPredictions.a2),1),
+  #    tail(round(testPredictions.a3),1),
+  #    tail(round(testPredictions.a4),1),
+  #    tail(round(testPredictions.a5),1),
+  #    tail(round(testPredictions.b1),1),
+  #    tail(round(testPredictions.b2),1)
+  #  ))
+  
+  a1<-round(testPredictions.a1)
+  a2<-round(testPredictions.a2)
+  a3<-round(testPredictions.a3)
+  a4<-round(testPredictions.a4)
+  a5<-round(testPredictions.a5)
+  b1<-round(testPredictions.b1)
+  b2<-round(testPredictions.b2)
+  
+  result.ab<-data.frame(a1,a2,a3,a4,a5,b1,b2)
+  return(result.ab)
+  
   
   
   
