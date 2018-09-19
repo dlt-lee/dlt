@@ -350,7 +350,7 @@ table(n.b)
 table(n.c)
 
 
-print(c(tail(a1.Predictions,1),
+return(c(tail(a1.Predictions,1),
         tail(a2.Predictions,1),
         tail(a3.Predictions,1),
         tail(a4.Predictions,1),
