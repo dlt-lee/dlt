@@ -68,5 +68,5 @@ table(ab.result.a5)
 table(ab.result.b1)
 table(ab.result.b2)
 
-
+ab.result
 

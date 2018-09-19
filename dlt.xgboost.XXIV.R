@@ -16,36 +16,36 @@ dlt.xgboost.XXIV <- function(data,count,n) {
   trains_10<-tail(data,count)[10:(count-33),]
   trains_11<-tail(data,count)[11:(count-32),]
   trains_12<-tail(data,count)[12:(count-31),]
-  trains_13 <-tail(data,count)[13:(count-30),]
-  trains_14 <-tail(data,count)[14:(count-29),]
-  trains_15 <-tail(data,count)[15:(count-28),]
-  trains_16 <-tail(data,count)[16:(count-27),]
-  trains_17 <-tail(data,count)[17:(count-26),]
-  trains_18 <-tail(data,count)[18:(count-25),]
-  trains_19 <-tail(data,count)[19:(count-24),]
-  trains_20 <-tail(data,count)[20:(count-23),]
-  trains_21 <-tail(data,count)[21:(count-22),]
-  trains_22 <-tail(data,count)[22:(count-21),]
-  trains_23 <-tail(data,count)[23:(count-20),]
-  trains_24 <-tail(data,count)[24:(count-19),]
-  trains_25 <-tail(data,count)[25:(count-18),]
-  trains_26 <-tail(data,count)[26:(count-17),]
-  trains_27 <-tail(data,count)[27:(count-16),]
-  trains_28 <-tail(data,count)[28:(count-15),]
-  trains_29 <-tail(data,count)[29:(count-14),]
-  trains_30 <-tail(data,count)[30:(count-13),]
+  trains_13<-tail(data,count)[13:(count-30),]
+  trains_14<-tail(data,count)[14:(count-29),]
+  trains_15<-tail(data,count)[15:(count-28),]
+  trains_16<-tail(data,count)[16:(count-27),]
+  trains_17<-tail(data,count)[17:(count-26),]
+  trains_18<-tail(data,count)[18:(count-25),]
+  trains_19<-tail(data,count)[19:(count-24),]
+  trains_20<-tail(data,count)[20:(count-23),]
+  trains_21<-tail(data,count)[21:(count-22),]
+  trains_22<-tail(data,count)[22:(count-21),]
+  trains_23<-tail(data,count)[23:(count-20),]
+  trains_24<-tail(data,count)[24:(count-19),]
+  trains_25<-tail(data,count)[25:(count-18),]
+  trains_26<-tail(data,count)[26:(count-17),]
+  trains_27<-tail(data,count)[27:(count-16),]
+  trains_28<-tail(data,count)[28:(count-15),]
+  trains_29<-tail(data,count)[29:(count-14),]
+  trains_30<-tail(data,count)[30:(count-13),]
   trains_31<-tail(data,count)[31:(count-12),]
   trains_32<-tail(data,count)[32:(count-11),]
   trains_33<-tail(data,count)[33:(count-10),]
-  trains_34 <-tail(data,count)[34:(count-9),]
-  trains_35 <-tail(data,count)[35:(count-8),]
-  trains_36 <-tail(data,count)[36:(count-7),]
-  trains_37 <-tail(data,count)[37:(count-6),]
-  trains_38 <-tail(data,count)[38:(count-5),]
-  trains_39 <-tail(data,count)[39:(count-4),]
-  trains_40 <-tail(data,count)[40:(count-3),]
-  trains_41 <-tail(data,count)[41:(count-2),]
-  trains_42 <-tail(data,count)[42:(count-1),]
+  trains_34<-tail(data,count)[34:(count-9),]
+  trains_35<-tail(data,count)[35:(count-8),]
+  trains_36<-tail(data,count)[36:(count-7),]
+  trains_37<-tail(data,count)[37:(count-6),]
+  trains_38<-tail(data,count)[38:(count-5),]
+  trains_39<-tail(data,count)[39:(count-4),]
+  trains_40<-tail(data,count)[40:(count-3),]
+  trains_41<-tail(data,count)[41:(count-2),]
+  trains_42<-tail(data,count)[42:(count-1),]
   
   results<-tail(data,(count-42))
   
@@ -81,16 +81,16 @@ dlt.xgboost.XXIV <- function(data,count,n) {
   tests_30<-tail(data,count)[30:(count-12),]
   tests_31<-tail(data,count)[31:(count-11),]
   tests_32<-tail(data,count)[32:(count-10),]
-  tests_33 <-tail(data,count)[33:(count-9),]
-  tests_34 <-tail(data,count)[34:(count-8),]
-  tests_35 <-tail(data,count)[35:(count-7),]
-  tests_36 <-tail(data,count)[36:(count-6),]
-  tests_37 <-tail(data,count)[37:(count-5),]
-  tests_38 <-tail(data,count)[38:(count-4),]
-  tests_39 <-tail(data,count)[39:(count-3),]
-  tests_40 <-tail(data,count)[40:(count-2),]
-  tests_41 <-tail(data,count)[41:(count-1),]
-  tests_42 <-tail(data,count-41)
+  tests_33<-tail(data,count)[33:(count-9),]
+  tests_34<-tail(data,count)[34:(count-8),]
+  tests_35<-tail(data,count)[35:(count-7),]
+  tests_36<-tail(data,count)[36:(count-6),]
+  tests_37<-tail(data,count)[37:(count-5),]
+  tests_38<-tail(data,count)[38:(count-4),]
+  tests_39<-tail(data,count)[39:(count-3),]
+  tests_40<-tail(data,count)[40:(count-2),]
+  tests_41<-tail(data,count)[41:(count-1),]
+  tests_42<-tail(data,count-41)
   
   #A:
   trn1<-trains_1$n
@@ -474,14 +474,14 @@ dlt.xgboost.XXIV <- function(data,count,n) {
                         
                         a1.20,a2.20,a3.20,a4.20,a5.20,
                         a1.21,a2.21,a3.21,a4.21,a5.21,
-                        a1.22,a2.22,a3.12,a4.22,a5.22,
-                        a1.23,a2.23,a3.13,a4.23,a5.23,
-                        a1.24,a2.24,a3.14,a4.24,a5.24,
-                        a1.25,a2.25,a3.15,a4.25,a5.25,
-                        a1.26,a2.26,a3.16,a4.26,a5.26,
-                        a1.27,a2.27,a3.17,a4.27,a5.27,
-                        a1.28,a2.28,a3.18,a4.28,a5.28,
-                        a1.29,a2.29,a3.19,a4.29,a5.29,
+                        a1.22,a2.22,a3.22,a4.22,a5.22,
+                        a1.23,a2.23,a3.23,a4.23,a5.23,
+                        a1.24,a2.24,a3.24,a4.24,a5.24,
+                        a1.25,a2.25,a3.25,a4.25,a5.25,
+                        a1.26,a2.26,a3.26,a4.26,a5.26,
+                        a1.27,a2.27,a3.27,a4.27,a5.27,
+                        a1.28,a2.28,a3.28,a4.28,a5.28,
+                        a1.29,a2.29,a3.29,a4.29,a5.29,
                         
                         a1.30,a2.30,a3.30,a4.30,a5.30,
                         a1.31,a2.31,a3.31,a4.31,a5.31,
@@ -570,14 +570,14 @@ dlt.xgboost.XXIV <- function(data,count,n) {
                         
                         a1.20,a2.20,a3.20,a4.20,a5.20,
                         a1.21,a2.21,a3.21,a4.21,a5.21,
-                        a1.22,a2.22,a3.12,a4.22,a5.22,
-                        a1.23,a2.23,a3.13,a4.23,a5.23,
-                        a1.24,a2.24,a3.14,a4.24,a5.24,
-                        a1.25,a2.25,a3.15,a4.25,a5.25,
-                        a1.26,a2.26,a3.16,a4.26,a5.26,
-                        a1.27,a2.27,a3.17,a4.27,a5.27,
-                        a1.28,a2.28,a3.18,a4.28,a5.28,
-                        a1.29,a2.29,a3.19,a4.29,a5.29,
+                        a1.22,a2.22,a3.22,a4.22,a5.22,
+                        a1.23,a2.23,a3.23,a4.23,a5.23,
+                        a1.24,a2.24,a3.24,a4.24,a5.24,
+                        a1.25,a2.25,a3.25,a4.25,a5.25,
+                        a1.26,a2.26,a3.26,a4.26,a5.26,
+                        a1.27,a2.27,a3.27,a4.27,a5.27,
+                        a1.28,a2.28,a3.28,a4.28,a5.28,
+                        a1.29,a2.29,a3.29,a4.29,a5.29,
                         
                         a1.30,a2.30,a3.30,a4.30,a5.30,
                         a1.31,a2.31,a3.31,a4.31,a5.31,
@@ -666,14 +666,14 @@ dlt.xgboost.XXIV <- function(data,count,n) {
                         
                         a1.20,a2.20,a3.20,a4.20,a5.20,
                         a1.21,a2.21,a3.21,a4.21,a5.21,
-                        a1.22,a2.22,a3.12,a4.22,a5.22,
-                        a1.23,a2.23,a3.13,a4.23,a5.23,
-                        a1.24,a2.24,a3.14,a4.24,a5.24,
-                        a1.25,a2.25,a3.15,a4.25,a5.25,
-                        a1.26,a2.26,a3.16,a4.26,a5.26,
-                        a1.27,a2.27,a3.17,a4.27,a5.27,
-                        a1.28,a2.28,a3.18,a4.28,a5.28,
-                        a1.29,a2.29,a3.19,a4.29,a5.29,
+                        a1.22,a2.22,a3.22,a4.22,a5.22,
+                        a1.23,a2.23,a3.23,a4.23,a5.23,
+                        a1.24,a2.24,a3.24,a4.24,a5.24,
+                        a1.25,a2.25,a3.25,a4.25,a5.25,
+                        a1.26,a2.26,a3.26,a4.26,a5.26,
+                        a1.27,a2.27,a3.27,a4.27,a5.27,
+                        a1.28,a2.28,a3.28,a4.28,a5.28,
+                        a1.29,a2.29,a3.29,a4.29,a5.29,
                         
                         a1.30,a2.30,a3.30,a4.30,a5.30,
                         a1.31,a2.31,a3.31,a4.31,a5.31,
@@ -762,14 +762,14 @@ dlt.xgboost.XXIV <- function(data,count,n) {
                         
                         a1.20,a2.20,a3.20,a4.20,a5.20,
                         a1.21,a2.21,a3.21,a4.21,a5.21,
-                        a1.22,a2.22,a3.12,a4.22,a5.22,
-                        a1.23,a2.23,a3.13,a4.23,a5.23,
-                        a1.24,a2.24,a3.14,a4.24,a5.24,
-                        a1.25,a2.25,a3.15,a4.25,a5.25,
-                        a1.26,a2.26,a3.16,a4.26,a5.26,
-                        a1.27,a2.27,a3.17,a4.27,a5.27,
-                        a1.28,a2.28,a3.18,a4.28,a5.28,
-                        a1.29,a2.29,a3.19,a4.29,a5.29,
+                        a1.22,a2.22,a3.22,a4.22,a5.22,
+                        a1.23,a2.23,a3.23,a4.23,a5.23,
+                        a1.24,a2.24,a3.24,a4.24,a5.24,
+                        a1.25,a2.25,a3.25,a4.25,a5.25,
+                        a1.26,a2.26,a3.26,a4.26,a5.26,
+                        a1.27,a2.27,a3.27,a4.27,a5.27,
+                        a1.28,a2.28,a3.28,a4.28,a5.28,
+                        a1.29,a2.29,a3.29,a4.29,a5.29,
                         
                         a1.30,a2.30,a3.30,a4.30,a5.30,
                         a1.31,a2.31,a3.31,a4.31,a5.31,
@@ -858,14 +858,14 @@ dlt.xgboost.XXIV <- function(data,count,n) {
                         
                         a1.20,a2.20,a3.20,a4.20,a5.20,
                         a1.21,a2.21,a3.21,a4.21,a5.21,
-                        a1.22,a2.22,a3.12,a4.22,a5.22,
-                        a1.23,a2.23,a3.13,a4.23,a5.23,
-                        a1.24,a2.24,a3.14,a4.24,a5.24,
-                        a1.25,a2.25,a3.15,a4.25,a5.25,
-                        a1.26,a2.26,a3.16,a4.26,a5.26,
-                        a1.27,a2.27,a3.17,a4.27,a5.27,
-                        a1.28,a2.28,a3.18,a4.28,a5.28,
-                        a1.29,a2.29,a3.19,a4.29,a5.29,
+                        a1.22,a2.22,a3.22,a4.22,a5.22,
+                        a1.23,a2.23,a3.23,a4.23,a5.23,
+                        a1.24,a2.24,a3.24,a4.24,a5.24,
+                        a1.25,a2.25,a3.25,a4.25,a5.25,
+                        a1.26,a2.26,a3.26,a4.26,a5.26,
+                        a1.27,a2.27,a3.27,a4.27,a5.27,
+                        a1.28,a2.28,a3.28,a4.28,a5.28,
+                        a1.29,a2.29,a3.29,a4.29,a5.29,
                         
                         a1.30,a2.30,a3.30,a4.30,a5.30,
                         a1.31,a2.31,a3.31,a4.31,a5.31,
@@ -954,14 +954,14 @@ dlt.xgboost.XXIV <- function(data,count,n) {
                         
                         a1.20,a2.20,a3.20,a4.20,a5.20,
                         a1.21,a2.21,a3.21,a4.21,a5.21,
-                        a1.22,a2.22,a3.12,a4.22,a5.22,
-                        a1.23,a2.23,a3.13,a4.23,a5.23,
-                        a1.24,a2.24,a3.14,a4.24,a5.24,
-                        a1.25,a2.25,a3.15,a4.25,a5.25,
-                        a1.26,a2.26,a3.16,a4.26,a5.26,
-                        a1.27,a2.27,a3.17,a4.27,a5.27,
-                        a1.28,a2.28,a3.18,a4.28,a5.28,
-                        a1.29,a2.29,a3.19,a4.29,a5.29,
+                        a1.22,a2.22,a3.22,a4.22,a5.22,
+                        a1.23,a2.23,a3.23,a4.23,a5.23,
+                        a1.24,a2.24,a3.24,a4.24,a5.24,
+                        a1.25,a2.25,a3.25,a4.25,a5.25,
+                        a1.26,a2.26,a3.26,a4.26,a5.26,
+                        a1.27,a2.27,a3.27,a4.27,a5.27,
+                        a1.28,a2.28,a3.28,a4.28,a5.28,
+                        a1.29,a2.29,a3.29,a4.29,a5.29,
                         
                         a1.30,a2.30,a3.30,a4.30,a5.30,
                         a1.31,a2.31,a3.31,a4.31,a5.31,
@@ -1050,14 +1050,14 @@ dlt.xgboost.XXIV <- function(data,count,n) {
                         
                         a1.20,a2.20,a3.20,a4.20,a5.20,
                         a1.21,a2.21,a3.21,a4.21,a5.21,
-                        a1.22,a2.22,a3.12,a4.22,a5.22,
-                        a1.23,a2.23,a3.13,a4.23,a5.23,
-                        a1.24,a2.24,a3.14,a4.24,a5.24,
-                        a1.25,a2.25,a3.15,a4.25,a5.25,
-                        a1.26,a2.26,a3.16,a4.26,a5.26,
-                        a1.27,a2.27,a3.17,a4.27,a5.27,
-                        a1.28,a2.28,a3.18,a4.28,a5.28,
-                        a1.29,a2.29,a3.19,a4.29,a5.29,
+                        a1.22,a2.22,a3.22,a4.22,a5.22,
+                        a1.23,a2.23,a3.23,a4.23,a5.23,
+                        a1.24,a2.24,a3.24,a4.24,a5.24,
+                        a1.25,a2.25,a3.25,a4.25,a5.25,
+                        a1.26,a2.26,a3.26,a4.26,a5.26,
+                        a1.27,a2.27,a3.27,a4.27,a5.27,
+                        a1.28,a2.28,a3.28,a4.28,a5.28,
+                        a1.29,a2.29,a3.29,a4.29,a5.29,
                         
                         a1.30,a2.30,a3.30,a4.30,a5.30,
                         a1.31,a2.31,a3.31,a4.31,a5.31,
