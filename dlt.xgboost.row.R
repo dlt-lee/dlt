@@ -60,13 +60,15 @@ ab.result.b2<-c(tail(ab.1.row$b2,1),tail(ab.2.row$b2,1),tail(ab.3.row$b2,1),tail
 ab.result<-data.frame(ab.result.a1,ab.result.a2,ab.result.a3,ab.result.a4,
                       ab.result.a5,ab.result.b1,ab.result.b2)
 
-table(ab.result.a1)
-table(ab.result.a2)
-table(ab.result.a3)
-table(ab.result.a4)
-table(ab.result.a5)
-table(ab.result.b1)
-table(ab.result.b2)
+sort(table(ab.result.a1))
+sort(table(ab.result.a2))
+sort(table(ab.result.a3))
+sort(table(ab.result.a4))
+sort(table(ab.result.a5))
+sort(table(ab.result.b1))
+sort(table(ab.result.b2))
 
 ab.result
+
+
 
