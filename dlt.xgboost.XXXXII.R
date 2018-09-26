@@ -27,13 +27,13 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
   trains_1_b1_temp<-0
   trains_1_b2_temp<-0
   for (j in row) {
-    trains_1_a1_temp<-c(trains_1_a1_temp,data.train[j-41,]$a1)
-    trains_1_a2_temp<-c(trains_1_a2_temp,data.train[j-41,]$a2)
-    trains_1_a3_temp<-c(trains_1_a3_temp,data.train[j-41,]$a3)
-    trains_1_a4_temp<-c(trains_1_a4_temp,data.train[j-41,]$a4)
-    trains_1_a5_temp<-c(trains_1_a5_temp,data.train[j-41,]$a5)
-    trains_1_b1_temp<-c(trains_1_b1_temp,data.train[j-41,]$b1)
-    trains_1_b2_temp<-c(trains_1_b2_temp,data.train[j-41,]$b2)
+    trains_1_a1_temp<-c(trains_1_a1_temp,data.train[j-42,]$a1)
+    trains_1_a2_temp<-c(trains_1_a2_temp,data.train[j-42,]$a2)
+    trains_1_a3_temp<-c(trains_1_a3_temp,data.train[j-42,]$a3)
+    trains_1_a4_temp<-c(trains_1_a4_temp,data.train[j-42,]$a4)
+    trains_1_a5_temp<-c(trains_1_a5_temp,data.train[j-42,]$a5)
+    trains_1_b1_temp<-c(trains_1_b1_temp,data.train[j-42,]$b1)
+    trains_1_b2_temp<-c(trains_1_b2_temp,data.train[j-42,]$b2)
   }
   a1<-trains_1_a1_temp[-1]
   a2<-trains_1_a2_temp[-1]
@@ -116,7 +116,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
     trains_4_a5_temp<-c(trains_4_a5_temp,data.train[j-39,]$a5)
     trains_4_b1_temp<-c(trains_4_b1_temp,data.train[j-39,]$b1)
     trains_4_b2_temp<-c(trains_4_b2_temp,data.train[j-39,]$b2)
-  
+  }
   a1<-trains_4_a1_temp[-1]
   a2<-trains_4_a2_temp[-1]
   a3<-trains_4_a3_temp[-1]
@@ -1100,42 +1100,86 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
   
   trains_40  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
+  #Trains_41
+  trains_41_a1_temp<-0
+  trains_41_a2_temp<-0
+  trains_41_a3_temp<-0
+  trains_41_a4_temp<-0
+  trains_41_a5_temp<-0
+  trains_41_b1_temp<-0
+  trains_41_b2_temp<-0
+  for (j in row) {
+    trains_41_a1_temp<-c(trains_41_a1_temp,data.train[j-2,]$a1)
+    trains_41_a2_temp<-c(trains_41_a2_temp,data.train[j-2,]$a2)
+    trains_41_a3_temp<-c(trains_41_a3_temp,data.train[j-2,]$a3)
+    trains_41_a4_temp<-c(trains_41_a4_temp,data.train[j-2,]$a4)
+    trains_41_a5_temp<-c(trains_41_a5_temp,data.train[j-2,]$a5)
+    trains_41_b1_temp<-c(trains_41_b1_temp,data.train[j-2,]$b1)
+    trains_41_b2_temp<-c(trains_41_b2_temp,data.train[j-2,]$b2)
+  }
+  a1<-trains_41_a1_temp[-1]
+  a2<-trains_41_a2_temp[-1]
+  a3<-trains_41_a3_temp[-1]
+  a4<-trains_41_a4_temp[-1]
+  a5<-trains_41_a5_temp[-1]
+  b1<-trains_41_b1_temp[-1]
+  b2<-trains_41_b2_temp[-1]
   
-  trains_10<-tail(data.train,count)[10:(count-33),]
-  trains_11<-tail(data.train,count)[11:(count-32),]
-  trains_12<-tail(data.train,count)[12:(count-31),]
-  trains_13 <-tail(data.train,count)[13:(count-30),]
-  trains_14 <-tail(data.train,count)[14:(count-29),]
-  trains_15 <-tail(data.train,count)[15:(count-28),]
-  trains_16 <-tail(data.train,count)[16:(count-27),]
-  trains_17 <-tail(data.train,count)[17:(count-26),]
-  trains_18 <-tail(data.train,count)[18:(count-25),]
-  trains_19 <-tail(data.train,count)[19:(count-24),]
-  trains_20 <-tail(data.train,count)[20:(count-23),]
-  trains_21 <-tail(data.train,count)[21:(count-22),]
-  trains_22 <-tail(data.train,count)[22:(count-21),]
-  trains_23 <-tail(data.train,count)[23:(count-20),]
-  trains_24 <-tail(data.train,count)[24:(count-19),]
-  trains_25 <-tail(data.train,count)[25:(count-18),]
-  trains_26 <-tail(data.train,count)[26:(count-17),]
-  trains_27 <-tail(data.train,count)[27:(count-16),]
-  trains_28 <-tail(data.train,count)[28:(count-15),]
-  trains_29 <-tail(data.train,count)[29:(count-14),]
-  trains_30 <-tail(data.train,count)[30:(count-13),]
-  trains_31<-tail(data.train,count)[31:(count-12),]
-  trains_32<-tail(data.train,count)[32:(count-11),]
-  trains_33<-tail(data.train,count)[33:(count-10),]
-  trains_34 <-tail(data.train,count)[34:(count-9),]
-  trains_35 <-tail(data.train,count)[35:(count-8),]
-  trains_36 <-tail(data.train,count)[36:(count-7),]
-  trains_37 <-tail(data.train,count)[37:(count-6),]
-  trains_38 <-tail(data.train,count)[38:(count-5),]
-  trains_39 <-tail(data.train,count)[39:(count-4),]
-  trains_40 <-tail(data.train,count)[40:(count-3),]
-  trains_41 <-tail(data.train,count)[41:(count-2),]
-  trains_42 <-tail(data.train,count)[42:(count-1),]
+  trains_41  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  results<-tail(data.train,(count-42))
+  #Trains_42
+  trains_42_a1_temp<-0
+  trains_42_a2_temp<-0
+  trains_42_a3_temp<-0
+  trains_42_a4_temp<-0
+  trains_42_a5_temp<-0
+  trains_42_b1_temp<-0
+  trains_42_b2_temp<-0
+  for (j in row) {
+    trains_42_a1_temp<-c(trains_42_a1_temp,data.train[j-1,]$a1)
+    trains_42_a2_temp<-c(trains_42_a2_temp,data.train[j-1,]$a2)
+    trains_42_a3_temp<-c(trains_42_a3_temp,data.train[j-1,]$a3)
+    trains_42_a4_temp<-c(trains_42_a4_temp,data.train[j-1,]$a4)
+    trains_42_a5_temp<-c(trains_42_a5_temp,data.train[j-1,]$a5)
+    trains_42_b1_temp<-c(trains_42_b1_temp,data.train[j-1,]$b1)
+    trains_42_b2_temp<-c(trains_42_b2_temp,data.train[j-1,]$b2)
+  }
+  a1<-trains_42_a1_temp[-1]
+  a2<-trains_42_a2_temp[-1]
+  a3<-trains_42_a3_temp[-1]
+  a4<-trains_42_a4_temp[-1]
+  a5<-trains_42_a5_temp[-1]
+  b1<-trains_42_b1_temp[-1]
+  b2<-trains_42_b2_temp[-1]
+  
+  trains_42  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
+  
+  #Results
+  results_a1_temp<-0
+  results_a2_temp<-0
+  results_a3_temp<-0
+  results_a4_temp<-0
+  results_a5_temp<-0
+  results_b1_temp<-0
+  results_b2_temp<-0
+  for (j in row) {
+    results_a1_temp<-c(results_a1_temp,data.train[j,]$a1)
+    results_a2_temp<-c(results_a2_temp,data.train[j,]$a2)
+    results_a3_temp<-c(results_a3_temp,data.train[j,]$a3)
+    results_a4_temp<-c(results_a4_temp,data.train[j,]$a4)
+    results_a5_temp<-c(results_a5_temp,data.train[j,]$a5)
+    results_b1_temp<-c(results_b1_temp,data.train[j,]$b1)
+    results_b2_temp<-c(results_b2_temp,data.train[j,]$b2)
+  }
+  a1<-results_a1_temp[-1]
+  a2<-results_a2_temp[-1]
+  a3<-results_a3_temp[-1]
+  a4<-results_a4_temp[-1]
+  a5<-results_a5_temp[-1]
+  b1<-results_b1_temp[-1]
+  b2<-results_b2_temp[-1]
+  
+  results  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
   tests_1  <-tail(data,count)[1:(count-41),]
   tests_2  <-tail(data,count)[2:(count-40),]
@@ -1181,10 +1225,6 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
   tests_42 <-tail(data,count-41)
   
   #A:
-  trn1<-trains_1$n
-  trn2<-trains_2$n
-  trn3<-trains_3$n
-  
   a1.1<-trains_1$a1
   a2.1<-trains_1$a2
   a3.1<-trains_1$a3
@@ -1538,8 +1578,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
   resb2<-results$b2
   
   
-  trains.a1<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.a1<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
                         a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -1634,8 +1673,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                         b1.42,b2.42,
                         
                         resa1)
-  trains.a2<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.a2<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
                         a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -1730,8 +1768,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                         b1.42,b2.42,
                         
                         resa2)
-  trains.a3<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.a3<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
                         a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -1826,8 +1863,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                         b1.42,b2.42,
                         
                         resa3)
-  trains.a4<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.a4<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
                         a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -1922,8 +1958,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                         b1.42,b2.42,
                         
                         resa4)
-  trains.a5<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.a5<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
                         a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -2018,8 +2053,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                         b1.42,b2.42,
                         
                         resa5)
-  trains.b1<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.b1<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
                         a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -2114,8 +2148,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                         b1.42,b2.42,
                         
                         resb1)
-  trains.b2<-data.frame(trn1,trn2,trn3,
-                        a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.b2<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                         a1.2,a2.2,a3.2,a4.2,a5.2,
                         a1.3,a2.3,a3.3,a4.3,a5.3,
                         a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -2211,13 +2244,13 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                         
                         resb2)
   
-  trains.T.a1<-Matrix(as.matrix(trains.a1[,4:297]),sparse=T)
-  trains.T.a2<-Matrix(as.matrix(trains.a2[,4:297]),sparse=T)
-  trains.T.a3<-Matrix(as.matrix(trains.a3[,4:297]),sparse=T)
-  trains.T.a4<-Matrix(as.matrix(trains.a4[,4:297]),sparse=T)
-  trains.T.a5<-Matrix(as.matrix(trains.a5[,4:297]),sparse=T)
-  trains.T.b1<-Matrix(as.matrix(trains.b1[,4:297]),sparse=T)
-  trains.T.b2<-Matrix(as.matrix(trains.b2[,4:297]),sparse=T)
+  trains.T.a1<-Matrix(as.matrix(trains.a1[,1:294]),sparse=T)
+  trains.T.a2<-Matrix(as.matrix(trains.a2[,1:294]),sparse=T)
+  trains.T.a3<-Matrix(as.matrix(trains.a3[,1:294]),sparse=T)
+  trains.T.a4<-Matrix(as.matrix(trains.a4[,1:294]),sparse=T)
+  trains.T.a5<-Matrix(as.matrix(trains.a5[,1:294]),sparse=T)
+  trains.T.b1<-Matrix(as.matrix(trains.b1[,1:294]),sparse=T)
+  trains.T.b2<-Matrix(as.matrix(trains.b2[,1:294]),sparse=T)
   
   #A:
   bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n,print_every_n = 300L)
@@ -2230,10 +2263,6 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
   
   #Buil test data
   #A:
-  tsn1<-tests_1$n
-  tsn2<-tests_2$n
-  tsn3<-tests_3$n
-  
   a1.1<-tests_1$a1
   a2.1<-tests_1$a2
   a3.1<-tests_1$a3
@@ -2576,8 +2605,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
   b1.42<-tests_42$b1
   b2.42<-tests_42$b2
   
-  tests.ab<-data.frame(tsn1,tsn2,tsn3,
-                       a1.1,a2.1,a3.1,a4.1,a5.1,
+  tests.ab<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,
                        a1.2,a2.2,a3.2,a4.2,a5.2,
                        a1.3,a2.3,a3.3,a4.3,a5.3,
                        a1.4,a2.4,a3.4,a4.4,a5.4,
@@ -2671,7 +2699,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                        b1.41,b2.41,
                        b1.42,b2.42)
   
-  tests.T.ab<-Matrix(as.matrix(tests.ab[,4:297]),sparse=T)
+  tests.T.ab<-Matrix(as.matrix(tests.ab[,1:294]),sparse=T)
   
   testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.ab)
   testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.ab)
