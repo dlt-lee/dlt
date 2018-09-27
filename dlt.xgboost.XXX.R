@@ -1674,8 +1674,7 @@ dlt.xgboost.XXX <- function(data,count,n) {
                         b1.42,b2.42,
                         
                         resa1)
-  trains.a2<-data.frame(trn1,trn2,trn3,
-                        #a1.1,a2.1,a3.1,a4.1,a5.1,
+  trains.a2<-data.frame(#a1.1,a2.1,a3.1,a4.1,a5.1,
                         #a1.2,a2.2,a3.2,a4.2,a5.2,
                         #a1.3,a2.3,a3.3,a4.3,a5.3,
                         #a1.4,a2.4,a3.4,a4.4,a5.4,
