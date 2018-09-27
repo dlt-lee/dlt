@@ -6,16 +6,16 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
   
   data.train<-head(data,count-2)
   rows<-dim(data.train)[1]
-  row.line<-45
-  row<-45
-  for(i in 42:rows){
-    if ((row.line<-row.line+3)<=rows) {
-      row<-c(row,row.line)
-    }
-    if(row.line>=rows){
+  row<-0
+  row.line<-count-2
+  for (i in 1:rows) {
+    row<-c(row,row.line)
+    row.line<-row.line-3
+    if (row.line<=42) {
       break
     }
   }
+  row<-sort(row[-1])
   data.test<-data
   
   #Trains_1
