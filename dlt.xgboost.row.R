@@ -60,13 +60,6 @@ ab.result.b2<-c(tail(ab.1.row$b2,1),tail(ab.2.row$b2,1),tail(ab.3.row$b2,1),tail
 ab.result<-data.frame(ab.result.a1,ab.result.a2,ab.result.a3,ab.result.a4,
                       ab.result.a5,ab.result.b1,ab.result.b2)
 
-sort(table(ab.result.a1[10:16]))
-sort(table(ab.result.a2[10:16]))
-sort(table(ab.result.a3[10:16]))
-sort(table(ab.result.a4[10:16]))
-sort(table(ab.result.a5[10:16]))
-sort(table(ab.result.b1[10:16]))
-sort(table(ab.result.b2[10:16]))
 
 sort(table(ab.result.a1[1:9]))
 sort(table(ab.result.a2[1:9]))
@@ -75,6 +68,15 @@ sort(table(ab.result.a4[1:9]))
 sort(table(ab.result.a5[1:9]))
 sort(table(ab.result.b1[1:9]))
 sort(table(ab.result.b2[1:9]))
+
+sort(table(ab.result.a1[10:16]))
+sort(table(ab.result.a2[10:16]))
+sort(table(ab.result.a3[10:16]))
+sort(table(ab.result.a4[10:16]))
+sort(table(ab.result.a5[10:16]))
+sort(table(ab.result.b1[10:16]))
+sort(table(ab.result.b2[10:16]))
+
 
 
 ab.result
