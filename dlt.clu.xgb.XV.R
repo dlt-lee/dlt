@@ -1646,7 +1646,7 @@ dlt.clu.xgb.XV <- function(data,count,n) {
                         #a5.16,a5.17,a5.18,
                         #a5.19,a5.20,a5.21,
                         #a5.22,a5.23,a5.24,
-                        a5.25,a5.26,a5.27,
+                        #a5.25,a5.26,a5.27,
                         a5.28,a5.29,a5.30,
                         a5.31,a5.32,a5.33,
                         a5.34,a5.35,a5.36,
@@ -2151,7 +2151,7 @@ dlt.clu.xgb.XV <- function(data,count,n) {
                        b2.40,b2.41,b2.42
   )
   
-  tests.T.a1<-Matrix(as.matrix(tests.a1[,1:45]),sparse=T)
+  tests.T.a1<-Matrix(as.matrix(tests.a1[,1:15]),sparse=T)
   tests.T.a2<-Matrix(as.matrix(tests.a2[,1:15]),sparse=T)
   tests.T.a3<-Matrix(as.matrix(tests.a3[,1:15]),sparse=T)
   tests.T.a4<-Matrix(as.matrix(tests.a4[,1:15]),sparse=T)

@@ -1,7 +1,7 @@
 data<-dlt
 count<-dim(dlt)[1]
 n<-300
-dlt.clu.xgb.XXXI <- function(data,count,n) {
+dlt.clu.xgb.XXI <- function(data,count,n) {
   library(xgboost)
   
   data.train<-head(data,count-2)

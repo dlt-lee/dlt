@@ -1,7 +1,7 @@
 data<-dlt
 count<-dim(dlt)[1]
 n<-300
-dlt.clu.xgb.XXVIII <- function(data,count,n) {
+dlt.clu.xgb.XVIII <- function(data,count,n) {
   library(xgboost)
   
   data.train<-head(data,count-2)
@@ -1674,8 +1674,8 @@ dlt.clu.xgb.XXVIII <- function(data,count,n) {
                         #b2.10,b2.11,b2.12,
                         #b2.13,b2.14,b2.15,
                         #b2.16,b2.17,b2.18,
-                        b2.19,b2.20,b2.21,
-                        b2.22,b2.23,b2.24,
+                        #b2.19,b2.20,b2.21,
+                        #b2.22,b2.23,b2.24,
                         b2.25,b2.26,b2.27,
                         b2.28,b2.29,b2.30,
                         b2.31,b2.32,b2.33,

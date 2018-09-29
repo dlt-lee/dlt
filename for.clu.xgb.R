@@ -15,34 +15,61 @@ ab.30.clu<-dlt.clu.xgb.XXX(data,count,n)
 ab.33.clu<-dlt.clu.xgb.XXXIII(data,count,n)
 ab.36.clu<-dlt.clu.xgb.XXXVI(data,count,n)
 ab.39.clu<-dlt.clu.xgb.XXXIX(data,count,n)
-rab.42.clu14<-dlt.clu.xgb.XXXXII(data,count,n)
+ab.42.clu<-dlt.clu.xgb.XXXXII(data,count,n)
 
 
-ab.result.a1.clu<-c(tail(ab.3.clu$a1,1))
+ab.result.a1.clu<-c(tail(ab.3.clu$a1,1),tail(ab.6.clu$a1,1),tail(ab.9.clu$a1,1),
+                    tail(ab.12.clu$a1,1),tail(ab.15.clu$a1,1),tail(ab.18.clu$a1,1),
+                    tail(ab.21.clu$a1,1),tail(ab.24.clu$a1,1),tail(ab.27.clu$a1,1),
+                    tail(ab.30.clu$a1,1),tail(ab.33.clu$a1,1),tail(ab.36.clu$a1,1),
+                    tail(ab.39.clu$a1,1),tail(ab.42.clu$a1,1))
+ab.result.a2.clu<-c(tail(ab.3.clu$a2,1),tail(ab.6.clu$a2,1),tail(ab.9.clu$a2,1),
+                    tail(ab.12.clu$a2,1),tail(ab.15.clu$a2,1),tail(ab.18.clu$a2,1),
+                    tail(ab.21.clu$a2,1),tail(ab.24.clu$a2,1),tail(ab.27.clu$a2,1),
+                    tail(ab.30.clu$a2,1),tail(ab.33.clu$a2,1),tail(ab.36.clu$a2,1),
+                    tail(ab.39.clu$a2,1),tail(ab.42.clu$a2,1))
+ab.result.a3.clu<-c(tail(ab.3.clu$a3,1),tail(ab.6.clu$a3,1),tail(ab.9.clu$a3,1),
+                    tail(ab.12.clu$a3,1),tail(ab.15.clu$a3,1),tail(ab.18.clu$a3,1),
+                    tail(ab.21.clu$a3,1),tail(ab.24.clu$a3,1),tail(ab.27.clu$a3,1),
+                    tail(ab.30.clu$a3,1),tail(ab.33.clu$a3,1),tail(ab.36.clu$a3,1),
+                    tail(ab.39.clu$a3,1),tail(ab.42.clu$a3,1))
+ab.result.a4.clu<-c(tail(ab.3.clu$a4,1),tail(ab.6.clu$a4,1),tail(ab.9.clu$a4,1),
+                    tail(ab.12.clu$a4,1),tail(ab.15.clu$a4,1),tail(ab.18.clu$a4,1),
+                    tail(ab.21.clu$a4,1),tail(ab.24.clu$a4,1),tail(ab.27.clu$a4,1),
+                    tail(ab.30.clu$a4,1),tail(ab.33.clu$a4,1),tail(ab.36.clu$a4,1),
+                    tail(ab.39.clu$a4,1),tail(ab.42.clu$a4,1))
+ab.result.a5.clu<-c(tail(ab.3.clu$a5,1),tail(ab.6.clu$a5,1),tail(ab.9.clu$a5,1),
+                    tail(ab.12.clu$a5,1),tail(ab.15.clu$a5,1),tail(ab.18.clu$a5,1),
+                    tail(ab.21.clu$a5,1),tail(ab.24.clu$a5,1),tail(ab.27.clu$a5,1),
+                    tail(ab.30.clu$a5,1),tail(ab.33.clu$a5,1),tail(ab.36.clu$a5,1),
+                    tail(ab.39.clu$a5,1),tail(ab.42.clu$a5,1))
+ab.result.b1.clu<-c(tail(ab.3.clu$b1,1),tail(ab.6.clu$b1,1),tail(ab.9.clu$b1,1),
+                    tail(ab.12.clu$b1,1),tail(ab.15.clu$b1,1),tail(ab.18.clu$b1,1),
+                    tail(ab.21.clu$b1,1),tail(ab.24.clu$b1,1),tail(ab.27.clu$b1,1),
+                    tail(ab.30.clu$b1,1),tail(ab.33.clu$b1,1),tail(ab.36.clu$b1,1),
+                    tail(ab.39.clu$b1,1),tail(ab.42.clu$b1,1))
+ab.result.b2.clu<-c(tail(ab.3.clu$b2,1),tail(ab.6.clu$b2,1),tail(ab.9.clu$b2,1),
+                    tail(ab.12.clu$b2,1),tail(ab.15.clu$b2,1),tail(ab.18.clu$b2,1),
+                    tail(ab.21.clu$b2,1),tail(ab.24.clu$b2,1),tail(ab.27.clu$b2,1),
+                    tail(ab.30.clu$b2,1),tail(ab.33.clu$b2,1),tail(ab.36.clu$b2,1),
+                    tail(ab.39.clu$b2,1),tail(ab.42.clu$b2,1))
 
-sort(table(c(r8[1],r9[1],r10[1],r11[1],r12[1],r13[1],r14[1])))
-sort(table(c(r8[2],r9[2],r10[2],r11[2],r12[2],r13[2],r14[2])))
-sort(table(c(r8[3],r9[3],r10[3],r11[3],r12[3],r13[3],r14[3])))
-sort(table(c(r8[4],r9[4],r10[4],r11[4],r12[4],r13[4],r14[4])))
-sort(table(c(r8[5],r9[5],r10[5],r11[5],r12[5],r13[5],r14[5])))
-sort(table(c(r8[6],r9[6],r10[6],r11[6],r12[6],r13[6],r14[6])))
-sort(table(c(r8[7],r9[7],r10[7],r11[7],r12[7],r13[7],r14[7])))
+
+sort(table(ab.result.a1.clu))
+sort(table(ab.result.a2.clu))
+sort(table(ab.result.a3.clu))
+sort(table(ab.result.a4.clu))
+sort(table(ab.result.a5.clu))
+sort(table(ab.result.b1.clu))
+sort(table(ab.result.b2.clu))
+
+ab.result.rclu<-data.frame(ab.result.a1.clu,ab.result.a2.clu,ab.result.a3.clu,
+                           ab.result.a4.clu,ab.result.a5.clu,ab.result.b1.clu,
+                           ab.result.b2.clu)
 
 
-r1
-r2
-r3
-r4
-r5
-r6
-r7
-r8
-r9
-r10
-r11
-r12
-r13
-r14
+
+ab.result.rclu
 
 
 
