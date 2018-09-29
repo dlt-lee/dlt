@@ -2189,15 +2189,26 @@ dlt.clu.xgb.XXIV <- function(data,count,n) {
               round(testPredictions.a5),
               round(testPredictions.b1),round(testPredictions.b2))
   
-  return(c(
-    tail(round(testPredictions.a1),1),
-    tail(round(testPredictions.a2),1),
-    tail(round(testPredictions.a3),1),
-    tail(round(testPredictions.a4),1),
-    tail(round(testPredictions.a5),1),
-    tail(round(testPredictions.b1),1),
-    tail(round(testPredictions.b2),1)
-  ))
+  #  return(c(
+  #    tail(round(testPredictions.a1),1),
+  #    tail(round(testPredictions.a2),1),
+  #    tail(round(testPredictions.a3),1),
+  #    tail(round(testPredictions.a4),1),
+  #    tail(round(testPredictions.a5),1),
+  #    tail(round(testPredictions.b1),1),
+  #    tail(round(testPredictions.b2),1)
+  #  ))
+  
+  a1<-round(testPredictions.a1)
+  a2<-round(testPredictions.a2)
+  a3<-round(testPredictions.a3)
+  a4<-round(testPredictions.a4)
+  a5<-round(testPredictions.a5)
+  b1<-round(testPredictions.b1)
+  b2<-round(testPredictions.b2)
+  
+  result.ab<-data.frame(a1,a2,a3,a4,a5,b1,b2)
+  return(result.ab)
     
     
   

@@ -2,20 +2,23 @@ data<-dlt
 count<-dim(dlt)[1]
 n<-300
 
-r1 <-dlt.clu.xgb.III(data,count,n)
-r2 <-dlt.clu.xgb.VI(data,count,n)
-r3 <-dlt.clu.xgb.IX(data,count,n)
-r4 <-dlt.clu.xgb.XII(data,count,n)
-r5 <-dlt.clu.xgb.XV(data,count,n)
-r6 <-dlt.clu.xgb.XVIII(data,count,n)
-r7 <-dlt.clu.xgb.XXI(data,count,n)
-r8 <-dlt.clu.xgb.XXIV(data,count,n)
-r9 <-dlt.clu.xgb.XXVII(data,count,n)
-r10<-dlt.clu.xgb.XXX(data,count,n)
-r11<-dlt.clu.xgb.XXXIII(data,count,n)
-r12<-dlt.clu.xgb.XXXVI(data,count,n)
-r13<-dlt.clu.xgb.XXXIX(data,count,n)
-r14<-dlt.clu.xgb.XXXXII(data,count,n)
+ab.3.clu <-dlt.clu.xgb.III(data,count,n)
+ab.6.clu <-dlt.clu.xgb.VI(data,count,n)
+ab.9.clu <-dlt.clu.xgb.IX(data,count,n)
+ab.12.clu <-dlt.clu.xgb.XII(data,count,n)
+ab.15.clu <-dlt.clu.xgb.XV(data,count,n)
+ab.18.clu <-dlt.clu.xgb.XVIII(data,count,n)
+ab.21.clu <-dlt.clu.xgb.XXI(data,count,n)
+ab.24.clu <-dlt.clu.xgb.XXIV(data,count,n)
+ab.27.clu <-dlt.clu.xgb.XXVII(data,count,n)
+ab.30.clu<-dlt.clu.xgb.XXX(data,count,n)
+ab.33.clu<-dlt.clu.xgb.XXXIII(data,count,n)
+ab.36.clu<-dlt.clu.xgb.XXXVI(data,count,n)
+ab.39.clu<-dlt.clu.xgb.XXXIX(data,count,n)
+rab.42.clu14<-dlt.clu.xgb.XXXXII(data,count,n)
+
+
+ab.result.a1.clu<-c(tail(ab.3.clu$a1,1))
 
 sort(table(c(r8[1],r9[1],r10[1],r11[1],r12[1],r13[1],r14[1])))
 sort(table(c(r8[2],r9[2],r10[2],r11[2],r12[2],r13[2],r14[2])))
