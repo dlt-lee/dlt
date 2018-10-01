@@ -2314,8 +2314,7 @@ dlt.xgboost.XXXXII <- function(data,count,n) {
                        
                        a1.40,a2.40,a3.40,a4.40,a5.40,b1.40,b2.40,
                        a1.41,a2.41,a3.41,a4.41,a5.41,b1.41,b2.41,
-                       a1.42,a2.42,a3.42,a4.42,a5.42,b1.42,b2.42
-                       )
+                       a1.42,a2.42,a3.42,a4.42,a5.42,b1.42,b2.42)
   
   tests.T.ab<-Matrix(as.matrix(tests.ab[,1:294]),sparse=T)
   
