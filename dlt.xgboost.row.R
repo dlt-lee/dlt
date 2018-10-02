@@ -61,25 +61,16 @@ ab.result.row<-data.frame(ab.result.a1.row,ab.result.a2.row,ab.result.a3.row,ab.
                       ab.result.a5.row,ab.result.b1.row,ab.result.b2.row)
 
 
-sort(table(ab.result.a1.row[1:9]))
-sort(table(ab.result.a2.row[1:9]))
-sort(table(ab.result.a3.row[1:9]))
-sort(table(ab.result.a4.row[1:9]))
-sort(table(ab.result.a5.row[1:9]))
-sort(table(ab.result.b1.row[1:9]))
-sort(table(ab.result.b2.row[1:9]))
-
-sort(table(ab.result.a1.row[10:16]))
-sort(table(ab.result.a2.row[10:16]))
-sort(table(ab.result.a3.row[10:16]))
-sort(table(ab.result.a4.row[10:16]))
-sort(table(ab.result.a5.row[10:16]))
-sort(table(ab.result.b1.row[10:16]))
-sort(table(ab.result.b2.row[10:16]))
+sort(table(ab.result.a1.row))
+sort(table(ab.result.a2.row))
+sort(table(ab.result.a3.row))
+sort(table(ab.result.a4.row))
+sort(table(ab.result.a5.row))
+sort(table(ab.result.b1.row))
+sort(table(ab.result.b2.row))
 
 
-
-ab.result
+ab.result.row
 
 
 
