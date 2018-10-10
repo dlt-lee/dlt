@@ -1,7 +1,5 @@
 data<-dlt
 count<-dim(dlt)[1]
-data<-dlt
-count<-dim(dlt)[1]
 dlt.mda.III <- function(data,count) {
   library(mda)
   library(caret)
@@ -1934,7 +1932,7 @@ dlt.mda.III <- function(data,count) {
                    data = trains.a3,
                    preProcess = c("BoxCox","center","scale","pca"),
                    #range(dlt$a1)-1
-                   subclasses = 6
+                   subclasses = 5
   )
   mdaModel.a4<-mda(resa4~
                      a1.42+a2.42+a3.42+a4.42+a5.42+b1.42+b2.42+
@@ -2475,13 +2473,26 @@ dlt.mda.III <- function(data,count) {
               a2.Predictions,a3.Predictions,a4.Predictions,
               a5.Predictions,b1.Predictions,b2.Predictions)
   
-  print(c(tail(a1.Predictions,1),
-          tail(a2.Predictions,1),
-          tail(a3.Predictions,1),  
-          tail(a4.Predictions,1),
-          tail(a5.Predictions,1),
-          tail(b1.Predictions,1),
-          tail(b2.Predictions,1)))
+  #  return(c(
+  #    tail(round(testPredictions.a1),1),
+  #    tail(round(testPredictions.a2),1),
+  #    tail(round(testPredictions.a3),1),
+  #    tail(round(testPredictions.a4),1),
+  #    tail(round(testPredictions.a5),1),
+  #    tail(round(testPredictions.b1),1),
+  #    tail(round(testPredictions.b2),1)
+  #  ))
+  
+  a1<-round(a1.Predictions)
+  a2<-round(a2.Predictions)
+  a3<-round(a3.Predictions)
+  a4<-round(a4.Predictions)
+  a5<-round(a5.Predictions)
+  b1<-round(b1.Predictions)
+  b2<-round(b2.Predictions)
+  
+  result.ab<-data.frame(a1,a2,a3,a4,a5,b1,b2)
+  return(result.ab)
   
 }
 
