@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.clu.mda.XXXXII <- function(data,count) {
+dlt.clu.mda.XXXIII <- function(data,count) {
   library(mda)
   library(caret)
   
@@ -1684,9 +1684,9 @@ dlt.clu.mda.XXXXII <- function(data,count) {
                         b2.40,b2.41,b2.42,
                         resb2)
   mdaModel.a1<-mda(resa1~
-                     a1.1+a1.2+a1.3+
-                     a1.4+a1.5+a1.6+
-                     a1.7+a1.8+a1.9+
+                     #a1.1+a1.2+a1.3+
+                     #a1.4+a1.5+a1.6+
+                     #a1.7+a1.8+a1.9+
                      a1.10+a1.11+a1.12+
                      a1.13+a1.14+a1.15+
                      a1.16+a1.17+a1.18+
@@ -1703,9 +1703,9 @@ dlt.clu.mda.XXXXII <- function(data,count) {
                    subclasses = 8
   )
   mdaModel.a2<-mda(resa2~
-                     a2.1+a2.2+a2.3+
-                     a2.4+a2.5+a2.6+
-                     a2.7+a2.8+a2.9+
+                     #a2.1+a2.2+a2.3+
+                     #a2.4+a2.5+a2.6+
+                     #a2.7+a2.8+a2.9+
                      a2.10+a2.11+a2.12+
                      a2.13+a2.14+a2.15+
                      a2.16+a2.17+a2.18+
@@ -1721,9 +1721,9 @@ dlt.clu.mda.XXXXII <- function(data,count) {
                    subclasses = 6
   )
   mdaModel.a3<-mda(resa3~
-                     a3.1+a3.2+a3.3+
-                     a3.4+a3.5+a3.6+
-                     a3.7+a3.8+a3.9+
+                     #a3.1+a3.2+a3.3+
+                     #a3.4+a3.5+a3.6+
+                     #a3.7+a3.8+a3.9+
                      a3.10+a3.11+a3.12+
                      a3.13+a3.14+a3.15+
                      a3.16+a3.17+a3.18+
@@ -1739,9 +1739,9 @@ dlt.clu.mda.XXXXII <- function(data,count) {
                    subclasses = 5
   )
   mdaModel.a4<-mda(resa4~
-                     a4.1+a4.2+a4.3+
-                     a4.4+a4.5+a4.6+
-                     a4.7+a4.8+a4.9+
+                     #a4.1+a4.2+a4.3+
+                     #a4.4+a4.5+a4.6+
+                     #a4.7+a4.8+a4.9+
                      a4.10+a4.11+a4.12+
                      a4.13+a4.14+a4.15+
                      a4.16+a4.17+a4.18+
@@ -1757,9 +1757,9 @@ dlt.clu.mda.XXXXII <- function(data,count) {
                    subclasses = 6
   )
   mdaModel.a5<-mda(resa5~
-                     a5.1+a5.2+a5.3+
-                     a5.4+a5.5+a5.6+
-                     a5.7+a5.8+a5.9+
+                     #a5.1+a5.2+a5.3+
+                     #a5.4+a5.5+a5.6+
+                     #a5.7+a5.8+a5.9+
                      a5.10+a5.11+a5.12+
                      a5.13+a5.14+a5.15+
                      a5.16+a5.17+a5.18+
@@ -1775,9 +1775,9 @@ dlt.clu.mda.XXXXII <- function(data,count) {
                    subclasses = 8
   )
   mdaModel.b1<-mda(resb1~
-                     b1.1+b1.2+b1.3+
-                     b1.4+b1.5+b1.6+
-                     b1.7+b1.8+b1.9+
+                     #b1.1+b1.2+b1.3+
+                     #b1.4+b1.5+b1.6+
+                     #b1.7+b1.8+b1.9+
                      b1.10+b1.11+b1.12+
                      b1.13+b1.14+b1.15+
                      b1.16+b1.17+b1.18+
@@ -1793,9 +1793,9 @@ dlt.clu.mda.XXXXII <- function(data,count) {
                    subclasses = 16
   )
   mdaModel.b2<-mda(resb2~
-                     b2.1+b2.2+b2.3+
-                     b2.4+b2.5+b2.6+
-                     b2.7+b2.8+b2.9+
+                     #b2.1+b2.2+b2.3+
+                     #b2.4+b2.5+b2.6+
+                     #b2.7+b2.8+b2.9+
                      b2.10+b2.11+b2.12+
                      b2.13+b2.14+b2.15+
                      b2.16+b2.17+b2.18+
@@ -2335,5 +2335,6 @@ dlt.clu.mda.XXXXII <- function(data,count) {
   return(result.ab)
   
 }
+
 
   
