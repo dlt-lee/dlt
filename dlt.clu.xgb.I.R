@@ -1,8 +1,8 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.clu.mda.XXVII <- function(data,count) {
-  library(mda)
-  library(caret)
+n<-300
+dlt.clu.xgb.I <- function(data,count,n) {
+  library(xgboost)
   
   data.train<-head(data,count-2)
   rows<-dim(data.train)[1]
@@ -1578,321 +1578,135 @@ dlt.clu.mda.XXVII <- function(data,count) {
   resb2<-results$b2
   
   
-  trains.a1<-data.frame(a1.1,a1.2,a1.3,
-                        a1.4,a1.5,a1.6,
-                        a1.7,a1.8,a1.9,
-                        a1.10,a1.11,a1.12,
-                        a1.13,a1.14,a1.15,
-                        a1.16,a1.17,a1.18,
-                        a1.19,a1.20,a1.21,
-                        a1.22,a1.23,a1.24,
-                        a1.25,a1.26,a1.27,
-                        a1.28,a1.29,a1.30,
-                        a1.31,a1.32,a1.33,
-                        a1.34,a1.35,a1.36,
-                        a1.37,a1.38,a1.39,
-                        a1.40,a1.41,a1.42,
+  trains.a1<-data.frame(#a1.1,a1.2,a1.3,
+                        #a1.4,a1.5,a1.6,
+                        #a1.7,a1.8,a1.9,
+                        #a1.10,a1.11,a1.12,
+                        #a1.13,a1.14,a1.15,
+                        #a1.16,a1.17,a1.18,
+                        #a1.19,a1.20,a1.21,
+                        #a1.22,a1.23,a1.24,
+                        #a1.25,a1.26,a1.27,
+                        #a1.28,a1.29,a1.30,
+                        #a1.31,a1.32,a1.33,
+                        #a1.34,a1.35,a1.36,
+                        #a1.37,a1.38,a1.39,
+                        #a1.40,a1.41,
+                        a1.42,
                         resa1)
-  trains.a2<-data.frame(a2.1,a2.2,a2.3,
-                        a2.4,a2.5,a2.6,
-                        a2.7,a2.8,a2.9,
-                        a2.10,a2.11,a2.12,
-                        a2.13,a2.14,a2.15,
-                        a2.16,a2.17,a2.18,
-                        a2.19,a2.20,a2.21,
-                        a2.22,a2.23,a2.24,
-                        a2.25,a2.26,a2.27,
-                        a2.28,a2.29,a2.30,
-                        a2.31,a2.32,a2.33,
-                        a2.34,a2.35,a2.36,
-                        a2.37,a2.38,a2.39,
-                        a2.40,a2.41,a2.42,
+  trains.a2<-data.frame(#a2.1,a2.2,a2.3,
+                        #a2.4,a2.5,a2.6,
+                        #a2.7,a2.8,a2.9,
+                        #a2.10,a2.11,a2.12,
+                        #a2.13,a2.14,a2.15,
+                        #a2.16,a2.17,a2.18,
+                        #a2.19,a2.20,a2.21,
+                        #a2.22,a2.23,a2.24,
+                        #a2.25,a2.26,a2.27,
+                        #a2.28,a2.29,a2.30,
+                        #a2.31,a2.32,a2.33,
+                        #a2.34,a2.35,a2.36,
+                        #a2.37,a2.38,a2.39,
+                        #a2.40,a2.41,
+                        a2.42,
                         resa2)
-  trains.a3<-data.frame(a3.1,a3.2,a3.3,
-                        a3.4,a3.5,a3.6,
-                        a3.7,a3.8,a3.9,
-                        a3.10,a3.11,a3.12,
-                        a3.13,a3.14,a3.15,
-                        a3.16,a3.17,a3.18,
-                        a3.19,a3.20,a3.21,
-                        a3.22,a3.23,a3.24,
-                        a3.25,a3.26,a3.27,
-                        a3.28,a3.29,a3.30,
-                        a3.31,a3.32,a3.33,
-                        a3.34,a3.35,a3.36,
-                        a3.37,a3.38,a3.39,
-                        a3.40,a3.41,a3.42,
+  trains.a3<-data.frame(#a3.1,a3.2,a3.3,
+                        #a3.4,a3.5,a3.6,
+                        #a3.7,a3.8,a3.9,
+                        #a3.10,a3.11,a3.12,
+                        #a3.13,a3.14,a3.15,
+                        #a3.16,a3.17,a3.18,
+                        #a3.19,a3.20,a3.21,
+                        #a3.22,a3.23,a3.24,
+                        #a3.25,a3.26,a3.27,
+                        #a3.28,a3.29,a3.30,
+                        #a3.31,a3.32,a3.33,
+                        #a3.34,a3.35,a3.36,
+                        #a3.37,a3.38,a3.39,
+                        #a3.40,a3.41,
+                        a3.42,
                         resa3)
-  trains.a4<-data.frame(a4.1,a4.2,a4.3,
-                        a4.4,a4.5,a4.6,
-                        a4.7,a4.8,a4.9,
-                        a4.10,a4.11,a4.12,
-                        a4.13,a4.14,a4.15,
-                        a4.16,a4.17,a4.18,
-                        a4.19,a4.20,a4.21,
-                        a4.22,a4.23,a4.24,
-                        a4.25,a4.26,a4.27,
-                        a4.28,a4.29,a4.30,
-                        a4.31,a4.32,a4.33,
-                        a4.34,a4.35,a4.36,
-                        a4.37,a4.38,a4.39,
-                        a4.40,a4.41,a4.42,
+  trains.a4<-data.frame(#a4.1,a4.2,a4.3,
+                        #a4.4,a4.5,a4.6,
+                        #a4.7,a4.8,a4.9,
+                        #a4.10,a4.11,a4.12,
+                        #a4.13,a4.14,a4.15,
+                        #a4.16,a4.17,a4.18,
+                        #a4.19,a4.20,a4.21,
+                        #a4.22,a4.23,a4.24,
+                        #a4.25,a4.26,a4.27,
+                        #a4.28,a4.29,a4.30,
+                        #a4.31,a4.32,a4.33,
+                        #a4.34,a4.35,a4.36,
+                        #a4.37,a4.38,a4.39,
+                        #a4.40,a4.41,
+                        a4.42,
                         resa4)
-  trains.a5<-data.frame(a5.1,a5.2,a5.3,
-                        a5.4,a5.5,a5.6,
-                        a5.7,a5.8,a5.9,
-                        a5.10,a5.11,a5.12,
-                        a5.13,a5.14,a5.15,
-                        a5.16,a5.17,a5.18,
-                        a5.19,a5.20,a5.21,
-                        a5.22,a5.23,a5.24,
-                        a5.25,a5.26,a5.27,
-                        a5.28,a5.29,a5.30,
-                        a5.31,a5.32,a5.33,
-                        a5.34,a5.35,a5.36,
-                        a5.37,a5.38,a5.39,
-                        a5.40,a5.41,a5.42,
+  trains.a5<-data.frame(#a5.1,a5.2,a5.3,
+                        #a5.4,a5.5,a5.6,
+                        #a5.7,a5.8,a5.9,
+                        #a5.10,a5.11,a5.12,
+                        #a5.13,a5.14,a5.15,
+                        #a5.16,a5.17,a5.18,
+                        #a5.19,a5.20,a5.21,
+                        #a5.22,a5.23,a5.24,
+                        #a5.25,a5.26,a5.27,
+                        #a5.28,a5.29,a5.30,
+                        #a5.31,a5.32,a5.33,
+                        #a5.34,a5.35,a5.36,
+                        #a5.37,a5.38,a5.39,
+                        #a5.40,a5.41,
+                        a5.42,
                         resa5)
-  trains.b1<-data.frame(b1.1,b1.2,b1.3,
-                        b1.4,b1.5,b1.6,
-                        b1.7,b1.8,b1.9,
-                        b1.10,b1.11,b1.12,
-                        b1.13,b1.14,b1.15,
-                        b1.16,b1.17,b1.18,
-                        b1.19,b1.20,b1.21,
-                        b1.22,b1.23,b1.24,
-                        b1.25,b1.26,b1.27,
-                        b1.28,b1.29,b1.30,
-                        b1.31,b1.32,b1.33,
-                        b1.34,b1.35,b1.36,
-                        b1.37,b1.38,b1.39,
-                        b1.40,b1.41,b1.42,
+  trains.b1<-data.frame(#b1.1,b1.2,b1.3,
+                        #b1.4,b1.5,b1.6,
+                        #b1.7,b1.8,b1.9,
+                        #b1.10,b1.11,b1.12,
+                        #b1.13,b1.14,b1.15,
+                        #b1.16,b1.17,b1.18,
+                        #b1.19,b1.20,b1.21,
+                        #b1.22,b1.23,b1.24,
+                        #b1.25,b1.26,b1.27,
+                        #b1.28,b1.29,b1.30,
+                        #b1.31,b1.32,b1.33,
+                        #b1.34,b1.35,b1.36,
+                        #b1.37,b1.38,b1.39,
+                        #b1.40,b1.41,
+                        b1.42,
                         resb1)
-  trains.b2<-data.frame(b2.1,b2.2,b2.3,
-                        b2.4,b2.5,b2.6,
-                        b2.7,b2.8,b2.9,
-                        b2.10,b2.11,b2.12,
-                        b2.13,b2.14,b2.15,
-                        b2.16,b2.17,b2.18,
-                        b2.19,b2.20,b2.21,
-                        b2.22,b2.23,b2.24,
-                        b2.25,b2.26,b2.27,
-                        b2.28,b2.29,b2.30,
-                        b2.31,b2.32,b2.33,
-                        b2.34,b2.35,b2.36,
-                        b2.37,b2.38,b2.39,
-                        b2.40,b2.41,b2.42,
+  trains.b2<-data.frame(#b2.1,b2.2,b2.3,
+                        #b2.4,b2.5,b2.6,
+                        #b2.7,b2.8,b2.9,
+                        #b2.10,b2.11,b2.12,
+                        #b2.13,b2.14,b2.15,
+                        #b2.16,b2.17,b2.18,
+                        #b2.19,b2.20,b2.21,
+                        #b2.22,b2.23,b2.24,
+                        #b2.25,b2.26,b2.27,
+                        #b2.28,b2.29,b2.30,
+                        #b2.31,b2.32,b2.33,
+                        #b2.34,b2.35,b2.36,
+                        #b2.37,b2.38,b2.39,
+                        #b2.40,b2.41,
+                        b2.42,
                         resb2)
-  mdaModel.a1<-mda(resa1~
-                     #a1.1+a1.2+a1.3+
-                     #a1.4+a1.5+a1.6+
-                     #a1.7+a1.8+a1.9+
-                     #a1.10+a1.11+a1.12+
-                     #a1.13+a1.14+a1.15+
-                     a1.16+a1.17+a1.18+
-                     a1.19+a1.20+a1.21+
-                     a1.22+a1.23+a1.24+
-                     a1.25+a1.26+a1.27+
-                     a1.28+a1.29+a1.30+
-                     a1.31+a1.32+a1.33+
-                     a1.34+a1.35+a1.36+
-                     a1.37+a1.38+a1.39+
-                     a1.40+a1.41+a1.42,
-                   data = trains.a1,
-                   preProcess = c("BoxCox","center","scale","pca")
-  )
-  mdaModel.a2<-mda(resa2~
-                     #a2.1+a2.2+a2.3+
-                     #a2.4+a2.5+a2.6+
-                     #a2.7+a2.8+a2.9+
-                     #a2.10+a2.11+a2.12+
-                     #a2.13+a2.14+a2.15+
-                     a2.16+a2.17+a2.18+
-                     a2.19+a2.20+a2.21+
-                     a2.22+a2.23+a2.24+
-                     a2.25+a2.26+a2.27+
-                     a2.28+a2.29+a2.30+
-                     a2.31+a2.32+a2.33+
-                     a2.34+a2.35+a2.36+
-                     a2.37+a2.38+a2.39+
-                     a2.40+a2.41+a2.42,
-                   preProcess = c("BoxCox","center","scale","pca")
-  )
-  mdaModel.a3<-mda(resa3~
-                     #a3.1+a3.2+a3.3+
-                     #a3.4+a3.5+a3.6+
-                     #a3.7+a3.8+a3.9+
-                     #a3.10+a3.11+a3.12+
-                     #a3.13+a3.14+a3.15+
-                     a3.16+a3.17+a3.18+
-                     a3.19+a3.20+a3.21+
-                     a3.22+a3.23+a3.24+
-                     a3.25+a3.26+a3.27+
-                     a3.28+a3.29+a3.30+
-                     a3.31+a3.32+a3.33+
-                     a3.34+a3.35+a3.36+
-                     a3.37+a3.38+a3.39+
-                     a3.40+a3.41+a3.42,
-                   preProcess = c("BoxCox","center","scale","pca")
-  )
-  mdaModel.a4<-mda(resa4~
-                     #a4.1+a4.2+a4.3+
-                     #a4.4+a4.5+a4.6+
-                     #a4.7+a4.8+a4.9+
-                     #a4.10+a4.11+a4.12+
-                     #a4.13+a4.14+a4.15+
-                     a4.16+a4.17+a4.18+
-                     a4.19+a4.20+a4.21+
-                     a4.22+a4.23+a4.24+
-                     a4.25+a4.26+a4.27+
-                     a4.28+a4.29+a4.30+
-                     a4.31+a4.32+a4.33+
-                     a4.34+a4.35+a4.36+
-                     a4.37+a4.38+a4.39+
-                     a4.40+a4.41+a4.42,
-                   preProcess = c("BoxCox","center","scale","pca")
-  )
-  mdaModel.a5<-mda(resa5~
-                     #a5.1+a5.2+a5.3+
-                     #a5.4+a5.5+a5.6+
-                     #a5.7+a5.8+a5.9+
-                     #a5.10+a5.11+a5.12+
-                     #a5.13+a5.14+a5.15+
-                     a5.16+a5.17+a5.18+
-                     a5.19+a5.20+a5.21+
-                     a5.22+a5.23+a5.24+
-                     a5.25+a5.26+a5.27+
-                     a5.28+a5.29+a5.30+
-                     a5.31+a5.32+a5.33+
-                     a5.34+a5.35+a5.36+
-                     a5.37+a5.38+a5.39+
-                     a5.40+a5.41+a5.42,
-                   preProcess = c("BoxCox","center","scale","pca")
-  )
-  mdaModel.b1<-mda(resb1~
-                     #b1.1+b1.2+b1.3+
-                     #b1.4+b1.5+b1.6+
-                     #b1.7+b1.8+b1.9+
-                     #b1.10+b1.11+b1.12+
-                     #b1.13+b1.14+b1.15+
-                     b1.16+b1.17+b1.18+
-                     b1.19+b1.20+b1.21+
-                     b1.22+b1.23+b1.24+
-                     b1.25+b1.26+b1.27+
-                     b1.28+b1.29+b1.30+
-                     b1.31+b1.32+b1.33+
-                     b1.34+b1.35+b1.36+
-                     b1.37+b1.38+b1.39+
-                     b1.40+b1.41+b1.42,
-                   preProcess = c("BoxCox","center","scale","pca")
-  )
-  mdaModel.b2<-mda(resb2~
-                     #b2.1+b2.2+b2.3+
-                     #b2.4+b2.5+b2.6+
-                     #b2.7+b2.8+b2.9+
-                     #b2.10+b2.11+b2.12+
-                     #b2.13+b2.14+b2.15+
-                     b2.16+b2.17+b2.18+
-                     b2.19+b2.20+b2.21+
-                     b2.22+b2.23+b2.24+
-                     b2.25+b2.26+b2.27+
-                     b2.28+b2.29+b2.30+
-                     b2.31+b2.32+b2.33+
-                     b2.34+b2.35+b2.36+
-                     b2.37+b2.38+b2.39+
-                     b2.40+b2.41+b2.42,
-                   preProcess = c("BoxCox","center","scale","pca")
-  )
   
-  ################################################################################
-  tests.ab<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,b1.1,b2.1,
-                       a1.2,a2.2,a3.2,a4.2,a5.2,b1.2,b2.2,
-                       a1.3,a2.3,a3.3,a4.3,a5.3,b1.3,b2.3,
-                       a1.4,a2.4,a3.4,a4.4,a5.4,b1.4,b2.4,
-                       a1.5,a2.5,a3.5,a4.5,a5.5,b1.5,b2.5,
-                       a1.6,a2.6,a3.6,a4.6,a5.6,b1.6,b2.6,
-                       a1.7,a2.7,a3.7,a4.7,a5.7,b1.7,b2.7,
-                       a1.8,a2.8,a3.8,a4.8,a5.8,b1.8,b2.8,
-                       a1.9,a2.9,a3.9,a4.9,a5.9,b1.9,b2.9,
-                       
-                       a1.10,a2.10,a3.10,a4.10,a5.10,b1.10,b2.10,
-                       a1.11,a2.11,a3.11,a4.11,a5.11,b1.11,b2.11,
-                       a1.12,a2.12,a3.12,a4.12,a5.12,b1.12,b2.12,
-                       a1.13,a2.13,a3.13,a4.13,a5.13,b1.13,b2.13,
-                       a1.14,a2.14,a3.14,a4.14,a5.14,b1.14,b2.14,
-                       a1.15,a2.15,a3.15,a4.15,a5.15,b1.15,b2.15,
-                       a1.16,a2.16,a3.16,a4.16,a5.16,b1.16,b2.16,
-                       a1.17,a2.17,a3.17,a4.17,a5.17,b1.17,b2.17,
-                       a1.18,a2.18,a3.18,a4.18,a5.18,b1.18,b2.18,
-                       a1.19,a2.19,a3.19,a4.19,a5.19,b1.19,b2.19,
-                       
-                       a1.20,a2.20,a3.20,a4.20,a5.20,b1.20,b2.20,
-                       a1.21,a2.21,a3.21,a4.21,a5.21,b1.21,b2.21,
-                       a1.22,a2.22,a3.22,a4.22,a5.22,b1.22,b2.22,
-                       a1.23,a2.23,a3.23,a4.23,a5.23,b1.23,b2.23,
-                       a1.24,a2.24,a3.24,a4.24,a5.24,b1.24,b2.24,
-                       a1.25,a2.25,a3.25,a4.25,a5.25,b1.25,b2.25,
-                       a1.26,a2.26,a3.26,a4.26,a5.26,b1.26,b2.26,
-                       a1.27,a2.27,a3.27,a4.27,a5.27,b1.27,b2.27,
-                       a1.28,a2.28,a3.28,a4.28,a5.28,b1.28,b2.28,
-                       a1.29,a2.29,a3.29,a4.29,a5.29,b1.29,b2.29,
-                       
-                       a1.30,a2.30,a3.30,a4.30,a5.30, b1.30,b2.30,
-                       a1.31,a2.31,a3.31,a4.31,a5.31,b1.31,b2.31,
-                       a1.32,a2.32,a3.32,a4.32,a5.32,b1.32,b2.32,
-                       a1.33,a2.33,a3.33,a4.33,a5.33,b1.33,b2.33,
-                       a1.34,a2.34,a3.34,a4.34,a5.34,b1.34,b2.34,
-                       a1.35,a2.35,a3.35,a4.35,a5.35,b1.35,b2.35,
-                       a1.36,a2.36,a3.36,a4.36,a5.36,b1.36,b2.36,
-                       a1.37,a2.37,a3.37,a4.37,a5.37,b1.37,b2.37,
-                       a1.38,a2.38,a3.38,a4.38,a5.38,b1.38,b2.38,
-                       a1.39,a2.39,a3.39,a4.39,a5.39,b1.39,b2.39,
-                       
-                       a1.40,a2.40,a3.40,a4.40,a5.40,b1.40,b2.40,
-                       a1.41,a2.41,a3.41,a4.41,a5.41,b1.41,b2.41,
-                       a1.42,a2.42,a3.42,a4.42,a5.42,b1.42,b2.42)
-  test.ab<-preProcess(tests.ab,method = c("BoxCox","center","scale","pca"))
-  testPredictions.a1<-as.numeric(predict(mdaModel.a1,tests.ab))
-  testPredictions.a2<-as.numeric(predict(mdaModel.a2,tests.ab))
-  testPredictions.a3<-as.numeric(predict(mdaModel.a3,tests.ab))
-  testPredictions.a4<-as.numeric(predict(mdaModel.a4,tests.ab))
-  testPredictions.a5<-as.numeric(predict(mdaModel.a5,tests.ab))
-  testPredictions.b1<-as.numeric(predict(mdaModel.b1,tests.ab))
-  testPredictions.b2<-as.numeric(predict(mdaModel.b2,tests.ab))
+  trains.T.a1<-Matrix(as.matrix(trains.a1[,1]),sparse=T)
+  trains.T.a2<-Matrix(as.matrix(trains.a2[,1]),sparse=T)
+  trains.T.a3<-Matrix(as.matrix(trains.a3[,1]),sparse=T)
+  trains.T.a4<-Matrix(as.matrix(trains.a4[,1]),sparse=T)
+  trains.T.a5<-Matrix(as.matrix(trains.a5[,1]),sparse=T)
+  trains.T.b1<-Matrix(as.matrix(trains.b1[,1]),sparse=T)
+  trains.T.b2<-Matrix(as.matrix(trains.b2[,1]),sparse=T)
   
-  
-  #A1:
-  a1.delta<-results$a1-testPredictions.a1
-  barplot(table(a1.delta),main = "a1")
-  #A2:
-  
-  a2.delta<-results$a2-testPredictions.a2
-  barplot(table(a2.delta),main = "a2") 
-  #A3:
-  a3.delta<-results$a3-testPredictions.a3
-  barplot(table(a3.delta),main = "a3") 
-  #A4:
-  a4.delta<-results$a4-testPredictions.a4
-  barplot(table(a4.delta),main = "a4") 
-  #A5:
-  a5.delta<-results$a5-testPredictions.a5
-  barplot(table(a5.delta),main = "a5") 
-  #B1:
-  b1.delta<-results$b1-testPredictions.b1
-  barplot(table(b1.delta),main = "b1")
-  #B2:
-  b2.delta<-results$b2-testPredictions.b2
-  barplot(table(b2.delta),main = "b2")
-  
-  a1.d<-tail(as.numeric(names(sort(table(a1.delta)))),1)
-  a2.d<-tail(as.numeric(names(sort(table(a2.delta)))),1)
-  a3.d<-tail(as.numeric(names(sort(table(a3.delta)))),1)
-  a4.d<-tail(as.numeric(names(sort(table(a4.delta)))),1)
-  a5.d<-tail(as.numeric(names(sort(table(a5.delta)))),1)
-  b1.d<-tail(as.numeric(names(sort(table(b1.delta)))),1)
-  b2.d<-tail(as.numeric(names(sort(table(b2.delta)))),1)
-  
-  ###################################################################################
+  #A:
+  bst.a1 <- xgboost(data = trains.T.a1,label = trains.a1$resa1,nrounds = n,print_every_n = 300L)
+  bst.a2 <- xgboost(data = trains.T.a2,label = trains.a2$resa2,nrounds = n,print_every_n = 300L)
+  bst.a3 <- xgboost(data = trains.T.a3,label = trains.a3$resa3,nrounds = n,print_every_n = 300L)
+  bst.a4 <- xgboost(data = trains.T.a4,label = trains.a4$resa4,nrounds = n,print_every_n = 300L)
+  bst.a5 <- xgboost(data = trains.T.a5,label = trains.a5$resa5,nrounds = n,print_every_n = 300L)
+  bst.b1 <- xgboost(data = trains.T.b1,label = trains.b1$resb1,nrounds = n,print_every_n = 300L)
+  bst.b2 <- xgboost(data = trains.T.b2,label = trains.b2$resb2,nrounds = n,print_every_n = 300L)
   
   #Buil test data
   #A:
@@ -2238,73 +2052,156 @@ dlt.clu.mda.XXVII <- function(data,count) {
   b1.42<-tests_42$b1
   b2.42<-tests_42$b2
   
-  tests.ab<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,b1.1,b2.1,
-                       a1.2,a2.2,a3.2,a4.2,a5.2,b1.2,b2.2,
-                       a1.3,a2.3,a3.3,a4.3,a5.3,b1.3,b2.3,
-                       a1.4,a2.4,a3.4,a4.4,a5.4,b1.4,b2.4,
-                       a1.5,a2.5,a3.5,a4.5,a5.5,b1.5,b2.5,
-                       a1.6,a2.6,a3.6,a4.6,a5.6,b1.6,b2.6,
-                       a1.7,a2.7,a3.7,a4.7,a5.7,b1.7,b2.7,
-                       a1.8,a2.8,a3.8,a4.8,a5.8,b1.8,b2.8,
-                       a1.9,a2.9,a3.9,a4.9,a5.9,b1.9,b2.9,
-                       
-                       a1.10,a2.10,a3.10,a4.10,a5.10,b1.10,b2.10,
-                       a1.11,a2.11,a3.11,a4.11,a5.11,b1.11,b2.11,
-                       a1.12,a2.12,a3.12,a4.12,a5.12,b1.12,b2.12,
-                       a1.13,a2.13,a3.13,a4.13,a5.13,b1.13,b2.13,
-                       a1.14,a2.14,a3.14,a4.14,a5.14,b1.14,b2.14,
-                       a1.15,a2.15,a3.15,a4.15,a5.15,b1.15,b2.15,
-                       a1.16,a2.16,a3.16,a4.16,a5.16,b1.16,b2.16,
-                       a1.17,a2.17,a3.17,a4.17,a5.17,b1.17,b2.17,
-                       a1.18,a2.18,a3.18,a4.18,a5.18,b1.18,b2.18,
-                       a1.19,a2.19,a3.19,a4.19,a5.19,b1.19,b2.19,
-                       
-                       a1.20,a2.20,a3.20,a4.20,a5.20,b1.20,b2.20,
-                       a1.21,a2.21,a3.21,a4.21,a5.21,b1.21,b2.21,
-                       a1.22,a2.22,a3.22,a4.22,a5.22,b1.22,b2.22,
-                       a1.23,a2.23,a3.23,a4.23,a5.23,b1.23,b2.23,
-                       a1.24,a2.24,a3.24,a4.24,a5.24,b1.24,b2.24,
-                       a1.25,a2.25,a3.25,a4.25,a5.25,b1.25,b2.25,
-                       a1.26,a2.26,a3.26,a4.26,a5.26,b1.26,b2.26,
-                       a1.27,a2.27,a3.27,a4.27,a5.27,b1.27,b2.27,
-                       a1.28,a2.28,a3.28,a4.28,a5.28,b1.28,b2.28,
-                       a1.29,a2.29,a3.29,a4.29,a5.29,b1.29,b2.29,
-                       
-                       a1.30,a2.30,a3.30,a4.30,a5.30, b1.30,b2.30,
-                       a1.31,a2.31,a3.31,a4.31,a5.31,b1.31,b2.31,
-                       a1.32,a2.32,a3.32,a4.32,a5.32,b1.32,b2.32,
-                       a1.33,a2.33,a3.33,a4.33,a5.33,b1.33,b2.33,
-                       a1.34,a2.34,a3.34,a4.34,a5.34,b1.34,b2.34,
-                       a1.35,a2.35,a3.35,a4.35,a5.35,b1.35,b2.35,
-                       a1.36,a2.36,a3.36,a4.36,a5.36,b1.36,b2.36,
-                       a1.37,a2.37,a3.37,a4.37,a5.37,b1.37,b2.37,
-                       a1.38,a2.38,a3.38,a4.38,a5.38,b1.38,b2.38,
-                       a1.39,a2.39,a3.39,a4.39,a5.39,b1.39,b2.39,
-                       
-                       a1.40,a2.40,a3.40,a4.40,a5.40,b1.40,b2.40,
-                       a1.41,a2.41,a3.41,a4.41,a5.41,b1.41,b2.41,
-                       a1.42,a2.42,a3.42,a4.42,a5.42,b1.42,b2.42)
-  test.ab<-preProcess(tests.ab,method = c("BoxCox","center","scale","pca"))
-  testPredictions.a1<-as.numeric(predict(mdaModel.a1,tests.ab))
-  testPredictions.a2<-as.numeric(predict(mdaModel.a2,tests.ab))
-  testPredictions.a3<-as.numeric(predict(mdaModel.a3,tests.ab))
-  testPredictions.a4<-as.numeric(predict(mdaModel.a4,tests.ab))
-  testPredictions.a5<-as.numeric(predict(mdaModel.a5,tests.ab))
-  testPredictions.b1<-as.numeric(predict(mdaModel.b1,tests.ab))
-  testPredictions.b2<-as.numeric(predict(mdaModel.b2,tests.ab))
+  tests.a1<-data.frame(#a1.1,a1.2,a1.3,
+                       #a1.4,a1.5,a1.6,
+                       #a1.7,a1.8,a1.9,
+                       #a1.10,a1.11,a1.12,
+                       #a1.13,a1.14,a1.15,
+                       #a1.16,a1.17,a1.18,
+                       #a1.19,a1.20,a1.21,
+                       #a1.22,a1.23,a1.24,
+                       #a1.25,a1.26,a1.27,
+                       #a1.28,a1.29,a1.30,
+                       #a1.31,a1.32,a1.33,
+                       #a1.34,a1.35,a1.36,
+                       #a1.37,a1.38,a1.39,
+                       #a1.40,a1.41,
+                       a1.42
+  )
+  tests.a2<-data.frame(#a2.1,a2.2,a2.3,
+                       #a2.4,a2.5,a2.6,
+                       #a2.7,a2.8,a2.9,
+                       #a2.10,a2.11,a2.12,
+                       #a2.13,a2.14,a2.15,
+                       #a2.16,a2.17,a2.18,
+                       #a2.19,a2.20,a2.21,
+                       #a2.22,a2.23,a2.24,
+                       #a2.25,a2.26,a2.27,
+                       #a2.28,a2.29,a2.30,
+                       #a2.31,a2.32,a2.33,
+                       #a2.34,a2.35,a2.36,
+                       #a2.37,a2.38,a2.39,
+                       #a2.40,a2.41,
+                       a2.42
+  )
+  tests.a3<-data.frame(#a3.1,a3.2,a3.3,
+                       #a3.4,a3.5,a3.6,
+                       #a3.7,a3.8,a3.9,
+                       #a3.10,a3.11,a3.12,
+                       #a3.13,a3.14,a3.15,
+                       #a3.16,a3.17,a3.18,
+                       #a3.19,a3.20,a3.21,
+                       #a3.22,a3.23,a3.24,
+                       #a3.25,a3.26,a3.27,
+                       #a3.28,a3.29,a3.30,
+                       #a3.31,a3.32,a3.33,
+                       #a3.34,a3.35,a3.36,
+                       #a3.37,a3.38,a3.39,
+                       #a3.40,a3.41,
+                       a3.42
+  )
+  tests.a4<-data.frame(#a4.1,a4.2,a4.3,
+                       #a4.4,a4.5,a4.6,
+                       #a4.7,a4.8,a4.9,
+                       #a4.10,a4.11,a4.12,
+                       #a4.13,a4.14,a4.15,
+                       #a4.16,a4.17,a4.18,
+                       #a4.19,a4.20,a4.21,
+                       #a4.22,a4.23,a4.24,
+                       #a4.25,a4.26,a4.27,
+                       #a4.28,a4.29,a4.30,
+                       #a4.31,a4.32,a4.33,
+                       #a4.34,a4.35,a4.36,
+                       #a4.37,a4.38,a4.39,
+                       #a4.40,a4.41,
+                       a4.42
+  )
+  tests.a5<-data.frame(#a5.1,a5.2,a5.3,
+                       #a5.4,a5.5,a5.6,
+                       #a5.7,a5.8,a5.9,
+                       #a5.10,a5.11,a5.12,
+                       #a5.13,a5.14,a5.15,
+                       #a5.16,a5.17,a5.18,
+                       #a5.19,a5.20,a5.21,
+                       #a5.22,a5.23,a5.24,
+                       #a5.25,a5.26,a5.27,
+                       #a5.28,a5.29,a5.30,
+                       #a5.31,a5.32,a5.33,
+                       #a5.34,a5.35,a5.36,
+                       #a5.37,a5.38,a5.39,
+                       #a5.40,a5.41,
+                       a5.42
+  )
+  tests.b1<-data.frame(#b1.1,b1.2,b1.3,
+                       #b1.4,b1.5,b1.6,
+                       #b1.7,b1.8,b1.9,
+                       #b1.10,b1.11,b1.12,
+                       #b1.13,b1.14,b1.15,
+                       #b1.16,b1.17,b1.18,
+                       #b1.19,b1.20,b1.21,
+                       #b1.22,b1.23,b1.24,
+                       #b1.25,b1.26,b1.27,
+                       #b1.28,b1.29,b1.30,
+                       #b1.31,b1.32,b1.33,
+                       #b1.34,b1.35,b1.36,
+                       #b1.37,b1.38,b1.39,
+                       #b1.40,b1.41,
+                       b1.42
+  )
+  tests.b2<-data.frame(#b2.1,b2.2,b2.3,
+                       #b2.4,b2.5,b2.6,
+                       #b2.7,b2.8,b2.9,
+                       #b2.10,b2.11,b2.12,
+                       #b2.13,b2.14,b2.15,
+                       #b2.16,b2.17,b2.18,
+                       #b2.19,b2.20,b2.21,
+                       #b2.22,b2.23,b2.24,
+                       #b2.25,b2.26,b2.27,
+                       #b2.28,b2.29,b2.30,
+                       #b2.31,b2.32,b2.33,
+                       #b2.34,b2.35,b2.36,
+                       #b2.37,b2.38,b2.39,
+                       #b2.40,b2.41,
+                       b2.42
+  )
   
-  a1.Predictions<-testPredictions.a1+a1.d
-  a2.Predictions<-testPredictions.a2+a2.d
-  a3.Predictions<-testPredictions.a3+a3.d
-  a4.Predictions<-testPredictions.a4+a4.d
-  a5.Predictions<-testPredictions.a5+a5.d
-  b1.Predictions<-testPredictions.b1+b1.d
-  b2.Predictions<-testPredictions.b2+b2.d
+  tests.T.a1<-Matrix(as.matrix(tests.a1[,1]),sparse=T)
+  tests.T.a2<-Matrix(as.matrix(tests.a2[,1]),sparse=T)
+  tests.T.a3<-Matrix(as.matrix(tests.a3[,1]),sparse=T)
+  tests.T.a4<-Matrix(as.matrix(tests.a4[,1]),sparse=T)
+  tests.T.a5<-Matrix(as.matrix(tests.a5[,1]),sparse=T)
+  tests.T.b1<-Matrix(as.matrix(tests.b1[,1]),sparse=T)
+  tests.T.b2<-Matrix(as.matrix(tests.b2[,1]),sparse=T)
   
+  testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.a1)
+  testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.a2)
+  testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T.a3)
+  testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T.a4)
+  testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T.a5)
+  testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.b1)
+  testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T.b2)
   
-  dlt.p.table(dlt,a1.Predictions,
-              a2.Predictions,a3.Predictions,a4.Predictions,
-              a5.Predictions,b1.Predictions,b2.Predictions)
+  dlt.p.table(dlt,
+              ceiling(testPredictions.a1),ceiling(testPredictions.a2),
+              ceiling(testPredictions.a3),ceiling(testPredictions.a4),
+              ceiling(testPredictions.a5),
+              ceiling(testPredictions.b1),ceiling(testPredictions.b2)
+  )
+  dlt.p.table(dlt,
+              floor(testPredictions.a1),floor(testPredictions.a2),
+              floor(testPredictions.a3),floor(testPredictions.a4),
+              floor(testPredictions.a5),
+              floor(testPredictions.b1),floor(testPredictions.b2))
+  dlt.p.table(dlt,
+              trunc(testPredictions.a1),trunc(testPredictions.a2),
+              trunc(testPredictions.a3),trunc(testPredictions.a4),
+              trunc(testPredictions.a5),
+              trunc(testPredictions.b1),trunc(testPredictions.b2))
+  dlt.p.table(dlt,
+              round(testPredictions.a1),round(testPredictions.a2),
+              round(testPredictions.a3),round(testPredictions.a4),
+              round(testPredictions.a5),
+              round(testPredictions.b1),round(testPredictions.b2))
   
   #  return(c(
   #    tail(round(testPredictions.a1),1),
@@ -2316,17 +2213,20 @@ dlt.clu.mda.XXVII <- function(data,count) {
   #    tail(round(testPredictions.b2),1)
   #  ))
   
-  a1<-round(a1.Predictions)
-  a2<-round(a2.Predictions)
-  a3<-round(a3.Predictions)
-  a4<-round(a4.Predictions)
-  a5<-round(a5.Predictions)
-  b1<-round(b1.Predictions)
-  b2<-round(b2.Predictions)
+  a1<-round(testPredictions.a1)
+  a2<-round(testPredictions.a2)
+  a3<-round(testPredictions.a3)
+  a4<-round(testPredictions.a4)
+  a5<-round(testPredictions.a5)
+  b1<-round(testPredictions.b1)
+  b2<-round(testPredictions.b2)
   
   result.ab<-data.frame(a1,a2,a3,a4,a5,b1,b2)
   return(result.ab)
   
+  
+  
 }
+
 
 
