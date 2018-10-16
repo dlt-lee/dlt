@@ -1716,6 +1716,7 @@ dlt.clu.mda.XXVII <- function(data,count) {
                      a2.34+a2.35+a2.36+
                      a2.37+a2.38+a2.39+
                      a2.40+a2.41+a2.42,
+                   data = trains.a2,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a3<-mda(resa3~
@@ -1733,6 +1734,7 @@ dlt.clu.mda.XXVII <- function(data,count) {
                      a3.34+a3.35+a3.36+
                      a3.37+a3.38+a3.39+
                      a3.40+a3.41+a3.42,
+                   data = trains.a3,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a4<-mda(resa4~
@@ -1750,6 +1752,7 @@ dlt.clu.mda.XXVII <- function(data,count) {
                      a4.34+a4.35+a4.36+
                      a4.37+a4.38+a4.39+
                      a4.40+a4.41+a4.42,
+                   data = trains.a4,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a5<-mda(resa5~
@@ -1767,6 +1770,7 @@ dlt.clu.mda.XXVII <- function(data,count) {
                      a5.34+a5.35+a5.36+
                      a5.37+a5.38+a5.39+
                      a5.40+a5.41+a5.42,
+                   data = trains.a5,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.b1<-mda(resb1~
@@ -1784,6 +1788,7 @@ dlt.clu.mda.XXVII <- function(data,count) {
                      b1.34+b1.35+b1.36+
                      b1.37+b1.38+b1.39+
                      b1.40+b1.41+b1.42,
+                   data = trains.b1,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.b2<-mda(resb2~
@@ -1801,6 +1806,7 @@ dlt.clu.mda.XXVII <- function(data,count) {
                      b2.34+b2.35+b2.36+
                      b2.37+b2.38+b2.39+
                      b2.40+b2.41+b2.42,
+                   data = trains.b2,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   
