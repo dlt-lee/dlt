@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-dlt.clu.mda.I <- function(data,count) {
+#dlt.clu.mda.I <- function(data,count) {
   library(mda)
   library(caret)
   
@@ -1700,6 +1700,7 @@ dlt.clu.mda.I <- function(data,count) {
                      #a1.40+a1.41+
                      a1.42,
                    data = trains.a1,
+                   subclasses = 7,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a2<-mda(resa2~
@@ -2341,6 +2342,6 @@ dlt.clu.mda.I <- function(data,count) {
   result.ab<-data.frame(a1,a2,a3,a4,a5,b1,b2)
   return(result.ab)
   
-}
+#}
 
   
