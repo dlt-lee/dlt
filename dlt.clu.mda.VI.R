@@ -1814,7 +1814,7 @@ dlt.clu.mda.VI <- function(data,count) {
                      b2.40+b2.41+b2.42,
                    data = trains.b2,
                    preProcess = c("BoxCox","center","scale","pca"),
-                   subclasses = 16
+                   subclasses = 9
   )
   
   ################################################################################

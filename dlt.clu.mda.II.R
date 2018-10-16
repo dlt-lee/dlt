@@ -1700,6 +1700,7 @@ dlt.clu.mda.II <- function(data,count) {
                      #a1.40+
                      a1.41+a1.42,
                    data = trains.a1,
+                   subclasses = 9,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a2<-mda(resa2~
@@ -1719,6 +1720,7 @@ dlt.clu.mda.II <- function(data,count) {
                      #a2.40+
                      a2.41+a2.42,
                    data = trains.a2,
+                   subclasses = 6,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a3<-mda(resa3~
@@ -1738,6 +1740,7 @@ dlt.clu.mda.II <- function(data,count) {
                      #a3.40+
                      a3.41+a3.42,
                    data = trains.a3,
+                   subclasses = 5,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a4<-mda(resa4~
@@ -1757,6 +1760,7 @@ dlt.clu.mda.II <- function(data,count) {
                      #a4.40+
                      a4.41+a4.42,
                    data = trains.a4,
+                   subclasses = 6,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a5<-mda(resa5~
@@ -1776,6 +1780,7 @@ dlt.clu.mda.II <- function(data,count) {
                      #a5.40+
                      a5.41+a5.42,
                    data = trains.a5,
+                   subclasses = 9,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.b1<-mda(resb1~
@@ -1795,6 +1800,7 @@ dlt.clu.mda.II <- function(data,count) {
                      #b1.40+
                      b1.41+b1.42,
                    data = trains.b1,
+                   subclasses = 16,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.b2<-mda(resb2~
@@ -1814,6 +1820,7 @@ dlt.clu.mda.II <- function(data,count) {
                      #b2.40+
                      b2.41+b2.42,
                    data = trains.b2,
+                   subclasses = 16,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   

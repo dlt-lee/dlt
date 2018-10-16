@@ -1757,7 +1757,7 @@ dlt.clu.mda.XXXIX <- function(data,count) {
                      a4.40+a4.41+a4.42,
                    data = trains.a4,
                    preProcess = c("BoxCox","center","scale","pca"),
-                   subclasses = 6
+                   subclasses = 4
   )
   mdaModel.a5<-mda(resa5~
                      #a5.1+a5.2+a5.3+

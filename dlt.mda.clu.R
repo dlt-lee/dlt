@@ -2,8 +2,8 @@ data<-dlt
 count<-dim(dlt)[1]
 n<-300
 
-ab.1.clu <-dlt.clu.mda.I(data,count)
-ab.2.clu <-dlt.clu.mda.II(data,count)
+#ab.1.clu <-dlt.clu.mda.I(data,count)
+#ab.2.clu <-dlt.clu.mda.II(data,count)
 ab.3.clu <-dlt.clu.mda.III(data,count)
 ab.6.clu <-dlt.clu.mda.VI(data,count)
 ab.9.clu <-dlt.clu.mda.IX(data,count)

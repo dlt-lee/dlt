@@ -1,6 +1,6 @@
 data<-dlt
 count<-dim(dlt)[1]
-#dlt.clu.mda.I <- function(data,count) {
+dlt.clu.mda.I <- function(data,count) {
   library(mda)
   library(caret)
   
@@ -1720,6 +1720,7 @@ count<-dim(dlt)[1]
                      #a2.40+a2.41+
                      a2.42,
                    data = trains.a2,
+                   subclasses = 6,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a3<-mda(resa3~
@@ -1739,6 +1740,7 @@ count<-dim(dlt)[1]
                      #a3.40+a3.41+
                      a3.42,
                    data = trains.a3,
+                   subclasses = 5,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a4<-mda(resa4~
@@ -1758,6 +1760,7 @@ count<-dim(dlt)[1]
                      #a4.40+a4.41+
                      a4.42,
                    data = trains.a4,
+                   subclasses = 4,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.a5<-mda(resa5~
@@ -1777,7 +1780,7 @@ count<-dim(dlt)[1]
                      #a5.40+a5.41+
                      a5.42,
                    data = trains.a5,
-                   subclasses = 8,
+                   subclasses = 4,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.b1<-mda(resb1~
@@ -1797,6 +1800,7 @@ count<-dim(dlt)[1]
                      #b1.40+b1.41+
                      b1.42,
                    data = trains.b1,
+                   subclasses = 5,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   mdaModel.b2<-mda(resb2~
@@ -1816,6 +1820,7 @@ count<-dim(dlt)[1]
                      #b2.40+b2.41+
                      b2.42,
                    data = trains.b2,
+                   subclasses = 2,
                    preProcess = c("BoxCox","center","scale","pca")
   )
   
@@ -2342,6 +2347,6 @@ count<-dim(dlt)[1]
   result.ab<-data.frame(a1,a2,a3,a4,a5,b1,b2)
   return(result.ab)
   
-#}
+}
 
   
