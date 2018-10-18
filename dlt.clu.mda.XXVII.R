@@ -2308,9 +2308,9 @@ dlt.clu.mda.XXVII <- function(data,count) {
   b2.Predictions<-testPredictions.b2+b2.d
   
   
-  dlt.p.table(dlt,a1.Predictions,
-              a2.Predictions,a3.Predictions,a4.Predictions,
-              a5.Predictions,b1.Predictions,b2.Predictions)
+  dlt.p.table(data,
+              a1.Predictions,a2.Predictions,a3.Predictions,
+              a4.Predictions,a5.Predictions,b1.Predictions,b2.Predictions)
   
   #  return(c(
   #    tail(round(testPredictions.a1),1),
