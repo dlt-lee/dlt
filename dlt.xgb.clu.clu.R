@@ -99,7 +99,7 @@ tests.T.b2<-Matrix(as.matrix(pre.final.data$b2.clu),sparse=T)
 
 
 testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T.a1))
-testPredictions.a2 <- predict(object = bst.a2,newdata = t( tests.T.a2))
+testPredictions.a2 <- predict(object = bst.a2,newdata = t(tests.T.a2))
 testPredictions.a3 <- predict(object = bst.a3,newdata = t(tests.T.a3))
 testPredictions.a4 <- predict(object = bst.a4,newdata = t(tests.T.a4))
 testPredictions.a5 <- predict(object = bst.a5,newdata = t(tests.T.a5))
