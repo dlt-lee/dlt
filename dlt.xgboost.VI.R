@@ -2326,23 +2326,8 @@ dlt.xgboost.VI <- function(data,count,n) {
   testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.ab)
   testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T.ab)
   
-  dlt.p.table(dlt,
-              ceiling(testPredictions.a1),ceiling(testPredictions.a2),
-              ceiling(testPredictions.a3),ceiling(testPredictions.a4),
-              ceiling(testPredictions.a5),
-              ceiling(testPredictions.b1),ceiling(testPredictions.b2)
-  )
-  dlt.p.table(dlt,
-              floor(testPredictions.a1),floor(testPredictions.a2),
-              floor(testPredictions.a3),floor(testPredictions.a4),
-              floor(testPredictions.a5),
-              floor(testPredictions.b1),floor(testPredictions.b2))
-  dlt.p.table(dlt,
-              trunc(testPredictions.a1),trunc(testPredictions.a2),
-              trunc(testPredictions.a3),trunc(testPredictions.a4),
-              trunc(testPredictions.a5),
-              trunc(testPredictions.b1),trunc(testPredictions.b2))
-  dlt.p.table(dlt,
+  
+  dlt.p.table(data,
               round(testPredictions.a1),round(testPredictions.a2),
               round(testPredictions.a3),round(testPredictions.a4),
               round(testPredictions.a5),
