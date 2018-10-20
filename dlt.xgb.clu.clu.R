@@ -42,12 +42,12 @@ for(i in 1:90) {
 }
 
 pre.a1<-pre.a1[-1,]
-pre.a2<-pre.a1[-1,]
-pre.a<-pre.a1[-1,]
-pre.a1<-pre.a1[-1,]
-pre.a1<-pre.a1[-1,]
-pre.a1<-pre.a1[-1,]
-pre.a1<-pre.a1[-1,]
+pre.a2<-pre.a2[-1,]
+pre.a3<-pre.a3[-1,]
+pre.a4<-pre.a4[-1,]
+pre.a5<-pre.a5[-1,]
+pre.b1<-pre.b1[-1,]
+pre.b2<-pre.b2[-1,]
 
 
 
