@@ -86,7 +86,7 @@ dlt.xgb.row.clu <- function(){
   bst.b1 <- xgboost(data = trains.T.b1,label = exp.b1,nrounds = n,print_every_n = 300L)
   bst.b2 <- xgboost(data = trains.T.b2,label = exp.b2,nrounds = n,print_every_n = 300L)
   
-  pre.final.data<-for.clu.xgb(tail(dlt,300))
+  pre.final.data<-dlt.xgboost.row(tail(dlt,300))
   
   
   tests.T.a1<-Matrix(as.matrix(pre.final.data$a1.clu),sparse=T)
