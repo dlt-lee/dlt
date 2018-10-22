@@ -35,8 +35,8 @@ dlt.xgb.clu.row <- function(){
     rows<-rows+3
   }
     
-    pre.m.ab<-pre.ab[-1]
-    pre.m.ab<-matrix(pre.m.ab,ncol = 112,byrow = TRUE)
+  pre.ab<-pre.ab[-1]
+    pre.m.ab<-matrix(pre.ab,ncol = 112,byrow = TRUE)
     
     trains.T.ab<-Matrix(as.matrix(pre.m.ab),sparse=T)
     
