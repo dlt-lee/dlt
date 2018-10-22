@@ -1,10 +1,12 @@
 data.xgb.clu.clu<-dlt.xgb.clu.clu()
 data.xgb.row.clu<-dlt.xgb.row.clu()
+data.xgb.clu.row<-dlt.xgb.clu.row()
 data.xgb.clu<-for.clu.xgb(dlt)
 data.xgb.row<-dlt.xgboost.row(dlt)
 
 data.xgb.clu.clu
 data.xgb.row.clu
+data.xgb.clu.row
 
 #clu:
 sort(table(data.xgb.clu$a1.clu))
