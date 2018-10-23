@@ -1,3 +1,6 @@
+library(h2o)
+h2o.init(nthreads = 4)
+
 data.xgb.clu.clu<-dlt.xgb.clu.clu()
 data.xgb.row.clu<-dlt.xgb.row.clu()
 data.xgb.clu.row<-dlt.xgb.clu.row()
