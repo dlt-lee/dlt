@@ -1,4 +1,5 @@
 library(h2o)
+detectCores()
 h2o.init(nthreads = 4)
 
 data.xgb.clu.clu<-dlt.xgb.clu.clu()
