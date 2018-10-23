@@ -16,9 +16,8 @@ dlt.xgb.clu.row <- function(){
     data<-head(dlt,rows)
     data<-tail(data,300)
     
-    for.clu.xgb(data)
+    temp.data<-for.clu.xgb(data)
     
-    temp.data<-dlt.xgboost.row(data)
     for (j in 1:16) {
       pre.ab<-c(pre.ab,temp.data[j,])
       
@@ -59,13 +58,17 @@ dlt.xgb.clu.row <- function(){
     
     pre.final.data<-for.clu.xgb(tail(dlt,300))
     
-    test.ab<-c(pre.final.data[1,],pre.final.data[2,],pre.final.data[3,],
-               pre.final.data[4,],pre.final.data[5,],pre.final.data[6,],
-               pre.final.data[7,],pre.final.data[8,],pre.final.data[9,],
-               pre.final.data[10,],pre.final.data[11,],pre.final.data[12,],
-               pre.final.data[13,],pre.final.data[14,],pre.final.data[15,],
-               pre.final.data[16,])
+    test.ab<-0
     
+    for (j in 1:16) {
+      for (k in 1:7) {
+        test.ab<-c(test.ab,pre.final.data[j,k])
+        
+      }
+      
+    }
+    test.ab<-test.ab[-1]
+  
     tests.T.ab<-Matrix(as.matrix(test.ab),sparse=T)
     
     testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T.ab))

@@ -89,13 +89,13 @@ dlt.xgb.row.clu <- function(){
   pre.final.data<-dlt.xgboost.row(tail(dlt,300))
   
   
-  tests.T.a1<-Matrix(as.matrix(pre.final.data$a1.clu),sparse=T)
-  tests.T.a2<-Matrix(as.matrix(pre.final.data$a2.clu),sparse=T)
-  tests.T.a3<-Matrix(as.matrix(pre.final.data$a3.clu),sparse=T)
-  tests.T.a4<-Matrix(as.matrix(pre.final.data$a4.clu),sparse=T)
-  tests.T.a5<-Matrix(as.matrix(pre.final.data$a5.clu),sparse=T)
-  tests.T.b1<-Matrix(as.matrix(pre.final.data$b1.clu),sparse=T)
-  tests.T.b2<-Matrix(as.matrix(pre.final.data$b2.clu),sparse=T)
+ tests.T.a1<-Matrix(as.matrix(pre.final.data$a1.row),sparse=T)
+  tests.T.a2<-Matrix(as.matrix(pre.final.data$a2.row),sparse=T)
+  tests.T.a3<-Matrix(as.matrix(pre.final.data$a3.row),sparse=T)
+  tests.T.a4<-Matrix(as.matrix(pre.final.data$a4.row),sparse=T)
+  tests.T.a5<-Matrix(as.matrix(pre.final.data$a5.row),sparse=T)
+  tests.T.b1<-Matrix(as.matrix(pre.final.data$b1.row),sparse=T)
+  tests.T.b2<-Matrix(as.matrix(pre.final.data$b2.row),sparse=T)
   
   
   
