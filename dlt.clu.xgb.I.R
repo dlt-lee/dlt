@@ -3,6 +3,9 @@ count<-dim(dlt)[1]
 n<-300
 dlt.clu.xgb.I <- function(data,count,n) {
   library(xgboost)
+  library(h2o)
+  nt<-detectCores()
+  h2o.init(nthreads = nt)
   
   data.train<-head(data,count-2)
   rows<-dim(data.train)[1]

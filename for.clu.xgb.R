@@ -2,6 +2,10 @@ data<-dlt
 
 
 for.clu.xgb <- function(data) {
+  library(h2o)
+  nt<-detectCores()
+  h2o.init(nthreads = nt)
+  
   #count<-dim(dlt)[1]
   count<-dim(data)[1]
   n<-300
