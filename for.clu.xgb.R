@@ -2,30 +2,24 @@ data<-dlt
 
 
 for.clu.xgb <- function(data) {
-  library(h2o)
-  nt<-detectCores()
-  h2o.init(nthreads = nt)
   
-  #count<-dim(dlt)[1]
-  count<-dim(data)[1]
-  n<-300
   
-  ab.1.clu <-dlt.clu.xgb.I(data,count,n)
-  ab.2.clu <-dlt.clu.xgb.II(data,count,n)
-  ab.3.clu <-dlt.clu.xgb.III(data,count,n)
-  ab.6.clu <-dlt.clu.xgb.VI(data,count,n)
-  ab.9.clu <-dlt.clu.xgb.IX(data,count,n)
-  ab.12.clu <-dlt.clu.xgb.XII(data,count,n)
-  ab.15.clu <-dlt.clu.xgb.XV(data,count,n)
-  ab.18.clu <-dlt.clu.xgb.XVIII(data,count,n)
-  ab.21.clu <-dlt.clu.xgb.XXI(data,count,n)
-  ab.24.clu <-dlt.clu.xgb.XXIV(data,count,n)
-  ab.27.clu <-dlt.clu.xgb.XXVII(data,count,n)
-  ab.30.clu<-dlt.clu.xgb.XXX(data,count,n)
-  ab.33.clu<-dlt.clu.xgb.XXXIII(data,count,n)
-  ab.36.clu<-dlt.clu.xgb.XXXVI(data,count,n)
-  ab.39.clu<-dlt.clu.xgb.XXXIX(data,count,n)
-  ab.42.clu<-dlt.clu.xgb.XXXXII(data,count,n)
+  ab.1.clu <-dlt.clu.xgb.I(data)
+  ab.2.clu <-dlt.clu.xgb.II(data)
+  ab.3.clu <-dlt.clu.xgb.III(data)
+  ab.6.clu <-dlt.clu.xgb.VI(data)
+  ab.9.clu <-dlt.clu.xgb.IX(data)
+  ab.12.clu <-dlt.clu.xgb.XII(data)
+  ab.15.clu <-dlt.clu.xgb.XV(data)
+  ab.18.clu <-dlt.clu.xgb.XVIII(data)
+  ab.21.clu <-dlt.clu.xgb.XXI(data)
+  ab.24.clu <-dlt.clu.xgb.XXIV(data)
+  ab.27.clu <-dlt.clu.xgb.XXVII(data)
+  ab.30.clu<-dlt.clu.xgb.XXX(data)
+  ab.33.clu<-dlt.clu.xgb.XXXIII(data)
+  ab.36.clu<-dlt.clu.xgb.XXXVI(data)
+  ab.39.clu<-dlt.clu.xgb.XXXIX(data)
+  ab.42.clu<-dlt.clu.xgb.XXXXII(data)
   
   
   a1.clu<-c(tail(ab.1.clu$a1,1),tail(ab.2.clu$a1,1),tail(ab.3.clu$a1,1),tail(ab.6.clu$a1,1),tail(ab.9.clu$a1,1),

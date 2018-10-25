@@ -1,8 +1,14 @@
 data<-dlt
-count<-dim(dlt)[1]
-n<-300
-dlt.clu.xgb.XXX <- function(data,count,n) {
+
+dlt.clu.xgb.XXX <- function(data) {
   library(xgboost)
+  #library(h2o)
+  #nt<-4
+  #nt<-detectCores()
+  #h2o.init(nthreads = nt)
+  
+  count<-dim(data)[1]
+  n<-300
   
   data.train<-head(data,count-2)
   rows<-dim(data.train)[1]

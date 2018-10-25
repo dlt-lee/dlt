@@ -1,25 +1,24 @@
 data<-dlt
 
 dlt.xgboost.row <- function(data) {
-  count<-dim(data)[1]
-  n<-300
   
-  ab.1.row <-dlt.xgboost.I(data,count,n)
-  ab.2.row <-dlt.xgboost.II(data,count,n)
-  ab.3.row <-dlt.xgboost.III(data,count,n)
-  ab.6.row <-dlt.xgboost.VI(data,count,n)
-  ab.9.row <-dlt.xgboost.IX(data,count,n)
-  ab.12.row<-dlt.xgboost.XII(data,count,n)
-  ab.15.row <-dlt.xgboost.XV(data,count,n)
-  ab.18.row<-dlt.xgboost.XVIII(data,count,n)
-  ab.21.row<-dlt.xgboost.XXI(data,count,n)
-  ab.24.row<-dlt.xgboost.XXIV(data,count,n)
-  ab.27.row<-dlt.xgboost.XXVII(data,count,n)
-  ab.30.row<-dlt.xgboost.XXX(data,count,n)
-  ab.33.row<-dlt.xgboost.XXXIII(data,count,n)
-  ab.36.row<-dlt.xgboost.XXXVI(data,count,n)
-  ab.39.row<-dlt.xgboost.XXXIX(data,count,n)
-  ab.42.row<-dlt.xgboost.XXXXII(data,count,n)
+  
+  ab.1.row <-dlt.xgboost.I(data)
+  ab.2.row <-dlt.xgboost.II(data)
+  ab.3.row <-dlt.xgboost.III(data)
+  ab.6.row <-dlt.xgboost.VI(data)
+  ab.9.row <-dlt.xgboost.IX(data)
+  ab.12.row<-dlt.xgboost.XII(data)
+  ab.15.row <-dlt.xgboost.XV(data)
+  ab.18.row<-dlt.xgboost.XVIII(data)
+  ab.21.row<-dlt.xgboost.XXI(data)
+  ab.24.row<-dlt.xgboost.XXIV(data)
+  ab.27.row<-dlt.xgboost.XXVII(data)
+  ab.30.row<-dlt.xgboost.XXX(data)
+  ab.33.row<-dlt.xgboost.XXXIII(data)
+  ab.36.row<-dlt.xgboost.XXXVI(data)
+  ab.39.row<-dlt.xgboost.XXXIX(data)
+  ab.42.row<-dlt.xgboost.XXXXII(data)
   
   
   a1.row<-c(tail(ab.1.row$a1,1),tail(ab.2.row$a1,1),tail(ab.3.row$a1,1),tail(ab.6.row$a1,1),
