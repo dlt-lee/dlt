@@ -16,7 +16,7 @@ dlt.xgb.clu.row <- function(){
     data<-head(dlt,rows)
     data<-tail(data,300)
     
-    temp.data<-for.clu.xgb(data)
+    temp.data<-dlt.xgboost.clu(data)
     
     for (j in 1:16) {
       pre.ab<-c(pre.ab,temp.data[j,])
@@ -56,7 +56,7 @@ dlt.xgb.clu.row <- function(){
     bst.b1 <- xgboost(data = trains.T.ab,label = exp.b1,nrounds = n,print_every_n = 300L)
     bst.b2 <- xgboost(data = trains.T.ab,label = exp.b2,nrounds = n,print_every_n = 300L)
     
-    pre.final.data<-for.clu.xgb(tail(dlt,300))
+    pre.final.data<-dlt.xgboost.clu(tail(dlt,300))
     
     test.ab<-0
     

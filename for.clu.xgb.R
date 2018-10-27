@@ -1,77 +1,73 @@
 data<-dlt
 
 
-for.clu.xgb <- function(data) {
+for.clu.xgb <- function() {
+  rows<-dim(dlt)[1]-273
+  n<-300
+  
+  pre.a1<-0
+  pre.a2<-0
+  pre.a3<-0
+  pre.a4<-0
+  pre.a5<-0
+  pre.b1<-0
+  pre.b2<-0
+  
+  exp.a1<-0
+  exp.a2<-0
+  exp.a3<-0
+  exp.a4<-0
+  exp.a5<-0
+  exp.b1<-0
+  exp.b2<-0
+  
+  for(i in 1:90) {
+    data<-head(dlt,rows)
+    data<-tail(data,300)
+    
+    temp.data<-dlt.xgboost.clu(data)
+    pre.a1<-c(pre.a1,temp.data$a1)
+    pre.a2<-c(pre.a2,temp.data$a2)
+    pre.a3<-c(pre.a3,temp.data$a3)
+    pre.a4<-c(pre.a4,temp.data$a4)
+    pre.a5<-c(pre.a5,temp.data$a5)
+    pre.b1<-c(pre.b1,temp.data$b1)
+    pre.b2<-c(pre.b2,temp.data$b2)
+    
+    exp.a1<-c(exp.a1,dlt[rows+1,]$a1)
+    exp.a2<-c(exp.a2,dlt[rows+1,]$a2)
+    exp.a3<-c(exp.a3,dlt[rows+1,]$a3)
+    exp.a4<-c(exp.a4,dlt[rows+1,]$a4)
+    exp.a5<-c(exp.a5,dlt[rows+1,]$a5)
+    exp.b1<-c(exp.b1,dlt[rows+1,]$b1)
+    exp.b2<-c(exp.b2,dlt[rows+1,]$b2)
+    
+    
+    rows<-rows+3
+    
+  }
+  
+  pre.a1<-pre.a1[-1]
+  pre.a2<-pre.a2[-1]
+  pre.a3<-pre.a3[-1]
+  pre.a4<-pre.a4[-1]
+  pre.a5<-pre.a5[-1]
+  pre.b1<-pre.b1[-1]
+  pre.b2<-pre.b2[-1]
+  
+  exp.a1<-exp.a1[-1]
+  exp.a2<-exp.a2[-1]
+  exp.a3<-exp.a3[-1]
+  exp.a4<-exp.a4[-1]
+  exp.a5<-exp.a5[-1]
+  exp.b1<-exp.b1[-1]
+  exp.b2<-exp.b2[-1]
+  
+  data.result<-data.frame(pre.a1,pre.a2,pre.a3,pre.a4,pre.a5,pre.b1,pre.b2,
+                          exp.a1,exp.a2,exp.a3,exp.a4,exp.a5,exp.b1,exp.b2)
   
   
-  ab.1.clu <-dlt.clu.xgb.I(data)
-  ab.2.clu <-dlt.clu.xgb.II(data)
-  ab.3.clu <-dlt.clu.xgb.III(data)
-  ab.6.clu <-dlt.clu.xgb.VI(data)
-  ab.9.clu <-dlt.clu.xgb.IX(data)
-  ab.12.clu <-dlt.clu.xgb.XII(data)
-  ab.15.clu <-dlt.clu.xgb.XV(data)
-  ab.18.clu <-dlt.clu.xgb.XVIII(data)
-  ab.21.clu <-dlt.clu.xgb.XXI(data)
-  ab.24.clu <-dlt.clu.xgb.XXIV(data)
-  ab.27.clu <-dlt.clu.xgb.XXVII(data)
-  ab.30.clu<-dlt.clu.xgb.XXX(data)
-  ab.33.clu<-dlt.clu.xgb.XXXIII(data)
-  ab.36.clu<-dlt.clu.xgb.XXXVI(data)
-  ab.39.clu<-dlt.clu.xgb.XXXIX(data)
-  ab.42.clu<-dlt.clu.xgb.XXXXII(data)
-  
-  
-  a1.clu<-c(tail(ab.1.clu$a1,1),tail(ab.2.clu$a1,1),tail(ab.3.clu$a1,1),tail(ab.6.clu$a1,1),tail(ab.9.clu$a1,1),
-            tail(ab.12.clu$a1,1),tail(ab.15.clu$a1,1),tail(ab.18.clu$a1,1),
-            tail(ab.21.clu$a1,1),tail(ab.24.clu$a1,1),tail(ab.27.clu$a1,1),
-            tail(ab.30.clu$a1,1),tail(ab.33.clu$a1,1),tail(ab.36.clu$a1,1),
-            tail(ab.39.clu$a1,1),tail(ab.42.clu$a1,1))
-  a2.clu<-c(tail(ab.1.clu$a2,1),tail(ab.2.clu$a2,1),tail(ab.3.clu$a2,1),tail(ab.6.clu$a2,1),tail(ab.9.clu$a2,1),
-            tail(ab.12.clu$a2,1),tail(ab.15.clu$a2,1),tail(ab.18.clu$a2,1),
-            tail(ab.21.clu$a2,1),tail(ab.24.clu$a2,1),tail(ab.27.clu$a2,1),
-            tail(ab.30.clu$a2,1),tail(ab.33.clu$a2,1),tail(ab.36.clu$a2,1),
-            tail(ab.39.clu$a2,1),tail(ab.42.clu$a2,1))
-  a3.clu<-c(tail(ab.1.clu$a3,1),tail(ab.2.clu$a3,1),tail(ab.3.clu$a3,1),tail(ab.6.clu$a3,1),tail(ab.9.clu$a3,1),
-            tail(ab.12.clu$a3,1),tail(ab.15.clu$a3,1),tail(ab.18.clu$a3,1),
-            tail(ab.21.clu$a3,1),tail(ab.24.clu$a3,1),tail(ab.27.clu$a3,1),
-            tail(ab.30.clu$a3,1),tail(ab.33.clu$a3,1),tail(ab.36.clu$a3,1),
-            tail(ab.39.clu$a3,1),tail(ab.42.clu$a3,1))
-  a4.clu<-c(tail(ab.1.clu$a4,1),tail(ab.2.clu$a4,1),tail(ab.3.clu$a4,1),tail(ab.6.clu$a4,1),tail(ab.9.clu$a4,1),
-            tail(ab.12.clu$a4,1),tail(ab.15.clu$a4,1),tail(ab.18.clu$a4,1),
-            tail(ab.21.clu$a4,1),tail(ab.24.clu$a4,1),tail(ab.27.clu$a4,1),
-            tail(ab.30.clu$a4,1),tail(ab.33.clu$a4,1),tail(ab.36.clu$a4,1),
-            tail(ab.39.clu$a4,1),tail(ab.42.clu$a4,1))
-  a5.clu<-c(tail(ab.1.clu$a5,1),tail(ab.2.clu$a5,1),tail(ab.3.clu$a5,1),tail(ab.6.clu$a5,1),tail(ab.9.clu$a5,1),
-            tail(ab.12.clu$a5,1),tail(ab.15.clu$a5,1),tail(ab.18.clu$a5,1),
-            tail(ab.21.clu$a5,1),tail(ab.24.clu$a5,1),tail(ab.27.clu$a5,1),
-            tail(ab.30.clu$a5,1),tail(ab.33.clu$a5,1),tail(ab.36.clu$a5,1),
-            tail(ab.39.clu$a5,1),tail(ab.42.clu$a5,1))
-  b1.clu<-c(tail(ab.1.clu$b1,1),tail(ab.2.clu$b1,1),tail(ab.3.clu$b1,1),tail(ab.6.clu$b1,1),tail(ab.9.clu$b1,1),
-            tail(ab.12.clu$b1,1),tail(ab.15.clu$b1,1),tail(ab.18.clu$b1,1),
-            tail(ab.21.clu$b1,1),tail(ab.24.clu$b1,1),tail(ab.27.clu$b1,1),
-            tail(ab.30.clu$b1,1),tail(ab.33.clu$b1,1),tail(ab.36.clu$b1,1),
-            tail(ab.39.clu$b1,1),tail(ab.42.clu$b1,1))
-  b2.clu<-c(tail(ab.1.clu$b2,1),tail(ab.2.clu$b2,1),tail(ab.3.clu$b2,1),tail(ab.6.clu$b2,1),tail(ab.9.clu$b2,1),
-            tail(ab.12.clu$b2,1),tail(ab.15.clu$b2,1),tail(ab.18.clu$b2,1),
-            tail(ab.21.clu$b2,1),tail(ab.24.clu$b2,1),tail(ab.27.clu$b2,1),
-            tail(ab.30.clu$b2,1),tail(ab.33.clu$b2,1),tail(ab.36.clu$b2,1),
-            tail(ab.39.clu$b2,1),tail(ab.42.clu$b2,1))
-  
-  
-  ab.result.clu<-data.frame(a1.clu,a2.clu,a3.clu,a4.clu,a5.clu,b1.clu,b2.clu)
-  
-  sort(table(ab.result.clu$a1.clu))
-  sort(table(ab.result.clu$a2.clu))
-  sort(table(ab.result.clu$a3.clu))
-  sort(table(ab.result.clu$a4.clu))
-  sort(table(ab.result.clu$a5.clu))
-  sort(table(ab.result.clu$b1.clu))
-  sort(table(ab.result.clu$b2.clu))
-  
-  
-  
-  return(ab.result.clu)
+  return(data.result)
 }
 
 
