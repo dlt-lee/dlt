@@ -1,4 +1,5 @@
 dlt.xgb.clu.row <- function(data){
+  n<-300
   pre.m.a1<-matrix(data$pre.a1,ncol = 16,byrow = TRUE)
   pre.m.a2<-matrix(data$pre.a2,ncol = 16,byrow = TRUE)
   pre.m.a3<-matrix(data$pre.a3,ncol = 16,byrow = TRUE)

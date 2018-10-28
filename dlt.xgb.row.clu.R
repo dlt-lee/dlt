@@ -1,5 +1,5 @@
-dlt.xgb.row.clu <- function(){
-  
+dlt.xgb.row.clu <- function(data){
+  n<-300
   #============================================================================
   
   pre.m.a1<-matrix(data$pre.a1,ncol = 16,byrow = TRUE)
