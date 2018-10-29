@@ -5,7 +5,7 @@ data.xgb.clu.clu<-dlt.xgb.clu.clu(data.for.xgb.clu)
 data.xgb.row.clu<-dlt.xgb.row.clu(data.for.xgb.row)
 data.xgb.clu.row<-dlt.xgb.clu.row(data.for.xgb.clu)
 data.xgb.row.row<-dlt.xgb.row.row(data.for.xgb.row)
-data.xgb.clu<-for.clu.xgb(dlt)
+data.xgb.clu<-dlt.xgboost.clu(dlt)
 data.xgb.row<-dlt.xgboost.row(dlt)
 
 
