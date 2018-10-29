@@ -7,8 +7,8 @@ dlt.clu.xgb.XXXIII <- function(data) {
   #nt<-detectCores()
   #h2o.init(nthreads = nt)
   
-  count<-dim(data)[1]
   n<-300
+  count<-dim(data)[1]
   
   data.train<-head(data,count-2)
   rows<-dim(data.train)[1]
@@ -24,7 +24,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   row<-sort(row[-1])
   data.test<-data
   
-  #Trains_1
   trains_1_a1_temp<-0
   trains_1_a2_temp<-0
   trains_1_a3_temp<-0
@@ -32,6 +31,343 @@ dlt.clu.xgb.XXXIII <- function(data) {
   trains_1_a5_temp<-0
   trains_1_b1_temp<-0
   trains_1_b2_temp<-0
+  
+  trains_2_a1_temp<-0
+  trains_2_a2_temp<-0
+  trains_2_a3_temp<-0
+  trains_2_a4_temp<-0
+  trains_2_a5_temp<-0
+  trains_2_b1_temp<-0
+  trains_2_b2_temp<-0
+  
+  trains_3_a1_temp<-0
+  trains_3_a2_temp<-0
+  trains_3_a3_temp<-0
+  trains_3_a4_temp<-0
+  trains_3_a5_temp<-0
+  trains_3_b1_temp<-0
+  trains_3_b2_temp<-0
+  
+  trains_4_a1_temp<-0
+  trains_4_a2_temp<-0
+  trains_4_a3_temp<-0
+  trains_4_a4_temp<-0
+  trains_4_a5_temp<-0
+  trains_4_b1_temp<-0
+  trains_4_b2_temp<-0
+  
+  trains_5_a1_temp<-0
+  trains_5_a2_temp<-0
+  trains_5_a3_temp<-0
+  trains_5_a4_temp<-0
+  trains_5_a5_temp<-0
+  trains_5_b1_temp<-0
+  trains_5_b2_temp<-0
+  
+  trains_6_a1_temp<-0
+  trains_6_a2_temp<-0
+  trains_6_a3_temp<-0
+  trains_6_a4_temp<-0
+  trains_6_a5_temp<-0
+  trains_6_b1_temp<-0
+  trains_6_b2_temp<-0
+  
+  trains_7_a1_temp<-0
+  trains_7_a2_temp<-0
+  trains_7_a3_temp<-0
+  trains_7_a4_temp<-0
+  trains_7_a5_temp<-0
+  trains_7_b1_temp<-0
+  trains_7_b2_temp<-0
+  
+  trains_8_a1_temp<-0
+  trains_8_a2_temp<-0
+  trains_8_a3_temp<-0
+  trains_8_a4_temp<-0
+  trains_8_a5_temp<-0
+  trains_8_b1_temp<-0
+  trains_8_b2_temp<-0
+  
+  trains_9_a1_temp<-0
+  trains_9_a2_temp<-0
+  trains_9_a3_temp<-0
+  trains_9_a4_temp<-0
+  trains_9_a5_temp<-0
+  trains_9_b1_temp<-0
+  trains_9_b2_temp<-0
+  
+  trains_10_a1_temp<-0
+  trains_10_a2_temp<-0
+  trains_10_a3_temp<-0
+  trains_10_a4_temp<-0
+  trains_10_a5_temp<-0
+  trains_10_b1_temp<-0
+  trains_10_b2_temp<-0
+  
+  trains_11_a1_temp<-0
+  trains_11_a2_temp<-0
+  trains_11_a3_temp<-0
+  trains_11_a4_temp<-0
+  trains_11_a5_temp<-0
+  trains_11_b1_temp<-0
+  trains_11_b2_temp<-0
+  
+  trains_12_a1_temp<-0
+  trains_12_a2_temp<-0
+  trains_12_a3_temp<-0
+  trains_12_a4_temp<-0
+  trains_12_a5_temp<-0
+  trains_12_b1_temp<-0
+  trains_12_b2_temp<-0
+  
+  trains_13_a1_temp<-0
+  trains_13_a2_temp<-0
+  trains_13_a3_temp<-0
+  trains_13_a4_temp<-0
+  trains_13_a5_temp<-0
+  trains_13_b1_temp<-0
+  trains_13_b2_temp<-0
+  
+  trains_14_a1_temp<-0
+  trains_14_a2_temp<-0
+  trains_14_a3_temp<-0
+  trains_14_a4_temp<-0
+  trains_14_a5_temp<-0
+  trains_14_b1_temp<-0
+  trains_14_b2_temp<-0
+  
+  trains_15_a1_temp<-0
+  trains_15_a2_temp<-0
+  trains_15_a3_temp<-0
+  trains_15_a4_temp<-0
+  trains_15_a5_temp<-0
+  trains_15_b1_temp<-0
+  trains_15_b2_temp<-0
+  
+  trains_16_a1_temp<-0
+  trains_16_a2_temp<-0
+  trains_16_a3_temp<-0
+  trains_16_a4_temp<-0
+  trains_16_a5_temp<-0
+  trains_16_b1_temp<-0
+  trains_16_b2_temp<-0
+  
+  trains_17_a1_temp<-0
+  trains_17_a2_temp<-0
+  trains_17_a3_temp<-0
+  trains_17_a4_temp<-0
+  trains_17_a5_temp<-0
+  trains_17_b1_temp<-0
+  trains_17_b2_temp<-0
+  
+  trains_18_a1_temp<-0
+  trains_18_a2_temp<-0
+  trains_18_a3_temp<-0
+  trains_18_a4_temp<-0
+  trains_18_a5_temp<-0
+  trains_18_b1_temp<-0
+  trains_18_b2_temp<-0
+  
+  trains_19_a1_temp<-0
+  trains_19_a2_temp<-0
+  trains_19_a3_temp<-0
+  trains_19_a4_temp<-0
+  trains_19_a5_temp<-0
+  trains_19_b1_temp<-0
+  trains_19_b2_temp<-0
+  
+  trains_20_a1_temp<-0
+  trains_20_a2_temp<-0
+  trains_20_a3_temp<-0
+  trains_20_a4_temp<-0
+  trains_20_a5_temp<-0
+  trains_20_b1_temp<-0
+  trains_20_b2_temp<-0
+  
+  trains_21_a1_temp<-0
+  trains_21_a2_temp<-0
+  trains_21_a3_temp<-0
+  trains_21_a4_temp<-0
+  trains_21_a5_temp<-0
+  trains_21_b1_temp<-0
+  trains_21_b2_temp<-0
+  
+  trains_22_a1_temp<-0
+  trains_22_a2_temp<-0
+  trains_22_a3_temp<-0
+  trains_22_a4_temp<-0
+  trains_22_a5_temp<-0
+  trains_22_b1_temp<-0
+  trains_22_b2_temp<-0
+  
+  trains_23_a1_temp<-0
+  trains_23_a2_temp<-0
+  trains_23_a3_temp<-0
+  trains_23_a4_temp<-0
+  trains_23_a5_temp<-0
+  trains_23_b1_temp<-0
+  trains_23_b2_temp<-0
+  
+  trains_24_a1_temp<-0
+  trains_24_a2_temp<-0
+  trains_24_a3_temp<-0
+  trains_24_a4_temp<-0
+  trains_24_a5_temp<-0
+  trains_24_b1_temp<-0
+  trains_24_b2_temp<-0
+  
+  trains_25_a1_temp<-0
+  trains_25_a2_temp<-0
+  trains_25_a3_temp<-0
+  trains_25_a4_temp<-0
+  trains_25_a5_temp<-0
+  trains_25_b1_temp<-0
+  trains_25_b2_temp<-0
+  
+  trains_26_a1_temp<-0
+  trains_26_a2_temp<-0
+  trains_26_a3_temp<-0
+  trains_26_a4_temp<-0
+  trains_26_a5_temp<-0
+  trains_26_b1_temp<-0
+  trains_26_b2_temp<-0
+  
+  trains_27_a1_temp<-0
+  trains_27_a2_temp<-0
+  trains_27_a3_temp<-0
+  trains_27_a4_temp<-0
+  trains_27_a5_temp<-0
+  trains_27_b1_temp<-0
+  trains_27_b2_temp<-0
+  
+  trains_28_a1_temp<-0
+  trains_28_a2_temp<-0
+  trains_28_a3_temp<-0
+  trains_28_a4_temp<-0
+  trains_28_a5_temp<-0
+  trains_28_b1_temp<-0
+  trains_28_b2_temp<-0
+  
+  trains_29_a1_temp<-0
+  trains_29_a2_temp<-0
+  trains_29_a3_temp<-0
+  trains_29_a4_temp<-0
+  trains_29_a5_temp<-0
+  trains_29_b1_temp<-0
+  trains_29_b2_temp<-0
+  
+  trains_30_a1_temp<-0
+  trains_30_a2_temp<-0
+  trains_30_a3_temp<-0
+  trains_30_a4_temp<-0
+  trains_30_a5_temp<-0
+  trains_30_b1_temp<-0
+  trains_30_b2_temp<-0
+  
+  trains_31_a1_temp<-0
+  trains_31_a2_temp<-0
+  trains_31_a3_temp<-0
+  trains_31_a4_temp<-0
+  trains_31_a5_temp<-0
+  trains_31_b1_temp<-0
+  trains_31_b2_temp<-0
+  
+  trains_32_a1_temp<-0
+  trains_32_a2_temp<-0
+  trains_32_a3_temp<-0
+  trains_32_a4_temp<-0
+  trains_32_a5_temp<-0
+  trains_32_b1_temp<-0
+  trains_32_b2_temp<-0
+  
+  trains_33_a1_temp<-0
+  trains_33_a2_temp<-0
+  trains_33_a3_temp<-0
+  trains_33_a4_temp<-0
+  trains_33_a5_temp<-0
+  trains_33_b1_temp<-0
+  trains_33_b2_temp<-0
+  
+  trains_34_a1_temp<-0
+  trains_34_a2_temp<-0
+  trains_34_a3_temp<-0
+  trains_34_a4_temp<-0
+  trains_34_a5_temp<-0
+  trains_34_b1_temp<-0
+  trains_34_b2_temp<-0
+  
+  trains_35_a1_temp<-0
+  trains_35_a2_temp<-0
+  trains_35_a3_temp<-0
+  trains_35_a4_temp<-0
+  trains_35_a5_temp<-0
+  trains_35_b1_temp<-0
+  trains_35_b2_temp<-0
+  
+  trains_36_a1_temp<-0
+  trains_36_a2_temp<-0
+  trains_36_a3_temp<-0
+  trains_36_a4_temp<-0
+  trains_36_a5_temp<-0
+  trains_36_b1_temp<-0
+  trains_36_b2_temp<-0
+  
+  trains_37_a1_temp<-0
+  trains_37_a2_temp<-0
+  trains_37_a3_temp<-0
+  trains_37_a4_temp<-0
+  trains_37_a5_temp<-0
+  trains_37_b1_temp<-0
+  trains_37_b2_temp<-0
+  
+  trains_38_a1_temp<-0
+  trains_38_a2_temp<-0
+  trains_38_a3_temp<-0
+  trains_38_a4_temp<-0
+  trains_38_a5_temp<-0
+  trains_38_b1_temp<-0
+  trains_38_b2_temp<-0
+  
+  trains_39_a1_temp<-0
+  trains_39_a2_temp<-0
+  trains_39_a3_temp<-0
+  trains_39_a4_temp<-0
+  trains_39_a5_temp<-0
+  trains_39_b1_temp<-0
+  trains_39_b2_temp<-0
+  
+  trains_40_a1_temp<-0
+  trains_40_a2_temp<-0
+  trains_40_a3_temp<-0
+  trains_40_a4_temp<-0
+  trains_40_a5_temp<-0
+  trains_40_b1_temp<-0
+  trains_40_b2_temp<-0
+  
+  trains_41_a1_temp<-0
+  trains_41_a2_temp<-0
+  trains_41_a3_temp<-0
+  trains_41_a4_temp<-0
+  trains_41_a5_temp<-0
+  trains_41_b1_temp<-0
+  trains_41_b2_temp<-0
+  
+  trains_42_a1_temp<-0
+  trains_42_a2_temp<-0
+  trains_42_a3_temp<-0
+  trains_42_a4_temp<-0
+  trains_42_a5_temp<-0
+  trains_42_b1_temp<-0
+  trains_42_b2_temp<-0
+  
+  results_a1_temp<-0
+  results_a2_temp<-0
+  results_a3_temp<-0
+  results_a4_temp<-0
+  results_a5_temp<-0
+  results_b1_temp<-0
+  results_b2_temp<-0
+  
   for (j in row) {
     trains_1_a1_temp<-c(trains_1_a1_temp,data.train[j-42,]$a1)
     trains_1_a2_temp<-c(trains_1_a2_temp,data.train[j-42,]$a2)
@@ -40,7 +376,355 @@ dlt.clu.xgb.XXXIII <- function(data) {
     trains_1_a5_temp<-c(trains_1_a5_temp,data.train[j-42,]$a5)
     trains_1_b1_temp<-c(trains_1_b1_temp,data.train[j-42,]$b1)
     trains_1_b2_temp<-c(trains_1_b2_temp,data.train[j-42,]$b2)
+    
+    trains_2_a1_temp<-c(trains_2_a1_temp,data.train[j-41,]$a1)
+    trains_2_a2_temp<-c(trains_2_a2_temp,data.train[j-41,]$a2)
+    trains_2_a3_temp<-c(trains_2_a3_temp,data.train[j-41,]$a3)
+    trains_2_a4_temp<-c(trains_2_a4_temp,data.train[j-41,]$a4)
+    trains_2_a5_temp<-c(trains_2_a5_temp,data.train[j-41,]$a5)
+    trains_2_b1_temp<-c(trains_2_b1_temp,data.train[j-41,]$b1)
+    trains_2_b2_temp<-c(trains_2_b2_temp,data.train[j-41,]$b2)
+    
+    trains_3_a1_temp<-c(trains_3_a1_temp,data.train[j-40,]$a1)
+    trains_3_a2_temp<-c(trains_3_a2_temp,data.train[j-40,]$a2)
+    trains_3_a3_temp<-c(trains_3_a3_temp,data.train[j-40,]$a3)
+    trains_3_a4_temp<-c(trains_3_a4_temp,data.train[j-40,]$a4)
+    trains_3_a5_temp<-c(trains_3_a5_temp,data.train[j-40,]$a5)
+    trains_3_b1_temp<-c(trains_3_b1_temp,data.train[j-40,]$b1)
+    trains_3_b2_temp<-c(trains_3_b2_temp,data.train[j-40,]$b2)
+    
+    trains_4_a1_temp<-c(trains_4_a1_temp,data.train[j-39,]$a1)
+    trains_4_a2_temp<-c(trains_4_a2_temp,data.train[j-39,]$a2)
+    trains_4_a3_temp<-c(trains_4_a3_temp,data.train[j-39,]$a3)
+    trains_4_a4_temp<-c(trains_4_a4_temp,data.train[j-39,]$a4)
+    trains_4_a5_temp<-c(trains_4_a5_temp,data.train[j-39,]$a5)
+    trains_4_b1_temp<-c(trains_4_b1_temp,data.train[j-39,]$b1)
+    trains_4_b2_temp<-c(trains_4_b2_temp,data.train[j-39,]$b2)
+    
+    trains_5_a1_temp<-c(trains_5_a1_temp,data.train[j-38,]$a1)
+    trains_5_a2_temp<-c(trains_5_a2_temp,data.train[j-38,]$a2)
+    trains_5_a3_temp<-c(trains_5_a3_temp,data.train[j-38,]$a3)
+    trains_5_a4_temp<-c(trains_5_a4_temp,data.train[j-38,]$a4)
+    trains_5_a5_temp<-c(trains_5_a5_temp,data.train[j-38,]$a5)
+    trains_5_b1_temp<-c(trains_5_b1_temp,data.train[j-38,]$b1)
+    trains_5_b2_temp<-c(trains_5_b2_temp,data.train[j-38,]$b2)
+    
+    trains_6_a1_temp<-c(trains_6_a1_temp,data.train[j-37,]$a1)
+    trains_6_a2_temp<-c(trains_6_a2_temp,data.train[j-37,]$a2)
+    trains_6_a3_temp<-c(trains_6_a3_temp,data.train[j-37,]$a3)
+    trains_6_a4_temp<-c(trains_6_a4_temp,data.train[j-37,]$a4)
+    trains_6_a5_temp<-c(trains_6_a5_temp,data.train[j-37,]$a5)
+    trains_6_b1_temp<-c(trains_6_b1_temp,data.train[j-37,]$b1)
+    trains_6_b2_temp<-c(trains_6_b2_temp,data.train[j-37,]$b2)
+    
+    trains_7_a1_temp<-c(trains_7_a1_temp,data.train[j-36,]$a1)
+    trains_7_a2_temp<-c(trains_7_a2_temp,data.train[j-36,]$a2)
+    trains_7_a3_temp<-c(trains_7_a3_temp,data.train[j-36,]$a3)
+    trains_7_a4_temp<-c(trains_7_a4_temp,data.train[j-36,]$a4)
+    trains_7_a5_temp<-c(trains_7_a5_temp,data.train[j-36,]$a5)
+    trains_7_b1_temp<-c(trains_7_b1_temp,data.train[j-36,]$b1)
+    trains_7_b2_temp<-c(trains_7_b2_temp,data.train[j-36,]$b2)
+    
+    trains_8_a1_temp<-c(trains_8_a1_temp,data.train[j-35,]$a1)
+    trains_8_a2_temp<-c(trains_8_a2_temp,data.train[j-35,]$a2)
+    trains_8_a3_temp<-c(trains_8_a3_temp,data.train[j-35,]$a3)
+    trains_8_a4_temp<-c(trains_8_a4_temp,data.train[j-35,]$a4)
+    trains_8_a5_temp<-c(trains_8_a5_temp,data.train[j-35,]$a5)
+    trains_8_b1_temp<-c(trains_8_b1_temp,data.train[j-35,]$b1)
+    trains_8_b2_temp<-c(trains_8_b2_temp,data.train[j-35,]$b2)
+    
+    trains_9_a1_temp<-c(trains_9_a1_temp,data.train[j-34,]$a1)
+    trains_9_a2_temp<-c(trains_9_a2_temp,data.train[j-34,]$a2)
+    trains_9_a3_temp<-c(trains_9_a3_temp,data.train[j-34,]$a3)
+    trains_9_a4_temp<-c(trains_9_a4_temp,data.train[j-34,]$a4)
+    trains_9_a5_temp<-c(trains_9_a5_temp,data.train[j-34,]$a5)
+    trains_9_b1_temp<-c(trains_9_b1_temp,data.train[j-34,]$b1)
+    trains_9_b2_temp<-c(trains_9_b2_temp,data.train[j-34,]$b2)
+    
+    trains_10_a1_temp<-c(trains_10_a1_temp,data.train[j-33,]$a1)
+    trains_10_a2_temp<-c(trains_10_a2_temp,data.train[j-33,]$a2)
+    trains_10_a3_temp<-c(trains_10_a3_temp,data.train[j-33,]$a3)
+    trains_10_a4_temp<-c(trains_10_a4_temp,data.train[j-33,]$a4)
+    trains_10_a5_temp<-c(trains_10_a5_temp,data.train[j-33,]$a5)
+    trains_10_b1_temp<-c(trains_10_b1_temp,data.train[j-33,]$b1)
+    trains_10_b2_temp<-c(trains_10_b2_temp,data.train[j-33,]$b2)
+    
+    trains_11_a1_temp<-c(trains_11_a1_temp,data.train[j-32,]$a1)
+    trains_11_a2_temp<-c(trains_11_a2_temp,data.train[j-32,]$a2)
+    trains_11_a3_temp<-c(trains_11_a3_temp,data.train[j-32,]$a3)
+    trains_11_a4_temp<-c(trains_11_a4_temp,data.train[j-32,]$a4)
+    trains_11_a5_temp<-c(trains_11_a5_temp,data.train[j-32,]$a5)
+    trains_11_b1_temp<-c(trains_11_b1_temp,data.train[j-32,]$b1)
+    trains_11_b2_temp<-c(trains_11_b2_temp,data.train[j-32,]$b2)
+    
+    trains_12_a1_temp<-c(trains_12_a1_temp,data.train[j-31,]$a1)
+    trains_12_a2_temp<-c(trains_12_a2_temp,data.train[j-31,]$a2)
+    trains_12_a3_temp<-c(trains_12_a3_temp,data.train[j-31,]$a3)
+    trains_12_a4_temp<-c(trains_12_a4_temp,data.train[j-31,]$a4)
+    trains_12_a5_temp<-c(trains_12_a5_temp,data.train[j-31,]$a5)
+    trains_12_b1_temp<-c(trains_12_b1_temp,data.train[j-31,]$b1)
+    trains_12_b2_temp<-c(trains_12_b2_temp,data.train[j-31,]$b2)
+    
+    trains_13_a1_temp<-c(trains_13_a1_temp,data.train[j-30,]$a1)
+    trains_13_a2_temp<-c(trains_13_a2_temp,data.train[j-30,]$a2)
+    trains_13_a3_temp<-c(trains_13_a3_temp,data.train[j-30,]$a3)
+    trains_13_a4_temp<-c(trains_13_a4_temp,data.train[j-30,]$a4)
+    trains_13_a5_temp<-c(trains_13_a5_temp,data.train[j-30,]$a5)
+    trains_13_b1_temp<-c(trains_13_b1_temp,data.train[j-30,]$b1)
+    trains_13_b2_temp<-c(trains_13_b2_temp,data.train[j-30,]$b2)
+    
+    trains_13_a1_temp<-c(trains_13_a1_temp,data.train[j-30,]$a1)
+    trains_13_a2_temp<-c(trains_13_a2_temp,data.train[j-30,]$a2)
+    trains_13_a3_temp<-c(trains_13_a3_temp,data.train[j-30,]$a3)
+    trains_13_a4_temp<-c(trains_13_a4_temp,data.train[j-30,]$a4)
+    trains_13_a5_temp<-c(trains_13_a5_temp,data.train[j-30,]$a5)
+    trains_13_b1_temp<-c(trains_13_b1_temp,data.train[j-30,]$b1)
+    trains_13_b2_temp<-c(trains_13_b2_temp,data.train[j-30,]$b2)
+    
+    trains_14_a1_temp<-c(trains_14_a1_temp,data.train[j-29,]$a1)
+    trains_14_a2_temp<-c(trains_14_a2_temp,data.train[j-29,]$a2)
+    trains_14_a3_temp<-c(trains_14_a3_temp,data.train[j-29,]$a3)
+    trains_14_a4_temp<-c(trains_14_a4_temp,data.train[j-29,]$a4)
+    trains_14_a5_temp<-c(trains_14_a5_temp,data.train[j-29,]$a5)
+    trains_14_b1_temp<-c(trains_14_b1_temp,data.train[j-29,]$b1)
+    trains_14_b2_temp<-c(trains_14_b2_temp,data.train[j-29,]$b2)
+    
+    trains_15_a1_temp<-c(trains_15_a1_temp,data.train[j-28,]$a1)
+    trains_15_a2_temp<-c(trains_15_a2_temp,data.train[j-28,]$a2)
+    trains_15_a3_temp<-c(trains_15_a3_temp,data.train[j-28,]$a3)
+    trains_15_a4_temp<-c(trains_15_a4_temp,data.train[j-28,]$a4)
+    trains_15_a5_temp<-c(trains_15_a5_temp,data.train[j-28,]$a5)
+    trains_15_b1_temp<-c(trains_15_b1_temp,data.train[j-28,]$b1)
+    trains_15_b2_temp<-c(trains_15_b2_temp,data.train[j-28,]$b2)
+    
+    trains_16_a1_temp<-c(trains_16_a1_temp,data.train[j-27,]$a1)
+    trains_16_a2_temp<-c(trains_16_a2_temp,data.train[j-27,]$a2)
+    trains_16_a3_temp<-c(trains_16_a3_temp,data.train[j-27,]$a3)
+    trains_16_a4_temp<-c(trains_16_a4_temp,data.train[j-27,]$a4)
+    trains_16_a5_temp<-c(trains_16_a5_temp,data.train[j-27,]$a5)
+    trains_16_b1_temp<-c(trains_16_b1_temp,data.train[j-27,]$b1)
+    trains_16_b2_temp<-c(trains_16_b2_temp,data.train[j-27,]$b2)
+    
+    trains_17_a1_temp<-c(trains_17_a1_temp,data.train[j-26,]$a1)
+    trains_17_a2_temp<-c(trains_17_a2_temp,data.train[j-26,]$a2)
+    trains_17_a3_temp<-c(trains_17_a3_temp,data.train[j-26,]$a3)
+    trains_17_a4_temp<-c(trains_17_a4_temp,data.train[j-26,]$a4)
+    trains_17_a5_temp<-c(trains_17_a5_temp,data.train[j-26,]$a5)
+    trains_17_b1_temp<-c(trains_17_b1_temp,data.train[j-26,]$b1)
+    trains_17_b2_temp<-c(trains_17_b2_temp,data.train[j-26,]$b2)
+    
+    trains_18_a1_temp<-c(trains_18_a1_temp,data.train[j-25,]$a1)
+    trains_18_a2_temp<-c(trains_18_a2_temp,data.train[j-25,]$a2)
+    trains_18_a3_temp<-c(trains_18_a3_temp,data.train[j-25,]$a3)
+    trains_18_a4_temp<-c(trains_18_a4_temp,data.train[j-25,]$a4)
+    trains_18_a5_temp<-c(trains_18_a5_temp,data.train[j-25,]$a5)
+    trains_18_b1_temp<-c(trains_18_b1_temp,data.train[j-25,]$b1)
+    trains_18_b2_temp<-c(trains_18_b2_temp,data.train[j-25,]$b2)
+    
+    trains_19_a1_temp<-c(trains_19_a1_temp,data.train[j-24,]$a1)
+    trains_19_a2_temp<-c(trains_19_a2_temp,data.train[j-24,]$a2)
+    trains_19_a3_temp<-c(trains_19_a3_temp,data.train[j-24,]$a3)
+    trains_19_a4_temp<-c(trains_19_a4_temp,data.train[j-24,]$a4)
+    trains_19_a5_temp<-c(trains_19_a5_temp,data.train[j-24,]$a5)
+    trains_19_b1_temp<-c(trains_19_b1_temp,data.train[j-24,]$b1)
+    trains_19_b2_temp<-c(trains_19_b2_temp,data.train[j-24,]$b2)
+    
+    trains_20_a1_temp<-c(trains_20_a1_temp,data.train[j-23,]$a1)
+    trains_20_a2_temp<-c(trains_20_a2_temp,data.train[j-23,]$a2)
+    trains_20_a3_temp<-c(trains_20_a3_temp,data.train[j-23,]$a3)
+    trains_20_a4_temp<-c(trains_20_a4_temp,data.train[j-23,]$a4)
+    trains_20_a5_temp<-c(trains_20_a5_temp,data.train[j-23,]$a5)
+    trains_20_b1_temp<-c(trains_20_b1_temp,data.train[j-23,]$b1)
+    trains_20_b2_temp<-c(trains_20_b2_temp,data.train[j-23,]$b2)
+    
+    trains_21_a1_temp<-c(trains_21_a1_temp,data.train[j-22,]$a1)
+    trains_21_a2_temp<-c(trains_21_a2_temp,data.train[j-22,]$a2)
+    trains_21_a3_temp<-c(trains_21_a3_temp,data.train[j-22,]$a3)
+    trains_21_a4_temp<-c(trains_21_a4_temp,data.train[j-22,]$a4)
+    trains_21_a5_temp<-c(trains_21_a5_temp,data.train[j-22,]$a5)
+    trains_21_b1_temp<-c(trains_21_b1_temp,data.train[j-22,]$b1)
+    trains_21_b2_temp<-c(trains_21_b2_temp,data.train[j-22,]$b2)
+    
+    trains_22_a1_temp<-c(trains_22_a1_temp,data.train[j-21,]$a1)
+    trains_22_a2_temp<-c(trains_22_a2_temp,data.train[j-21,]$a2)
+    trains_22_a3_temp<-c(trains_22_a3_temp,data.train[j-21,]$a3)
+    trains_22_a4_temp<-c(trains_22_a4_temp,data.train[j-21,]$a4)
+    trains_22_a5_temp<-c(trains_22_a5_temp,data.train[j-21,]$a5)
+    trains_22_b1_temp<-c(trains_22_b1_temp,data.train[j-21,]$b1)
+    trains_22_b2_temp<-c(trains_22_b2_temp,data.train[j-21,]$b2)
+    
+    trains_23_a1_temp<-c(trains_23_a1_temp,data.train[j-20,]$a1)
+    trains_23_a2_temp<-c(trains_23_a2_temp,data.train[j-20,]$a2)
+    trains_23_a3_temp<-c(trains_23_a3_temp,data.train[j-20,]$a3)
+    trains_23_a4_temp<-c(trains_23_a4_temp,data.train[j-20,]$a4)
+    trains_23_a5_temp<-c(trains_23_a5_temp,data.train[j-20,]$a5)
+    trains_23_b1_temp<-c(trains_23_b1_temp,data.train[j-20,]$b1)
+    trains_23_b2_temp<-c(trains_23_b2_temp,data.train[j-20,]$b2)
+    
+    trains_24_a1_temp<-c(trains_24_a1_temp,data.train[j-19,]$a1)
+    trains_24_a2_temp<-c(trains_24_a2_temp,data.train[j-19,]$a2)
+    trains_24_a3_temp<-c(trains_24_a3_temp,data.train[j-19,]$a3)
+    trains_24_a4_temp<-c(trains_24_a4_temp,data.train[j-19,]$a4)
+    trains_24_a5_temp<-c(trains_24_a5_temp,data.train[j-19,]$a5)
+    trains_24_b1_temp<-c(trains_24_b1_temp,data.train[j-19,]$b1)
+    trains_24_b2_temp<-c(trains_24_b2_temp,data.train[j-19,]$b2)
+    
+    trains_25_a1_temp<-c(trains_25_a1_temp,data.train[j-18,]$a1)
+    trains_25_a2_temp<-c(trains_25_a2_temp,data.train[j-18,]$a2)
+    trains_25_a3_temp<-c(trains_25_a3_temp,data.train[j-18,]$a3)
+    trains_25_a4_temp<-c(trains_25_a4_temp,data.train[j-18,]$a4)
+    trains_25_a5_temp<-c(trains_25_a5_temp,data.train[j-18,]$a5)
+    trains_25_b1_temp<-c(trains_25_b1_temp,data.train[j-18,]$b1)
+    trains_25_b2_temp<-c(trains_25_b2_temp,data.train[j-18,]$b2)
+    
+    trains_26_a1_temp<-c(trains_26_a1_temp,data.train[j-17,]$a1)
+    trains_26_a2_temp<-c(trains_26_a2_temp,data.train[j-17,]$a2)
+    trains_26_a3_temp<-c(trains_26_a3_temp,data.train[j-17,]$a3)
+    trains_26_a4_temp<-c(trains_26_a4_temp,data.train[j-17,]$a4)
+    trains_26_a5_temp<-c(trains_26_a5_temp,data.train[j-17,]$a5)
+    trains_26_b1_temp<-c(trains_26_b1_temp,data.train[j-17,]$b1)
+    trains_26_b2_temp<-c(trains_26_b2_temp,data.train[j-17,]$b2)
+    
+    trains_27_a1_temp<-c(trains_27_a1_temp,data.train[j-16,]$a1)
+    trains_27_a2_temp<-c(trains_27_a2_temp,data.train[j-16,]$a2)
+    trains_27_a3_temp<-c(trains_27_a3_temp,data.train[j-16,]$a3)
+    trains_27_a4_temp<-c(trains_27_a4_temp,data.train[j-16,]$a4)
+    trains_27_a5_temp<-c(trains_27_a5_temp,data.train[j-16,]$a5)
+    trains_27_b1_temp<-c(trains_27_b1_temp,data.train[j-16,]$b1)
+    trains_27_b2_temp<-c(trains_27_b2_temp,data.train[j-16,]$b2)
+    
+    trains_28_a1_temp<-c(trains_28_a1_temp,data.train[j-15,]$a1)
+    trains_28_a2_temp<-c(trains_28_a2_temp,data.train[j-15,]$a2)
+    trains_28_a3_temp<-c(trains_28_a3_temp,data.train[j-15,]$a3)
+    trains_28_a4_temp<-c(trains_28_a4_temp,data.train[j-15,]$a4)
+    trains_28_a5_temp<-c(trains_28_a5_temp,data.train[j-15,]$a5)
+    trains_28_b1_temp<-c(trains_28_b1_temp,data.train[j-15,]$b1)
+    trains_28_b2_temp<-c(trains_28_b2_temp,data.train[j-15,]$b2)
+    
+    trains_29_a1_temp<-c(trains_29_a1_temp,data.train[j-14,]$a1)
+    trains_29_a2_temp<-c(trains_29_a2_temp,data.train[j-14,]$a2)
+    trains_29_a3_temp<-c(trains_29_a3_temp,data.train[j-14,]$a3)
+    trains_29_a4_temp<-c(trains_29_a4_temp,data.train[j-14,]$a4)
+    trains_29_a5_temp<-c(trains_29_a5_temp,data.train[j-14,]$a5)
+    trains_29_b1_temp<-c(trains_29_b1_temp,data.train[j-14,]$b1)
+    trains_29_b2_temp<-c(trains_29_b2_temp,data.train[j-14,]$b2)
+    
+    trains_30_a1_temp<-c(trains_30_a1_temp,data.train[j-13,]$a1)
+    trains_30_a2_temp<-c(trains_30_a2_temp,data.train[j-13,]$a2)
+    trains_30_a3_temp<-c(trains_30_a3_temp,data.train[j-13,]$a3)
+    trains_30_a4_temp<-c(trains_30_a4_temp,data.train[j-13,]$a4)
+    trains_30_a5_temp<-c(trains_30_a5_temp,data.train[j-13,]$a5)
+    trains_30_b1_temp<-c(trains_30_b1_temp,data.train[j-13,]$b1)
+    trains_30_b2_temp<-c(trains_30_b2_temp,data.train[j-13,]$b2)
+    
+    trains_31_a1_temp<-c(trains_31_a1_temp,data.train[j-12,]$a1)
+    trains_31_a2_temp<-c(trains_31_a2_temp,data.train[j-12,]$a2)
+    trains_31_a3_temp<-c(trains_31_a3_temp,data.train[j-12,]$a3)
+    trains_31_a4_temp<-c(trains_31_a4_temp,data.train[j-12,]$a4)
+    trains_31_a5_temp<-c(trains_31_a5_temp,data.train[j-12,]$a5)
+    trains_31_b1_temp<-c(trains_31_b1_temp,data.train[j-12,]$b1)
+    trains_31_b2_temp<-c(trains_31_b2_temp,data.train[j-12,]$b2)
+    
+    trains_32_a1_temp<-c(trains_32_a1_temp,data.train[j-11,]$a1)
+    trains_32_a2_temp<-c(trains_32_a2_temp,data.train[j-11,]$a2)
+    trains_32_a3_temp<-c(trains_32_a3_temp,data.train[j-11,]$a3)
+    trains_32_a4_temp<-c(trains_32_a4_temp,data.train[j-11,]$a4)
+    trains_32_a5_temp<-c(trains_32_a5_temp,data.train[j-11,]$a5)
+    trains_32_b1_temp<-c(trains_32_b1_temp,data.train[j-11,]$b1)
+    trains_32_b2_temp<-c(trains_32_b2_temp,data.train[j-11,]$b2)
+    
+    trains_33_a1_temp<-c(trains_33_a1_temp,data.train[j-10,]$a1)
+    trains_33_a2_temp<-c(trains_33_a2_temp,data.train[j-10,]$a2)
+    trains_33_a3_temp<-c(trains_33_a3_temp,data.train[j-10,]$a3)
+    trains_33_a4_temp<-c(trains_33_a4_temp,data.train[j-10,]$a4)
+    trains_33_a5_temp<-c(trains_33_a5_temp,data.train[j-10,]$a5)
+    trains_33_b1_temp<-c(trains_33_b1_temp,data.train[j-10,]$b1)
+    trains_33_b2_temp<-c(trains_33_b2_temp,data.train[j-10,]$b2)
+    
+    trains_34_a1_temp<-c(trains_34_a1_temp,data.train[j-9,]$a1)
+    trains_34_a2_temp<-c(trains_34_a2_temp,data.train[j-9,]$a2)
+    trains_34_a3_temp<-c(trains_34_a3_temp,data.train[j-9,]$a3)
+    trains_34_a4_temp<-c(trains_34_a4_temp,data.train[j-9,]$a4)
+    trains_34_a5_temp<-c(trains_34_a5_temp,data.train[j-9,]$a5)
+    trains_34_b1_temp<-c(trains_34_b1_temp,data.train[j-9,]$b1)
+    trains_34_b2_temp<-c(trains_34_b2_temp,data.train[j-9,]$b2)
+    
+    trains_35_a1_temp<-c(trains_35_a1_temp,data.train[j-8,]$a1)
+    trains_35_a2_temp<-c(trains_35_a2_temp,data.train[j-8,]$a2)
+    trains_35_a3_temp<-c(trains_35_a3_temp,data.train[j-8,]$a3)
+    trains_35_a4_temp<-c(trains_35_a4_temp,data.train[j-8,]$a4)
+    trains_35_a5_temp<-c(trains_35_a5_temp,data.train[j-8,]$a5)
+    trains_35_b1_temp<-c(trains_35_b1_temp,data.train[j-8,]$b1)
+    trains_35_b2_temp<-c(trains_35_b2_temp,data.train[j-8,]$b2)
+    
+    trains_36_a1_temp<-c(trains_36_a1_temp,data.train[j-7,]$a1)
+    trains_36_a2_temp<-c(trains_36_a2_temp,data.train[j-7,]$a2)
+    trains_36_a3_temp<-c(trains_36_a3_temp,data.train[j-7,]$a3)
+    trains_36_a4_temp<-c(trains_36_a4_temp,data.train[j-7,]$a4)
+    trains_36_a5_temp<-c(trains_36_a5_temp,data.train[j-7,]$a5)
+    trains_36_b1_temp<-c(trains_36_b1_temp,data.train[j-7,]$b1)
+    trains_36_b2_temp<-c(trains_36_b2_temp,data.train[j-7,]$b2)
+    
+    trains_37_a1_temp<-c(trains_37_a1_temp,data.train[j-6,]$a1)
+    trains_37_a2_temp<-c(trains_37_a2_temp,data.train[j-6,]$a2)
+    trains_37_a3_temp<-c(trains_37_a3_temp,data.train[j-6,]$a3)
+    trains_37_a4_temp<-c(trains_37_a4_temp,data.train[j-6,]$a4)
+    trains_37_a5_temp<-c(trains_37_a5_temp,data.train[j-6,]$a5)
+    trains_37_b1_temp<-c(trains_37_b1_temp,data.train[j-6,]$b1)
+    trains_37_b2_temp<-c(trains_37_b2_temp,data.train[j-6,]$b2)
+    
+    trains_38_a1_temp<-c(trains_38_a1_temp,data.train[j-5,]$a1)
+    trains_38_a2_temp<-c(trains_38_a2_temp,data.train[j-5,]$a2)
+    trains_38_a3_temp<-c(trains_38_a3_temp,data.train[j-5,]$a3)
+    trains_38_a4_temp<-c(trains_38_a4_temp,data.train[j-5,]$a4)
+    trains_38_a5_temp<-c(trains_38_a5_temp,data.train[j-5,]$a5)
+    trains_38_b1_temp<-c(trains_38_b1_temp,data.train[j-5,]$b1)
+    trains_38_b2_temp<-c(trains_38_b2_temp,data.train[j-5,]$b2)
+    
+    trains_39_a1_temp<-c(trains_39_a1_temp,data.train[j-4,]$a1)
+    trains_39_a2_temp<-c(trains_39_a2_temp,data.train[j-4,]$a2)
+    trains_39_a3_temp<-c(trains_39_a3_temp,data.train[j-4,]$a3)
+    trains_39_a4_temp<-c(trains_39_a4_temp,data.train[j-4,]$a4)
+    trains_39_a5_temp<-c(trains_39_a5_temp,data.train[j-4,]$a5)
+    trains_39_b1_temp<-c(trains_39_b1_temp,data.train[j-4,]$b1)
+    trains_39_b2_temp<-c(trains_39_b2_temp,data.train[j-4,]$b2)
+    
+    trains_40_a1_temp<-c(trains_40_a1_temp,data.train[j-3,]$a1)
+    trains_40_a2_temp<-c(trains_40_a2_temp,data.train[j-3,]$a2)
+    trains_40_a3_temp<-c(trains_40_a3_temp,data.train[j-3,]$a3)
+    trains_40_a4_temp<-c(trains_40_a4_temp,data.train[j-3,]$a4)
+    trains_40_a5_temp<-c(trains_40_a5_temp,data.train[j-3,]$a5)
+    trains_40_b1_temp<-c(trains_40_b1_temp,data.train[j-3,]$b1)
+    trains_40_b2_temp<-c(trains_40_b2_temp,data.train[j-3,]$b2)
+    
+    trains_41_a1_temp<-c(trains_41_a1_temp,data.train[j-2,]$a1)
+    trains_41_a2_temp<-c(trains_41_a2_temp,data.train[j-2,]$a2)
+    trains_41_a3_temp<-c(trains_41_a3_temp,data.train[j-2,]$a3)
+    trains_41_a4_temp<-c(trains_41_a4_temp,data.train[j-2,]$a4)
+    trains_41_a5_temp<-c(trains_41_a5_temp,data.train[j-2,]$a5)
+    trains_41_b1_temp<-c(trains_41_b1_temp,data.train[j-2,]$b1)
+    trains_41_b2_temp<-c(trains_41_b2_temp,data.train[j-2,]$b2)
+    
+    trains_42_a1_temp<-c(trains_42_a1_temp,data.train[j-1,]$a1)
+    trains_42_a2_temp<-c(trains_42_a2_temp,data.train[j-1,]$a2)
+    trains_42_a3_temp<-c(trains_42_a3_temp,data.train[j-1,]$a3)
+    trains_42_a4_temp<-c(trains_42_a4_temp,data.train[j-1,]$a4)
+    trains_42_a5_temp<-c(trains_42_a5_temp,data.train[j-1,]$a5)
+    trains_42_b1_temp<-c(trains_42_b1_temp,data.train[j-1,]$b1)
+    trains_42_b2_temp<-c(trains_42_b2_temp,data.train[j-1,]$b2)
+    
+    results_a1_temp<-c(results_a1_temp,data.train[j,]$a1)
+    results_a2_temp<-c(results_a2_temp,data.train[j,]$a2)
+    results_a3_temp<-c(results_a3_temp,data.train[j,]$a3)
+    results_a4_temp<-c(results_a4_temp,data.train[j,]$a4)
+    results_a5_temp<-c(results_a5_temp,data.train[j,]$a5)
+    results_b1_temp<-c(results_b1_temp,data.train[j,]$b1)
+    results_b2_temp<-c(results_b2_temp,data.train[j,]$b2)
+    
+    
+    
   }
+  
   a1<-trains_1_a1_temp[-1]
   a2<-trains_1_a2_temp[-1]
   a3<-trains_1_a3_temp[-1]
@@ -51,24 +735,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_1  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  
-  #Trains_2
-  trains_2_a1_temp<-0
-  trains_2_a2_temp<-0
-  trains_2_a3_temp<-0
-  trains_2_a4_temp<-0
-  trains_2_a5_temp<-0
-  trains_2_b1_temp<-0
-  trains_2_b2_temp<-0
-  for (j in row) {
-    trains_2_a1_temp<-c(trains_2_a1_temp,data.train[j-41,]$a1)
-    trains_2_a2_temp<-c(trains_2_a2_temp,data.train[j-41,]$a2)
-    trains_2_a3_temp<-c(trains_2_a3_temp,data.train[j-41,]$a3)
-    trains_2_a4_temp<-c(trains_2_a4_temp,data.train[j-41,]$a4)
-    trains_2_a5_temp<-c(trains_2_a5_temp,data.train[j-41,]$a5)
-    trains_2_b1_temp<-c(trains_2_b1_temp,data.train[j-41,]$b1)
-    trains_2_b2_temp<-c(trains_2_b2_temp,data.train[j-41,]$b2)
-  }
   a1<-trains_2_a1_temp[-1]
   a2<-trains_2_a2_temp[-1]
   a3<-trains_2_a3_temp[-1]
@@ -79,23 +745,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_2  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_3
-  trains_3_a1_temp<-0
-  trains_3_a2_temp<-0
-  trains_3_a3_temp<-0
-  trains_3_a4_temp<-0
-  trains_3_a5_temp<-0
-  trains_3_b1_temp<-0
-  trains_3_b2_temp<-0
-  for (j in row) {
-    trains_3_a1_temp<-c(trains_3_a1_temp,data.train[j-40,]$a1)
-    trains_3_a2_temp<-c(trains_3_a2_temp,data.train[j-40,]$a2)
-    trains_3_a3_temp<-c(trains_3_a3_temp,data.train[j-40,]$a3)
-    trains_3_a4_temp<-c(trains_3_a4_temp,data.train[j-40,]$a4)
-    trains_3_a5_temp<-c(trains_3_a5_temp,data.train[j-40,]$a5)
-    trains_3_b1_temp<-c(trains_3_b1_temp,data.train[j-40,]$b1)
-    trains_3_b2_temp<-c(trains_3_b2_temp,data.train[j-40,]$b2)
-  }
   a1<-trains_3_a1_temp[-1]
   a2<-trains_3_a2_temp[-1]
   a3<-trains_3_a3_temp[-1]
@@ -106,23 +755,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_3  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_4
-  trains_4_a1_temp<-0
-  trains_4_a2_temp<-0
-  trains_4_a3_temp<-0
-  trains_4_a4_temp<-0
-  trains_4_a5_temp<-0
-  trains_4_b1_temp<-0
-  trains_4_b2_temp<-0
-  for (j in row) {
-    trains_4_a1_temp<-c(trains_4_a1_temp,data.train[j-39,]$a1)
-    trains_4_a2_temp<-c(trains_4_a2_temp,data.train[j-39,]$a2)
-    trains_4_a3_temp<-c(trains_4_a3_temp,data.train[j-39,]$a3)
-    trains_4_a4_temp<-c(trains_4_a4_temp,data.train[j-39,]$a4)
-    trains_4_a5_temp<-c(trains_4_a5_temp,data.train[j-39,]$a5)
-    trains_4_b1_temp<-c(trains_4_b1_temp,data.train[j-39,]$b1)
-    trains_4_b2_temp<-c(trains_4_b2_temp,data.train[j-39,]$b2)
-  }
   a1<-trains_4_a1_temp[-1]
   a2<-trains_4_a2_temp[-1]
   a3<-trains_4_a3_temp[-1]
@@ -133,23 +765,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_4  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_5
-  trains_5_a1_temp<-0
-  trains_5_a2_temp<-0
-  trains_5_a3_temp<-0
-  trains_5_a4_temp<-0
-  trains_5_a5_temp<-0
-  trains_5_b1_temp<-0
-  trains_5_b2_temp<-0
-  for (j in row) {
-    trains_5_a1_temp<-c(trains_5_a1_temp,data.train[j-38,]$a1)
-    trains_5_a2_temp<-c(trains_5_a2_temp,data.train[j-38,]$a2)
-    trains_5_a3_temp<-c(trains_5_a3_temp,data.train[j-38,]$a3)
-    trains_5_a4_temp<-c(trains_5_a4_temp,data.train[j-38,]$a4)
-    trains_5_a5_temp<-c(trains_5_a5_temp,data.train[j-38,]$a5)
-    trains_5_b1_temp<-c(trains_5_b1_temp,data.train[j-38,]$b1)
-    trains_5_b2_temp<-c(trains_5_b2_temp,data.train[j-38,]$b2)
-  }
   a1<-trains_5_a1_temp[-1]
   a2<-trains_5_a2_temp[-1]
   a3<-trains_5_a3_temp[-1]
@@ -160,23 +775,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_5  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_6
-  trains_6_a1_temp<-0
-  trains_6_a2_temp<-0
-  trains_6_a3_temp<-0
-  trains_6_a4_temp<-0
-  trains_6_a5_temp<-0
-  trains_6_b1_temp<-0
-  trains_6_b2_temp<-0
-  for (j in row) {
-    trains_6_a1_temp<-c(trains_6_a1_temp,data.train[j-37,]$a1)
-    trains_6_a2_temp<-c(trains_6_a2_temp,data.train[j-37,]$a2)
-    trains_6_a3_temp<-c(trains_6_a3_temp,data.train[j-37,]$a3)
-    trains_6_a4_temp<-c(trains_6_a4_temp,data.train[j-37,]$a4)
-    trains_6_a5_temp<-c(trains_6_a5_temp,data.train[j-37,]$a5)
-    trains_6_b1_temp<-c(trains_6_b1_temp,data.train[j-37,]$b1)
-    trains_6_b2_temp<-c(trains_6_b2_temp,data.train[j-37,]$b2)
-  }
   a1<-trains_6_a1_temp[-1]
   a2<-trains_6_a2_temp[-1]
   a3<-trains_6_a3_temp[-1]
@@ -187,23 +785,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_6  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_7
-  trains_7_a1_temp<-0
-  trains_7_a2_temp<-0
-  trains_7_a3_temp<-0
-  trains_7_a4_temp<-0
-  trains_7_a5_temp<-0
-  trains_7_b1_temp<-0
-  trains_7_b2_temp<-0
-  for (j in row) {
-    trains_7_a1_temp<-c(trains_7_a1_temp,data.train[j-36,]$a1)
-    trains_7_a2_temp<-c(trains_7_a2_temp,data.train[j-36,]$a2)
-    trains_7_a3_temp<-c(trains_7_a3_temp,data.train[j-36,]$a3)
-    trains_7_a4_temp<-c(trains_7_a4_temp,data.train[j-36,]$a4)
-    trains_7_a5_temp<-c(trains_7_a5_temp,data.train[j-36,]$a5)
-    trains_7_b1_temp<-c(trains_7_b1_temp,data.train[j-36,]$b1)
-    trains_7_b2_temp<-c(trains_7_b2_temp,data.train[j-36,]$b2)
-  }
   a1<-trains_7_a1_temp[-1]
   a2<-trains_7_a2_temp[-1]
   a3<-trains_7_a3_temp[-1]
@@ -214,23 +795,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_7  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_8
-  trains_8_a1_temp<-0
-  trains_8_a2_temp<-0
-  trains_8_a3_temp<-0
-  trains_8_a4_temp<-0
-  trains_8_a5_temp<-0
-  trains_8_b1_temp<-0
-  trains_8_b2_temp<-0
-  for (j in row) {
-    trains_8_a1_temp<-c(trains_8_a1_temp,data.train[j-35,]$a1)
-    trains_8_a2_temp<-c(trains_8_a2_temp,data.train[j-35,]$a2)
-    trains_8_a3_temp<-c(trains_8_a3_temp,data.train[j-35,]$a3)
-    trains_8_a4_temp<-c(trains_8_a4_temp,data.train[j-35,]$a4)
-    trains_8_a5_temp<-c(trains_8_a5_temp,data.train[j-35,]$a5)
-    trains_8_b1_temp<-c(trains_8_b1_temp,data.train[j-35,]$b1)
-    trains_8_b2_temp<-c(trains_8_b2_temp,data.train[j-35,]$b2)
-  }
   a1<-trains_8_a1_temp[-1]
   a2<-trains_8_a2_temp[-1]
   a3<-trains_8_a3_temp[-1]
@@ -241,23 +805,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_8  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_9
-  trains_9_a1_temp<-0
-  trains_9_a2_temp<-0
-  trains_9_a3_temp<-0
-  trains_9_a4_temp<-0
-  trains_9_a5_temp<-0
-  trains_9_b1_temp<-0
-  trains_9_b2_temp<-0
-  for (j in row) {
-    trains_9_a1_temp<-c(trains_9_a1_temp,data.train[j-34,]$a1)
-    trains_9_a2_temp<-c(trains_9_a2_temp,data.train[j-34,]$a2)
-    trains_9_a3_temp<-c(trains_9_a3_temp,data.train[j-34,]$a3)
-    trains_9_a4_temp<-c(trains_9_a4_temp,data.train[j-34,]$a4)
-    trains_9_a5_temp<-c(trains_9_a5_temp,data.train[j-34,]$a5)
-    trains_9_b1_temp<-c(trains_9_b1_temp,data.train[j-34,]$b1)
-    trains_9_b2_temp<-c(trains_9_b2_temp,data.train[j-34,]$b2)
-  }
   a1<-trains_9_a1_temp[-1]
   a2<-trains_9_a2_temp[-1]
   a3<-trains_9_a3_temp[-1]
@@ -268,23 +815,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_9  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_10
-  trains_10_a1_temp<-0
-  trains_10_a2_temp<-0
-  trains_10_a3_temp<-0
-  trains_10_a4_temp<-0
-  trains_10_a5_temp<-0
-  trains_10_b1_temp<-0
-  trains_10_b2_temp<-0
-  for (j in row) {
-    trains_10_a1_temp<-c(trains_10_a1_temp,data.train[j-33,]$a1)
-    trains_10_a2_temp<-c(trains_10_a2_temp,data.train[j-33,]$a2)
-    trains_10_a3_temp<-c(trains_10_a3_temp,data.train[j-33,]$a3)
-    trains_10_a4_temp<-c(trains_10_a4_temp,data.train[j-33,]$a4)
-    trains_10_a5_temp<-c(trains_10_a5_temp,data.train[j-33,]$a5)
-    trains_10_b1_temp<-c(trains_10_b1_temp,data.train[j-33,]$b1)
-    trains_10_b2_temp<-c(trains_10_b2_temp,data.train[j-33,]$b2)
-  }
   a1<-trains_10_a1_temp[-1]
   a2<-trains_10_a2_temp[-1]
   a3<-trains_10_a3_temp[-1]
@@ -295,23 +825,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_10  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_11
-  trains_11_a1_temp<-0
-  trains_11_a2_temp<-0
-  trains_11_a3_temp<-0
-  trains_11_a4_temp<-0
-  trains_11_a5_temp<-0
-  trains_11_b1_temp<-0
-  trains_11_b2_temp<-0
-  for (j in row) {
-    trains_11_a1_temp<-c(trains_11_a1_temp,data.train[j-32,]$a1)
-    trains_11_a2_temp<-c(trains_11_a2_temp,data.train[j-32,]$a2)
-    trains_11_a3_temp<-c(trains_11_a3_temp,data.train[j-32,]$a3)
-    trains_11_a4_temp<-c(trains_11_a4_temp,data.train[j-32,]$a4)
-    trains_11_a5_temp<-c(trains_11_a5_temp,data.train[j-32,]$a5)
-    trains_11_b1_temp<-c(trains_11_b1_temp,data.train[j-32,]$b1)
-    trains_11_b2_temp<-c(trains_11_b2_temp,data.train[j-32,]$b2)
-  }
   a1<-trains_11_a1_temp[-1]
   a2<-trains_11_a2_temp[-1]
   a3<-trains_11_a3_temp[-1]
@@ -322,23 +835,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_11  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_12
-  trains_12_a1_temp<-0
-  trains_12_a2_temp<-0
-  trains_12_a3_temp<-0
-  trains_12_a4_temp<-0
-  trains_12_a5_temp<-0
-  trains_12_b1_temp<-0
-  trains_12_b2_temp<-0
-  for (j in row) {
-    trains_12_a1_temp<-c(trains_12_a1_temp,data.train[j-31,]$a1)
-    trains_12_a2_temp<-c(trains_12_a2_temp,data.train[j-31,]$a2)
-    trains_12_a3_temp<-c(trains_12_a3_temp,data.train[j-31,]$a3)
-    trains_12_a4_temp<-c(trains_12_a4_temp,data.train[j-31,]$a4)
-    trains_12_a5_temp<-c(trains_12_a5_temp,data.train[j-31,]$a5)
-    trains_12_b1_temp<-c(trains_12_b1_temp,data.train[j-31,]$b1)
-    trains_12_b2_temp<-c(trains_12_b2_temp,data.train[j-31,]$b2)
-  }
   a1<-trains_12_a1_temp[-1]
   a2<-trains_12_a2_temp[-1]
   a3<-trains_12_a3_temp[-1]
@@ -349,23 +845,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_12  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_13
-  trains_13_a1_temp<-0
-  trains_13_a2_temp<-0
-  trains_13_a3_temp<-0
-  trains_13_a4_temp<-0
-  trains_13_a5_temp<-0
-  trains_13_b1_temp<-0
-  trains_13_b2_temp<-0
-  for (j in row) {
-    trains_13_a1_temp<-c(trains_13_a1_temp,data.train[j-30,]$a1)
-    trains_13_a2_temp<-c(trains_13_a2_temp,data.train[j-30,]$a2)
-    trains_13_a3_temp<-c(trains_13_a3_temp,data.train[j-30,]$a3)
-    trains_13_a4_temp<-c(trains_13_a4_temp,data.train[j-30,]$a4)
-    trains_13_a5_temp<-c(trains_13_a5_temp,data.train[j-30,]$a5)
-    trains_13_b1_temp<-c(trains_13_b1_temp,data.train[j-30,]$b1)
-    trains_13_b2_temp<-c(trains_13_b2_temp,data.train[j-30,]$b2)
-  }
   a1<-trains_13_a1_temp[-1]
   a2<-trains_13_a2_temp[-1]
   a3<-trains_13_a3_temp[-1]
@@ -376,23 +855,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_13  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_14
-  trains_14_a1_temp<-0
-  trains_14_a2_temp<-0
-  trains_14_a3_temp<-0
-  trains_14_a4_temp<-0
-  trains_14_a5_temp<-0
-  trains_14_b1_temp<-0
-  trains_14_b2_temp<-0
-  for (j in row) {
-    trains_14_a1_temp<-c(trains_14_a1_temp,data.train[j-29,]$a1)
-    trains_14_a2_temp<-c(trains_14_a2_temp,data.train[j-29,]$a2)
-    trains_14_a3_temp<-c(trains_14_a3_temp,data.train[j-29,]$a3)
-    trains_14_a4_temp<-c(trains_14_a4_temp,data.train[j-29,]$a4)
-    trains_14_a5_temp<-c(trains_14_a5_temp,data.train[j-29,]$a5)
-    trains_14_b1_temp<-c(trains_14_b1_temp,data.train[j-29,]$b1)
-    trains_14_b2_temp<-c(trains_14_b2_temp,data.train[j-29,]$b2)
-  }
   a1<-trains_14_a1_temp[-1]
   a2<-trains_14_a2_temp[-1]
   a3<-trains_14_a3_temp[-1]
@@ -403,23 +865,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_14  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_15
-  trains_15_a1_temp<-0
-  trains_15_a2_temp<-0
-  trains_15_a3_temp<-0
-  trains_15_a4_temp<-0
-  trains_15_a5_temp<-0
-  trains_15_b1_temp<-0
-  trains_15_b2_temp<-0
-  for (j in row) {
-    trains_15_a1_temp<-c(trains_15_a1_temp,data.train[j-28,]$a1)
-    trains_15_a2_temp<-c(trains_15_a2_temp,data.train[j-28,]$a2)
-    trains_15_a3_temp<-c(trains_15_a3_temp,data.train[j-28,]$a3)
-    trains_15_a4_temp<-c(trains_15_a4_temp,data.train[j-28,]$a4)
-    trains_15_a5_temp<-c(trains_15_a5_temp,data.train[j-28,]$a5)
-    trains_15_b1_temp<-c(trains_15_b1_temp,data.train[j-28,]$b1)
-    trains_15_b2_temp<-c(trains_15_b2_temp,data.train[j-28,]$b2)
-  }
   a1<-trains_15_a1_temp[-1]
   a2<-trains_15_a2_temp[-1]
   a3<-trains_15_a3_temp[-1]
@@ -430,23 +875,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_15  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_16
-  trains_16_a1_temp<-0
-  trains_16_a2_temp<-0
-  trains_16_a3_temp<-0
-  trains_16_a4_temp<-0
-  trains_16_a5_temp<-0
-  trains_16_b1_temp<-0
-  trains_16_b2_temp<-0
-  for (j in row) {
-    trains_16_a1_temp<-c(trains_16_a1_temp,data.train[j-27,]$a1)
-    trains_16_a2_temp<-c(trains_16_a2_temp,data.train[j-27,]$a2)
-    trains_16_a3_temp<-c(trains_16_a3_temp,data.train[j-27,]$a3)
-    trains_16_a4_temp<-c(trains_16_a4_temp,data.train[j-27,]$a4)
-    trains_16_a5_temp<-c(trains_16_a5_temp,data.train[j-27,]$a5)
-    trains_16_b1_temp<-c(trains_16_b1_temp,data.train[j-27,]$b1)
-    trains_16_b2_temp<-c(trains_16_b2_temp,data.train[j-27,]$b2)
-  }
   a1<-trains_16_a1_temp[-1]
   a2<-trains_16_a2_temp[-1]
   a3<-trains_16_a3_temp[-1]
@@ -457,23 +885,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_16  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_17
-  trains_17_a1_temp<-0
-  trains_17_a2_temp<-0
-  trains_17_a3_temp<-0
-  trains_17_a4_temp<-0
-  trains_17_a5_temp<-0
-  trains_17_b1_temp<-0
-  trains_17_b2_temp<-0
-  for (j in row) {
-    trains_17_a1_temp<-c(trains_17_a1_temp,data.train[j-26,]$a1)
-    trains_17_a2_temp<-c(trains_17_a2_temp,data.train[j-26,]$a2)
-    trains_17_a3_temp<-c(trains_17_a3_temp,data.train[j-26,]$a3)
-    trains_17_a4_temp<-c(trains_17_a4_temp,data.train[j-26,]$a4)
-    trains_17_a5_temp<-c(trains_17_a5_temp,data.train[j-26,]$a5)
-    trains_17_b1_temp<-c(trains_17_b1_temp,data.train[j-26,]$b1)
-    trains_17_b2_temp<-c(trains_17_b2_temp,data.train[j-26,]$b2)
-  }
   a1<-trains_17_a1_temp[-1]
   a2<-trains_17_a2_temp[-1]
   a3<-trains_17_a3_temp[-1]
@@ -484,23 +895,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_17  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_18
-  trains_18_a1_temp<-0
-  trains_18_a2_temp<-0
-  trains_18_a3_temp<-0
-  trains_18_a4_temp<-0
-  trains_18_a5_temp<-0
-  trains_18_b1_temp<-0
-  trains_18_b2_temp<-0
-  for (j in row) {
-    trains_18_a1_temp<-c(trains_18_a1_temp,data.train[j-25,]$a1)
-    trains_18_a2_temp<-c(trains_18_a2_temp,data.train[j-25,]$a2)
-    trains_18_a3_temp<-c(trains_18_a3_temp,data.train[j-25,]$a3)
-    trains_18_a4_temp<-c(trains_18_a4_temp,data.train[j-25,]$a4)
-    trains_18_a5_temp<-c(trains_18_a5_temp,data.train[j-25,]$a5)
-    trains_18_b1_temp<-c(trains_18_b1_temp,data.train[j-25,]$b1)
-    trains_18_b2_temp<-c(trains_18_b2_temp,data.train[j-25,]$b2)
-  }
   a1<-trains_18_a1_temp[-1]
   a2<-trains_18_a2_temp[-1]
   a3<-trains_18_a3_temp[-1]
@@ -511,23 +905,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_18  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_19
-  trains_19_a1_temp<-0
-  trains_19_a2_temp<-0
-  trains_19_a3_temp<-0
-  trains_19_a4_temp<-0
-  trains_19_a5_temp<-0
-  trains_19_b1_temp<-0
-  trains_19_b2_temp<-0
-  for (j in row) {
-    trains_19_a1_temp<-c(trains_19_a1_temp,data.train[j-24,]$a1)
-    trains_19_a2_temp<-c(trains_19_a2_temp,data.train[j-24,]$a2)
-    trains_19_a3_temp<-c(trains_19_a3_temp,data.train[j-24,]$a3)
-    trains_19_a4_temp<-c(trains_19_a4_temp,data.train[j-24,]$a4)
-    trains_19_a5_temp<-c(trains_19_a5_temp,data.train[j-24,]$a5)
-    trains_19_b1_temp<-c(trains_19_b1_temp,data.train[j-24,]$b1)
-    trains_19_b2_temp<-c(trains_19_b2_temp,data.train[j-24,]$b2)
-  }
   a1<-trains_19_a1_temp[-1]
   a2<-trains_19_a2_temp[-1]
   a3<-trains_19_a3_temp[-1]
@@ -538,23 +915,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_19  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_20
-  trains_20_a1_temp<-0
-  trains_20_a2_temp<-0
-  trains_20_a3_temp<-0
-  trains_20_a4_temp<-0
-  trains_20_a5_temp<-0
-  trains_20_b1_temp<-0
-  trains_20_b2_temp<-0
-  for (j in row) {
-    trains_20_a1_temp<-c(trains_20_a1_temp,data.train[j-23,]$a1)
-    trains_20_a2_temp<-c(trains_20_a2_temp,data.train[j-23,]$a2)
-    trains_20_a3_temp<-c(trains_20_a3_temp,data.train[j-23,]$a3)
-    trains_20_a4_temp<-c(trains_20_a4_temp,data.train[j-23,]$a4)
-    trains_20_a5_temp<-c(trains_20_a5_temp,data.train[j-23,]$a5)
-    trains_20_b1_temp<-c(trains_20_b1_temp,data.train[j-23,]$b1)
-    trains_20_b2_temp<-c(trains_20_b2_temp,data.train[j-23,]$b2)
-  }
   a1<-trains_20_a1_temp[-1]
   a2<-trains_20_a2_temp[-1]
   a3<-trains_20_a3_temp[-1]
@@ -565,23 +925,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_20  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_21
-  trains_21_a1_temp<-0
-  trains_21_a2_temp<-0
-  trains_21_a3_temp<-0
-  trains_21_a4_temp<-0
-  trains_21_a5_temp<-0
-  trains_21_b1_temp<-0
-  trains_21_b2_temp<-0
-  for (j in row) {
-    trains_21_a1_temp<-c(trains_21_a1_temp,data.train[j-22,]$a1)
-    trains_21_a2_temp<-c(trains_21_a2_temp,data.train[j-22,]$a2)
-    trains_21_a3_temp<-c(trains_21_a3_temp,data.train[j-22,]$a3)
-    trains_21_a4_temp<-c(trains_21_a4_temp,data.train[j-22,]$a4)
-    trains_21_a5_temp<-c(trains_21_a5_temp,data.train[j-22,]$a5)
-    trains_21_b1_temp<-c(trains_21_b1_temp,data.train[j-22,]$b1)
-    trains_21_b2_temp<-c(trains_21_b2_temp,data.train[j-22,]$b2)
-  }
   a1<-trains_21_a1_temp[-1]
   a2<-trains_21_a2_temp[-1]
   a3<-trains_21_a3_temp[-1]
@@ -592,23 +935,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_21  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_22
-  trains_22_a1_temp<-0
-  trains_22_a2_temp<-0
-  trains_22_a3_temp<-0
-  trains_22_a4_temp<-0
-  trains_22_a5_temp<-0
-  trains_22_b1_temp<-0
-  trains_22_b2_temp<-0
-  for (j in row) {
-    trains_22_a1_temp<-c(trains_22_a1_temp,data.train[j-21,]$a1)
-    trains_22_a2_temp<-c(trains_22_a2_temp,data.train[j-21,]$a2)
-    trains_22_a3_temp<-c(trains_22_a3_temp,data.train[j-21,]$a3)
-    trains_22_a4_temp<-c(trains_22_a4_temp,data.train[j-21,]$a4)
-    trains_22_a5_temp<-c(trains_22_a5_temp,data.train[j-21,]$a5)
-    trains_22_b1_temp<-c(trains_22_b1_temp,data.train[j-21,]$b1)
-    trains_22_b2_temp<-c(trains_22_b2_temp,data.train[j-21,]$b2)
-  }
   a1<-trains_22_a1_temp[-1]
   a2<-trains_22_a2_temp[-1]
   a3<-trains_22_a3_temp[-1]
@@ -619,23 +945,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_22  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_23
-  trains_23_a1_temp<-0
-  trains_23_a2_temp<-0
-  trains_23_a3_temp<-0
-  trains_23_a4_temp<-0
-  trains_23_a5_temp<-0
-  trains_23_b1_temp<-0
-  trains_23_b2_temp<-0
-  for (j in row) {
-    trains_23_a1_temp<-c(trains_23_a1_temp,data.train[j-20,]$a1)
-    trains_23_a2_temp<-c(trains_23_a2_temp,data.train[j-20,]$a2)
-    trains_23_a3_temp<-c(trains_23_a3_temp,data.train[j-20,]$a3)
-    trains_23_a4_temp<-c(trains_23_a4_temp,data.train[j-20,]$a4)
-    trains_23_a5_temp<-c(trains_23_a5_temp,data.train[j-20,]$a5)
-    trains_23_b1_temp<-c(trains_23_b1_temp,data.train[j-20,]$b1)
-    trains_23_b2_temp<-c(trains_23_b2_temp,data.train[j-20,]$b2)
-  }
   a1<-trains_23_a1_temp[-1]
   a2<-trains_23_a2_temp[-1]
   a3<-trains_23_a3_temp[-1]
@@ -646,23 +955,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_23  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_24
-  trains_24_a1_temp<-0
-  trains_24_a2_temp<-0
-  trains_24_a3_temp<-0
-  trains_24_a4_temp<-0
-  trains_24_a5_temp<-0
-  trains_24_b1_temp<-0
-  trains_24_b2_temp<-0
-  for (j in row) {
-    trains_24_a1_temp<-c(trains_24_a1_temp,data.train[j-19,]$a1)
-    trains_24_a2_temp<-c(trains_24_a2_temp,data.train[j-19,]$a2)
-    trains_24_a3_temp<-c(trains_24_a3_temp,data.train[j-19,]$a3)
-    trains_24_a4_temp<-c(trains_24_a4_temp,data.train[j-19,]$a4)
-    trains_24_a5_temp<-c(trains_24_a5_temp,data.train[j-19,]$a5)
-    trains_24_b1_temp<-c(trains_24_b1_temp,data.train[j-19,]$b1)
-    trains_24_b2_temp<-c(trains_24_b2_temp,data.train[j-19,]$b2)
-  }
   a1<-trains_24_a1_temp[-1]
   a2<-trains_24_a2_temp[-1]
   a3<-trains_24_a3_temp[-1]
@@ -673,23 +965,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_24  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_25
-  trains_25_a1_temp<-0
-  trains_25_a2_temp<-0
-  trains_25_a3_temp<-0
-  trains_25_a4_temp<-0
-  trains_25_a5_temp<-0
-  trains_25_b1_temp<-0
-  trains_25_b2_temp<-0
-  for (j in row) {
-    trains_25_a1_temp<-c(trains_25_a1_temp,data.train[j-18,]$a1)
-    trains_25_a2_temp<-c(trains_25_a2_temp,data.train[j-18,]$a2)
-    trains_25_a3_temp<-c(trains_25_a3_temp,data.train[j-18,]$a3)
-    trains_25_a4_temp<-c(trains_25_a4_temp,data.train[j-18,]$a4)
-    trains_25_a5_temp<-c(trains_25_a5_temp,data.train[j-18,]$a5)
-    trains_25_b1_temp<-c(trains_25_b1_temp,data.train[j-18,]$b1)
-    trains_25_b2_temp<-c(trains_25_b2_temp,data.train[j-18,]$b2)
-  }
   a1<-trains_25_a1_temp[-1]
   a2<-trains_25_a2_temp[-1]
   a3<-trains_25_a3_temp[-1]
@@ -700,23 +975,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_25  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_26
-  trains_26_a1_temp<-0
-  trains_26_a2_temp<-0
-  trains_26_a3_temp<-0
-  trains_26_a4_temp<-0
-  trains_26_a5_temp<-0
-  trains_26_b1_temp<-0
-  trains_26_b2_temp<-0
-  for (j in row) {
-    trains_26_a1_temp<-c(trains_26_a1_temp,data.train[j-17,]$a1)
-    trains_26_a2_temp<-c(trains_26_a2_temp,data.train[j-17,]$a2)
-    trains_26_a3_temp<-c(trains_26_a3_temp,data.train[j-17,]$a3)
-    trains_26_a4_temp<-c(trains_26_a4_temp,data.train[j-17,]$a4)
-    trains_26_a5_temp<-c(trains_26_a5_temp,data.train[j-17,]$a5)
-    trains_26_b1_temp<-c(trains_26_b1_temp,data.train[j-17,]$b1)
-    trains_26_b2_temp<-c(trains_26_b2_temp,data.train[j-17,]$b2)
-  }
   a1<-trains_26_a1_temp[-1]
   a2<-trains_26_a2_temp[-1]
   a3<-trains_26_a3_temp[-1]
@@ -727,23 +985,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_26  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_27
-  trains_27_a1_temp<-0
-  trains_27_a2_temp<-0
-  trains_27_a3_temp<-0
-  trains_27_a4_temp<-0
-  trains_27_a5_temp<-0
-  trains_27_b1_temp<-0
-  trains_27_b2_temp<-0
-  for (j in row) {
-    trains_27_a1_temp<-c(trains_27_a1_temp,data.train[j-16,]$a1)
-    trains_27_a2_temp<-c(trains_27_a2_temp,data.train[j-16,]$a2)
-    trains_27_a3_temp<-c(trains_27_a3_temp,data.train[j-16,]$a3)
-    trains_27_a4_temp<-c(trains_27_a4_temp,data.train[j-16,]$a4)
-    trains_27_a5_temp<-c(trains_27_a5_temp,data.train[j-16,]$a5)
-    trains_27_b1_temp<-c(trains_27_b1_temp,data.train[j-16,]$b1)
-    trains_27_b2_temp<-c(trains_27_b2_temp,data.train[j-16,]$b2)
-  }
   a1<-trains_27_a1_temp[-1]
   a2<-trains_27_a2_temp[-1]
   a3<-trains_27_a3_temp[-1]
@@ -754,23 +995,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_27  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_28
-  trains_28_a1_temp<-0
-  trains_28_a2_temp<-0
-  trains_28_a3_temp<-0
-  trains_28_a4_temp<-0
-  trains_28_a5_temp<-0
-  trains_28_b1_temp<-0
-  trains_28_b2_temp<-0
-  for (j in row) {
-    trains_28_a1_temp<-c(trains_28_a1_temp,data.train[j-15,]$a1)
-    trains_28_a2_temp<-c(trains_28_a2_temp,data.train[j-15,]$a2)
-    trains_28_a3_temp<-c(trains_28_a3_temp,data.train[j-15,]$a3)
-    trains_28_a4_temp<-c(trains_28_a4_temp,data.train[j-15,]$a4)
-    trains_28_a5_temp<-c(trains_28_a5_temp,data.train[j-15,]$a5)
-    trains_28_b1_temp<-c(trains_28_b1_temp,data.train[j-15,]$b1)
-    trains_28_b2_temp<-c(trains_28_b2_temp,data.train[j-15,]$b2)
-  }
   a1<-trains_28_a1_temp[-1]
   a2<-trains_28_a2_temp[-1]
   a3<-trains_28_a3_temp[-1]
@@ -781,23 +1005,7 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_28  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_29
-  trains_29_a1_temp<-0
-  trains_29_a2_temp<-0
-  trains_29_a3_temp<-0
-  trains_29_a4_temp<-0
-  trains_29_a5_temp<-0
-  trains_29_b1_temp<-0
-  trains_29_b2_temp<-0
-  for (j in row) {
-    trains_29_a1_temp<-c(trains_29_a1_temp,data.train[j-14,]$a1)
-    trains_29_a2_temp<-c(trains_29_a2_temp,data.train[j-14,]$a2)
-    trains_29_a3_temp<-c(trains_29_a3_temp,data.train[j-14,]$a3)
-    trains_29_a4_temp<-c(trains_29_a4_temp,data.train[j-14,]$a4)
-    trains_29_a5_temp<-c(trains_29_a5_temp,data.train[j-14,]$a5)
-    trains_29_b1_temp<-c(trains_29_b1_temp,data.train[j-14,]$b1)
-    trains_29_b2_temp<-c(trains_29_b2_temp,data.train[j-14,]$b2)
-  }
+  
   a1<-trains_29_a1_temp[-1]
   a2<-trains_29_a2_temp[-1]
   a3<-trains_29_a3_temp[-1]
@@ -808,23 +1016,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_29  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_30
-  trains_30_a1_temp<-0
-  trains_30_a2_temp<-0
-  trains_30_a3_temp<-0
-  trains_30_a4_temp<-0
-  trains_30_a5_temp<-0
-  trains_30_b1_temp<-0
-  trains_30_b2_temp<-0
-  for (j in row) {
-    trains_30_a1_temp<-c(trains_30_a1_temp,data.train[j-13,]$a1)
-    trains_30_a2_temp<-c(trains_30_a2_temp,data.train[j-13,]$a2)
-    trains_30_a3_temp<-c(trains_30_a3_temp,data.train[j-13,]$a3)
-    trains_30_a4_temp<-c(trains_30_a4_temp,data.train[j-13,]$a4)
-    trains_30_a5_temp<-c(trains_30_a5_temp,data.train[j-13,]$a5)
-    trains_30_b1_temp<-c(trains_30_b1_temp,data.train[j-13,]$b1)
-    trains_30_b2_temp<-c(trains_30_b2_temp,data.train[j-13,]$b2)
-  }
   a1<-trains_30_a1_temp[-1]
   a2<-trains_30_a2_temp[-1]
   a3<-trains_30_a3_temp[-1]
@@ -835,23 +1026,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_30  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_31
-  trains_31_a1_temp<-0
-  trains_31_a2_temp<-0
-  trains_31_a3_temp<-0
-  trains_31_a4_temp<-0
-  trains_31_a5_temp<-0
-  trains_31_b1_temp<-0
-  trains_31_b2_temp<-0
-  for (j in row) {
-    trains_31_a1_temp<-c(trains_31_a1_temp,data.train[j-12,]$a1)
-    trains_31_a2_temp<-c(trains_31_a2_temp,data.train[j-12,]$a2)
-    trains_31_a3_temp<-c(trains_31_a3_temp,data.train[j-12,]$a3)
-    trains_31_a4_temp<-c(trains_31_a4_temp,data.train[j-12,]$a4)
-    trains_31_a5_temp<-c(trains_31_a5_temp,data.train[j-12,]$a5)
-    trains_31_b1_temp<-c(trains_31_b1_temp,data.train[j-12,]$b1)
-    trains_31_b2_temp<-c(trains_31_b2_temp,data.train[j-12,]$b2)
-  }
   a1<-trains_31_a1_temp[-1]
   a2<-trains_31_a2_temp[-1]
   a3<-trains_31_a3_temp[-1]
@@ -862,23 +1036,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_31  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_32
-  trains_32_a1_temp<-0
-  trains_32_a2_temp<-0
-  trains_32_a3_temp<-0
-  trains_32_a4_temp<-0
-  trains_32_a5_temp<-0
-  trains_32_b1_temp<-0
-  trains_32_b2_temp<-0
-  for (j in row) {
-    trains_32_a1_temp<-c(trains_32_a1_temp,data.train[j-11,]$a1)
-    trains_32_a2_temp<-c(trains_32_a2_temp,data.train[j-11,]$a2)
-    trains_32_a3_temp<-c(trains_32_a3_temp,data.train[j-11,]$a3)
-    trains_32_a4_temp<-c(trains_32_a4_temp,data.train[j-11,]$a4)
-    trains_32_a5_temp<-c(trains_32_a5_temp,data.train[j-11,]$a5)
-    trains_32_b1_temp<-c(trains_32_b1_temp,data.train[j-11,]$b1)
-    trains_32_b2_temp<-c(trains_32_b2_temp,data.train[j-11,]$b2)
-  }
   a1<-trains_32_a1_temp[-1]
   a2<-trains_32_a2_temp[-1]
   a3<-trains_32_a3_temp[-1]
@@ -889,23 +1046,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_32  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_33
-  trains_33_a1_temp<-0
-  trains_33_a2_temp<-0
-  trains_33_a3_temp<-0
-  trains_33_a4_temp<-0
-  trains_33_a5_temp<-0
-  trains_33_b1_temp<-0
-  trains_33_b2_temp<-0
-  for (j in row) {
-    trains_33_a1_temp<-c(trains_33_a1_temp,data.train[j-10,]$a1)
-    trains_33_a2_temp<-c(trains_33_a2_temp,data.train[j-10,]$a2)
-    trains_33_a3_temp<-c(trains_33_a3_temp,data.train[j-10,]$a3)
-    trains_33_a4_temp<-c(trains_33_a4_temp,data.train[j-10,]$a4)
-    trains_33_a5_temp<-c(trains_33_a5_temp,data.train[j-10,]$a5)
-    trains_33_b1_temp<-c(trains_33_b1_temp,data.train[j-10,]$b1)
-    trains_33_b2_temp<-c(trains_33_b2_temp,data.train[j-10,]$b2)
-  }
   a1<-trains_33_a1_temp[-1]
   a2<-trains_33_a2_temp[-1]
   a3<-trains_33_a3_temp[-1]
@@ -916,23 +1056,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_33  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_34
-  trains_34_a1_temp<-0
-  trains_34_a2_temp<-0
-  trains_34_a3_temp<-0
-  trains_34_a4_temp<-0
-  trains_34_a5_temp<-0
-  trains_34_b1_temp<-0
-  trains_34_b2_temp<-0
-  for (j in row) {
-    trains_34_a1_temp<-c(trains_34_a1_temp,data.train[j-9,]$a1)
-    trains_34_a2_temp<-c(trains_34_a2_temp,data.train[j-9,]$a2)
-    trains_34_a3_temp<-c(trains_34_a3_temp,data.train[j-9,]$a3)
-    trains_34_a4_temp<-c(trains_34_a4_temp,data.train[j-9,]$a4)
-    trains_34_a5_temp<-c(trains_34_a5_temp,data.train[j-9,]$a5)
-    trains_34_b1_temp<-c(trains_34_b1_temp,data.train[j-9,]$b1)
-    trains_34_b2_temp<-c(trains_34_b2_temp,data.train[j-9,]$b2)
-  }
   a1<-trains_34_a1_temp[-1]
   a2<-trains_34_a2_temp[-1]
   a3<-trains_34_a3_temp[-1]
@@ -943,23 +1066,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_34  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_35
-  trains_35_a1_temp<-0
-  trains_35_a2_temp<-0
-  trains_35_a3_temp<-0
-  trains_35_a4_temp<-0
-  trains_35_a5_temp<-0
-  trains_35_b1_temp<-0
-  trains_35_b2_temp<-0
-  for (j in row) {
-    trains_35_a1_temp<-c(trains_35_a1_temp,data.train[j-8,]$a1)
-    trains_35_a2_temp<-c(trains_35_a2_temp,data.train[j-8,]$a2)
-    trains_35_a3_temp<-c(trains_35_a3_temp,data.train[j-8,]$a3)
-    trains_35_a4_temp<-c(trains_35_a4_temp,data.train[j-8,]$a4)
-    trains_35_a5_temp<-c(trains_35_a5_temp,data.train[j-8,]$a5)
-    trains_35_b1_temp<-c(trains_35_b1_temp,data.train[j-8,]$b1)
-    trains_35_b2_temp<-c(trains_35_b2_temp,data.train[j-8,]$b2)
-  }
   a1<-trains_35_a1_temp[-1]
   a2<-trains_35_a2_temp[-1]
   a3<-trains_35_a3_temp[-1]
@@ -970,23 +1076,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_35  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_36
-  trains_36_a1_temp<-0
-  trains_36_a2_temp<-0
-  trains_36_a3_temp<-0
-  trains_36_a4_temp<-0
-  trains_36_a5_temp<-0
-  trains_36_b1_temp<-0
-  trains_36_b2_temp<-0
-  for (j in row) {
-    trains_36_a1_temp<-c(trains_36_a1_temp,data.train[j-7,]$a1)
-    trains_36_a2_temp<-c(trains_36_a2_temp,data.train[j-7,]$a2)
-    trains_36_a3_temp<-c(trains_36_a3_temp,data.train[j-7,]$a3)
-    trains_36_a4_temp<-c(trains_36_a4_temp,data.train[j-7,]$a4)
-    trains_36_a5_temp<-c(trains_36_a5_temp,data.train[j-7,]$a5)
-    trains_36_b1_temp<-c(trains_36_b1_temp,data.train[j-7,]$b1)
-    trains_36_b2_temp<-c(trains_36_b2_temp,data.train[j-7,]$b2)
-  }
   a1<-trains_36_a1_temp[-1]
   a2<-trains_36_a2_temp[-1]
   a3<-trains_36_a3_temp[-1]
@@ -997,23 +1086,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_36  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_37
-  trains_37_a1_temp<-0
-  trains_37_a2_temp<-0
-  trains_37_a3_temp<-0
-  trains_37_a4_temp<-0
-  trains_37_a5_temp<-0
-  trains_37_b1_temp<-0
-  trains_37_b2_temp<-0
-  for (j in row) {
-    trains_37_a1_temp<-c(trains_37_a1_temp,data.train[j-6,]$a1)
-    trains_37_a2_temp<-c(trains_37_a2_temp,data.train[j-6,]$a2)
-    trains_37_a3_temp<-c(trains_37_a3_temp,data.train[j-6,]$a3)
-    trains_37_a4_temp<-c(trains_37_a4_temp,data.train[j-6,]$a4)
-    trains_37_a5_temp<-c(trains_37_a5_temp,data.train[j-6,]$a5)
-    trains_37_b1_temp<-c(trains_37_b1_temp,data.train[j-6,]$b1)
-    trains_37_b2_temp<-c(trains_37_b2_temp,data.train[j-6,]$b2)
-  }
   a1<-trains_37_a1_temp[-1]
   a2<-trains_37_a2_temp[-1]
   a3<-trains_37_a3_temp[-1]
@@ -1024,23 +1096,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_37  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_38
-  trains_38_a1_temp<-0
-  trains_38_a2_temp<-0
-  trains_38_a3_temp<-0
-  trains_38_a4_temp<-0
-  trains_38_a5_temp<-0
-  trains_38_b1_temp<-0
-  trains_38_b2_temp<-0
-  for (j in row) {
-    trains_38_a1_temp<-c(trains_38_a1_temp,data.train[j-5,]$a1)
-    trains_38_a2_temp<-c(trains_38_a2_temp,data.train[j-5,]$a2)
-    trains_38_a3_temp<-c(trains_38_a3_temp,data.train[j-5,]$a3)
-    trains_38_a4_temp<-c(trains_38_a4_temp,data.train[j-5,]$a4)
-    trains_38_a5_temp<-c(trains_38_a5_temp,data.train[j-5,]$a5)
-    trains_38_b1_temp<-c(trains_38_b1_temp,data.train[j-5,]$b1)
-    trains_38_b2_temp<-c(trains_38_b2_temp,data.train[j-5,]$b2)
-  }
   a1<-trains_38_a1_temp[-1]
   a2<-trains_38_a2_temp[-1]
   a3<-trains_38_a3_temp[-1]
@@ -1051,24 +1106,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_38  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  
-  #Trains_39
-  trains_39_a1_temp<-0
-  trains_39_a2_temp<-0
-  trains_39_a3_temp<-0
-  trains_39_a4_temp<-0
-  trains_39_a5_temp<-0
-  trains_39_b1_temp<-0
-  trains_39_b2_temp<-0
-  for (j in row) {
-    trains_39_a1_temp<-c(trains_39_a1_temp,data.train[j-4,]$a1)
-    trains_39_a2_temp<-c(trains_39_a2_temp,data.train[j-4,]$a2)
-    trains_39_a3_temp<-c(trains_39_a3_temp,data.train[j-4,]$a3)
-    trains_39_a4_temp<-c(trains_39_a4_temp,data.train[j-4,]$a4)
-    trains_39_a5_temp<-c(trains_39_a5_temp,data.train[j-4,]$a5)
-    trains_39_b1_temp<-c(trains_39_b1_temp,data.train[j-4,]$b1)
-    trains_39_b2_temp<-c(trains_39_b2_temp,data.train[j-4,]$b2)
-  }
   a1<-trains_39_a1_temp[-1]
   a2<-trains_39_a2_temp[-1]
   a3<-trains_39_a3_temp[-1]
@@ -1079,23 +1116,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_39  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_40
-  trains_40_a1_temp<-0
-  trains_40_a2_temp<-0
-  trains_40_a3_temp<-0
-  trains_40_a4_temp<-0
-  trains_40_a5_temp<-0
-  trains_40_b1_temp<-0
-  trains_40_b2_temp<-0
-  for (j in row) {
-    trains_40_a1_temp<-c(trains_40_a1_temp,data.train[j-3,]$a1)
-    trains_40_a2_temp<-c(trains_40_a2_temp,data.train[j-3,]$a2)
-    trains_40_a3_temp<-c(trains_40_a3_temp,data.train[j-3,]$a3)
-    trains_40_a4_temp<-c(trains_40_a4_temp,data.train[j-3,]$a4)
-    trains_40_a5_temp<-c(trains_40_a5_temp,data.train[j-3,]$a5)
-    trains_40_b1_temp<-c(trains_40_b1_temp,data.train[j-3,]$b1)
-    trains_40_b2_temp<-c(trains_40_b2_temp,data.train[j-3,]$b2)
-  }
   a1<-trains_40_a1_temp[-1]
   a2<-trains_40_a2_temp[-1]
   a3<-trains_40_a3_temp[-1]
@@ -1106,23 +1126,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_40  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_41
-  trains_41_a1_temp<-0
-  trains_41_a2_temp<-0
-  trains_41_a3_temp<-0
-  trains_41_a4_temp<-0
-  trains_41_a5_temp<-0
-  trains_41_b1_temp<-0
-  trains_41_b2_temp<-0
-  for (j in row) {
-    trains_41_a1_temp<-c(trains_41_a1_temp,data.train[j-2,]$a1)
-    trains_41_a2_temp<-c(trains_41_a2_temp,data.train[j-2,]$a2)
-    trains_41_a3_temp<-c(trains_41_a3_temp,data.train[j-2,]$a3)
-    trains_41_a4_temp<-c(trains_41_a4_temp,data.train[j-2,]$a4)
-    trains_41_a5_temp<-c(trains_41_a5_temp,data.train[j-2,]$a5)
-    trains_41_b1_temp<-c(trains_41_b1_temp,data.train[j-2,]$b1)
-    trains_41_b2_temp<-c(trains_41_b2_temp,data.train[j-2,]$b2)
-  }
   a1<-trains_41_a1_temp[-1]
   a2<-trains_41_a2_temp[-1]
   a3<-trains_41_a3_temp[-1]
@@ -1133,23 +1136,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_41  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Trains_42
-  trains_42_a1_temp<-0
-  trains_42_a2_temp<-0
-  trains_42_a3_temp<-0
-  trains_42_a4_temp<-0
-  trains_42_a5_temp<-0
-  trains_42_b1_temp<-0
-  trains_42_b2_temp<-0
-  for (j in row) {
-    trains_42_a1_temp<-c(trains_42_a1_temp,data.train[j-1,]$a1)
-    trains_42_a2_temp<-c(trains_42_a2_temp,data.train[j-1,]$a2)
-    trains_42_a3_temp<-c(trains_42_a3_temp,data.train[j-1,]$a3)
-    trains_42_a4_temp<-c(trains_42_a4_temp,data.train[j-1,]$a4)
-    trains_42_a5_temp<-c(trains_42_a5_temp,data.train[j-1,]$a5)
-    trains_42_b1_temp<-c(trains_42_b1_temp,data.train[j-1,]$b1)
-    trains_42_b2_temp<-c(trains_42_b2_temp,data.train[j-1,]$b2)
-  }
   a1<-trains_42_a1_temp[-1]
   a2<-trains_42_a2_temp[-1]
   a3<-trains_42_a3_temp[-1]
@@ -1160,23 +1146,6 @@ dlt.clu.xgb.XXXIII <- function(data) {
   
   trains_42  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   
-  #Results
-  results_a1_temp<-0
-  results_a2_temp<-0
-  results_a3_temp<-0
-  results_a4_temp<-0
-  results_a5_temp<-0
-  results_b1_temp<-0
-  results_b2_temp<-0
-  for (j in row) {
-    results_a1_temp<-c(results_a1_temp,data.train[j,]$a1)
-    results_a2_temp<-c(results_a2_temp,data.train[j,]$a2)
-    results_a3_temp<-c(results_a3_temp,data.train[j,]$a3)
-    results_a4_temp<-c(results_a4_temp,data.train[j,]$a4)
-    results_a5_temp<-c(results_a5_temp,data.train[j,]$a5)
-    results_b1_temp<-c(results_b1_temp,data.train[j,]$b1)
-    results_b2_temp<-c(results_b2_temp,data.train[j,]$b2)
-  }
   a1<-results_a1_temp[-1]
   a2<-results_a2_temp[-1]
   a3<-results_a3_temp[-1]
