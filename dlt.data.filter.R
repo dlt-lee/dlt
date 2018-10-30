@@ -753,7 +753,8 @@ dlt.data.filter <- function(data) {
                           
                           trains_40_a1_temp,trains_40_a2_temp,trains_40_a3_temp,trains_40_a4_temp,trains_40_a5_temp,trains_40_b1_temp,trains_40_b2_temp,
                           trains_41_a1_temp,trains_41_a2_temp,trains_41_a3_temp,trains_41_a4_temp,trains_41_a5_temp,trains_41_b1_temp,trains_41_b2_temp,
-                          trains_42_a1_temp,trains_42_a2_temp,trains_42_a3_temp,trains_42_a4_temp,trains_42_a5_temp,trains_42_b1_temp,trains_42_b2_temp)
+                          trains_42_a1_temp,trains_42_a2_temp,trains_42_a3_temp,trains_42_a4_temp,trains_42_a5_temp,trains_42_b1_temp,trains_42_b2_temp,
+                          results_a1_temp,results_a2_temp,results_a3_temp,results_a4_temp,results_a5_temp,results_b1_temp,results_b2_temp)
   return(data.result)
   
   
