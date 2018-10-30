@@ -1,7 +1,7 @@
 data<-dlt
 
 
-for.clu.xgb <- function() {
+for.row.xgb <- function() {
   rows<-dim(dlt)[1]-273
   n<-300
   
@@ -25,7 +25,7 @@ for.clu.xgb <- function() {
     data<-head(dlt,rows)
     data<-tail(data,300)
     
-    temp.data<-dlt.xgboost.clu(data)
+    temp.data<-dlt.xgboost.row(data)
     pre.a1<-c(pre.a1,temp.data$a1)
     pre.a2<-c(pre.a2,temp.data$a2)
     pre.a3<-c(pre.a3,temp.data$a3)

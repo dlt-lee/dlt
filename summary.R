@@ -1,11 +1,11 @@
-library(h2o)
-detectCores()
-h2o.init(nthreads = 4)
 
-data.xgb.clu.clu<-dlt.xgb.clu.clu()
-data.xgb.row.clu<-dlt.xgb.row.clu()
-data.xgb.clu.row<-dlt.xgb.clu.row()
-data.xgb.clu<-for.clu.xgb(dlt)
+data.for.xgb.clu<-for.clu.xgb()
+data.for.xgb.row<-for.row.xgb()
+data.xgb.clu.clu<-dlt.xgb.clu.clu(data.for.xgb.clu)
+data.xgb.row.clu<-dlt.xgb.row.clu(data.for.xgb.row)
+data.xgb.clu.row<-dlt.xgb.clu.row(data.for.xgb.clu)
+data.xgb.row.row<-dlt.xgb.row.row(data.for.xgb.row)
+data.xgb.clu<-dlt.xgboost.clu(dlt)
 data.xgb.row<-dlt.xgboost.row(dlt)
 
 
@@ -31,6 +31,9 @@ sort(table(data.xgb.row$b2.row))
 data.xgb.clu.clu
 data.xgb.row.clu
 data.xgb.clu.row
+data.xgb.row.row
+
+
 
 
 
