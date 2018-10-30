@@ -5,6 +5,8 @@ for.clu.xgb <- function() {
   rows<-dim(dlt)[1]-273
   n<-300
   
+  
+  
   pre.a1<-0
   pre.a2<-0
   pre.a3<-0
