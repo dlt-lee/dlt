@@ -36,7 +36,7 @@ library(doParallel)
 library(mclust)
 library(HiddenMarkov)
 library(depmixS4)
-#library(recommenderlab)
+library(recommenderlab)
 library(nnet)
 library(caret)
 
@@ -632,7 +632,8 @@ cell_2018<-c( 18001,01,13,22,25,35,3,04,
               18123,06,09,29,32,35,02,04,
               18124,08,10,12,19,20,10,11,
               18125,07,16,20,21,34,04,06,
-              18126,11,13,15,21,27,05,06
+              18126,11,13,15,21,27,05,06,
+              18127,01,03,04,11,29,08,12
               )
 m_2018<-matrix(cell_2018,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 cell_all<-c(cell_2015,
