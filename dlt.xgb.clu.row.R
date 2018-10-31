@@ -22,7 +22,9 @@ dlt.xgb.clu.row <- function(data){
     bst.b1 <- xgboost(data = trains.T.ab,label = data$exp.b1[1:90],nrounds = n,print_every_n = 300L)
     bst.b2 <- xgboost(data = trains.T.ab,label = data$exp.b2[1:90],nrounds = n,print_every_n = 300L)
     
-    pre.final.data<-dlt.xgboost.clu(tail(dlt,300))
+    data<-tail(dlt,300)
+    data.tr<-dlt.data.filter(data)
+    pre.final.data<-dlt.xgboost.clu(data,data.tr)
     
     test.ab<-0
     
