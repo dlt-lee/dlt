@@ -9,7 +9,7 @@ dlt.clu.xgb.I <- function(data,data.tr) {
   #nt<-detectCores()
   #h2o.init(nthreads = nt)
   n<-300
-  
+  count<-dim(data)[1]
   
   a1<-data.tr$trains_1_a1_temp[-1]
   a2<-data.tr$trains_1_a2_temp[-1]

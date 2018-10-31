@@ -8,6 +8,7 @@ dlt.clu.xgb.XXXIII <- function(data,data.tr) {
   #h2o.init(nthreads = nt)
   
   n<-300
+  count<-dim(data)[1]
   
   
   a1<-data.tr$trains_1_a1_temp[-1]
@@ -438,16 +439,6 @@ dlt.clu.xgb.XXXIII <- function(data,data.tr) {
   a5<-data.tr$results_a5_temp[-1]
   b1<-data.tr$results_b1_temp[-1]
   b2<-data.tr$results_b2_temp[-1]
-  
-  results  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
-  
-  a1<-results_a1_temp[-1]
-  a2<-results_a2_temp[-1]
-  a3<-results_a3_temp[-1]
-  a4<-results_a4_temp[-1]
-  a5<-results_a5_temp[-1]
-  b1<-results_b1_temp[-1]
-  b2<-results_b2_temp[-1]
   
   results  <-data.frame(a1,a2,a3,a4,a5,b1,b2)
   

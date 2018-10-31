@@ -8,6 +8,7 @@ dlt.clu.xgb.XXX <- function(data,data.tr) {
   #h2o.init(nthreads = nt)
   
   n<-300
+  count<-dim(data)[1]
   
   
   a1<-data.tr$trains_1_a1_temp[-1]
