@@ -1,12 +1,15 @@
 
 data.for.xgb.clu<-for.clu.xgb()
 data.for.xgb.row<-for.row.xgb()
+
 data.xgb.clu.clu<-dlt.xgb.clu.clu(data.for.xgb.clu)
 data.xgb.row.clu<-dlt.xgb.row.clu(data.for.xgb.row)
 data.xgb.clu.row<-dlt.xgb.clu.row(data.for.xgb.clu)
 data.xgb.row.row<-dlt.xgb.row.row(data.for.xgb.row)
-data.xgb.clu<-dlt.xgboost.clu(dlt)
-data.xgb.row<-dlt.xgboost.row(dlt)
+
+data.tr<-dlt.data.filter(dlt)
+data.xgb.clu<-dlt.xgboost.clu(dlt,data.tr)
+data.xgb.row<-dlt.xgboost.row(dlt,data.tr)
 
 
 

@@ -25,7 +25,8 @@ for.row.xgb <- function() {
     data<-head(dlt,rows)
     data<-tail(data,300)
     
-    temp.data<-dlt.xgboost.row(data)
+    data.tr<-dlt.data.filter(data)
+    temp.data<-dlt.xgboost.row(data,,data.tr)
     pre.a1<-c(pre.a1,temp.data$a1)
     pre.a2<-c(pre.a2,temp.data$a2)
     pre.a3<-c(pre.a3,temp.data$a3)

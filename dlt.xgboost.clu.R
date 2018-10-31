@@ -1,25 +1,25 @@
 data<-dlt
 
 
-dlt.xgboost.clu <- function(data) {
+dlt.xgboost.clu <- function(data,data.tr) {
   
   
-  ab.1.clu <-dlt.clu.xgb.I(data)
-  ab.2.clu <-dlt.clu.xgb.II(data)
-  ab.3.clu <-dlt.clu.xgb.III(data)
-  ab.6.clu <-dlt.clu.xgb.VI(data)
-  ab.9.clu <-dlt.clu.xgb.IX(data)
-  ab.12.clu <-dlt.clu.xgb.XII(data)
-  ab.15.clu <-dlt.clu.xgb.XV(data)
-  ab.18.clu <-dlt.clu.xgb.XVIII(data)
-  ab.21.clu <-dlt.clu.xgb.XXI(data)
-  ab.24.clu <-dlt.clu.xgb.XXIV(data)
-  ab.27.clu <-dlt.clu.xgb.XXVII(data)
-  ab.30.clu<-dlt.clu.xgb.XXX(data)
-  ab.33.clu<-dlt.clu.xgb.XXXIII(data)
-  ab.36.clu<-dlt.clu.xgb.XXXVI(data)
-  ab.39.clu<-dlt.clu.xgb.XXXIX(data)
-  ab.42.clu<-dlt.clu.xgb.XXXXII(data)
+  ab.1.clu <-dlt.clu.xgb.I(data,data.tr)
+  ab.2.clu <-dlt.clu.xgb.II(data,data.tr)
+  ab.3.clu <-dlt.clu.xgb.III(data,data.tr)
+  ab.6.clu <-dlt.clu.xgb.VI(data,data.tr)
+  ab.9.clu <-dlt.clu.xgb.IX(data,data.tr)
+  ab.12.clu <-dlt.clu.xgb.XII(data,data.tr)
+  ab.15.clu <-dlt.clu.xgb.XV(data,data.tr)
+  ab.18.clu <-dlt.clu.xgb.XVIII(data,data.tr)
+  ab.21.clu <-dlt.clu.xgb.XXI(data,data.tr)
+  ab.24.clu <-dlt.clu.xgb.XXIV(data,data.tr)
+  ab.27.clu <-dlt.clu.xgb.XXVII(data,data.tr)
+  ab.30.clu<-dlt.clu.xgb.XXX(data,data.tr)
+  ab.33.clu<-dlt.clu.xgb.XXXIII(data,data.tr)
+  ab.36.clu<-dlt.clu.xgb.XXXVI(data,data.tr)
+  ab.39.clu<-dlt.clu.xgb.XXXIX(data,data.tr)
+  ab.42.clu<-dlt.clu.xgb.XXXXII(data,data.tr)
   
   
   a1.clu<-c(tail(ab.1.clu$a1,1),tail(ab.2.clu$a1,1),tail(ab.3.clu$a1,1),tail(ab.6.clu$a1,1),tail(ab.9.clu$a1,1),
