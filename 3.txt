@@ -26,8 +26,4 @@
 > sort(table(data.xgb.clu.row.aver$b2))
 
  5  7  8  6 10 12 11  9 
-<<<<<<< HEAD
  1  1  1  2  2  2  3  4 
-=======
- 1  1  1  2  2  2  3  4 
->>>>>>> fe77fe4b55362c3662a6cdc9ce3fb20425910dc8
