@@ -161,37 +161,51 @@ dlt.rdf.clu.clu <- function(data){
                          pre.a1.6+pre.a1.7+pre.a1.8+pre.a1.9+pre.a1.10+
                          pre.a1.11+pre.a1.12+pre.a1.13+pre.a1.14+pre.a1.15+
                          pre.a1.16,data = trains.a1,
-                       importance = T,ntrees=2000)
+                       importance = T
+                       #,ntrees=2000
+                       )
   rf.a2 = randomForest(exp.a2 ~ pre.a2.1+pre.a2.2+pre.a2.3+pre.a2.4+pre.a2.5+
                          pre.a2.6+pre.a2.7+pre.a2.8+pre.a2.9+pre.a2.10+
                          pre.a2.11+pre.a2.12+pre.a2.13+pre.a2.14+pre.a2.15+
                          pre.a2.16,data = trains.a2,
-                       importance = T,ntrees=2000)
+                       importance = T
+                       #,ntrees=2000
+                       )
   rf.a3 = randomForest(exp.a3 ~ pre.a3.1+pre.a3.2+pre.a1.3+pre.a3.4+pre.a3.5+
                          pre.a3.6+pre.a3.7+pre.a3.8+pre.a3.9+pre.a3.10+
                          pre.a3.11+pre.a3.12+pre.a3.13+pre.a3.14+pre.a3.15+
                          pre.a3.16,data = trains.a3,
-                       importance = T,ntrees=2000)
+                       importance = T
+                       #,ntrees=2000
+                       )
   rf.a4 = randomForest(exp.a4 ~ pre.a4.1+pre.a4.2+pre.a4.3+pre.a4.4+pre.a4.5+
                          pre.a4.6+pre.a4.7+pre.a4.8+pre.a4.9+pre.a4.10+
                          pre.a4.11+pre.a4.12+pre.a4.13+pre.a4.14+pre.a4.15+
                          pre.a4.16,data = trains.a4,
-                       importance = T,ntrees=2000)
+                       importance = T
+                       #,ntrees=2000
+                       )
   rf.a5 = randomForest(exp.a5 ~ pre.a5.1+pre.a5.2+pre.a5.3+pre.a5.4+pre.a5.5+
                          pre.a5.6+pre.a5.7+pre.a5.8+pre.a5.9+pre.a5.10+
                          pre.a5.11+pre.a5.12+pre.a5.13+pre.a5.14+pre.a5.15+
                          pre.a5.16,data = trains.a5,
-                       importance = T,ntrees=2000)
+                       importance = T
+                       #,ntrees=2000
+                       )
   rf.b1 = randomForest(exp.b1 ~ pre.b1.1+pre.b1.2+pre.b1.3+pre.b1.4+pre.b1.5+
                          pre.b1.6+pre.b1.7+pre.b1.8+pre.b1.9+pre.b1.10+
                          pre.b1.11+pre.b1.12+pre.b1.13+pre.b1.14+pre.b1.15+
                          pre.b1.16,data = trains.b1,
-                       importance = T,ntrees=2000)
+                       importance = T
+                       #,ntrees=2000
+                       )
   rf.b2 = randomForest(exp.b2 ~ pre.b2.1+pre.b2.2+pre.b2.3+pre.b2.4+pre.b2.5+
                          pre.b2.6+pre.b2.7+pre.b2.8+pre.b2.9+pre.b2.10+
                          pre.b2.11+pre.b2.12+pre.b2.13+pre.b2.14+pre.b2.15+
                          pre.b2.16,data = trains.b2,
-                       importance = T,ntrees=2000)
+                       importance = T
+                       #,ntrees=2000
+                       )
   
   data<-tail(dlt,300)
   data.tr<-dlt.data.filter(data)
