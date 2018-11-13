@@ -3,11 +3,12 @@ data.for.xgb.clu<-for.clu.xgb()
 data.for.xgb.row<-for.row.xgb()
 
 data.xgb.clu.clu<-dlt.xgb.clu.clu(data.for.xgb.clu)
-data.rdf.clu.clu<-dlt.rdf.clu.clu(data.for.xgb.clu)
 data.xgb.row.clu<-dlt.xgb.row.clu(data.for.xgb.row)
 data.xgb.clu.row<-dlt.xgb.clu.row(data.for.xgb.clu)
-data.xgb.clu.row.aver<-dlt.xgb.clu.row.aver(data.for.xgb.clu)
 data.xgb.row.row<-dlt.xgb.row.row(data.for.xgb.row)
+
+data.rdf.clu.clu<-dlt.rdf.clu.clu(data.for.xgb.clu)
+data.xgb.clu.row.aver<-dlt.xgb.clu.row.aver(data.for.xgb.clu)
 data.xgb.row.row.aver<-dlt.xgb.row.row.aver(data.for.xgb.row)
 
 data.tr<-dlt.data.filter(dlt)
