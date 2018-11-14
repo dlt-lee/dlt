@@ -8,6 +8,7 @@ data.xgb.clu.row<-dlt.xgb.clu.row(data.for.xgb.clu)
 data.xgb.row.row<-dlt.xgb.row.row(data.for.xgb.row)
 
 data.rdf.clu.clu<-dlt.rdf.clu.clu(data.for.xgb.clu)
+data.xgb.clu.cum<-dlt.xgb.clu.cum(data.for.xgb.clu)
 data.xgb.clu.row.aver<-dlt.xgb.clu.row.aver(data.for.xgb.clu)
 data.xgb.row.row.aver<-dlt.xgb.row.row.aver(data.for.xgb.row)
 
