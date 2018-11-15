@@ -58,8 +58,9 @@ data.rdf.clu.clu
 data.xgb.row.clu
 data.xgb.clu.row
 data.xgb.row.row
-data.xgb.row.cum
 data.xgb.clu.cum
+data.xgb.row.cum
+
 
 
 
