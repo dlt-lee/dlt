@@ -1,5 +1,6 @@
 > #row.row:
 > sort(table(data.xgb.row.row.aver$a1))
+
  4  9 14  6 11  2  5  7 
  1  1  1  2  2  3  3  3 
 > sort(table(data.xgb.row.row.aver$a2))
