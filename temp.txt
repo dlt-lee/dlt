@@ -1,0 +1,165 @@
+> #clu:
+> sort(table(data.xgb.clu$a1.clu))
+
+ 4  7 10  8  6  9 
+ 1  1  1  3  5  5 
+> sort(table(data.xgb.clu$a2.clu))
+
+ 5  7  9 15 14  8 11 10 
+ 1  1  1  1  2  3  3  4 
+> sort(table(data.xgb.clu$a3.clu))
+
+10 12 14 16 17 18 19 15 20 21 13 
+ 1  1  1  1  1  1  1  2  2  2  3 
+> sort(table(data.xgb.clu$a4.clu))
+
+17 21 22 24 25 27 19 23 26 
+ 1  1  1  1  1  1  2  3  5 
+> sort(table(data.xgb.clu$a5.clu))
+
+23 25 29 28 31 24 26 27 
+ 1  1  1  2  2  3  3  3 
+> sort(table(data.xgb.clu$b1.clu))
+
+3 4 5 6 7 8 
+1 3 3 3 3 3 
+> sort(table(data.xgb.clu$b2.clu))
+
+6 4 7 8 5 
+1 3 3 4 5 
+> #row:
+> sort(table(data.xgb.row$a1.row))
+
+ 4  5  9 10 14 16  3  8  6  7 
+ 1  1  1  1  1  1  2  2  3  3 
+> sort(table(data.xgb.row$a2.row))
+
+10 13 15 18  6 12 14 16  9 
+ 1  1  1  1  2  2  2  2  4 
+> sort(table(data.xgb.row$a3.row))
+
+12 13 17 18 19 21 15 20 
+ 1  1  2  2  2  2  3  3 
+> sort(table(data.xgb.row$a4.row))
+
+17 18 19 22 16 24 25 21 23 
+ 1  1  1  1  2  2  2  3  3 
+> sort(table(data.xgb.row$a5.row))
+
+25 26 28 31 23 27 29 
+ 1  1  1  1  2  2  8 
+> sort(table(data.xgb.row$b1.row))
+
+6 8 5 3 7 4 
+1 1 2 3 3 6 
+> sort(table(data.xgb.row$b2.row))
+
+11  6  9  7  8 10 
+ 1  2  2  3  3  5 
+> #clu.row:
+> sort(table(data.xgb.clu.row.aver$a1))
+
+ 2  3 11 14  4  6  8  5  7 
+ 1  1  1  1  2  2  2  3  3 
+> sort(table(data.xgb.clu.row.aver$a2))
+
+ 5  7 12 15 16 11  8 13 
+ 1  1  1  1  1  3  4  4 
+> sort(table(data.xgb.clu.row.aver$a3))
+
+ 8 13 15 18 11 17 19 22 16 
+ 1  1  1  1  2  2  2  2  4 
+> sort(table(data.xgb.clu.row.aver$a4))
+
+12 18 19 24 30 31 15 28 22 27 
+ 1  1  1  1  1  1  2  2  3  3 
+> sort(table(data.xgb.clu.row.aver$a5))
+
+24 26 30 31 32 34 35 36 25 27 28 29 
+ 1  1  1  1  1  1  1  1  2  2  2  2 
+> sort(table(data.xgb.clu.row.aver$b1))
+
+ 2  5  8 10  4  7  6 
+ 1  1  1  1  3  4  5 
+> sort(table(data.xgb.clu.row.aver$b2))
+
+ 4  8 10 14 12 11 13  9 
+ 1  1  1  1  2  3  3  4 
+> #row.row:
+> sort(table(data.xgb.row.row.aver$a1))
+
+ 0  3  5  9 10  1  4  6  7 
+ 1  1  1  1  1  2  3  3  3 
+> sort(table(data.xgb.row.row.aver$a2))
+
+13 14 15 17  9 12 19 10 11 
+ 1  1  1  1  2  2  2  3  3 
+> sort(table(data.xgb.row.row.aver$a3))
+
+10 11 13 14 17 18 19 21 24 16 27 22 
+ 1  1  1  1  1  1  1  1  1  2  2  3 
+> sort(table(data.xgb.row.row.aver$a4))
+
+18 24 26 27 28 30 31 25 21 29 
+ 1  1  1  1  1  1  1  2  3  4 
+> sort(table(data.xgb.row.row.aver$a5))
+
+27 28 29 33 31 35 32 30 
+ 1  1  1  1  2  2  3  5 
+> sort(table(data.xgb.row.row.aver$b1))
+
+0 2 7 8 5 6 4 3 
+1 1 1 1 2 2 3 5 
+> sort(table(data.xgb.row.row.aver$b2))
+
+ 5  6  7  9 10  8 
+ 2  2  2  2  2  6 
+> 
+> 
+> data.xgb.clu.clu
+[1]  1 11 17 23 32  5  5
+> data.rdf.clu.clu
+ 1  1  1  1  1  1  1 
+ 4 10 15 24 28  4  8 
+> data.xgb.row.clu
+[1]  2  8 25 22 29  6  9
+> data.xgb.clu.row
+[1]  4  8 12 14 12  5  5
+> data.xgb.row.row
+[1] 10  9 15 20 21  7  5
+> data.xgb.clu.cum
+   a1 a2 a3 a4 a5 b1 b2
+1   4 11 15 28 29  4  9
+2   4 11 15 26 29  4  9
+3   4 11 15 26 29  4  9
+4   4 11 15 26 29  4  9
+5   4 11 15 26 29  4  9
+6   4 11 15 26 29  4  9
+7   4 11 15 26 29  4  9
+8   4 11 15 26 29  4  9
+9   4 11 15 26 29  4  9
+10  4 11 15 26 29  4  9
+11  4 11 15 28 29  4  9
+12  4 11 15 26 29  4  9
+13  4 11 15 26 29  4  9
+14  4 11 15 26 29  4  9
+15  4 11 15 26 29  4  9
+16  4 11 15 28 29  4  9
+> data.xgb.row.cum
+   a1 a2 a3 a4 a5 b1 b2
+1   5 10 27 23 28  5 12
+2   5 10 27 23 28  5 12
+3   5 10 27 23 28  5 12
+4   5 10 27 23 28  5 12
+5   5 10 27 23 28  5 12
+6   5 10 27 23 28  5 12
+7   5 10 27 23 28  5 12
+8   5 10 27 23 28  5 12
+9   5 10 27 23 28  5 12
+10  5 10 27 23 28  5 12
+11  5 10 27 23 28  5 12
+12  5 10 27 23 28  5 12
+13  5 10 27 23 28  5 12
+14  5 10 27 23 28  5 12
+15  5 10 27 23 28  5 12
+16  5 10 27 23 28  5 12
