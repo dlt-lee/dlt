@@ -663,10 +663,14 @@ cell_2018<-c( 18001,01,13,22,25,35,3,04,
               18154,14,22,23,26,30,03,05
               )
 m_2018<-matrix(cell_2018,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
+cell_2019<-c( 19001,06,18,23,26,28,03,12
+              )
+m_2019<-matrix(cell_2019,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 cell_all<-c(cell_2015,
             cell_2016,
             cell_2017,
-            cell_2018)
+            cell_2018,
+            cell_2019)
 m_all<-matrix(cell_all,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 #edit(m_2017)
 length(m_all)
