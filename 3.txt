@@ -1,29 +1,29 @@
 > #clu.row:
 > sort(table(data.xgb.clu.row.aver$a1))
 
-0 5 9 1 2 3 4 7 
-1 1 1 2 2 3 3 3 
+ 1  6  8  9 10 12  2  3  4  5 
+ 1  1  1  1  1  1  2  2  3  3 
 > sort(table(data.xgb.clu.row.aver$a2))
 
- 1  3  5  6  7  9 11 13 18  4  8 
- 1  1  1  1  1  1  1  1  1  2  5 
+11 15 16 17 18 19 20 12 13 14 
+ 1  1  1  1  1  1  1  2  3  4 
 > sort(table(data.xgb.clu.row.aver$a3))
 
- 6  8 10 11 12 15 18 20 22 13 17  9 
- 1  1  1  1  1  1  1  1  1  2  2  3 
+13 15 18 19 23 25 27 17 22 21 
+ 1  1  1  1  1  1  1  2  3  4 
 > sort(table(data.xgb.clu.row.aver$a4))
 
- 6 16 19 20 24 29 35 21 23 22 
- 1  1  1  1  1  1  1  2  2  5 
+17 21 26 29 31 25 22 24 
+ 1  1  1  1  1  2  4  5 
 > sort(table(data.xgb.clu.row.aver$a5))
 
-22 24 26 28 29 30 31 21 23 35 25 
- 1  1  1  1  1  1  1  2  2  2  3 
+31 32 33 26 29 30 
+ 1  2  2  3  4  4 
 > sort(table(data.xgb.clu.row.aver$b1))
 
-7 3 4 6 5 2 
-1 2 2 2 4 5 
+1 5 6 7 3 4 2 
+1 1 1 1 2 3 7 
 > sort(table(data.xgb.clu.row.aver$b2))
 
- 4  5  6  9  7  8 10 
- 1  1  1  2  3  4  4 
+ 3  5 11 12  6  7  9 10  8 
+ 1  1  1  1  2  2  2  2  4 
