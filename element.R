@@ -664,7 +664,8 @@ cell_2018<-c( 18001,01,13,22,25,35,3,04,
               )
 m_2018<-matrix(cell_2018,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 cell_2019<-c( 19001,06,18,23,26,28,03,12,
-              19002,02,07,14,22,31,01,07
+              19002,02,07,14,22,31,01,07,
+              19003,04,08,18,20,32,10,12
               )
 m_2019<-matrix(cell_2019,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 cell_all<-c(cell_2015,
