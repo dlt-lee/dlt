@@ -1,4 +1,33 @@
 
+
+r.a1<-sort(unique(c(data.xgb.clu$a1.clu,data.xgb.row$a1.row,data.xgb.clu.row.aver$a1,data.xgb.row.row.aver$a1)))
+r.a2<-sort(unique(c(data.xgb.clu$a2.clu,data.xgb.row$a2.row,data.xgb.clu.row.aver$a2,data.xgb.row.row.aver$a2)))
+r.a3<-sort(unique(c(data.xgb.clu$a3.clu,data.xgb.row$a3.row,data.xgb.clu.row.aver$a3,data.xgb.row.row.aver$a3)))
+r.a4<-sort(unique(c(data.xgb.clu$a4.clu,data.xgb.row$a4.row,data.xgb.clu.row.aver$a4,data.xgb.row.row.aver$a4)))
+r.a5<-sort(unique(c(data.xgb.clu$a5.clu,data.xgb.row$a5.row,data.xgb.clu.row.aver$a5,data.xgb.row.row.aver$a5)))
+r.b1<-sort(unique(c(data.xgb.clu$b1.clu,data.xgb.row$b1.row,data.xgb.clu.row.aver$b1,data.xgb.row.row.aver$b1)))
+r.b2<-sort(unique(c(data.xgb.clu$b2.clu,data.xgb.row$b2.row,data.xgb.clu.row.aver$b2,data.xgb.row.row.aver$b2)))
+
+t.data<-0
+for (i in r.a1) {
+  for (j in r.a2) {
+    for (h in r.a3) {
+      for (k in r.a4) {
+        for (l in r.a5) {
+          for (p in r.b1) {
+            for (q in r.b2) {
+              t.data<-c(t.data,r.a1[i],r.a2[j],r.a3[h],r.a4[k],r.a5[l],r.b1[p],r.b2[q])
+            }
+          }
+        }
+      }
+    }
+  }
+}
+t.data<-t.data[-1]
+
+
+
 m_all
 sum.a1<-c(m_all[,04],data.xgb.clu$a1.clu,data.xgb.row$a1.row,data.xgb.clu.row.aver$a1,data.xgb.row.row.aver$a1)
 sum.a2<-c(m_all[,05],data.xgb.clu$a2.clu,data.xgb.row$a2.row,data.xgb.clu.row.aver$a2,data.xgb.row.row.aver$a2)
@@ -32,3 +61,5 @@ sum.data<-sum.data[order(sum.data$n),]
 
 temp<-tail(sum.data,64)
 temp[which(temp$sum.Freq==1),]
+barplot(tail(dlt$sb,20))
+barplot(tail(dlt$sa,20))
