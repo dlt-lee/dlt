@@ -72,6 +72,7 @@ r.b2<-sort(unique(c(data.xgb.clu$b2.clu,data.xgb.row$b2.row,data.xgb.clu.row.ave
 
 t.data<-0
 for (i in r.a1) {
+  print(i)
   if (i>0) {
     for (j in r.a2) {
       if (j>i) {
@@ -84,7 +85,6 @@ for (i in r.a1) {
                     for (p in r.b1) {
                       for (q in r.b2) {
                         if (p>0&q>p) {
-                          print(c(i,j,h,k,l,p,q))
                           t.data<-c(t.data,i,j,h,k,l,p,q)
                         }
                       }
