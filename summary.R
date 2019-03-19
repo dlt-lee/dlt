@@ -62,35 +62,48 @@ data.xgb.clu.cum
 data.xgb.row.cum
 
 
-train.sa<-head(dlt$sa,dim(dlt)[1]-1)
-train.sb<-head(dlt$sb,dim(dlt)[1]-1)
-result.sa<-tail(dlt$sa,dim(dlt)[1]-1)
-result.sb<-tail(dlt$sb,dim(dlt)[1]-1)
+#train.sa<-head(dlt$sa,dim(dlt)[1]-1)
+#train.sb<-head(dlt$sb,dim(dlt)[1]-1)
+#result.sa<-tail(dlt$sa,dim(dlt)[1]-1)
+#result.sb<-tail(dlt$sb,dim(dlt)[1]-1)
 
-trains.sa<-data.frame(train.sa,result.sa)
-trains.T.sa<-Matrix(as.matrix(trains.sa[,1]),sparse=T)
-trains.sb<-data.frame(train.sb,result.sb)
-trains.T.sb<-Matrix(as.matrix(trains.sb[,1]),sparse=T)
+#train
+sa.1<-dlt$sa[1:(dim(dlt)[1]-3)]
+sa.2<-dlt$sa[2:(dim(dlt)[1]-2)]
+sa.3<-dlt$sa[3:(dim(dlt)[1]-1)]
+result.sa<-dlt$sa[4:dim(dlt)[1]]
+trains.sa<-data.frame(sa.1,sa.2,sa.3,result.sa)
+trains.T.sa<-Matrix(as.matrix(trains.sa[,1:3]),sparse=T)
 bst.sa<-xgboost(data = trains.T.sa,label = trains.sa$result.sa,nrounds = 300,print_every_n = 300L)
+
+
+sb.1<-dlt$sb[1:(dim(dlt)[1]-3)]
+sb.2<-dlt$sb[2:(dim(dlt)[1]-2)]
+sb.3<-dlt$sb[3:(dim(dlt)[1]-1)]
+result.sb<-dlt$sb[4:dim(dlt)[1]]
+trains.sb<-data.frame(sb.1,sb.2,sb.3,result.sb)
+trains.T.sb<-Matrix(as.matrix(trains.sb[,1:3]),sparse=T)
 bst.sb<-xgboost(data = trains.T.sb,label = trains.sb$result.sb,nrounds = 300,print_every_n = 300L)
 
-tests.sa<-data.frame(result.sa)
-tests.T.sa<-Matrix(as.matrix(tests.sa[,1]),sparse=T)
+#predoct
+sa.1<-dlt$sa[2:(dim(dlt)[1]-2)]
+sa.2<-dlt$sa[3:(dim(dlt)[1]-1)]
+sa.3<-dlt$sa[4:dim(dlt)[1]]
+tests.sa<-data.frame(sa.1,sa.2,sa.3)
+tests.T.sa<-Matrix(as.matrix(tests.sa),sparse=T)
 testPredictions.sa <- predict(object = bst.sa,newdata = tests.T.sa)
 
-tests.sb<-data.frame(result.sb)
-tests.T.sb<-Matrix(as.matrix(tests.sb[,1]),sparse=T)
+sb.1<-dlt$sb[2:(dim(dlt)[1]-2)]
+sb.2<-dlt$sb[3:(dim(dlt)[1]-1)]
+sb.3<-dlt$sb[4:dim(dlt)[1]]
+tests.sb<-data.frame(sb.1,sb.2,sb.3)
+tests.T.sb<-Matrix(as.matrix(tests.sb),sparse=T)
 testPredictions.sb <- predict(object = bst.sb,newdata = tests.T.sb)
 
-sa.max<-ceiling(tail(testPredictions.sa,1))
-sa.min<-floor(tail(testPredictions.sa,1))
-sb.max<-ceiling(tail(testPredictions.sb,1))
-sb.min<-floor(tail(testPredictions.sb,1))
+sa.pre<-round(testPredictions.sa)
+sb.pre<-round(testPredictions.sb)
 
-c(sa.min,sa.max)
-c(sb.min,sb.max)
-
-
+c(tail(sa.pre,1),tail(sb.pre,1))
 
 
 
