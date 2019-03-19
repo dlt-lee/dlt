@@ -76,19 +76,19 @@ bst.sb<-xgboost(data = trains.T.sb,label = trains.sb$result.sb,nrounds = 300,pri
 
 tests.sa<-data.frame(result.sa)
 tests.T.sa<-Matrix(as.matrix(tests.sa[,1]),sparse=T)
-testPredictions.sa <- predict(object = bst.sa,newdata = t(tests.T.sa))
+testPredictions.sa <- predict(object = bst.sa,newdata = tests.T.sa)
 
 tests.sb<-data.frame(result.sb)
 tests.T.sb<-Matrix(as.matrix(tests.sb[,1]),sparse=T)
-testPredictions.sb <- predict(object = bst.sb,newdata = t(tests.T.sb))
+testPredictions.sb <- predict(object = bst.sb,newdata = tests.T.sb)
 
-sa.max<-ceiling(testPredictions.sa)
-sa.min<-floor(testPredictions.sa)
-sb.max<-ceiling(testPredictions.sb)
-sb.min<-floor(testPredictions.sb)
+sa.max<-ceiling(tail(testPredictions.sa,1))
+sa.min<-floor(tail(testPredictions.sa,1))
+sb.max<-ceiling(tail(testPredictions.sb,1))
+sb.min<-floor(tail(testPredictions.sb,1))
 
-c(min,max)
-c(min,sb.max)
+c(sa.min,sa.max)
+c(sb.min,sb.max)
 
 
 
