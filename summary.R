@@ -61,7 +61,7 @@ data.xgb.row.row
 data.xgb.clu.cum
 data.xgb.row.cum
 
-
+########################################################################################################
 #train.sa<-head(dlt$sa,dim(dlt)[1]-1)
 #train.sb<-head(dlt$sb,dim(dlt)[1]-1)
 #result.sa<-tail(dlt$sa,dim(dlt)[1]-1)
