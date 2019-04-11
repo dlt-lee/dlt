@@ -61,6 +61,43 @@ data.xgb.row.row
 data.xgb.clu.cum
 data.xgb.row.cum
 
+data.xgb.clu.clu.a<-sort(data.xgb.clu.clu[1:5])
+data.xgb.clu.clu.b<-sort(data.xgb.clu.clu[6:7])
+
+data.rdf.clu.clu.a<-sort(as.numeric(data.rdf.clu.clu[1:5]))
+data.rdf.clu.clu.b<-sort(as.numeric(data.rdf.clu.clu[6:7]))
+
+data.xgb.row.clu.a<-sort(data.xgb.row.clu[1:5])
+data.xgb.row.clu.b<-sort(data.xgb.row.clu[6:7])
+
+data.xgb.clu.row.a<-sort(data.xgb.clu.row[1:5])
+data.xgb.clu.row.b<-sort(data.xgb.clu.row[6:7])
+
+data.xgb.row.row.a<-sort(data.xgb.row.row[1:5])
+data.xgb.row.row.b<-sort(data.xgb.row.row[6:7])
+
+r.a1<-c(data.xgb.clu.clu.a[1],data.rdf.clu.clu.a[1],data.xgb.row.clu.a[1],data.xgb.clu.row.a[1],
+        data.xgb.row.row.a[1],data.xgb.clu.cum$a1)
+r.a2<-c(data.xgb.clu.clu.a[2],data.rdf.clu.clu.a[2],data.xgb.row.clu.a[2],data.xgb.clu.row.a[2],
+        data.xgb.row.row.a[2],data.xgb.clu.cum$a2)
+r.a3<-c(data.xgb.clu.clu.a[3],data.rdf.clu.clu.a[3],data.xgb.row.clu.a[3],data.xgb.clu.row.a[3],
+        data.xgb.row.row.a[3],data.xgb.clu.cum$a3)
+r.a4<-c(data.xgb.clu.clu.a[4],data.rdf.clu.clu.a[4],data.xgb.row.clu.a[4],data.xgb.clu.row.a[4],
+        data.xgb.row.row.a[4],data.xgb.clu.cum$a4)
+r.a5<-c(data.xgb.clu.clu.a[5],data.rdf.clu.clu.a[5],data.xgb.row.clu.a[5],data.xgb.clu.row.a[5],
+        data.xgb.row.row.a[5],data.xgb.clu.cum$a5)
+r.b1<-c(data.xgb.clu.clu.b[1],data.rdf.clu.clu.b[1],data.xgb.row.clu.b[1],data.xgb.clu.row.b[1],
+        data.xgb.row.row.b[1],data.xgb.clu.cum$b1)
+r.b2<-c(data.xgb.clu.clu.b[2],data.rdf.clu.clu.b[2],data.xgb.row.clu.b[2],data.xgb.clu.row.b[2],
+        data.xgb.row.row.b[2],data.xgb.clu.cum$b2)
+
+sort(table(r.a1))
+sort(table(r.a2))
+sort(table(r.a3))
+sort(table(r.a4))
+sort(table(r.a5))
+sort(table(r.b1))
+sort(table(r.b2))
 ########################################################################################################
 #train.sa<-head(dlt$sa,dim(dlt)[1]-1)
 #train.sb<-head(dlt$sb,dim(dlt)[1]-1)
