@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 > #clu:
 > sort(table(data.xgb.clu$a1.clu))
 
@@ -270,3 +271,5 @@ r.b2
 > 
 > c(tail(sa.pre,1),tail(sb.pre,1))
 [1] 85  9
+=======
+>>>>>>> 45951afe8169c9403eaf8575305975960138d663
