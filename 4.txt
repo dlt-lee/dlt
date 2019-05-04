@@ -1,29 +1,29 @@
 > #row.row:
 > sort(table(data.xgb.row.row.aver$a1))
 
--4  6  8  9 10 20  2  4  5  3 
- 1  1  1  1  1  1  2  2  2  4 
+ 1  4  8 12  7 10  3  5 
+ 1  1  1  1  2  2  3  5 
 > sort(table(data.xgb.row.row.aver$a2))
 
- 6  7 10  4 13 14 15 16  8 
- 1  1  1  2  2  2  2  2  3 
+ 3  4  5  9 11 13 15  8 12 19 17 
+ 1  1  1  1  1  1  1  2  2  2  3 
 > sort(table(data.xgb.row.row.aver$a3))
 
- 5 10 11 12 13 15 17 18 19 21 22 20 14 
- 1  1  1  1  1  1  1  1  1  1  1  2  3 
+12 18 20 23 24 26 28 16 17 19 15 
+ 1  1  1  1  1  1  1  2  2  2  3 
 > sort(table(data.xgb.row.row.aver$a4))
 
- 5 18 21 23 28 16 17 20 24 14 
- 1  1  1  1  1  2  2  2  2  3 
+16 17 21 23 24 27 28 25 
+ 1  1  1  2  2  2  2  5 
 > sort(table(data.xgb.row.row.aver$a5))
 
-17 21 24 27 28 29 32 33 25 26 31 
- 1  1  1  1  1  1  1  1  2  3  3 
+18 28 27 29 30 32 36 31 
+ 1  1  2  2  2  2  2  4 
 > sort(table(data.xgb.row.row.aver$b1))
 
-1 6 2 4 5 3 
-1 2 3 3 3 4 
+3 7 2 6 4 
+2 2 3 4 5 
 > sort(table(data.xgb.row.row.aver$b2))
 
- 6  8 11  4  5 10 12  7 
- 1  1  1  2  2  2  2  5 
+ 6  8  9  7 10 
+ 1  2  3  5  5 
