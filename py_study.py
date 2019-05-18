@@ -17,3 +17,20 @@ print(d)
 s = 'hello'
 print(s.capitalize())
 print(s.upper())
+print(s.rjust(7))
+print(s.center(7))
+print(s.replace('e','o'))
+print(' world       '.strip())
+t=True
+f=False
+print(type(t))
+print(3>8)
+print(t and f)
+print(t or f)
+print(not t)
+print(t != f)
+print('I\'m \"OK\"')
+a = 'ABC'
+b = a
+a = 'XYZ'
+print(b)
