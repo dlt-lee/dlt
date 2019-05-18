@@ -34,3 +34,18 @@ a = 'ABC'
 b = a
 a = 'XYZ'
 print(b)
+xs=[3,1,2]
+print(xs,xs[2])
+print(xs[-1])
+print(len(xs))
+xs[2]='foo'
+print(xs.pop())
+print(xs)
+print(xs.append('end'))
+print(xs)
+L = [
+['Apple', 'Google', 'Microsoft'],
+['Java', 'Python', 'Ruby', 'PHP'],
+['Adam', 'Bart', 'Lisa']
+]
+print(L[0][0],L[1][1],L[2][2])
