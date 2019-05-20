@@ -49,3 +49,14 @@ L = [
 ['Adam', 'Bart', 'Lisa']
 ]
 print(L[0][0],L[1][1],L[2][2])
+nums = [0, 1, 2, 3, 4]
+print(nums)
+print(nums[2:4])
+print(nums[2:])  
+print(nums[:2])
+print(nums[:])
+print(nums[:-1])
+#nums[2:4]=[8,9]
+print(nums)
+nums=nums[:2]+nums[3:]
+print(nums)
