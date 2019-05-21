@@ -60,3 +60,20 @@ print(nums[:-1])
 print(nums)
 nums=nums[:2]+nums[3:]
 print(nums)
+animals = ['cat', 'dog', 'monkey']
+for animal in animals:
+    print(animal)
+for idx, animal in enumerate(animals):
+    print('#{}: {}'.format(idx + 1, animal))
+nums = [0, 1, 2, 3, 4]
+squares = []
+for x in nums:
+    squares.append(x**2)
+print(squares)
+squares = [x**2 for x in nums]
+print(squares)
+total =0
+for x in range(101):
+    #print(x)
+    total=total+x
+print(total)
