@@ -77,3 +77,13 @@ for x in range(101):
     #print(x)
     total=total+x
 print(total)
+animals = {'cat', 'dog'}
+print('cat' in animals)
+print('fish' in animals)
+print(len(animals))
+animals.add('fish')
+print(animals)
+animals.add('cat')
+print(animals)
+animals.remove('cat')
+print(animals)
