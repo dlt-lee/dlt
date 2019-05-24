@@ -87,3 +87,13 @@ animals.add('cat')
 print(animals)
 animals.remove('cat')
 print(animals)
+d = {'cat': 'cute', 'dog': 'furry'}
+print(d['cat'])
+print('furry' in d)
+print('dog' in d)
+d['fish']='wet'
+print(d)
+print(d.get('fish'))
+print(d.get('monkey','N/A'))
+del d['fish']
+print(d.get('fish'))
