@@ -77,19 +77,19 @@ data.xgb.row.row.a<-sort(data.xgb.row.row[1:5])
 data.xgb.row.row.b<-sort(data.xgb.row.row[6:7])
 
 r.a1<-c(data.xgb.clu.clu.a[1],data.rdf.clu.clu.a[1],data.xgb.row.clu.a[1],data.xgb.clu.row.a[1],
-        data.xgb.row.row.a[1],data.xgb.clu.cum$a1)
+        data.xgb.row.row.a[1],data.xgb.clu.cum$a1,data.xgb.row.cum$a1)
 r.a2<-c(data.xgb.clu.clu.a[2],data.rdf.clu.clu.a[2],data.xgb.row.clu.a[2],data.xgb.clu.row.a[2],
-        data.xgb.row.row.a[2],data.xgb.clu.cum$a2)
+        data.xgb.row.row.a[2],data.xgb.clu.cum$a2,data.xgb.row.cum$a2)
 r.a3<-c(data.xgb.clu.clu.a[3],data.rdf.clu.clu.a[3],data.xgb.row.clu.a[3],data.xgb.clu.row.a[3],
-        data.xgb.row.row.a[3],data.xgb.clu.cum$a3)
+        data.xgb.row.row.a[3],data.xgb.clu.cum$a3,data.xgb.row.cum$a3)
 r.a4<-c(data.xgb.clu.clu.a[4],data.rdf.clu.clu.a[4],data.xgb.row.clu.a[4],data.xgb.clu.row.a[4],
-        data.xgb.row.row.a[4],data.xgb.clu.cum$a4)
+        data.xgb.row.row.a[4],data.xgb.clu.cum$a4,data.xgb.row.cum$a4)
 r.a5<-c(data.xgb.clu.clu.a[5],data.rdf.clu.clu.a[5],data.xgb.row.clu.a[5],data.xgb.clu.row.a[5],
-        data.xgb.row.row.a[5],data.xgb.clu.cum$a5)
+        data.xgb.row.row.a[5],data.xgb.clu.cum$a5,data.xgb.row.cum$a5)
 r.b1<-c(data.xgb.clu.clu.b[1],data.rdf.clu.clu.b[1],data.xgb.row.clu.b[1],data.xgb.clu.row.b[1],
-        data.xgb.row.row.b[1],data.xgb.clu.cum$b1)
+        data.xgb.row.row.b[1],data.xgb.clu.cum$b1,data.xgb.row.cum$b1)
 r.b2<-c(data.xgb.clu.clu.b[2],data.rdf.clu.clu.b[2],data.xgb.row.clu.b[2],data.xgb.clu.row.b[2],
-        data.xgb.row.row.b[2],data.xgb.clu.cum$b2)
+        data.xgb.row.row.b[2],data.xgb.clu.cum$b2,data.xgb.row.cum$b2)
 
 sort(table(r.a1))
 sort(table(r.a2))
