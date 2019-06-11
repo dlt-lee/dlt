@@ -25,7 +25,7 @@ for.clu.xgb <- function() {
   
   for(i in 1:90) {
     data<-head(dlt,rows)
-    data<-tail(data,300)
+    data<-tail(data,400)
     
     data.tr<-dlt.data.filter(data)
     temp.data<-dlt.xgboost.clu(data,data.tr)
