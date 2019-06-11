@@ -2,7 +2,7 @@ data<-dlt
 
 
 for.row.xgb <- function() {
-  rows<-dim(dlt)[1]-273
+  rows<-dim(dlt)[1]-333
   n<-300
   
   pre.a1<-0
@@ -23,7 +23,7 @@ for.row.xgb <- function() {
   
   for(i in 1:90) {
     data<-head(dlt,rows)
-    data<-tail(data,400)
+    data<-tail(data,340)
     
     data.tr<-dlt.data.filter(data)
     temp.data<-dlt.xgboost.row(data,data.tr)
