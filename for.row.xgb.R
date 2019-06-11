@@ -21,7 +21,7 @@ for.row.xgb <- function() {
   exp.b1<-0
   exp.b2<-0
   
-  for(i in 1:90) {
+  for(i in 1:110) {
     data<-head(dlt,rows)
     data<-tail(data,330)
     
