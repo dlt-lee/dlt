@@ -1,6 +1,7 @@
-data<-data.for.xgb.clu
+#data<-data.for.xgb.clu
 dlt.xgb.clu.cum <- function(data){
   n<-300
+  m<-length(data$pre.a1)/16
   a1<-data$pre.a1
   a2<-data$pre.a2
   a3<-data$pre.a3
@@ -25,7 +26,7 @@ dlt.xgb.clu.cum <- function(data){
   pre.b1<-0
   pre.b2<-0
   
-  for(i in 1:90) {
+  for(i in 1:m) {
     for (j in 1:16) {
       pre.a1<-c(pre.a1,a1.m[i,])
       pre.a2<-c(pre.a2,a2.m[i,])

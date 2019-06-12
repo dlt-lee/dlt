@@ -1,6 +1,7 @@
 data<-data.for.xgb.clu
 dlt.xgb.clu.row.aver <- function(data){
   n<-300
+  m<-length(data$pre.a1)/16
   a1<-data$pre.a1
   a2<-data$pre.a2
   a3<-data$pre.a3
@@ -20,7 +21,7 @@ dlt.xgb.clu.row.aver <- function(data){
   exp.b1<-0
   exp.b2<-0
   
-  for (i in 1:90) {
+  for (i in 1:m) {
     for (j in 1:16) {
       exp.a1<-c(exp.a1,data$exp.a1[i])
       exp.a2<-c(exp.a2,data$exp.a2[i])

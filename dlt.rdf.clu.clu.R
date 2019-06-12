@@ -1,5 +1,6 @@
 dlt.rdf.clu.clu <- function(data){
   library(randomForest)
+  m<-length(data$pre.a1)/16
   
   pre.m.a1<-matrix(data$pre.a1,ncol = 16,byrow = TRUE)
   pre.m.a2<-matrix(data$pre.a2,ncol = 16,byrow = TRUE)
@@ -26,7 +27,7 @@ dlt.rdf.clu.clu <- function(data){
   pre.a1.14<-pre.m.a1[,14]
   pre.a1.15<-pre.m.a1[,15]
   pre.a1.16<-pre.m.a1[,16]
-  exp.a1<-data$exp.a1[1:90]
+  exp.a1<-data$exp.a1[1:m]
   trains.a1<-data.frame(pre.a1.1,pre.a1.2,pre.a1.3,pre.a1.4,pre.a1.5,pre.a1.6,
                         pre.a1.7,pre.a1.8,pre.a1.9,pre.a1.10,pre.a1.11,pre.a1.12,
                         pre.a1.13,pre.a1.14,pre.a1.15,pre.a1.16,exp.a1)
@@ -47,7 +48,7 @@ dlt.rdf.clu.clu <- function(data){
   pre.a2.14<-pre.m.a2[,14]
   pre.a2.15<-pre.m.a2[,15]
   pre.a2.16<-pre.m.a2[,16]
-  exp.a2<-data$exp.a2[1:90]
+  exp.a2<-data$exp.a2[1:m]
   trains.a2<-data.frame(pre.a2.1,pre.a2.2,pre.a2.3,pre.a2.4,pre.a2.5,pre.a2.6,
                         pre.a2.7,pre.a2.8,pre.a2.9,pre.a2.10,pre.a2.11,pre.a2.12,
                         pre.a2.13,pre.a2.14,pre.a2.15,pre.a2.16,exp.a2)
@@ -68,7 +69,7 @@ dlt.rdf.clu.clu <- function(data){
   pre.a3.14<-pre.m.a3[,14]
   pre.a3.15<-pre.m.a3[,15]
   pre.a3.16<-pre.m.a3[,16]
-  exp.a3<-data$exp.a3[1:90]
+  exp.a3<-data$exp.a3[1:m]
   trains.a3<-data.frame(pre.a3.1,pre.a3.2,pre.a3.3,pre.a3.4,pre.a3.5,pre.a3.6,
                         pre.a3.7,pre.a3.8,pre.a3.9,pre.a3.10,pre.a3.11,pre.a3.12,
                         pre.a3.13,pre.a3.14,pre.a3.15,pre.a3.16,exp.a3)
@@ -89,7 +90,7 @@ dlt.rdf.clu.clu <- function(data){
   pre.a4.14<-pre.m.a4[,14]
   pre.a4.15<-pre.m.a4[,15]
   pre.a4.16<-pre.m.a4[,16]
-  exp.a4<-data$exp.a4[1:90]
+  exp.a4<-data$exp.a4[1:m]
   trains.a4<-data.frame(pre.a4.1,pre.a4.2,pre.a4.3,pre.a4.4,pre.a4.5,pre.a4.6,
                         pre.a4.7,pre.a4.8,pre.a4.9,pre.a4.10,pre.a4.11,pre.a4.12,
                         pre.a4.13,pre.a4.14,pre.a4.15,pre.a4.16,exp.a4)
@@ -110,7 +111,7 @@ dlt.rdf.clu.clu <- function(data){
   pre.a5.14<-pre.m.a5[,14]
   pre.a5.15<-pre.m.a5[,15]
   pre.a5.16<-pre.m.a5[,16]
-  exp.a5<-data$exp.a5[1:90]
+  exp.a5<-data$exp.a5[1:m]
   trains.a5<-data.frame(pre.a5.1,pre.a5.2,pre.a5.3,pre.a5.4,pre.a5.5,pre.a5.6,
                         pre.a5.7,pre.a5.8,pre.a5.9,pre.a5.10,pre.a5.11,pre.a5.12,
                         pre.a5.13,pre.a5.14,pre.a5.15,pre.a5.16,exp.a5)
@@ -131,7 +132,7 @@ dlt.rdf.clu.clu <- function(data){
   pre.b1.14<-pre.m.b1[,14]
   pre.b1.15<-pre.m.b1[,15]
   pre.b1.16<-pre.m.b1[,16]
-  exp.b1<-data$exp.b1[1:90]
+  exp.b1<-data$exp.b1[1:m]
   trains.b1<-data.frame(pre.b1.1,pre.b1.2,pre.b1.3,pre.b1.4,pre.b1.5,pre.b1.6,
                         pre.b1.7,pre.b1.8,pre.b1.9,pre.b1.10,pre.b1.11,pre.b1.12,
                         pre.b1.13,pre.b1.14,pre.b1.15,pre.b1.16,exp.b1)
@@ -152,7 +153,7 @@ dlt.rdf.clu.clu <- function(data){
   pre.b2.14<-pre.m.b2[,14]
   pre.b2.15<-pre.m.b2[,15]
   pre.b2.16<-pre.m.b2[,16]
-  exp.b2<-data$exp.b2[1:90]
+  exp.b2<-data$exp.b2[1:m]
   trains.b2<-data.frame(pre.b2.1,pre.b2.2,pre.b2.3,pre.b2.4,pre.b2.5,pre.b2.6,
                         pre.b2.7,pre.b2.8,pre.b2.9,pre.b2.10,pre.b2.11,pre.b2.12,
                         pre.b2.13,pre.b2.14,pre.b2.15,pre.b2.16,exp.b2)

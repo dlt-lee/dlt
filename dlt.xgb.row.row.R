@@ -1,5 +1,6 @@
 dlt.xgb.row.row <- function(data){
   n<-300
+  m<-length(data$pre.a1)/16
   pre.m.a1<-matrix(data$pre.a1,ncol = 16,byrow = TRUE)
   pre.m.a2<-matrix(data$pre.a2,ncol = 16,byrow = TRUE)
   pre.m.a3<-matrix(data$pre.a3,ncol = 16,byrow = TRUE)
@@ -14,13 +15,13 @@ dlt.xgb.row.row <- function(data){
   
   
   
-  bst.a1 <- xgboost(data = trains.T.ab,label = data$exp.a1[1:90],nrounds = n,print_every_n = 300L)
-  bst.a2 <- xgboost(data = trains.T.ab,label = data$exp.a2[1:90],nrounds = n,print_every_n = 300L)
-  bst.a3 <- xgboost(data = trains.T.ab,label = data$exp.a3[1:90],nrounds = n,print_every_n = 300L)
-  bst.a4 <- xgboost(data = trains.T.ab,label = data$exp.a4[1:90],nrounds = n,print_every_n = 300L)
-  bst.a5 <- xgboost(data = trains.T.ab,label = data$exp.a5[1:90],nrounds = n,print_every_n = 300L)
-  bst.b1 <- xgboost(data = trains.T.ab,label = data$exp.b1[1:90],nrounds = n,print_every_n = 300L)
-  bst.b2 <- xgboost(data = trains.T.ab,label = data$exp.b2[1:90],nrounds = n,print_every_n = 300L)
+  bst.a1 <- xgboost(data = trains.T.ab,label = data$exp.a1[1:m],nrounds = n,print_every_n = 300L)
+  bst.a2 <- xgboost(data = trains.T.ab,label = data$exp.a2[1:m],nrounds = n,print_every_n = 300L)
+  bst.a3 <- xgboost(data = trains.T.ab,label = data$exp.a3[1:m],nrounds = n,print_every_n = 300L)
+  bst.a4 <- xgboost(data = trains.T.ab,label = data$exp.a4[1:m],nrounds = n,print_every_n = 300L)
+  bst.a5 <- xgboost(data = trains.T.ab,label = data$exp.a5[1:m],nrounds = n,print_every_n = 300L)
+  bst.b1 <- xgboost(data = trains.T.ab,label = data$exp.b1[1:m],nrounds = n,print_every_n = 300L)
+  bst.b2 <- xgboost(data = trains.T.ab,label = data$exp.b2[1:m],nrounds = n,print_every_n = 300L)
   
   data<-tail(dlt,300)
   data.tr<-dlt.data.filter(data)
