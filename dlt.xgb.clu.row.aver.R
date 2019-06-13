@@ -1,4 +1,4 @@
-data<-data.for.xgb.clu
+#data<-data.for.xgb.clu
 dlt.xgb.clu.row.aver <- function(data){
   n<-300
   m<-length(data$pre.a1)/16
