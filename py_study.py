@@ -97,3 +97,17 @@ print(d.get('fish'))
 print(d.get('monkey','N/A'))
 del d['fish']
 print(d.get('fish'))
+
+import torch
+torch.cuda.is_available()
+
+
+d = {(x, x + 1): x for x in range(10)}
+t = (5, 6)
+print(type(d))
+print(d[t])
+print(d)
+print(d[(3,4)])
+
+
+
