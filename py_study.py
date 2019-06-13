@@ -110,4 +110,10 @@ print(d)
 print(d[(3,4)])
 
 
-
+def abs_fun(x):
+    if x >= 0:
+        return x
+    else:
+        return -x
+print(abs_fun(3))
+print(abs_fun(-2))
