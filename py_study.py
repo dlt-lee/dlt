@@ -98,8 +98,6 @@ print(d.get('monkey','N/A'))
 del d['fish']
 print(d.get('fish'))
 
-import torch
-torch.cuda.is_available()
 
 
 d = {(x, x + 1): x for x in range(10)}
@@ -118,5 +116,5 @@ def abs_fun(x):
 print(abs_fun(3))
 print(abs_fun(-2))
 
-#from __future__ import print_function
+
 
