@@ -115,6 +115,3 @@ def abs_fun(x):
         return -x
 print(abs_fun(3))
 print(abs_fun(-2))
-
-
-
