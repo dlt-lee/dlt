@@ -126,3 +126,15 @@ print(a)
 b = np.array([[1,2,3,],[4,5,6]])
 print(b.shape)
 print(b)
+
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+print(a)
+b = a[:2,1:3] #row:0,1 clum:1,2
+print(b)
+row_r1 = a[1,:] #row:1 clum:all
+print(row_r1)
+print(a[0,0],a[1,1])
+bool_idx = a > 6
+print(a)
+print(bool_idx)
+print(a[bool_idx])
