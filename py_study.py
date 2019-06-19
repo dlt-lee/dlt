@@ -116,3 +116,13 @@ def abs_fun(x):
 print(abs_fun(3))
 print(abs_fun(-2))
 
+import numpy as np
+a = np.array([1,2,3,4,8,12])
+print(type(a))
+print(a.shape)
+print(a[0],a[1],a[2])
+a[1] = 3
+print(a)
+b = np.array([[1,2,3,],[4,5,6]])
+print(b.shape)
+print(b)
