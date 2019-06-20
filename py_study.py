@@ -1,4 +1,7 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+
 print(100+200+300)
 print('hello,	world	and	hello	deep	learning!')
 print(type(3))
@@ -146,3 +149,10 @@ print(np.sum(x))
 print(np.sum(x,axis=0))
 print(np.sum(x,axis=1))
 
+x = np.arange(0, 8, 0.1)
+y = np.sin(x)
+plt.plot(x, y)
+#plt.show()
+
+img = Image.open('./jim.jpg')
+img
