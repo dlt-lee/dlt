@@ -1,3 +1,4 @@
+import numpy as np
 print(100+200+300)
 print('hello,	world	and	hello	deep	learning!')
 print(type(3))
@@ -144,3 +145,4 @@ print(x)
 print(np.sum(x))
 print(np.sum(x,axis=0))
 print(np.sum(x,axis=1))
+
