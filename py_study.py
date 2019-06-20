@@ -116,7 +116,7 @@ def abs_fun(x):
 print(abs_fun(3))
 print(abs_fun(-2))
 
-import numpy as np
+#import numpy as np
 a = np.array([1,2,3,4,8,12])
 print(type(a))
 print(a.shape)
@@ -138,3 +138,9 @@ bool_idx = a > 6
 print(a)
 print(bool_idx)
 print(a[bool_idx])
+
+x = np.array([[1,2],[3,4]])
+print(x)
+print(np.sum(x))
+print(np.sum(x,axis=0))
+print(np.sum(x,axis=1))
