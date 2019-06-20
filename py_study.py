@@ -116,7 +116,7 @@ def abs_fun(x):
 print(abs_fun(3))
 print(abs_fun(-2))
 
-#import numpy as np
+import numpy as np
 a = np.array([1,2,3,4,8,12])
 print(type(a))
 print(a.shape)
