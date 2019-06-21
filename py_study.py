@@ -154,5 +154,5 @@ y = np.sin(x)
 plt.plot(x, y)
 #plt.show()
 
-img = Image.open('./jim.jpg')
-img
+#img = Image.open('./jim.jpg')
+#img
