@@ -6,12 +6,13 @@ from torch import nn
 from torch.autograd import Variable
 import time
 import matplotlib.pyplot as plt
-print(data_dlt.get_dim()[0])
-print(data_dlt.get_trainsX(500).reshape((-1,)))
-print(data_dlt.get_trainsY(688))
+
+#print(data_dlt.get_dim()[0])
+#print(data_dlt.get_trainsX(500).reshape((-1,)))
+#print(data_dlt.get_trainsY(688))
 
 def data_tf(x):
-    x = np.array(x, dtype='float32') / 35
+    x = x / 35
     x = (x - 0.5) / 0.5
     x = x.reshape((-1,))
     x = torch.from_numpy(x)
@@ -39,11 +40,12 @@ for e in range(100):
     label = Variable(data_tf(data_dlt.get_trainsY(line)),requires_grad=True)
     #print(data_tf(data_dlt.get_trainsX(line)))
     #forward
-    out = net(im)
-    print(out)
+    print(im.shape)
+    #out = net(im)
+    #print(out)
     print(label)
     print('---------------------------------------------------')
-    loss = criterion(out,label)
+    #loss = criterion(out,label)
     #backward
     #optimizer.zero_grad()
     #loss.backward()
