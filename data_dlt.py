@@ -693,6 +693,6 @@ data = np.array (
 def get_dim():
     return data.shape
 def get_trainsX(trn):
-    return data[(trn-300):trn,:]
+    return data[(trn-300):trn,1:8]
 def get_trainsY(trn):
-    return data[trn,:]
+    return data[trn,1:8]
