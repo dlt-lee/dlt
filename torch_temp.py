@@ -20,6 +20,7 @@ test_set = MNIST('./data', train=False, transform=data_tf, download=True)
 
 criterion = nn.CrossEntropyLoss()
 train_data = DataLoader(train_set, batch_size=1, shuffle=True)
+print(type(train_data))
 
 net = nn.Sequential(
     nn.Linear(784, 200),
@@ -35,17 +36,18 @@ for e in range(2):
     train_loss = 0
     for im, label in train_data:
         im = Variable(im)
-        #print(type(im))
         #print(im.shape)
+        #print(type(im))
+        print(im.shape)
         label = Variable(label)
         #print(type(label))
         #print(label.shape)
         
         out = net(im)
-        print(out)
+        #print(out)
         #print(type(out))
         #print(out.shape)
-        print(label)
+        #print(label)
         loss = criterion(out, label)
         optimizer.zero_grad()
         loss.backward()

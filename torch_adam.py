@@ -5,6 +5,7 @@ from torch.autograd import Variable
 import time
 import matplotlib.pyplot as plt
 from torch import nn
+from torch.utils.data import DataLoader
 
 def data_tf(x):
     x = np.array(x, dtype='float32') / 35
@@ -18,9 +19,9 @@ nn.Linear(2100, 1000),
 nn.ReLU(),
 nn.Linear(1000, 500),
 nn.ReLU(),
-nn.Linear(500, 250),
+nn.Linear(500, 200),
 nn.ReLU(),
-nn.Linear(250, 10),
+nn.Linear(200, 10),
 )
 
 criterion = nn.CrossEntropyLoss()
@@ -33,12 +34,15 @@ for e in range(100):
     train_loss = 0
     line = line+3
     im = Variable(data_tf(data_dlt.get_trainsX(line)), requires_grad=True)
-    label  = Variable(torch.from_numpy(data_dlt.get_trainsY(line)).cuda(0))
+    #label  = Variable(torch.from_numpy(data_dlt.get_trainsY(line)).cuda(0))
+    label  = Variable(torch.from_numpy(data_dlt.get_trainsY(line)))
+    #print(data_dlt.get_trainsX(line))
+    print(im)
     out = net(im)
-    print(out)
+    print(out.shape)
     #print(label.shape)
     print(label)
-    
     print('--------------------------------------------------')
-    #loss = criterion(out,label)
+
+    #loss = criterion(out, label)
 
