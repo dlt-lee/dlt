@@ -696,4 +696,4 @@ def get_dim():
 def get_trainsX(trn):
     return data[(trn-300):trn,1:8]
 def get_trainsY(trn):
-    return data[trn,1:2]
+    return data[trn,1:8]

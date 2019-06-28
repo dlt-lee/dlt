@@ -46,14 +46,19 @@ for i in range(100):
 line = train_data.shape[0]
 #print(line)
 for j in range(0,line):
+
     im = Variable(torch.from_numpy(np.array(train_data[j:j+1,:2100],dtype='float32')), requires_grad=True)
     label = Variable(torch.from_numpy(np.array(train_data[j,2100:2101],dtype='int64')))
     print(im.shape)
     
-
     out = net(im)
-    print(out)
-    print(label)
-    print('-----------------------------------------------------')
-
+    #print(out)
+    #print(label)
     loss = criterion(out, label)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+
+    print('-----------------------------------------------------')
