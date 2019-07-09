@@ -14,5 +14,5 @@ def vgg_block(num_convs, in_channels, out_channels):
 
     return nn.Sequential(*net)
 
-block_demo = vgg_block(10, 1, 1)
+block_demo = vgg_block(3, 64, 128)
 print(block_demo)
