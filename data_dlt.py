@@ -689,12 +689,12 @@ data = np.array (
         [19071,7,13,14,15,22,7,11],
         [19068,4,5,8,17,27,6,11],
         [19072,2,4,6,9,18,7,10],
-        [19073,4,11,19,20,24,8,11,
-        19074,8,9,13,14,34,5,7]]
+        [19073,4,11,19,20,24,8,11],
+        [19074,8,9,13,14,34,5,7]]
         )  
 def get_dim():
     return data.shape
 def get_trainsX(trn):
-    return data[(trn-300):trn,1:8]
+    return data[(trn-31):(trn-1),1:8]
 def get_trainsY(trn):
-    return data[trn,1:8]
+    return data[(trn-1),1:8]
