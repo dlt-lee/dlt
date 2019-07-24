@@ -21,7 +21,7 @@ test_set = MNIST('./data', train=False,transform=data_tf,download=True)
 
 criterion = nn.CrossEntropyLoss()
 
-train_data = DataLoader(train_set, batch_size=1, shuffle=True)
+train_data = DataLoader(train_set, batch_size=64, shuffle=True)
 #print(train_data)
 #print(type(train_data))
 
