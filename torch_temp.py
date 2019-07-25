@@ -22,8 +22,8 @@ test_set = MNIST('./data', train=False,transform=data_tf,download=True)
 criterion = nn.CrossEntropyLoss()
 
 train_data = DataLoader(train_set, batch_size=64, shuffle=True)
-#print(train_data)
-#print(type(train_data))
+print(np.array(train_data).shape)
+print(type(np.array(train_data)))
 
 net = nn.Sequential(
     nn.Linear(784, 200),
