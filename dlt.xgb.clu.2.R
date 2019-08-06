@@ -2,13 +2,13 @@ library(xgboost)
 
 trains<-dlt.data.reset(dlt)
 trains.T<-Matrix(as.matrix(trains[,1:63]),sparse=T)
-bst.a1<-xgboost(data = trains.T[,c(43,50,57)],label = trains$res.a1,nrounds = 300,print_every_n = 300L)
-bst.a2<-xgboost(data = trains.T[,c(44,51,58)],label = trains$res.a2,nrounds = 300,print_every_n = 300L)
-bst.a3<-xgboost(data = trains.T[,c(45,52,59)],label = trains$res.a3,nrounds = 300,print_every_n = 300L)
-bst.a4<-xgboost(data = trains.T[,c(46,53,60)],label = trains$res.a4,nrounds = 300,print_every_n = 300L)
-bst.a5<-xgboost(data = trains.T[,c(47,54,61)],label = trains$res.a5,nrounds = 300,print_every_n = 300L)
-bst.b1<-xgboost(data = trains.T[,c(48,55,62)],label = trains$res.b1,nrounds = 300,print_every_n = 300L)
-bst.b2<-xgboost(data = trains.T[,c(49,56,63)],label = trains$res.b2,nrounds = 300,print_every_n = 300L)
+bst.a1<-xgboost(data = trains.T[,c(50,57)],label = trains$res.a1,nrounds = 300,print_every_n = 300L)
+bst.a2<-xgboost(data = trains.T[,c(51,58)],label = trains$res.a2,nrounds = 300,print_every_n = 300L)
+bst.a3<-xgboost(data = trains.T[,c(52,59)],label = trains$res.a3,nrounds = 300,print_every_n = 300L)
+bst.a4<-xgboost(data = trains.T[,c(53,60)],label = trains$res.a4,nrounds = 300,print_every_n = 300L)
+bst.a5<-xgboost(data = trains.T[,c(54,61)],label = trains$res.a5,nrounds = 300,print_every_n = 300L)
+bst.b1<-xgboost(data = trains.T[,c(55,62)],label = trains$res.b1,nrounds = 300,print_every_n = 300L)
+bst.b2<-xgboost(data = trains.T[,c(56,63)],label = trains$res.b2,nrounds = 300,print_every_n = 300L)
 
 #predoct
 a1.1<-dlt$a1[1:(dim(dlt)[1]-8)];a2.1<-dlt$a2[1:(dim(dlt)[1]-8)];a3.1<-dlt$a3[1:(dim(dlt)[1]-8)];a4.1<-dlt$a4[1:(dim(dlt)[1]-8)];a5.1<-dlt$a5[1:(dim(dlt)[1]-8)];b1.1<-dlt$b1[1:(dim(dlt)[1]-8)];b2.1<-dlt$b2[1:(dim(dlt)[1]-8)]
@@ -31,13 +31,13 @@ tests<-data.frame(a1.1,a2.1,a3.1,a4.1,a5.1,b1.1,b2.1,
                   a1.8,a2.8,a3.8,a4.8,a5.8,b1.8,b2.8,
                   a1.9,a2.9,a3.9,a4.9,a5.9,b1.9,b2.9)
 tests.T<-Matrix(as.matrix(tests),sparse=T)
-testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T[,c(43,50,57)])
-testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T[,c(44,51,58)])
-testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T[,c(45,52,59)])
-testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T[,c(46,53,60)])
-testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T[,c(47,54,61)])
-testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T[,c(48,55,62)])
-testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T[,c(49,56,63)])
+testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T[,c(50,57)])
+testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T[,c(51,58)])
+testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T[,c(52,59)])
+testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T[,c(53,60)])
+testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T[,c(54,61)])
+testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T[,c(55,62)])
+testPredictions.b2 <- predict(object = bst.b2,newdata = tests.T[,c(56,63)])
 
 
 #result
@@ -49,4 +49,6 @@ c(round(tail(testPredictions.a1,1)),
   round(tail(testPredictions.b1,1)),
   round(tail(testPredictions.b2,1))
 )
+
+
 

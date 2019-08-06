@@ -1,14 +1,14 @@
 dlt.data.reset <- function(data_org) {
-  rows<-dim(data_org)[1]
-  line<-rows-9  #back to three weeks
-  data<-head(data_org,line)  #get data
-  line<-line-line%%3  # split to group by 3
   
-  n<-line/3
+  rows<-dim(data_org)[1]    # roews of orange data
+  line<-rows-3              #preparefor trining data
   
-  data<-head(data,rows-2)
-  line<-line+1
-  data<-tail(data,line)
+  n<-(line-line%%3)/3-2
+  line<-line-line%%3+3
+  
+  data<-tail(data_org,line)
+  
+  
   
   a1.1<-0;a2.1<-0;a3.1<-0;a4.1<-0;a5.1<-0;b1.1<-0;b2.1<-0
   a1.2<-0;a2.2<-0;a3.2<-0;a4.2<-0;a5.2<-0;b1.2<-0;b2.2<-0
@@ -46,7 +46,7 @@ dlt.data.reset <- function(data_org) {
     res.b1<-c(res.b1,data[j+9,]$b1)
     res.b2<-c(res.b2,data[j+9,]$b2)
     j=j+3
-    print(j)
+    #print(j)
   }
   a1.1<-as.matrix(a1.1)[-1];a2.1<-as.matrix(a2.1)[-1];a3.1<-as.matrix(a3.1)[-1];a4.1<-as.matrix(a4.1)[-1];a5.1<-as.matrix(a5.1)[-1];b1.1<-as.matrix(b1.1)[-1];b2.1<-as.matrix(b2.1)[-1]
   a1.2<-as.matrix(a1.2)[-1];a2.2<-as.matrix(a2.2)[-1];a3.2<-as.matrix(a3.2)[-1];a4.2<-as.matrix(a4.2)[-1];a5.2<-as.matrix(a5.2)[-1];b1.2<-as.matrix(b1.2)[-1];b2.2<-as.matrix(b2.2)[-1]
@@ -75,7 +75,8 @@ dlt.data.reset <- function(data_org) {
                      a1.8,a2.8,a3.8,a4.8,a5.8,b1.8,b2.8,
                      a1.9,a2.9,a3.9,a4.9,a5.9,b1.9,b2.9,
                      res.a1,res.a2,res.a3,res.a4,res.a5,res.b1,res.b2)
+  
+  return(trains)
 }
-
 
 
