@@ -1,4 +1,4 @@
-dlt.data.clu.3 <- function(trains,d_o) {
+dlt.xgb.clu.3 <- function(trains,d_o) {
   library(xgboost)
   
   #trains<-dlt.data.reset(dlt)
