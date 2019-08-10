@@ -1,4 +1,4 @@
-dlt_sum<-function(data) {
+dlt_sum_L1<-function(data) {
   data_filter<-dlt.data.reset(data)
   
   data_clu2<-dlt.xgb.clu.2(data_filter,data)
