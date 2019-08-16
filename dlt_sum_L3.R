@@ -117,11 +117,36 @@ cell<-c(
           19091,04,13,16,25,33,04,07,
           19092,04,06,12,15,30,05,10,
           19093,05,09,14,25,32,07,09,
-          19094,05,08,18,24,31,05,11,
-          19095,04,06,15,23,32,05,11
+          19094,05,08,18,24,31,05,11
+          #19095,03,06,22,30,33,02,09
           
              )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
+
+a1.pre<-ab_m[,2]
+a2.pre<-ab_m[,3]
+a3.pre<-ab_m[,4]
+a4.pre<-ab_m[,5]
+a5.pre<-ab_m[,6]
+b1.pre<-ab_m[,7]
+b2.pre<-ab_m[,8]
+
+a1.res<-tail(dlt,dim(ab_m)[1])$a1
+a2.res<-tail(dlt,dim(ab_m)[1])$a2
+a3.res<-tail(dlt,dim(ab_m)[1])$a3
+a4.res<-tail(dlt,dim(ab_m)[1])$a4
+a5.res<-tail(dlt,dim(ab_m)[1])$a5
+b1.res<-tail(dlt,dim(ab_m)[1])$b1
+b2.res<-tail(dlt,dim(ab_m)[1])$b2
+
+a1.hmm<-data.frame(a1.pre,a1.res)
+a2.hmm<-data.frame(a2.pre,a2.res)
+a3.hmm<-data.frame(a3.pre,a3.res)
+a4.hmm<-data.frame(a4.pre,a4.res)
+a5.hmm<-data.frame(a5.pre,a5.res)
+b1.hmm<-data.frame(a1.pre,b1.res)
+b2.hmm<-data.frame(a2.pre,b2.res)
+
 
 #Training
 trains.T.ab<-Matrix(ab_m[,2:8],sparse=T)
@@ -158,6 +183,14 @@ sum_l1_ab<-dlt_sum_L1(dlt)
 
 sum_l2_ab
 sum_l3_ab
+
+sort(table(a1.hmm[which(a1.pre==sum_l3_ab[1]),]$a1.res))
+sort(table(a2.hmm[which(a2.pre==sum_l3_ab[2]),]$a2.res))
+sort(table(a3.hmm[which(a3.pre==sum_l3_ab[3]),]$a3.res))
+sort(table(a4.hmm[which(a4.pre==sum_l3_ab[4]),]$a4.res))
+sort(table(a5.hmm[which(a5.pre==sum_l3_ab[5]),]$a5.res))
+sort(table(b1.hmm[which(b1.pre==sum_l3_ab[6]),]$b1.res))
+sort(table(b2.hmm[which(b2.pre==sum_l3_ab[7]),]$b2.res))
 
 
 
