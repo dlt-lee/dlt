@@ -117,7 +117,9 @@ cell<-c(
           19091,04,13,16,25,33,04,07,
           19092,04,06,12,15,30,05,10,
           19093,05,09,14,25,32,07,09,
-          19094,05,08,18,24,31,05,11
+          19094,05,08,18,24,31,05,11,
+          19095,04,06,15,23,32,05,11
+          > 
              )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
 
@@ -144,14 +146,18 @@ testPredictions.a5 <- predict(object = bst.a5,newdata = t(pre.T.data[1:5]))
 testPredictions.b1 <- predict(object = bst.a1,newdata = t(pre.T.data[6:7]))
 testPredictions.b2 <- predict(object = bst.a2,newdata = t(pre.T.data[6:7]))
 
-c(round(tail(testPredictions.a1,1)),
-  round(tail(testPredictions.a2,1)),
-  round(tail(testPredictions.a3,1)),
-  round(tail(testPredictions.a4,1)),
-  round(tail(testPredictions.a5,1)),
-  round(tail(testPredictions.b1,1)),
-  round(tail(testPredictions.b2,1)))
+sum_l3_ab<-c(round(tail(testPredictions.a1,1)),
+             round(tail(testPredictions.a2,1)),
+             round(tail(testPredictions.a3,1)),
+             round(tail(testPredictions.a4,1)),
+             round(tail(testPredictions.a5,1)),
+             round(tail(testPredictions.b1,1)),
+             round(tail(testPredictions.b2,1)))
+sum_l2_ab<-dlt_sum_L2(dlt)
+sum_l1_ab<-dlt_sum_L1(dlt)
 
+sum_l2_ab
+sum_l3_ab
 
 
 
