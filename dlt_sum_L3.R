@@ -1,5 +1,8 @@
 library(HMM)
 library(depmixS4)
+library(matlab)
+library(quantmod)
+library(xgboost)
 
 #rows<-dim(dlt)[1]
 #line<-rows-98
@@ -118,7 +121,41 @@ cell<-c(
              )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
 
-dlt_sum_L2(tail(dlt,609))
+#Training
+trains.T.ab<-Matrix(ab_m[,2:8],sparse=T)
+bst.a1<-xgboost(data = trains.T.ab[,1:5],label = tail(dlt,dim(ab_m)[1])$a1,nrounds = 300,print_every_n = 300L)
+bst.a2<-xgboost(data = trains.T.ab[,1:5],label = tail(dlt,dim(ab_m)[1])$a2,nrounds = 300,print_every_n = 300L)
+bst.a3<-xgboost(data = trains.T.ab[,1:5],label = tail(dlt,dim(ab_m)[1])$a3,nrounds = 300,print_every_n = 300L)
+bst.a4<-xgboost(data = trains.T.ab[,1:5],label = tail(dlt,dim(ab_m)[1])$a4,nrounds = 300,print_every_n = 300L)
+bst.a5<-xgboost(data = trains.T.ab[,1:5],label = tail(dlt,dim(ab_m)[1])$a5,nrounds = 300,print_every_n = 300L)
+bst.b1<-xgboost(data = trains.T.ab[,6:7],label = tail(dlt,dim(ab_m)[1])$b1,nrounds = 300,print_every_n = 300L)
+bst.b2<-xgboost(data = trains.T.ab[,6:7],label = tail(dlt,dim(ab_m)[1])$b2,nrounds = 300,print_every_n = 300L)
+
+#data preparation
+pre.data<-dlt_sum_L2(tail(dlt,609))
+
+#predict
+pre.T.data<-Matrix(pre.data,sparse=T)
+testPredictions.a1 <- predict(object = bst.a1,newdata = t(pre.T.data[1:5]))
+testPredictions.a2 <- predict(object = bst.a2,newdata = t(pre.T.data[1:5]))
+testPredictions.a3 <- predict(object = bst.a3,newdata = t(pre.T.data[1:5]))
+testPredictions.a4 <- predict(object = bst.a4,newdata = t(pre.T.data[1:5]))
+testPredictions.a5 <- predict(object = bst.a5,newdata = t(pre.T.data[1:5]))
+testPredictions.b1 <- predict(object = bst.a1,newdata = t(pre.T.data[6:7]))
+testPredictions.b2 <- predict(object = bst.a2,newdata = t(pre.T.data[6:7]))
+
+c(round(tail(testPredictions.a1,1)),
+  round(tail(testPredictions.a2,1)),
+  round(tail(testPredictions.a3,1)),
+  round(tail(testPredictions.a4,1)),
+  round(tail(testPredictions.a5,1)),
+  round(tail(testPredictions.b1,1)),
+  round(tail(testPredictions.b2,1)))
+
+
+
+
+
 
 
 
