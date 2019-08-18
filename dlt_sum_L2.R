@@ -76,7 +76,7 @@ dlt_sum_L2<-function(data_org) {
               round(tail(testPredictions.a5,1)),
               round(tail(testPredictions.b1,1)),
               round(tail(testPredictions.b2,1)))
-  pre_data<-c(sort(pre_data[1:5]),sort(pre_data[6,7]))
+  pre_data<-c(sort(pre_data[1:5]),sort(pre_data[6:7]))
   return(pre_data)
   
   

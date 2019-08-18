@@ -180,12 +180,12 @@ sum_l3_ab<-c(round(tail(testPredictions.a1,1)),
              round(tail(testPredictions.b1,1)),
              round(tail(testPredictions.b2,1)))
 
-
+sum_l3_ab<-c(sort(sum_l3_ab[1:5]),sort(sum_l3_ab[6:7]))
 sum_l2_ab<-dlt_sum_L2(dlt)
 sum_l1_ab<-dlt_sum_L1(dlt)
 
 sum_l2_ab
-sum_l3_ab<-c(sort(sum_l3_ab[1:5]),sort(sum_l3_ab[6:7]))
+sum_l3_ab
 
 sort(table(a1.hmm[which(a1.pre==sum_l3_ab[1]),]$a1.res))
 sort(table(a2.hmm[which(a2.pre==sum_l3_ab[2]),]$a2.res))
