@@ -69,13 +69,15 @@ dlt_sum_L2<-function(data_org) {
   testPredictions.b2 <- predict(object = bst.b2,newdata = t(tests.T[,7]))
   
   
-  return(c(round(tail(testPredictions.a1,1)),
-           round(tail(testPredictions.a2,1)),
-           round(tail(testPredictions.a3,1)),
-           round(tail(testPredictions.a4,1)),
-           round(tail(testPredictions.a5,1)),
-           round(tail(testPredictions.b1,1)),
-           round(tail(testPredictions.b2,1))))
+  pre_data<-c(round(tail(testPredictions.a1,1)),
+              round(tail(testPredictions.a2,1)),
+              round(tail(testPredictions.a3,1)),
+              round(tail(testPredictions.a4,1)),
+              round(tail(testPredictions.a5,1)),
+              round(tail(testPredictions.b1,1)),
+              round(tail(testPredictions.b2,1)))
+  pre_data<-c(sort(pre_data[1:5]),pre_data[6,7])
+  return(pre_data)
   
   
   

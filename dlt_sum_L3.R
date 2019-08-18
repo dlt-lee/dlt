@@ -160,6 +160,7 @@ bst.b2<-xgboost(data = trains.T.ab[,6:7],label = tail(dlt,dim(ab_m)[1])$b2,nroun
 
 #data preparation
 pre.data<-dlt_sum_L2(tail(dlt,609))
+pre.data<-c(sort(pre.data[1:5]),sort(pre.data[6:7]))
 
 #predict
 pre.T.data<-Matrix(pre.data,sparse=T)
