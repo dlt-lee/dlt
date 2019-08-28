@@ -199,6 +199,8 @@ sort(table(a5.hmm[which(a5.pre==sum_l3_ab[5]),]$a5.res))
 sort(table(b1.hmm[which(b1.pre==sum_l3_ab[6]),]$b1.res))
 sort(table(b2.hmm[which(b2.pre==sum_l3_ab[7]),]$b2.res))
 
+pre.data
+
 
 
 
