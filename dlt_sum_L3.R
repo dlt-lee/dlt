@@ -184,8 +184,8 @@ testPredictions.a2 <- predict(object = bst.a2,newdata = t(pre.T.data))
 testPredictions.a3 <- predict(object = bst.a3,newdata = t(pre.T.data))
 testPredictions.a4 <- predict(object = bst.a4,newdata = t(pre.T.data))
 testPredictions.a5 <- predict(object = bst.a5,newdata = t(pre.T.data))
-testPredictions.b1 <- predict(object = bst.a1,newdata = t(pre.T.data))
-testPredictions.b2 <- predict(object = bst.a2,newdata = t(pre.T.data))
+testPredictions.b1 <- predict(object = bst.b1,newdata = t(pre.T.data))
+testPredictions.b2 <- predict(object = bst.b2,newdata = t(pre.T.data))
 
 sum_l3_ab<-c(round(tail(testPredictions.a1,1)),
              round(tail(testPredictions.a2,1)),
@@ -194,6 +194,10 @@ sum_l3_ab<-c(round(tail(testPredictions.a1,1)),
              round(tail(testPredictions.a5,1)),
              round(tail(testPredictions.b1,1)),
              round(tail(testPredictions.b2,1)))
+L2_159<-dlt_sum_cum(tail(dlt,720),159)
+L2_309<-dlt_sum_cum(tail(dlt,720),309)
+L2_459<-dlt_sum_cum(tail(dlt,720),459)
+L2_609<-dlt_sum_cum(tail(dlt,720),609)
 
 sum_l3_ab<-c(sort(sum_l3_ab[1:5]),sort(sum_l3_ab[6:7]))
 sum_l2_ab<-dlt_sum_L2(dlt)
@@ -211,6 +215,10 @@ sort(table(b1.hmm[which(b1.pre==sum_l3_ab[6]),]$b1.res))
 sort(table(b2.hmm[which(b2.pre==sum_l3_ab[7]),]$b2.res))
 
 pre.data
+L2_159
+L2_309
+L2_459
+L2_609
 
 
 
