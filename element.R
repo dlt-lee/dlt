@@ -946,7 +946,7 @@ data<-dlt
 count<-dim(dlt)[1]
 
 
-
+write.csv(dlt,file = "dlt.csv")
 tail(dlt,1)
 
 
