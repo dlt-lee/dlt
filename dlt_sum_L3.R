@@ -208,13 +208,13 @@ sum_l1_ab<-dlt_sum_L1(dlt)
 sum_l2_ab
 sum_l3_ab
 
-sort(table(a1.hmm[which(a1.pre==sum_l3_ab[1]),]$a1.res))
-sort(table(a2.hmm[which(a2.pre==sum_l3_ab[2]),]$a2.res))
-sort(table(a3.hmm[which(a3.pre==sum_l3_ab[3]),]$a3.res))
-sort(table(a4.hmm[which(a4.pre==sum_l3_ab[4]),]$a4.res))
-sort(table(a5.hmm[which(a5.pre==sum_l3_ab[5]),]$a5.res))
-sort(table(b1.hmm[which(b1.pre==sum_l3_ab[6]),]$b1.res))
-sort(table(b2.hmm[which(b2.pre==sum_l3_ab[7]),]$b2.res))
+#sort(table(a1.hmm[which(a1.pre==sum_l3_ab[1]),]$a1.res))
+#sort(table(a2.hmm[which(a2.pre==sum_l3_ab[2]),]$a2.res))
+#sort(table(a3.hmm[which(a3.pre==sum_l3_ab[3]),]$a3.res))
+#sort(table(a4.hmm[which(a4.pre==sum_l3_ab[4]),]$a4.res))
+#sort(table(a5.hmm[which(a5.pre==sum_l3_ab[5]),]$a5.res))
+#sort(table(b1.hmm[which(b1.pre==sum_l3_ab[6]),]$b1.res))
+#sort(table(b2.hmm[which(b2.pre==sum_l3_ab[7]),]$b2.res))
 
 pre.data
 L2_159
