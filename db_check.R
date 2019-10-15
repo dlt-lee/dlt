@@ -64,4 +64,4 @@ dbDisconnect(DB_mysql)
 
 
 
-
+mdm_datil[which( mdm_datil$DID==""),]
