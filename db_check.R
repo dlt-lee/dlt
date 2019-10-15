@@ -36,10 +36,10 @@ write.csv(mdm_raw,file = "mdm_raw.csv")
 write.csv(mdm_datil,file = "mdm_datil.csv")
 #########################################################################################
 #disconnect DB
-dbDisconnect(med_meeting)
+dbDisconnect(DB_mysql)
 #########################################################################################
 #Query data by sql
-dbGetQuery(med_meeting,"select Event_ID from medmeeting_index")
+dbGetQuery(DB_mysql,"select Event_ID from medmeeting_index")
 ########################################################################################
 # case 
 # check leak event_id from mdm_datil to mdm_index
