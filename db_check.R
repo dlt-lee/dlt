@@ -31,12 +31,10 @@ mdm_raw<-as.data.frame(dbReadTable(DB_mysql,"medmeeting_raw"))
 mdm_datil<-as.data.frame(dbReadTable(DB_mysql,"medmeeting_detail"))
 
 #Save data as local file
-write.csv(mdm_index,file = "mdm_index.csv")
-write.csv(mdm_raw,file = "mdm_raw.csv")
-write.csv(mdm_datil,file = "mdm_datil.csv")
-#########################################################################################
-#disconnect DB
-dbDisconnect(DB_mysql)
+write.csv(mdm_index,file = "mdm_index.csv",row.names=FALSE)
+write.csv(mdm_raw,file = "mdm_raw.csv",row.names=FALSE)
+write.csv(mdm_datil,file = "mdm_datil.csv",row.names=FALSE)
+
 #########################################################################################
 #Query data by sql
 dbGetQuery(DB_mysql,"select Event_ID from medmeeting_index")
@@ -53,14 +51,16 @@ for ( id in mdm_datil$Event_ID) {
 temp_id<-temp_id[-1]
 names(table(temp_id))
 ########################################################################################
+#Get WanFang data from Mysql
+wf_data_article<-as.data.frame(dbReadTable(DB_mysql,"wf_data_article"))
+wf_data_author<-as.data.frame(dbReadTable(DB_mysql,"wf_data_author"))
+wf_data_author<-as.data.frame(dbReadTable(DB_mysql,"wf_data_author"))
+wf_data_magazine<-as.data.frame(dbReadTable(DB_mysql,"wf_data_magazine"))
 
-
-
-write.csv(table(rt_datil$session_topic),"t_sess.csv",row.names=FALSE)
-
-event_title<-rt_datil[which(rt_datil$name=="-"),]$event_title
-
-
+########################################################################################
+#disconnect DB
+dbDisconnect(DB_mysql)
+#########################################################################################
 
 
 
