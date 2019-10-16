@@ -13,4 +13,4 @@ for (nam in single_name) {
   }
   
 }
-write.csv(temp_line,"med_n_D.csv")
+write.csv(temp_line[-1,],"med_n_D.csv")
