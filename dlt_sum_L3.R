@@ -152,6 +152,7 @@ cell<-c(
           19126,05,13,18,26,30,05,09
           
           
+          
              )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
 
