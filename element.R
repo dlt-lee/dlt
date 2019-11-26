@@ -874,7 +874,7 @@ ab_s_m<-as.data.frame.matrix ( xtabs(~dlt$sa+dlt$sb,data = dlt))
 #margnual number
 mar_table(m_2017[,2:6])
 margin.table(m_2017[,2:6],1)#row sum
-margin.table(m_2017[2:6],2)#colum sum
+margin.table(m_2017[,2:6],2)#colum sum
 #proportion
 prop.table(m_2017[,2:6],2)
 mar_table(prop.table(m_2017[,2:6]))
@@ -886,7 +886,7 @@ plot(table(dlt$sa,dlt$sb))
 barplot( table(m_2017[,2:6]))
 barplot( table(m_2017[,7:8]))
 
-CrossTable(tail(dlt$sa),tail(dlt$sb),chisq =  TRUE,fisher = TRUE,mcnemar = TRUE)
+CrossTable(tail(dlt$sa),tail(dlt$sb),chisq =  TRUE,fisher = TRUE,mcnemar = FALSE)
 #relationship(p < 0.01)
 chisq.test(table(m_all[,9:10]))
 assocstats(x = m_all[,9:10])
@@ -970,7 +970,7 @@ count<-dim(dlt)[1]
 
 
 write.csv(dlt,file = "dlt.csv")
-tail(dlt,1)
+print(tail(dlt,1))
 
 
 

@@ -3,6 +3,7 @@ library(depmixS4)
 library(matlab)
 library(quantmod)
 library(xgboost)
+source("element.R")
 
 #rows<-dim(dlt)[1]
 #line<-rows-98
