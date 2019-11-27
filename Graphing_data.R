@@ -6,6 +6,7 @@ library(grid)
 library(lattice)
 library(epcalc)
 library(ggplot2)
+library(nlme)
 source("element.R")
 
 #lattice
@@ -28,3 +29,7 @@ mtext("大乐透历史数据",side = 1,#下方
       adj= 0,#左对齐
       col = "dodgerblue4",#颜色
       cex =2)#字体大小
+#点图
+temp_data = dlt[order(dlt$sa),]
+dotchart(temp_data$sa,labels = temp_data$n,cex = .1,pch = 19,color = c("darkblue","dodgerblue"))
+
