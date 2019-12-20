@@ -169,7 +169,8 @@ cell<-c(
           19142,06,07,17,24,29,04,06,
           19143,02,15,16,29,30,04,10,
           19144,05,08,09,20,29,05,09,
-          19145,07,15,17,20,32,-1,08
+          19145,07,15,17,20,32,-1,08,
+          19146,03,13,17,22,22,05,09
           
           
           
@@ -242,6 +243,7 @@ sum_l2_ab<-dlt_sum_L2(dlt)
 sum_l1_ab<-dlt_sum_L1(dlt)
 
 sum_l2_ab
+pre.data
 sum_l3_ab
 
 #sort(table(a1.hmm[which(a1.pre==sum_l3_ab[1]),]$a1.res))
@@ -252,7 +254,6 @@ sum_l3_ab
 #sort(table(b1.hmm[which(b1.pre==sum_l3_ab[6]),]$b1.res))
 #sort(table(b2.hmm[which(b2.pre==sum_l3_ab[7]),]$b2.res))
 
-pre.data
 L2_159
 L2_309
 L2_459
