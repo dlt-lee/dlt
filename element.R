@@ -811,16 +811,21 @@ cell_2019<-c( 19001,06,18,23,26,28,03,12,
               19146,10,11,26,33,34,01,06,
               19147,09,12,19,22,33,07,08,
               19148,03,04,07,11,30,08,09,
-              19149,01,02,07,33,35,06,10
+              19149,01,02,07,33,35,06,10,
+              19150,07,11,12,16,33,05,07
               
               
               )
 m_2019<-matrix(cell_2019,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
+cell_2020<-c(20001,17,25,26,32,34,04,07
+             )
+m_2020<-matrix(cell_2020,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 cell_all<-c(cell_2015,
             cell_2016,
             cell_2017,
             cell_2018,
-            cell_2019)
+            cell_2019,
+            cell_2020)
 m_all<-matrix(cell_all,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 #edit(m_2017)
 length(m_all)
