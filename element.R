@@ -817,7 +817,8 @@ cell_2019<-c( 19001,06,18,23,26,28,03,12,
               
               )
 m_2019<-matrix(cell_2019,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
-cell_2020<-c(20001,17,25,26,32,34,04,07
+cell_2020<-c(20001,17,25,26,32,34,04,07,
+             20002,03,07,18,25,30,02,07
              )
 m_2020<-matrix(cell_2020,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 cell_all<-c(cell_2015,
