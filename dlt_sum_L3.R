@@ -4,6 +4,10 @@ library(matlab)
 library(quantmod)
 library(xgboost)
 source("element.R")
+source("dlt_sum_L2.R")
+source("dlt_sum_L1.R")
+source("dlt_sum_cum.R")
+
 
 #rows<-dim(dlt)[1]
 #line<-rows-98

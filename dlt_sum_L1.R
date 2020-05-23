@@ -1,4 +1,14 @@
 dlt_sum_L1<-function(data) {
+  source("dlt.data.reset.R")
+  source("dlt.xgb.clu.2.R")
+  source("dlt.xgb.clu.3.R")
+  source("dlt.xgb.clu.6.R")
+  source("dlt.xgb.clu.9.R")
+  source("dlt.xgb.row.1.R")
+  source("dlt.xgb.row.3.R")
+  source("dlt.xgb.row.6.R")
+  source("dlt.xgb.row.9.R")
+  
   data_filter<-dlt.data.reset(data)
   
   data_clu2<-dlt.xgb.clu.2(data_filter,data)

@@ -1,5 +1,6 @@
 dlt_sum_L2<-function(data_org) {
   library('xgboost')
+  source("dlt_sum_L1.R")
   
   rows<-dim(data_org)[1]
   line<-rows-309
