@@ -44,3 +44,50 @@ b2
 > L2_609
 [1]  3  9 17 24 30  8 10
 > 
+
+a1
+ 3  5  6  7 10 11  4 
+ 1  1  1  1  1  1  2 
+a2
+ 8 11 12 13 17 25 14 
+ 1  1  1  1  1  1  2 
+a3
+17 19 21 23 29 18 
+ 1  1  1  1  1  3 
+a4
+18 19 23 24 25 26 27 30 
+ 1  1  1  1  1  1  1  1 
+a5
+29 30 33 35 36 31 
+ 1  1  1  1  1  3 
+b1
+4 6 3 5 
+1 1 3 3 
+b2
+9 7 8 
+1 3 4 
+> 
+> sum_l2_ab
+[1]  6  8 16 25 26  2  9
+> pre.data
+[1]  6 24 24 28 31  6 12
+> sum_l3_ab
+[1]  6  7 10 18 20  8 10
+> 
+> #sort(table(a1.hmm[which(a1.pre==sum_l3_ab[1]),]$a1.res))
+> #sort(table(a2.hmm[which(a2.pre==sum_l3_ab[2]),]$a2.res))
+> #sort(table(a3.hmm[which(a3.pre==sum_l3_ab[3]),]$a3.res))
+> #sort(table(a4.hmm[which(a4.pre==sum_l3_ab[4]),]$a4.res))
+> #sort(table(a5.hmm[which(a5.pre==sum_l3_ab[5]),]$a5.res))
+> #sort(table(b1.hmm[which(b1.pre==sum_l3_ab[6]),]$b1.res))
+> #sort(table(b2.hmm[which(b2.pre==sum_l3_ab[7]),]$b2.res))
+> 
+> L2_159
+[1]  4  9 15 24 26  2  8
+> L2_309
+[1]  5 16 17 20 27  6  9
+> L2_459
+[1]  2  7  8 14 28  8 11
+> L2_609
+[1]  4 11 13 28 30  4 11
+> 
