@@ -207,7 +207,8 @@ cell<-c(
           20028,07,09,15,21,26,05,09,
           20029,04,07,18,23,25,04,06,
           20030,08,11,12.21,22,06,09,
-          20031,05,13,14,26,30,03,05
+          20031,05,13,14,26,30,03,05,
+          20032,10,11,13,22,28,05,09
           
              )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
@@ -273,7 +274,7 @@ L2_309<-dlt_sum_cum(tail(dlt,720),309)
 L2_459<-dlt_sum_cum(tail(dlt,720),459)
 L2_609<-dlt_sum_cum(tail(dlt,720),609)
 
-sum_l3_ab<-c(sort(sum_l3_ab[1:5]),sort(sum_l3_ab[6:7]))
+sum_l3_ab<-c(sort(sum_l3_ab[1:5]),sort(sum_l3_ab[6:7]))  
 sum_l2_ab<-dlt_sum_L2(dlt)
 sum_l1_ab<-dlt_sum_L1(dlt)
 
