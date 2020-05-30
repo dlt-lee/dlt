@@ -22,7 +22,7 @@ source("dlt_sum_cum.R")
 #  line<-line+1
 #}
 #n_m<-matrix(n,ncol = 8,byrow = TRUE)
-
+time_start<-Sys.time()
 cell<-c(
           18150,07,15,16,21,33,07,10,
           18151,03,10,19,19,33,04,05,
@@ -215,7 +215,8 @@ cell<-c(
           20036,04,13,13,26,31,05,09,
           20037,04,07,20,21,31,03,10,
           20038,03,08,21,22,23,02,09,
-          20039,05,07,15,26,28,06,11
+          20039,05,07,15,26,28,06,11,
+          20040,13,15,18,19,21,03,08
           )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
 
@@ -289,7 +290,7 @@ pre.data
 sum_l3_ab
 
 #sort(table(a1.hmm[which(a1.pre==sum_l3_ab[1]),]$a1.res))
-#sort(table(a2.hmm[which(a2.pre==sum_l3_ab[2]),]$a2.res))
+#sort(table(a2.hmm[which(a2.pre==sum_l3_ab[2]),]$a2.res)) 
 #sort(table(a3.hmm[which(a3.pre==sum_l3_ab[3]),]$a3.res))
 #sort(table(a4.hmm[which(a4.pre==sum_l3_ab[4]),]$a4.res))
 #sort(table(a5.hmm[which(a5.pre==sum_l3_ab[5]),]$a5.res))
@@ -301,8 +302,9 @@ L2_309
 L2_459
 L2_609
 
-
+time_end<Sys.time()
+time_dur<time_end-time_start
     
-
+  
           
      
