@@ -216,7 +216,8 @@ cell<-c(
           20037,04,07,20,21,31,03,10,
           20038,03,08,21,22,23,02,09,
           20039,05,07,15,26,28,06,11,
-          20040,13,15,18,19,21,03,08
+          20040,13,15,18,19,21,03,08,
+          20041,06,09,20,24,28,02,09
           )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
 
@@ -302,9 +303,9 @@ L2_309
 L2_459
 L2_609
 
-time_end<Sys.time()
-time_dur<time_end-time_start
-    
+time_end<-Sys.time()
+time_dur<-time_end-time_start
+round(time_dur)
   
-          
+            
      
