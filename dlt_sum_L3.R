@@ -219,7 +219,8 @@ cell<-c(
           20040,13,15,18,19,21,03,08,
           20041,06,09,20,24,28,02,09,
           20042,09,11,16,19,25,05,06,
-          20043,06,13,18,33,34,02,09
+          20043,06,13,18,33,34,02,09,
+          20044,02,13,16,22,32,05,07
           
           )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
@@ -289,6 +290,10 @@ sum_l3_ab<-c(sort(sum_l3_ab[1:5]),sort(sum_l3_ab[6:7]))
 sum_l2_ab<-dlt_sum_L2(dlt)
 sum_l1_ab<-dlt_sum_L1(dlt)
 
+time_end<-Sys.time()
+time_dur<-time_end-time_start
+round(time_dur)
+
 sum_l2_ab
 pre.data
 sum_l3_ab
@@ -306,9 +311,7 @@ L2_309
 L2_459
 L2_609
 
-time_end<-Sys.time()
-time_dur<-time_end-time_start
-round(time_dur)
-  
+
        
      
+   
