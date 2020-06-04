@@ -1,7 +1,7 @@
 dlt.data.reset <- function(data_org) {
   
   rows<-dim(data_org)[1]    # roews of orange data
-  line<-rows-3              #preparefor trining data
+  line<-rows-3              #prepare for tarining data
   
   n<-(line-line%%3)/3-2
   line<-line-line%%3+3
