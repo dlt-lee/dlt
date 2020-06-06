@@ -234,6 +234,7 @@ a5.pre<-ab_m[,6]
 b1.pre<-ab_m[,7]
 b2.pre<-ab_m[,8]
 
+
 a1.res<-tail(dlt,dim(ab_m)[1])$a1
 a2.res<-tail(dlt,dim(ab_m)[1])$a2
 a3.res<-tail(dlt,dim(ab_m)[1])$a3
@@ -247,8 +248,8 @@ a2.hmm<-data.frame(a2.pre,a2.res)
 a3.hmm<-data.frame(a3.pre,a3.res)
 a4.hmm<-data.frame(a4.pre,a4.res)
 a5.hmm<-data.frame(a5.pre,a5.res)
-b1.hmm<-data.frame(a1.pre,b1.res)
-b2.hmm<-data.frame(a2.pre,b2.res)
+b1.hmm<-data.frame(b1.pre,b1.res)
+b2.hmm<-data.frame(b2.pre,b2.res)
 
 
 #Training
@@ -312,7 +313,13 @@ L2_309
 L2_459
 L2_609
 
-
+sort(table(a1.hmm[which(a1.hmm$a1.pre==pre.data[1]),]$a1.res))
+sort(table(a2.hmm[which(a2.hmm$a2.pre==pre.data[2]),]$a2.res))
+sort(table(a3.hmm[which(a3.hmm$a3.pre==pre.data[3]),]$a3.res))
+sort(table(a4.hmm[which(a4.hmm$a4.pre==pre.data[4]),]$a4.res))
+sort(table(a5.hmm[which(a5.hmm$a5.pre==pre.data[5]),]$a5.res))
+sort(table(b1.hmm[which(b1.hmm$b1.pre==pre.data[6]),]$b1.res))
+sort(table(b2.hmm[which(b2.hmm$b2.pre==pre.data[7]),]$b2.res))
        
      
    
