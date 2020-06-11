@@ -3,7 +3,8 @@ dlt_sum_L2<-function(data_org) {
   source("dlt_sum_L1.R")
   
   rows<-dim(data_org)[1]
-  line<-rows-309
+  
+  line<-rows-floor(rows/3)
   j<-1
   a1_temp<-c(0,0,0,0,0,0,0,0)
   a2_temp<-c(0,0,0,0,0,0,0,0)
@@ -25,7 +26,7 @@ dlt_sum_L2<-function(data_org) {
     b1_temp<-c(b1_temp,temp$b1)
     b2_temp<-c(b2_temp,temp$b2)
     res_temp<-c(res_temp,data_org[line+1,4:10])
-    j<j+3
+    j<-j+3
     line<-line+3
     if (line>=rows) {
       break
@@ -59,7 +60,7 @@ dlt_sum_L2<-function(data_org) {
   
   
   #prediect
-  tests<-dlt_sum_L1(tail(data_org,309))
+  tests<-dlt_sum_L1(tail(data_org,floor(rows/3)))
   tests.T<-Matrix(as.matrix(tests),sparse=T)
   testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T[,1]))
   testPredictions.a2 <- predict(object = bst.a2,newdata = t(tests.T[,2]))
