@@ -24,7 +24,7 @@ dlt_sum_cum<-function(data_org,n_ch) {
     b1_temp<-c(b1_temp,temp$b1)
     b2_temp<-c(b2_temp,temp$b2)
     res_temp<-c(res_temp,data_org[line+1,4:10])
-    j<j+3
+    j<-j+3
     line<-line+3
     if (line>=rows) {
       break
