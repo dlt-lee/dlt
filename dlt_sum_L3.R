@@ -224,7 +224,9 @@ cell<-c(
           20045,02,12,17,23,29,05,09,
           20046,03,10,11,21,23,03,05,
           20047,04,09,19,24,29,04,05,
-          20048,07,16,17,20,30,09,11
+          20048,07,16,17,20,30,09,11,
+          20049,03,15,16,21,27,03,09,
+          20050,03,08,22,26,31,05,09
           
           )
 ab_m<-matrix(cell,ncol = 8,byrow = TRUE)
@@ -296,8 +298,6 @@ sum_l2_ab<-dlt_sum_L2(dlt)
 sum_l1_ab<-dlt_sum_L1(dlt)
 
 time_end<-Sys.time()
-time_dur<-time_end-time_start
-round(time_dur)
 
 sum_l2_ab
 pre.data
@@ -316,12 +316,6 @@ L2_309
 L2_459
 L2_609
 
-sort(table(a1.hmm[which(a1.hmm$a1.pre==pre.data[1]),]$a1.res))
-sort(table(a2.hmm[which(a2.hmm$a2.pre==pre.data[2]),]$a2.res))
-sort(table(a3.hmm[which(a3.hmm$a3.pre==pre.data[3]),]$a3.res))
-sort(table(a4.hmm[which(a4.hmm$a4.pre==pre.data[4]),]$a4.res))
-sort(table(a5.hmm[which(a5.hmm$a5.pre==pre.data[5]),]$a5.res))
-sort(table(b1.hmm[which(b1.hmm$b1.pre==pre.data[6]),]$b1.res))
-sort(table(b2.hmm[which(b2.hmm$b2.pre==pre.data[7]),]$b2.res))
-       
-     
+time_dur<-time_end-time_start  
+
+ 
