@@ -39,3 +39,4 @@ b2
 > time_dur<-time_end-time_start  
 > time_dur
 Time difference of 5.896832 hours
+
