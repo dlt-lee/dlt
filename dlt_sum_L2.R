@@ -1,10 +1,10 @@
-dlt_sum_L2<-function(data_org) {
+dlt_sum_L2<-function(data_org,n) {
   library('xgboost')
   source("dlt_sum_L1.R")
   
   rows<-dim(data_org)[1]
   
-  line<-rows-floor(rows/9)*3
+  line<-rows-floor(rows/9)*n
   j<-1
   a1_temp<-c(0,0,0,0,0,0,0,0)
   a2_temp<-c(0,0,0,0,0,0,0,0)
