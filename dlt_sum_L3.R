@@ -14,15 +14,15 @@ record_ab<-c(
 
 time_start<-Sys.time()
 
-unit<-floor(dim(dlt)[1]/9/3)*3
-L2_1<-dlt_sum_cum(dlt,unit*1)
-L2_2<-dlt_sum_cum(dlt,unit*2)
-L2_3<-dlt_sum_cum(dlt,unit*3)
-L2_4<-dlt_sum_cum(dlt,unit*4)
-L2_5<-dlt_sum_cum(dlt,unit*5)
-L2_6<-dlt_sum_cum(dlt,unit*6)
-L2_7<-dlt_sum_cum(dlt,unit*7)
-L2_8<-dlt_sum_cum(dlt,unit*8)
+#unit<-floor(dim(dlt)[1]/9/3)*3
+#L2_1<-dlt_sum_cum(dlt,unit*1)
+#L2_2<-dlt_sum_cum(dlt,unit*2)
+#L2_3<-dlt_sum_cum(dlt,unit*3)
+#L2_4<-dlt_sum_cum(dlt,unit*4)
+#L2_5<-dlt_sum_cum(dlt,unit*5)
+#L2_6<-dlt_sum_cum(dlt,unit*6)
+#L2_7<-dlt_sum_cum(dlt,unit*7)
+#L2_8<-dlt_sum_cum(dlt,unit*8)
 
 
 sum_l2_ab_3<-dlt_sum_L2(dlt,3)
@@ -34,14 +34,14 @@ time_end<-Sys.time()
 sum_l2_ab_3
 sum_l2_ab_6
 
-L2_1
-L2_2
-L2_3
-L2_4
-L2_5
-L2_6
-L2_7
-L2_8
+#L2_1
+#L2_2
+#L2_3
+#L2_4
+#L2_5
+#L2_6
+#L2_7
+#L2_8
 
 time_dur<-time_end-time_start  
 time_dur
