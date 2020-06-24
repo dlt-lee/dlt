@@ -3,13 +3,13 @@ dlt.xgb.row.3<-function(trains,d_o) {
   
   #trains<-dlt.data.reset(dlt)
   trains.T<-Matrix(as.matrix(trains[,43:63]),sparse=T)
-  bst.a1<-xgboost(data = trains.T,label = trains$res.a1,nrounds = 300,print_every_n = 300L)
-  bst.a2<-xgboost(data = trains.T,label = trains$res.a2,nrounds = 300,print_every_n = 300L)
-  bst.a3<-xgboost(data = trains.T,label = trains$res.a3,nrounds = 300,print_every_n = 300L)
-  bst.a4<-xgboost(data = trains.T,label = trains$res.a4,nrounds = 300,print_every_n = 300L)
-  bst.a5<-xgboost(data = trains.T,label = trains$res.a5,nrounds = 300,print_every_n = 300L)
-  bst.b1<-xgboost(data = trains.T,label = trains$res.b1,nrounds = 300,print_every_n = 300L)
-  bst.b2<-xgboost(data = trains.T,label = trains$res.b2,nrounds = 300,print_every_n = 300L)
+  bst.a1<-xgboost(data = trains.T,label = trains$res.a1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a2<-xgboost(data = trains.T,label = trains$res.a2,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a3<-xgboost(data = trains.T,label = trains$res.a3,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a4<-xgboost(data = trains.T,label = trains$res.a4,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a5<-xgboost(data = trains.T,label = trains$res.a5,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.b1<-xgboost(data = trains.T,label = trains$res.b1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.b2<-xgboost(data = trains.T,label = trains$res.b2,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
   
   
   #predoct
