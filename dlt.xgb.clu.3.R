@@ -3,13 +3,13 @@ dlt.xgb.clu.3 <- function(trains,d_o) {
   
   #trains<-dlt.data.reset(dlt)
   trains.T<-Matrix(as.matrix(trains[,1:63]),sparse=T)
-  bst.a1<-xgboost(data = trains.T[,c(43,50,57)],label = trains$res.a1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a1<-xgboost(data = trains.T[,c(43,50,57)],label = trains$res.a1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.a2<-xgboost(data = trains.T[,c(44,51,58)],label = trains$res.a2,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
-  bst.a3<-xgboost(data = trains.T[,c(45,52,59)],label = trains$res.a3,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
-  bst.a4<-xgboost(data = trains.T[,c(46,53,60)],label = trains$res.a4,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
-  bst.a5<-xgboost(data = trains.T[,c(47,54,61)],label = trains$res.a5,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a3<-xgboost(data = trains.T[,c(45,52,59)],label = trains$res.a3,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
+  bst.a4<-xgboost(data = trains.T[,c(46,53,60)],label = trains$res.a4,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
+  bst.a5<-xgboost(data = trains.T[,c(47,54,61)],label = trains$res.a5,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.b1<-xgboost(data = trains.T[,c(48,55,62)],label = trains$res.b1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
-  bst.b2<-xgboost(data = trains.T[,c(49,56,63)],label = trains$res.b2,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.b2<-xgboost(data = trains.T[,c(49,56,63)],label = trains$res.b2,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   
   #predoct
   rows<-dim(d_o)[1]
