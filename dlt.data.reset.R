@@ -83,10 +83,10 @@ dlt.data.reset <- function(data_org) {
                      a1.9,a2.9,a3.9,a4.9,a5.9,b1.9,b2.9,
                      res.a1,res.a2,res.a3,res.a4,res.a5,res.b1,res.b2)
 
-  
-  return(trains)
   #stop cluster
   stopCluster(cl)
+  return(trains)
+ 
 }
 
 
