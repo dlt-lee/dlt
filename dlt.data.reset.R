@@ -35,7 +35,7 @@ dlt.data.reset <- function(data_org) {
   res.b2<-0
   
   j<-1
-  foreach (i=1:n, .combine=cbind) %dopar% {
+  foreach (i=1:n, .combine=cbind) %do% {
     a1.1<-c(a1.1,data[j+0,]$a1);a2.1<-c(a2.1,data[j+0,]$a2);a3.1<-c(a3.1,data[j+0,]$a3);a4.1<-c(a4.1,data[j+0,]$a4);a5.1<-c(a5.1,data[j+0,]$a5);b1.1<-c(b1.1,data[j+0,]$b1);b2.1<-c(b2.1,data[j+0,]$b2)
     a1.2<-c(a1.2,data[j+1,]$a1);a2.2<-c(a2.2,data[j+1,]$a2);a3.2<-c(a3.2,data[j+1,]$a3);a4.2<-c(a4.2,data[j+1,]$a4);a5.2<-c(a5.2,data[j+1,]$a5);b1.2<-c(b1.2,data[j+1,]$b1);b2.2<-c(b2.2,data[j+1,]$b2)
     a1.3<-c(a1.3,data[j+2,]$a1);a2.3<-c(a2.3,data[j+2,]$a2);a3.3<-c(a3.3,data[j+2,]$a3);a4.3<-c(a4.3,data[j+2,]$a4);a5.3<-c(a5.3,data[j+2,]$a5);b1.3<-c(b1.3,data[j+2,]$b1);b2.3<-c(b2.3,data[j+2,]$b2)
@@ -82,10 +82,11 @@ dlt.data.reset <- function(data_org) {
                      a1.8,a2.8,a3.8,a4.8,a5.8,b1.8,b2.8,
                      a1.9,a2.9,a3.9,a4.9,a5.9,b1.9,b2.9,
                      res.a1,res.a2,res.a3,res.a4,res.a5,res.b1,res.b2)
-  #stop cluster
-  stopCluster(cl)
+
   
   return(trains)
+  #stop cluster
+  stopCluster(cl)
 }
 
 
