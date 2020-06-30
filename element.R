@@ -2249,7 +2249,7 @@ data<-dlt
 count<-dim(dlt)[1]
 
 
-write.csv(dlt,file = "dlt.csv")
+#write.csv(dlt,file = "dlt.csv")
 print(tail(dlt,1))
 
 
