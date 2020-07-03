@@ -3,6 +3,10 @@ dlt_sum_L2<-function(data_org,n) {
   source("dlt_sum_L1.R")
   threads=detectCores()
   number_of_core=threads/2
+  if (length(str_match(Sys.getenv("os"), "Windows")) == 1) {
+    number_of_core=threads
+  }
+  
   
   rows<-dim(data_org)[1]
   

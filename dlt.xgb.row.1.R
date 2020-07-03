@@ -2,6 +2,9 @@ dlt.xgb.row.1<-function(trains,d_o) {
   library(xgboost)
   threads=detectCores()
   number_of_core=threads/2
+  if (length(str_match(Sys.getenv("os"), "Windows")) == 1) {
+    number_of_core=threads
+  }
   
   #trains<-dlt.data.reset(dlt)
   trains.T<-Matrix(as.matrix(trains[,57:63]),sparse=T)

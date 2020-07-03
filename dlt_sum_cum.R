@@ -2,6 +2,9 @@ dlt_sum_cum<-function(data_org,n_ch) {
   library('xgboost')
   threads=detectCores()
   number_of_core=threads/2
+  if (length(str_match(Sys.getenv("os"), "Windows")) == 1) {
+    number_of_core=threads
+  }
   
   rows<-dim(data_org)[1]
   line<-rows-n_ch
