@@ -6,7 +6,7 @@ dlt.xgb.row.3<-function(trains,d_o) {
   
   #trains<-dlt.data.reset(dlt)
   trains.T<-Matrix(as.matrix(trains[,43:63]),sparse=T)
-  if (length(str_match(Sys.getenv("os"), "Windows")) == 1) {
+  if (threads <= 8) {
     bst.a1<-xgboost(data = trains.T,label = trains$res.a1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
     bst.a2<-xgboost(data = trains.T,label = trains$res.a2,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
     bst.a3<-xgboost(data = trains.T,label = trains$res.a3,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))

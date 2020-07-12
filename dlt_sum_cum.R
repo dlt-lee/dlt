@@ -51,7 +51,7 @@ dlt_sum_cum<-function(data_org,n_ch) {
   trains.T.b1<-Matrix(b1_m,sparse=T)
   trains.T.b2<-Matrix(b2_m,sparse=T)
   
-  if (length(str_match(Sys.getenv("os"), "Windows")) == 1) {
+  if (threads <= 8) {
     bst.a1<-xgboost(data = trains.T.a1,label = res_m[,1],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
     bst.a2<-xgboost(data = trains.T.a2,label = res_m[,2],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
     bst.a3<-xgboost(data = trains.T.a3,label = res_m[,3],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
