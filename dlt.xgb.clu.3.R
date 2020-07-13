@@ -1,7 +1,7 @@
 dlt.xgb.clu.3 <- function(trains,d_o) {
   library(xgboost)
   threads=detectCores()
-  number_of_core=threads/2
+  number_of_core=threads/4
   
   
   #trains<-dlt.data.reset(dlt)
