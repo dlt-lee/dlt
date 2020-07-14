@@ -2,7 +2,7 @@ dlt_sum_L2<-function(data_org,n) {
   library('xgboost')
   source("dlt_sum_L1.R")
   threads=detectCores()
-  number_of_core=threads/4
+  number_of_core=threads/2
   
   
   
