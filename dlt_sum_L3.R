@@ -139,11 +139,4 @@ sum_l2<-c(sum_l2_ab_3[1],L2_1[1],L2_2[1],L2_3[1],L2_4[1],L2_5[1],L2_6[1],L2_7[1]
           sum_l2_ab_3[7],L2_1[7],L2_2[7],L2_3[7],L2_4[7],L2_5[7],L2_6[7],L2_7[7],L2_8[7],sum_l2_ab_6[7])
 m_sum_l2<-matrix(sum_l2,ncol = 10,byrow = TRUE)
 m_sum_l2
-#sort(table(m_sum_l2[1,]))
-#sort(table(m_sum_l2[2,]))
-#sort(table(m_sum_l2[3,]))
-#sort(table(m_sum_l2[4,]))
-#sort(table(m_sum_l2[5,]))
-#sort(table(m_sum_l2[6,]))
-#sort(table(m_sum_l2[7,]))
 
