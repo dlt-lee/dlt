@@ -253,4 +253,10 @@ time_dur<-time_end-time_start
 time_dur
  
 m_sum_l2
-
+sum_l2<-c(max(dlt$n)+1,sum_l2)
+write.table(m_r_ab, file = "dlt_ab.txt", append = FALSE, quote = TRUE, sep = " ",
+            eol = "\n", na = "NA", dec = ".", row.names = FALSE,
+            col.names = FALSE, qmethod = c("escape", "double"),
+            fileEncoding = "")
+directory <-getwd()
+t_ab<-read.table(file = "dlt_ab.txt",row.names = NULL)
