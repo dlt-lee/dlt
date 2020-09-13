@@ -40,8 +40,8 @@ sum_l2<-c(sum_l2_ab_3[1],L2_1[1],L2_2[1],L2_3[1],L2_4[1],L2_5[1],L2_6[1],L2_7[1]
           sum_l2_ab_3[7],L2_1[7],L2_2[7],L2_3[7],L2_4[7],L2_5[7],L2_6[7],L2_7[7],L2_8[7],sum_l2_ab_6[7])
 m_sum_l2<-matrix(sum_l2,ncol = 10,byrow = TRUE)
 
-m_r_ab<-read.csv(file = "l2_ab.csv", header = FALSE)[-1,]
-m_r_ab<-m_r_ab[,-1]
+m_r_ab<-as.matrix(read.csv(file = "l2_ab.csv", header = FALSE))[,-1]
+m_r_ab<-m_r_ab[-1,]
 m_r_a1<-m_r_ab[,01:10]
 m_r_a2<-m_r_ab[,11:20]
 m_r_a3<-m_r_ab[,21:30]
