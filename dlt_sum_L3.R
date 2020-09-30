@@ -105,9 +105,7 @@ sum_L3_ab<-c(sort(c(round(testPredictions.a1),
              sort(c(round(testPredictions.b1),
                     round(testPredictions.b2))))
 
-sum_l1_ab<-dlt_sum_L1(dlt)
-
-time_end<-Sys.time()
+#sum_l1_ab<-dlt_sum_L1(dlt)
 
 #sum_l2_ab_3
 #sum_l2_ab_6
@@ -125,8 +123,9 @@ sum_l2<-c(max(dlt$n)+1,sum_l2)
 m_r_ab_delta<-rbind(m_r_ab_org,sum_l2)
 write.csv(m_r_ab_delta, file = "l2_ab.csv",row.names = FALSE)
 
-sum_L3_ab
+c(max(dlt$n)+1,sum_L3_ab)
 
+time_end<-Sys.time()
 time_dur<-time_end-time_start  
 time_dur
  
