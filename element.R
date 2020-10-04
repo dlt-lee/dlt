@@ -2128,8 +2128,8 @@ cell_all<-c(cell_2007,
             cell_2016,
             cell_2017,
             cell_2018,
-            cell_2019
-            #cell_2020
+            cell_2019,
+            cell_2020
             )
 m_all<-matrix(cell_all,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 #edit(m_2017)
