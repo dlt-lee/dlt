@@ -190,7 +190,11 @@ sum_l2<-c(max(dlt$n)+1,sum_l2)
 m_r_ab_delta<-rbind(m_r_ab_org,sum_l2)
 write.csv(m_r_ab_delta, file = "l2_ab.csv",row.names = FALSE)
 
-c(max(dlt$n)+1,sum_L3_ab)
+sum_l3<-c(max(dlt$n)+1,sum_L3_ab)
+m_r_ab_delta<-rbind(m_record_l3,sum_l3)
+write.csv(m_r_ab_delta, file = "l3_ab.csv",row.names = FALSE)
+
+
 
 time_end<-Sys.time()
 time_dur<-time_end-time_start  
