@@ -1,4 +1,5 @@
 dlt_sum_cum<-function(data_org,n_ch) {
+  library(quantmod)
   library('xgboost')
   threads=detectCores()
   number_of_core=threads/2
@@ -16,7 +17,12 @@ dlt_sum_cum<-function(data_org,n_ch) {
   b2_temp<-c(0,0,0,0,0,0,0,0)
   res_temp<-c(0,0,0,0,0,0,0)
   
-  for (i in 1:line) {
+  #setup parallel backend to use many processors
+  cores=detectCores()
+  cl <- makeCluster(cores[1]-1) #not to overload your computer
+  registerDoParallel(cl)
+  
+  foreach (i=1:line, .combine=cbind) %do% {
     data<-data_org[j:line,]
     temp<-dlt_sum_L1(data)
     a1_temp<-c(a1_temp,temp$a1)
@@ -32,8 +38,11 @@ dlt_sum_cum<-function(data_org,n_ch) {
     if (line>=rows) {
       break
     }
-    
   }
+  
+  #stop cluster
+  stopCluster(cl)
+  
   a1_m<-matrix(a1_temp,ncol = 8,byrow = TRUE)[-1,]
   a2_m<-matrix(a2_temp,ncol = 8,byrow = TRUE)[-1,]
   a3_m<-matrix(a3_temp,ncol = 8,byrow = TRUE)[-1,]
