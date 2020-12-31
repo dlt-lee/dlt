@@ -14,7 +14,7 @@ m_r_ab<-head(m_r_ab_org,row_result)
 result<-tail(dlt,row_result)
 
 m_record_l4<-c(
-  
+  20075,02,09,09,18,33,04,10
 )
 
 trains.T.ab<-Matrix(m_r_ab,sparse=T)

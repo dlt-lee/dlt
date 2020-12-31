@@ -10,7 +10,7 @@ source("dlt_sum_cum.R")
 threads=detectCores()
 number_of_core=threads/2
 
-record_ab<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
+m_record_l3<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
 
 
 time_start<-Sys.time()
