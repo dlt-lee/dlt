@@ -10,8 +10,9 @@ dlt.data.reset <- function(data_org) {
   rows<-dim(data_org)[1]    # roews of orange data
   line<-rows-3              #prepare for tarining data
   
-  n<-(line-line%%3)/3-2
-  line<-line-line%%3+3
+  # n<-(line-line%%3)/3-2
+  n=line-1
+  # line<-line-line%%3+3
   
   data<-tail(data_org,line)
   
@@ -26,13 +27,7 @@ dlt.data.reset <- function(data_org) {
   a1.7<-0;a2.7<-0;a3.7<-0;a4.7<-0;a5.7<-0;b1.7<-0;b2.7<-0
   a1.8<-0;a2.8<-0;a3.8<-0;a4.8<-0;a5.8<-0;b1.8<-0;b2.8<-0
   a1.9<-0;a2.9<-0;a3.9<-0;a4.9<-0;a5.9<-0;b1.9<-0;b2.9<-0
-  res.a1<-0
-  res.a2<-0
-  res.a3<-0
-  res.a4<-0
-  res.a5<-0
-  res.b1<-0
-  res.b2<-0
+  res.a1<-0;res.a2<-0;res.a3<-0;res.a4<-0;res.a5<-0;res.b1<-0;res.b2<-0
   
   j<-1
   foreach (i=1:n, .combine=cbind) %do% {
@@ -52,8 +47,8 @@ dlt.data.reset <- function(data_org) {
     res.a5<-c(res.a5,data[j+9,]$a5)
     res.b1<-c(res.b1,data[j+9,]$b1)
     res.b2<-c(res.b2,data[j+9,]$b2)
-    j=j+3
-    #print(j)
+    j=j+1
+    # print(j)
   }
   #stop cluster
   stopCluster(cl)
