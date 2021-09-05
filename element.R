@@ -41,6 +41,12 @@ library(nnet)
 library(caret)
 
 
+#t_m ='gpu_hist'
+t_m ='hist'
+# threads=detectCores()
+# number_of_core=threads/2
+number_of_core=4
+
 rnames<-c("number","a1","a2","a3","a4","a5","b1","b2")
 cnames<-c()
 cell_2007<-c(
