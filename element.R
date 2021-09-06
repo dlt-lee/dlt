@@ -45,7 +45,7 @@ library(caret)
 t_m ='hist'
 # threads=detectCores()
 # number_of_core=threads/2
-number_of_core=4
+number_of_core=1
 
 rnames<-c("number","a1","a2","a3","a4","a5","b1","b2")
 cnames<-c()
