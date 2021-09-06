@@ -1,7 +1,7 @@
 dlt_sum_cum<-function(data_org,n_ch) {
   library(quantmod)
   library('xgboost')
-  # threads=detectCores()
+  threads=detectCores()
   # number_of_core=threads/2
   
   

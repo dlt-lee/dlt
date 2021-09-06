@@ -3,7 +3,7 @@ dlt_sum_L2<-function(data_org,n) {
   library(quantmod)
   source("dlt_sum_L1.R")
   threads=detectCores()
-  number_of_core=threads/2
+  # number_of_core=threads/2
   
   
   
