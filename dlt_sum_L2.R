@@ -33,8 +33,8 @@ dlt_sum_L2<-function(data_org,n) {
     b1_temp<-c(b1_temp,temp$b1)
     b2_temp<-c(b2_temp,temp$b2)
     res_temp<-c(res_temp,data_org[line+1,4:10])
-    j<-j+3
-    line<-line+3
+    j<-j+1
+    line<-line+1
     if (line>=rows) {
       break
     }
