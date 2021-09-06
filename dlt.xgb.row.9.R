@@ -1,6 +1,6 @@
 dlt.xgb.row.9<-function(trains,d_o) {
   library(xgboost)
-  # threads=detectCores()
+  threads=detectCores()
   # number_of_core=threads/2
   
   
