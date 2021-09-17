@@ -8,15 +8,15 @@ dlt.data.reset <- function(data_org) {
   registerDoParallel(cl)
   
   rows<-dim(data_org)[1]    # roews of orange data
-  line<-rows-3              #prepare for tarining data
+  line<-rows-9              #prepare for tarining data
   
   # n<-(line-line%%3)/3-2
-  n=line-1
+  n=line
   # line<-line-line%%3+3
   
-  data<-tail(data_org,line)
+  # data<-tail(data_org,line)
   
-  
+  data<-data_org
   
   a1.1<-0;a2.1<-0;a3.1<-0;a4.1<-0;a5.1<-0;b1.1<-0;b2.1<-0
   a1.2<-0;a2.2<-0;a3.2<-0;a4.2<-0;a5.2<-0;b1.2<-0;b2.2<-0
@@ -49,6 +49,7 @@ dlt.data.reset <- function(data_org) {
     res.b2<-c(res.b2,data[j+9,]$b2)
     j=j+1
     # print(j)
+    #print(data[j+9,]$n)
   }
   #stop cluster
   stopCluster(cl)
