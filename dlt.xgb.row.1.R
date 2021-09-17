@@ -6,7 +6,7 @@ dlt.xgb.row.1<-function(trains,d_o) {
   
   #trains<-dlt.data.reset(dlt)
   trains.T<-Matrix(as.matrix(trains[,57:63]),sparse=T)
-  if (threads <= 8) {
+  if (threads <= 2) {
     bst.a1<-xgboost(data = trains.T,label = trains$res.a1,nrounds = 300,verbose=0,params = list(tree_method = t_m))
     bst.a2<-xgboost(data = trains.T,label = trains$res.a2,nrounds = 300,verbose=0,params = list(tree_method = t_m))
     bst.a3<-xgboost(data = trains.T,label = trains$res.a3,nrounds = 300,verbose=0,params = list(tree_method = t_m))
