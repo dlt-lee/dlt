@@ -1,7 +1,7 @@
 source("element.R")
 source("dlt_L2.R")
 
-for (i in 08051:08100) {
+for (i in 08029:08001) {
   dlt_L2(i)
   # dcb_L3(i,-1)
   # dcb_L4(i,-1)
